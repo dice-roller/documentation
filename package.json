@@ -1,0 +1,42 @@
+{
+  "name": "rpg-dice-roller-docs",
+  "version": "1.0.0",
+  "description": "The documentation for the rpg-dice-roller",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreenImp/rpg-dice-roller-docs.git"
+  },
+  "keywords": [
+    "dice",
+    "roller",
+    "rpg",
+    "roll",
+    "pathfinder",
+    "d&d",
+    "dnd",
+    "notation",
+    "docs",
+    "documentation",
+    "manual",
+    "help"
+  ],
+  "author": "GreenImp <info@greenimp.co.uk> (http://greenimp.co.uk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GreenImp/rpg-dice-roller-docs/issues"
+  },
+  "homepage": "https://github.com/GreenImp/rpg-dice-roller-docs#readme",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.5.0",
+    "vuepress": "^1.5.0",
+    "vuepress-plugin-dice-roller": "^0.1.1"
+  }
+}

@@ -1,0 +1,22 @@
+os: linux
+dist: xenial
+language: node_js
+node_js:
+  - "node"
+branches:
+  only:
+    - master
+    - develop
+script:
+  - npm run docs:build
+deploy:
+  provider: pages:git
+  edge: true
+  token: $GITHUB_TOKEN
+  local_dir: docs/.vuepress/dist
+  repo: GreenImp/rpg-dice-roller
+  keep_history: false
+  on:
+    branch: master
+    # all_branches: true
+
