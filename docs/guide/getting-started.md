@@ -93,10 +93,15 @@ Instead of the ESM file (`lib/esm/bundle.js`), you **must** use the UMD file (`l
 All uses of the library classes and objects **must** be accessed from the `rpgDiceRoller` namespace.
 
 ```html
-<!-- download the file locally -->
+<!-- download the file locally (minified) -->
 <script src="lib/umd/bundle.min.js"></script>
-<!-- or use the CDN -->
+<!-- non-minified -->
+<script src="lib/umd/bundle.js"></script>
+
+<!-- or use the CDN (minified) -->
 <script src="https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/umd/bundle.min.js"></script>
+<!-- non-minified -->
+<script src="https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/umd/bundle.js"></script>
 
 <script>
   // create a new instance of the DiceRoller

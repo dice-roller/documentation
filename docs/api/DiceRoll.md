@@ -48,7 +48,7 @@ roll.export();
 | --------------------------------- | ------------------------------------------------------------ | -------------- |
 | `export({exportFormats=} format)` | Exports the `DiceRoll` in the specified format. Throws `Error` if format is invalid | `string\|null` |
 | `hasRolls()`                      | Returns whether the object has rolled dice or not            | `boolean`      |
-| `rolls()`                         | Rolls the dice for the existing notation and returns the results. Useful if you want to re-roll the dice, but usually better to create a new `DiceRoll` instance instead | `[]`           |
+| `roll()`                          | Rolls the dice for the existing notation and returns the results. Useful if you want to re-roll the dice, but usually better to create a new `DiceRoll` instance instead | `[]`           |
 | `toJSON()`                        | Returns a JSON serialisable version of the object. Called automatically when using `JSON.stringify(diceroll)` | `Object`       |
 | `toString()`                      | Returns a string representation of the object (See `output` property). Called automatically when the object is cast to a string (ie. `Rolled: ${diceroll}`) | `string`       |
 
