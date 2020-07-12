@@ -2,7 +2,9 @@
 
 A `Rollresult` object holds the roll value and active modifiers for a single die roll.
 
-_You will probably not need to create your own `RollResult` instances, unless you're importing rolls, but `RollResult` objects will be returned when rolling dice._
+::: tip
+You will probably not need to create your own `RollResult` instances, unless you're importing rolls, but `RollResult` objects will be returned when rolling dice.
+:::
 
 
 ## Constructor
