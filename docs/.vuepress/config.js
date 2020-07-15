@@ -13,6 +13,10 @@ module.exports = {
     lastUpdated: 'Last Updated',
 
     smoothScroll: true,
+    algolia: {
+      apiKey: 'f5ccf286c5bf08a4db96d17194b54c41',
+      indexName: 'rpg-dice-roller'
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
