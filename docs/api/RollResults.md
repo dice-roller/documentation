@@ -2,7 +2,9 @@
 
 The `RollResults` object contains a collection of `RollResult` objects.
 
-_You will probably not need to create your own `RollResults` instances, unless you're importing rolls, but `RollResults` objects will be returned when rolling dice._
+::: tip
+You will probably not need to create your own `RollResults` instances, unless you're importing rolls, but `RollResults` objects will be returned when rolling dice.
+:::
 
 
 ## Constructor
