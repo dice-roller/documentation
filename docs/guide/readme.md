@@ -12,6 +12,13 @@ Dice can be rolled through the use of "notations", which are strings of characte
 You can read more about it in the [Notation section](notation/readme.md).
 
 
+## How random is it?
+
+This library uses [psudeo random number generation](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) (PRNG) to determine die rolls. It is not _true_ random but it is suitable for most purposes. PRNGs are used globally for computer-based random number generation.
+
+It is more than sufficient for the vast majority of uses. However, if your needs require, you can [modify the RNG engine](customisation.md#random-number-generation).
+
+
 ## Features
 
 **Different dice types**
@@ -36,6 +43,10 @@ You can read more about it in the [Notation section](notation/readme.md).
 
 * [Operators](notation/maths.md#operators)
 * [Functions](notation/maths.md#functions)
+
+**Customisation**
+
+* [Random number generator](customisation.md#random-number-generator) <Badge text="New" vertical="middle"/>
 
 **Coming soon**
 

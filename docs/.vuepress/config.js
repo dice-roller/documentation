@@ -31,6 +31,7 @@ module.exports = {
             '',
             'getting-started',
             'usage',
+            'customisation',
           ],
         },
         {
@@ -56,6 +57,7 @@ module.exports = {
             'RollResults',
             'ComparePoint',
             'Parser',
+            'NumberGenerator',
             'exportFormats',
           ],
         }
