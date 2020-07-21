@@ -16,6 +16,7 @@ features:
 
 [![Build Status](https://travis-ci.org/GreenImp/rpg-dice-roller.svg?branch=master)](https://travis-ci.org/GreenImp/rpg-dice-roller)
 [![Coverage Status](https://coveralls.io/repos/github/GreenImp/rpg-dice-roller/badge.svg)](https://coveralls.io/github/GreenImp/rpg-dice-roller)
+`![Tyepscript supported](https://img.shields.io/badge/typescript-supported-blue)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](licence.txt)
 [![npm downloads](https://img.shields.io/npm/dm/rpg-dice-roller)](https://www.npmjs.com/package/rpg-dice-roller)
 
@@ -25,3 +26,5 @@ features:
 Have a play and see how it works
 
 ::: roll 4d6d1 :::
+
+<iframe src="https://github.com/sponsors/GreenImp/button" title="Sponsor GreenImp" height="35" width="107" style="border: 0; margin: 0 auto 1rem; display: block;"></iframe>
