@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = ctx => ({
   title: 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
   base: '/rpg-dice-roller/',
@@ -13,10 +13,10 @@ module.exports = {
     lastUpdated: 'Last Updated',
 
     smoothScroll: true,
-    algolia: {
+    algolia: ctx.isProd ? ({
       apiKey: 'f5ccf286c5bf08a4db96d17194b54c41',
       indexName: 'rpg-dice-roller'
-    },
+    }) : null,
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
@@ -68,4 +68,4 @@ module.exports = {
     '@vuepress/back-to-top',
     'dice-roller',
   ],
-};
+});
