@@ -120,7 +120,14 @@ You can't have a die that only explodes if you _don't_ roll a specific number:
 This notation will instead create a [compound roll](#compounding-cp) if you roll a 4.
 :::
 
-::: roll 4d10!<=3 :::
+::: tip Infinite looping
+To stop infinite loops, when running something like `d10!>0`, modifiers are limited to 1000 iterations per dice roll:
+
+* `1d10!>0` would return 1001 rolls; the initial roll, and 1000 exploded rolls.
+* `2d10!>0` would return 2002 rolls; the initial 2 rolls, and 100 exploded rolls per initial roll.
+
+This also applies to [Compounding](#compounding-cp), [Penetrating](#penetrating-p-p-p-cp-p-cp), and [Re-roll](re-roll-r-ro-r-cp-ro-cp) modifiers.
+:::
 
 
 ### Compounding (`!!` / `!!{cp}`)
@@ -221,6 +228,15 @@ If you want to change the number that a dice will re-roll on, you can use a [Com
 Read more about [Compare Points below](#compare-point).
 
 ::: roll 4d10r<=3 :::
+
+::: tip Infinite looping
+To stop infinite loops, when running something like `d10r>0`, modifiers are limited to 1000 iterations per dice roll:
+
+* `1d10r>0`would only re-roll 1000 times.
+* `2d10r>0` would re-roll 2000; once for each initial roll.
+
+This also applies to [Exploding](#exploding-cp), [Compounding](#compounding-cp), and [Penetrating](#penetrating-p-p-p-cp-p-cp) modifiers.
+:::
 
 
 ## Keep (`k{n}` / `kh{n}` / `kl{n}`)
