@@ -2,7 +2,7 @@
 
 This library is a JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.
 
-It's main purpose is for use in pen and paper RPGs, like Dungeons & Dragons, Pathfinder, Cyberpunk etc., where players have to roll complicated combinations of dice.
+It's main purpose is for use in pen and paper / tabletop RPGs, like Dungeons & Dragons, Pathfinder, Cyberpunk, Warhammer etc., where players have to roll complicated combinations of dice.
 
 
 ## How it works
@@ -43,6 +43,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 * [Operators](notation/maths.md#operators)
 * [Functions](notation/maths.md#functions)
+* [Easy min / max / average total calculations](usage.md#retrieving-totals) <Badge text="New" vertical="middle"/>
 
 **Customisation**
 

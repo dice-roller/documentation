@@ -11,9 +11,9 @@ We use [random-js](https://github.com/ckknight/random-js). For a list of built-i
 
 ```js
 /**
- * @param {Engine=} engine
+ * @param {Engine|{}=} engine
  */ 
-NumberGenerator({Engine} engine = nativeMath)
+NumberGenerator({Engine|{}=} engine = nativeMath)
 ```
 
 A `NumberGenerator` instance takes an optional `engine` passed to the constructor:
@@ -41,6 +41,6 @@ generator.integer(1, 4);
 
 ## Properties
 
-| Property   | Type     | Description                                                  |
-| ---------- | -------- | ------------------------------------------------------------ |
-| `engine` | `Engine` | The number generation engine to be used |
+| Property | Type        | Description                             |
+| -------- | ----------- | --------------------------------------- |
+| `engine` | `Engine|{}` | The number generation engine to be used |
