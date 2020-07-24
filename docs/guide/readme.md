@@ -32,11 +32,13 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [Exploding](notation/modifiers.md#exploding---cp)
 * [Compounding](notation/modifiers.md#compounding---cp)
 * [Penetrating](notation/modifiers.md#penetrating-p--p--pcp--pcp)
-* [Drop rolls](notation/modifiers.md#drop-dn--dhn--dln)
 * [Keep rolls](notation/modifiers.md#keep-kn--khn--kln)
+* [Drop rolls](notation/modifiers.md#drop-dn--dhn--dln)
 * [Re-roll](notation/modifiers.md#re-roll-r--ro--rcp--rocp)
 * [Target success](notation/modifiers.md#target-success--dice-pool-cp)
 * [Target failure](notation/modifiers.md#target-failures--dice-pool-fcp)
+* [Max](notation/modifiers.md#max-max-n) <Badge text="New" vertical="middle"/>
+* [Min](notation/modifiers.md#min-min-n) <Badge text="New" vertical="middle"/>
 * [Sort dice](notation/modifiers.md#sorting-s--sa--sd)
 
 **Mathematical equations**
