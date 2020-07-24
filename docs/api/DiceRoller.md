@@ -49,14 +49,14 @@ const roller = new DiceRoller();
 roller.roll('d6');
 ```
 
-| Method                            | Description                                                  | Return                 |
-| --------------------------------- | ------------------------------------------------------------ | ---------------------- |
-| `clearLog()`                      | Clears the roll history log.                                 | `void`                 |
-| `export({exportFormats=} format)` | Exports the `DiceRoller` object to the specified format. Throws `Error` if format is invalid | `string\|null`         |
-| `import({mixed} data)`            | Imports the given data and appends it to the current roll log, returning the updated log. Throws `Error` if data type is invalid | `DiceRoll[]`           |
-| `roll({String} ...notation)`      | Rolls the dice notation returning the rolls. You can pass in multiple notations (i.e `roll('d6', '2d8')`) | `DiceRoll\|DiceRoll[]` |
-| `toJSON()`                        | Returns a JSON serialisable version of the object. Called automatically when using `JSON.stringify(roller)` | `Object`               |
-| `toString()`                      | Returns a string representation of the object (See `output` property). Called automatically when the object is cast to a string (ie. `Rolled: ${diceroller}`) | `string`               |
+| Method                            | Description                                                  | Return                |
+| --------------------------------- | ------------------------------------------------------------ | --------------------- |
+| `clearLog()`                      | Clears the roll history log.                                 | `void`                |
+| `export({exportFormats=} format)` | Exports the `DiceRoller` object to the specified format. Throws `Error` if format is invalid | `string|null`         |
+| `import({mixed} data)`            | Imports the given data and appends it to the current roll log, returning the updated log. Throws `Error` if data type is invalid | `DiceRoll[]`          |
+| `roll({String} ...notation)`      | Rolls the dice notation returning the rolls. You can pass in multiple notations (i.e `roll('d6', '2d8')`) | `DiceRoll|DiceRoll[]` |
+| `toJSON()`                        | Returns a JSON serialisable version of the object. Called automatically when using `JSON.stringify(roller)` | `Object`              |
+| `toString()`                      | Returns a string representation of the object (See `output` property). Called automatically when the object is cast to a string (ie. `Rolled: ${diceroller}`) | `string`              |
 
 
 ## Properties

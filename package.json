@@ -1,6 +1,6 @@
 {
   "name": "rpg-dice-roller-docs",
-  "version": "1.0.0",
+  "version": "4.3.0",
   "description": "The documentation for the rpg-dice-roller",
   "directories": {
     "doc": "docs"
@@ -37,6 +37,6 @@
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.5.0",
     "vuepress": "^1.5.0",
-    "vuepress-plugin-dice-roller": "^0.1.1"
+    "vuepress-plugin-dice-roller": "^0.1.3"
   }
 }

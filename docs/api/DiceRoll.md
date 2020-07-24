@@ -44,23 +44,26 @@ const roll = new DiceRoll('d6');
 roll.export();
 ```
 
-| Method                            | Description                                                  | Return         |
-| --------------------------------- | ------------------------------------------------------------ | -------------- |
-| `export({exportFormats=} format)` | Exports the `DiceRoll` in the specified format. Throws `Error` if format is invalid | `string\|null` |
-| `hasRolls()`                      | Returns whether the object has rolled dice or not            | `boolean`      |
-| `roll()`                          | Rolls the dice for the existing notation and returns the results. Useful if you want to re-roll the dice, but usually better to create a new `DiceRoll` instance instead | `[]`           |
-| `toJSON()`                        | Returns a JSON serialisable version of the object. Called automatically when using `JSON.stringify(diceroll)` | `Object`       |
-| `toString()`                      | Returns a string representation of the object (See `output` property). Called automatically when the object is cast to a string (ie. `Rolled: ${diceroll}`) | `string`       |
+| Method                            | Description                                                  | Return        |
+| --------------------------------- | ------------------------------------------------------------ | ------------- |
+| `export({exportFormats=} format)` | Exports the `DiceRoll` in the specified format. Throws `Error` if format is invalid | `string|null` |
+| `hasRolls()`                      | Remove extraneous backtickReturns whether the object has rolled dice or not | `boolean`     |
+| `roll()`                          | Rolls the dice for the existing notation and returns the results. Useful if you want to re-roll the dice, but usually better to create a new `DiceRoll` instance instead | `[]`          |
+| `toJSON()`                        | Returns a JSON serialisable version of the object. Called automatically when using `JSON.stringify(diceroll)` | `Object`      |
+| `toString()`                      | Returns a string representation of the object (See `output` property). Called automatically when the object is cast to a string (ie. `Rolled: ${diceroll}`) | `string`      |
 
 
 ## Properties
 
-| Property   | Type            | Description                                                  |
-| ---------- | --------------- | ------------------------------------------------------------ |
-| `notation` | `String`        | The dice notation                                            |
-| `output`   | `String`        | The roll notation and rolls in the format of: `2d20+1d6: [20,2]+[2] = 24`. |
-| `rolls`    | `RollResults[]` | The dice rolled for the notation                             |
-| `total`    | `Number`        | The roll total                                               |
+| Property       | Type            | Description                                                  |
+| -------------- | --------------- | ------------------------------------------------------------ |
+| `averageTotal` | `Number`        | <Badge text="New" vertical="middle"/> The average roll total |
+| `maxTotal`     | `Number`        | <Badge text="New" vertical="middle"/> The maximum possible roll total |
+| `minTotal`     | `Number`        | <Badge text="New" vertical="middle"/> The minimum possible roll total |
+| `notation`     | `String`        | The dice notation                                            |
+| `output`       | `String`        | The roll notation and rolls in the format of: `2d20+1d6: [20,2]+[2] = 24`. |
+| `rolls`        | `RollResults[]` | The dice rolled for the notation                             |
+| `total`        | `Number`        | The actual roll total                                        |
 
 
 ## Static methods
@@ -71,7 +74,7 @@ Static methods can be called on the class itself, without instantiating an objec
 const diceRoll = DiceRoll.import(data);
 ```
 
-| Method                                | Description                                        | Return     |
-| ------------------------------------- | -------------------------------------------------- | ---------- |
-| `import({{}\|string\|DiceRoll} data)` | Imports the given data and creates a new dice roll | `DiceRoll` |
+| Method                              | Description                                        | Return     |
+| ----------------------------------- | -------------------------------------------------- | ---------- |
+| `import({{}|string|DiceRoll} data)` | Imports the given data and creates a new dice roll | `DiceRoll` |
 

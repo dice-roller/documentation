@@ -2,7 +2,7 @@
 
 This library is a JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.
 
-It's main purpose is for use in pen and paper RPGs, like Dungeons & Dragons, Pathfinder, Cyberpunk etc., where players have to roll complicated combinations of dice.
+It's main purpose is for use in pen and paper / tabletop RPGs, like Dungeons & Dragons, Pathfinder, Cyberpunk, Warhammer etc., where players have to roll complicated combinations of dice.
 
 
 ## How it works
@@ -32,17 +32,20 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [Exploding](notation/modifiers.md#exploding---cp)
 * [Compounding](notation/modifiers.md#compounding---cp)
 * [Penetrating](notation/modifiers.md#penetrating-p--p--pcp--pcp)
-* [Drop rolls](notation/modifiers.md#drop-dn--dhn--dln)
 * [Keep rolls](notation/modifiers.md#keep-kn--khn--kln)
+* [Drop rolls](notation/modifiers.md#drop-dn--dhn--dln)
 * [Re-roll](notation/modifiers.md#re-roll-r--ro--rcp--rocp)
 * [Target success](notation/modifiers.md#target-success--dice-pool-cp)
 * [Target failure](notation/modifiers.md#target-failures--dice-pool-fcp)
+* [Max](notation/modifiers.md#max-max-n) <Badge text="New" vertical="middle"/>
+* [Min](notation/modifiers.md#min-min-n) <Badge text="New" vertical="middle"/>
 * [Sort dice](notation/modifiers.md#sorting-s--sa--sd)
 
 **Mathematical equations**
 
 * [Operators](notation/maths.md#operators)
 * [Functions](notation/maths.md#functions)
+* [Easy min / max / average total calculations](usage.md#retrieving-totals) <Badge text="New" vertical="middle"/>
 
 **Customisation**
 

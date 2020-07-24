@@ -28,9 +28,63 @@ These two are equivalent, and the [explode modifier](#exploding-cp) will always 
 :::
 
 
-## Exploding (`!` / `!{cp}`)
+## Min (`min{n}`) <Badge text="New" vertical="middle"/>
 
 **Order:** 1
+
+The min modifier causes any dice rolls below the minimum value to be treated as the minimum value. It's the opposite of the [Max modifier](#max-min-n)
+
+To specify a minimum value, use the word `min` followed by the minimum value: `4d6min3`
+
+For example:
+
+```
+// a normal roll
+4d6: [1, 4, 3, 2] = 10
+
+// the same roll but values less than 3 are treated as 3
+4d6min3: [3^, 4, 3, 3^] = 13
+```
+
+::: roll 4d6min3 :::
+
+::: tip Statistic probability
+It's worth noting that it is statistically more likely to roll the minimum value than any others.
+
+e.g. `d6min3` 4, 5, and 6 only have a  _1 in 6 (16.66%)_ chance of being rolled, but 3 has a _3 in 6 (50%)_ chance.
+:::
+
+
+## Max (`max{n}`) <Badge text="New" vertical="middle"/>
+
+**Order:** 2
+
+The max modifier causes any dice rolls above the maximum value to be treated as the maximum value. It's the opposite of the [Min modifier](#min-max-n)
+
+To specify a maximum value, use the word `max` followed by the maximum value: `4d6max3`
+
+For example:
+
+```
+// a normal roll
+4d6: [5, 4, 3, 2] = 14
+
+// the same roll but values greater than 3 are treated as 3
+4d6max3: [3v, 3v, 3, 2] = 11
+```
+
+::: roll 4d6max3 :::
+
+::: tip Statistic probability
+It's worth noting that it is statistically more likely to roll the maximum value than any others.
+
+e.g. `d6max3` 1 and 2 only have a  _1 in 6 (16.66%)_ chance of being rolled, but 3 has a _4 in 6 (66.66%)_ chance.
+:::
+
+
+## Exploding (`!` / `!{cp}`)
+
+**Order:** 3
 
 The exploding dice mechanic allows one or more dice to be re-rolled (Usually when it rolls the highest possible number on the die), with each successive roll being added to the total.
 
@@ -54,6 +108,8 @@ If you want to change the number that a die will explode on, you can use a [Comp
 
 Read more about [Compare Points below](#compare-point).
 
+::: roll 4d10!<=3 :::
+
 ::: warning `!=` compare point with exploding dice
 You can't have a die that only explodes if you _don't_ roll a specific number:
 
@@ -64,7 +120,14 @@ You can't have a die that only explodes if you _don't_ roll a specific number:
 This notation will instead create a [compound roll](#compounding-cp) if you roll a 4.
 :::
 
-::: roll 4d10!<=3 :::
+::: tip Infinite looping
+To stop infinite loops, when running something like `d10!>0`, modifiers are limited to 1000 iterations per dice roll:
+
+* `1d10!>0` would return 1001 rolls; the initial roll, and 1000 exploded rolls.
+* `2d10!>0` would return 2002 rolls; the initial 2 rolls, and 100 exploded rolls per initial roll.
+
+This also applies to [Compounding](#compounding-cp), [Penetrating](#penetrating-p-p-p-cp-p-cp), and [Re-roll](re-roll-r-ro-r-cp-ro-cp) modifiers.
+:::
 
 
 ### Compounding (`!!` / `!!{cp}`)
@@ -134,7 +197,7 @@ You can also use [Compare Points](#compare-point) to change when a dice will pen
 
 ## Re-roll (`r` / `ro` / `r{cp}` / `ro{cp}`)
 
-**Order:** 2
+**Order:** 4
 
 This will re-roll a die that rolls the lowest possible number on a die (Usually a 1). It will keep re-rolling until a number greater than the minimum is rolled, disregarding any of the previous rolls.
 
@@ -166,10 +229,19 @@ Read more about [Compare Points below](#compare-point).
 
 ::: roll 4d10r<=3 :::
 
+::: tip Infinite looping
+To stop infinite loops, when running something like `d10r>0`, modifiers are limited to 1000 iterations per dice roll:
+
+* `1d10r>0`would only re-roll 1000 times.
+* `2d10r>0` would re-roll 2000; once for each initial roll.
+
+This also applies to [Exploding](#exploding-cp), [Compounding](#compounding-cp), and [Penetrating](#penetrating-p-p-p-cp-p-cp) modifiers.
+:::
+
 
 ## Keep (`k{n}` / `kh{n}` / `kl{n}`)
 
-**Order:** 3
+**Order:** 5
 
 The keep modifier allows you to roll a collection of dice but to disregard all except for the highest or lowest result(s).
 It is the opposite of the [Drop modifier](#drop-dn-dhn-dln).
@@ -219,7 +291,7 @@ The `k1` will drop the first and second rolls, and the `d1` will also drop the f
 
 ## Drop (`d{n}` / `dh{n}` / `dl{n}`)
 
-**Order:** 4
+**Order:** 6
 
 Sometimes you may want to roll a certain number of dice, but "drop" or remove high or low rolls from the results.
 It is the opposite of the [Keep modifier](#keep-kn-khn-kln).
@@ -258,7 +330,7 @@ See the note in the [Keep modifier section](#keep-kn-khn-kln) regarding using th
 
 ## Target success / Dice pool (`{cp}`)
 
-**Order:** 5
+**Order:** 7
 
 Some systems use dice pool, or success counts, whereby the total is equal to the quantity of dice rolled that meet a fixed condition, rather than the total value of the rolls.
 
@@ -313,7 +385,7 @@ But you can work around this by specifying the Target compare point first:
 
 ## Target Failures / Dice Pool (`f{cp}`)
 
-**Order:** 5
+**Order:** 7
 
 Sometimes, when counting success, you also need to consider failures. A failure modifier _must_ directly follow a Success modifier, and works in much the same way.
 
@@ -331,7 +403,7 @@ The Failure modifier is a [Compare Point](#compare-point), preceded with the low
 
 ## Critical Success (`cs{cp}`)
 
-**Order:** 6
+**Order:** 8
 
 ::: tip
 This is purely aesthetic and makes no functional difference to the rolls or their values.
@@ -360,7 +432,7 @@ The roll result output will look something like this:
 
 ## Critical Failure (`cf{cp}`)
 
-**Order:** 7
+**Order:** 9
 
 ::: tip
 This is purely aesthetic and makes no functional difference to the rolls or their values.
@@ -389,7 +461,7 @@ The roll result output will look something like this:
 
 ## Sorting (`s` / `sa` / `sd`)
 
-**Order:** 8
+**Order:** 10
 
 You can sort the dice rolls, so that they are displayed in numerical order by appending the `s` flag after the dice notation.
 
