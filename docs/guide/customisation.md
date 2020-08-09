@@ -131,4 +131,4 @@ generator.real(1, 4, true);
 
 For more information on the engines, and how the generator works, check out:
 * [random-js documentation](https://github.com/ckknight/random-js); this is used behind the scenes. You can find more info on the engines and how to use the Mersenne Twister engine.
-* [API docs](/api/NumberGenerator.md) for more detail on the `NumberGenerator` class.
+* [API docs](../api/utilities/NumberGenerator.md) for more detail on the `NumberGenerator` class.

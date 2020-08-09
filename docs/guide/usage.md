@@ -82,6 +82,6 @@ console.log(roll.averageTotal); // 19
 
 ::: roll :::
 
-Check the [notation](/notation/readme) section for more examples.
+Check the [notation](./notation/readme.md) section for more examples.
 
-Check the [API](/api/readme.md) section for more details on using the dice roller.
+Check the [API](../api/readme.md) section for more details on using the dice roller.
