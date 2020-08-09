@@ -10,12 +10,12 @@ A notation is a simple string of characters that tells the parser which dice and
 The format of the notation is based on the Wikipedia article [Dice Notation](https://en.wikipedia.org/wiki/Dice_notation),
 so it's consistent and conforms to a standard of sorts, albeit a very loose one.
 
-We've then enhanced the notation to bring in extra functionality, that is not otherwise possible with the basic notation.
+It's then enhanced the notation to bring in extra functionality, that is not otherwise possible with the basic notation.
 
 
 ## Types
 
-Our notation can be split into several types:
+The notation can be split into several types:
 
 * [Dice](dice.md) - _The different types of dice that can be rolled (e.g. `d6`, `d20`, `dF`)._
 * [Modifiers](modifiers.md) - _The modifiers that can affect dice rolls (e.g. "exploding", "re-roll")._
