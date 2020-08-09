@@ -1,61 +1,126 @@
-# `ComparePoint`
+---
+title: ComparePoint
+---
 
-The `ComparePoint` object can check if a number matches a particular test. For example, is `numberA` greater than `3`, or is `numberB` equal to `10`.
+# ComparePoint
 
+<a name="ComparePoint"></a>
 
-## Constructor
+## ComparePoint
+A `ComparePoint` object compares numbers against each other.
+For example, _is 6 greater than 3_, or _is 8 equal to 10_.
 
-```js
-/**
- * @param {string} operator The compare operator (ie. '=')
- * @param {number} value The compare value (ie. `7`)
- */ 
-ComparePoint({string} operator, {number} value)
-```
+**Kind**: global class  
 
-A `ComparePoint` instance requires an `operator` and `value` passed to the constructor:
+* [ComparePoint](#ComparePoint)
+    * [new ComparePoint(operator, value)](#new_ComparePoint_new)
+    * _instance_
+        * [.operator](#ComparePoint+operator)
+        * [.operator](#ComparePoint+operator) ⇒ <code>string</code>
+        * [.value](#ComparePoint+value)
+        * [.value](#ComparePoint+value) ⇒ <code>number</code>
+        * [.isMatch(value)](#ComparePoint+isMatch) ⇒ <code>boolean</code>
+        * [.toJSON()](#ComparePoint+toJSON) ⇒ <code>Object</code>
+        * [.toString()](#ComparePoint+toString) ⇒ <code>string</code>
+    * _static_
+        * [.isValidOperator(operator)](#ComparePoint.isValidOperator) ⇒ <code>boolean</code>
 
-```js
-// create a ComparePoint that checks if numbers are equal to 6
-const cp = new ComparePoint('=', 6);
-```
+<a name="new_ComparePoint_new"></a>
 
-If either of these is missing or invalid an error will be thrown.
+### new ComparePoint(operator, value)
+Create a `ComparePoint` instance.
 
+**Throws**:
 
-## Prototype methods
-
-Prototype methods can be called on an instance of the object, like so:
-
-```js
-// create a ComparePoint that checks if numbers are NOT equal to 2
-const cp = new ComparePoint('!=', 2);
-cp.isMatch(4); // returns true
-```
-
-| Method                    | Description                                                  | Return    |
-| ------------------------- | ------------------------------------------------------------ | --------- |
-| `isMatch({Number} value)` | Checks whether value matches the compare point               | `boolean` |
-| `toJSON()`                | Returns a JSON serialisable version of the object. Called automatically when using `JSON.stringify(cp)` | `Object`  |
-| `toString()`              | Returns a string representation of the object. Called automatically when the object is cast to a string (ie. `CP: ${cp}`) | `string`  |
+- <code>CompareOperatorError</code> operator is invalid
+- <code>RequiredArgumentError</code> operator and value are required
+- <code>TypeError</code> value must be numeric
 
 
-## Properties
+| Param | Type | Description |
+| --- | --- | --- |
+| operator | <code>string</code> | The comparison operator (One of `=`, `!=`, `<`, `>`, `<=`, `>=`) |
+| value | <code>number</code> | The value to compare to |
 
-| Property   | Type     | Description                                                  |
-| ---------- | -------- | ------------------------------------------------------------ |
-| `operator` | `string` | The comparison operator. Can be one of: `=`, `!=`, `<`, `>`, `<=`, `>=` |
-| `value`    | `Number` | The comparison value (ie. the `8` in `>8`)                   |
+<a name="ComparePoint+operator"></a>
+
+### comparePoint.operator
+Set the comparison operator.
+
+**Kind**: instance property of [<code>ComparePoint</code>](#ComparePoint)  
+**Throws**:
+
+- CompareOperatorError operator is invalid
 
 
-## Static methods
+| Param | Type | Description |
+| --- | --- | --- |
+| operator | <code>string</code> | One of `=`, `!=`, `<`, `>`, `<=`, `>=` |
 
-Static methods can be called on the class itself, without instantiating an object, like so:
+<a name="ComparePoint+operator"></a>
 
-```js
-const isValid = ComparePoint.isValidOperator('=');
-```
+### comparePoint.operator ⇒ <code>string</code>
+The comparison operator.
 
-| Method                               | Description                     | Return    |
-| ------------------------------------ | ------------------------------- | --------- |
-| `isValidOperator({string} operator)` | Checks if the operator is valid | `boolean` |
+**Kind**: instance property of [<code>ComparePoint</code>](#ComparePoint)  
+<a name="ComparePoint+value"></a>
+
+### comparePoint.value
+Set the value.
+
+**Kind**: instance property of [<code>ComparePoint</code>](#ComparePoint)  
+**Throws**:
+
+- <code>TypeError</code> value must be numeric
+
+
+| Param | Type |
+| --- | --- |
+| value | <code>number</code> | 
+
+<a name="ComparePoint+value"></a>
+
+### comparePoint.value ⇒ <code>number</code>
+The comparison value
+
+**Kind**: instance property of [<code>ComparePoint</code>](#ComparePoint)  
+<a name="ComparePoint+isMatch"></a>
+
+### comparePoint.isMatch(value) ⇒ <code>boolean</code>
+Check whether value matches the compare point
+
+**Kind**: instance method of [<code>ComparePoint</code>](#ComparePoint)  
+**Returns**: <code>boolean</code> - `true` if it is a match, `false` otherwise  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | The number to compare |
+
+<a name="ComparePoint+toJSON"></a>
+
+### comparePoint.toJSON() ⇒ <code>Object</code>
+Return an object for JSON serialising.
+
+This is called automatically when JSON encoding the object.
+
+**Kind**: instance method of [<code>ComparePoint</code>](#ComparePoint)  
+<a name="ComparePoint+toString"></a>
+
+### comparePoint.toString() ⇒ <code>string</code>
+Return the String representation of the object.
+
+This is called automatically when casting the object to a string.
+
+**Kind**: instance method of [<code>ComparePoint</code>](#ComparePoint)  
+<a name="ComparePoint.isValidOperator"></a>
+
+### ComparePoint.isValidOperator(operator) ⇒ <code>boolean</code>
+Check if the operator is valid.
+
+**Kind**: static method of [<code>ComparePoint</code>](#ComparePoint)  
+**Returns**: <code>boolean</code> - `true` if the operator is valid, `false` otherwise  
+
+| Param | Type |
+| --- | --- |
+| operator | <code>string</code> | 
+

@@ -1,3 +1,5 @@
+const { sidebarTree } = require("../api/config");
+
 module.exports = ctx => ({
   title: 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
@@ -24,44 +26,30 @@ module.exports = ctx => ({
       { text: 'Contribute', link: '/contributing/' },
     ],
     sidebar: {
-      '/guide/': [
-        {
-          title: 'Guide',
-          children: [
-            '',
-            'getting-started',
-            'usage',
-            'customisation',
-          ],
-        },
-        {
-          title: 'Notation',
-          children: [
-            'notation/',
-            'notation/dice',
-            'notation/modifiers',
-            'notation/group-rolls',
-            'notation/maths',
-          ],
-        },
-      ],
-      '/api/': [
-        {
-          title: 'API',
-          collapsable: false,
-          children: [
-            '',
-            'DiceRoller',
-            'DiceRoll',
-            'RollResult',
-            'RollResults',
-            'ComparePoint',
-            'Parser',
-            'NumberGenerator',
-            'exportFormats',
-          ],
-        }
-      ],
+      ...{
+        '/guide/': [
+          {
+            title: 'Guide',
+            children: [
+              '',
+              'getting-started',
+              'usage',
+              'customisation',
+            ],
+          },
+          {
+            title: 'Notation',
+            children: [
+              'notation/',
+              'notation/dice',
+              'notation/modifiers',
+              'notation/group-rolls',
+              'notation/maths',
+            ],
+          },
+        ],
+      },
+      ...sidebarTree('Introduction'),
     },
   },
   plugins: [
