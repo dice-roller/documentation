@@ -71,4 +71,6 @@ There's no guarantee that it will work on older versions.
 
 ::: danger Internet Explorer
 We do **not** support IE, and the library will **not** work in IE.
+
+It _may_ be possible to make it work by creating polyfills for functionality that is missing in IE, but we cannot guarantee it.
 :::
