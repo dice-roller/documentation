@@ -1,13 +1,8 @@
 # Usage
 
-A quick example:
+Read the sections below for details usage instructions.
 
-```javascript
-const roll = new DiceRoll('2d20');
-
-console.log(roll.output); // 2d20: [14, 7] = 21
-console.log(roll.total); // 21
-```
+**TLDR;** just [show me some examples](#examples).
 
 
 ## Rolling dice
@@ -15,6 +10,8 @@ console.log(roll.total); // 21
 Dice are rolled with a string [notation](./notation/readme.md). The quickest method is using the `DiceRoll` class:
 
 ```javascript
+import { DiceRoll } from 'rpg-dice-roller';
+
 const roll = new DiceRoll('4d6');
 ```
 
@@ -77,6 +74,8 @@ console.log(`You rolled: ${roll}`);
 If you want to keep a log of previous rolls, you can use the `DiceRoller` class instead:
 
 ```javascript
+import { DiceRoller } from 'rpg-dice-roller';
+
 const roller = new DiceRoller();
 ```
 
@@ -160,41 +159,249 @@ console.log(roller.total); // 62
 ```
 
 
+## Export rolls
+
+The `DiceRoll` classe has an `export()` method, which can export the rolls in several different formats, as defined in the [`ExportFormats` utility object](../api/utilities/ExportFormats.md).
+
+```javascript
+// we need to import the exportFormats object
+import { DiceRoll, exportFormats } from 'rpg-dice-roller';
+
+const roll = new DiceRoll('4d6');
+```
+
+### Plain object
+
+```javascript
+// export as a plain object
+const jsonString = roll.export(exportFormats.OBJECT);
+```
+Returns something like:
+```javascript
+{
+  averageTotal: 14,
+  maxTotal: 24,
+  minTotal: 4,
+  notation: '4d6',
+  output: '4d6: [2, 4, 2, 2] = 10',
+  rolls: [...],
+  total: 10,
+  type: 'dice-roll',
+}
+```
+
+### JSON string _(Default)_
+
+```javascript
+// default export as a JSON string
+const jsonString = roll.export();
+// equivalent to:
+const jsonString = roll.export(exportFormats.JSON);
+```
+Returns stringified version of the plain object:
+```javascript
+'{"averageTotal":14,"maxTotal":24,"minTotal":4,"notation":"4d6","output":"4d6: [2, 4, 2, 2] = 10","rolls":[...],"total":10,"type":"dice-roll"}'
+```
+
+::: tip
+Calling `JSON.stringify()` on a `DiceRoll` instance returns the same as a JSON `export()`:
+
+```javascript
+JSON.stringify(roll) === roll.export();
+```
+:::
+
+### Base64 string
+
+```javascript
+// export as base64 encoded string
+const jsonString = roll.export(exportFormats.BASE_64);
+```
+Returns base64 encoded version of the JSON string:
+```javascript
+'eyJtYXhUb3RhbCI6MjQsIm1pblRvdGFsIjo0LCJub3RhdGlvbiI6IjRkNiIsIm91dHB1dCI6IjRkNjogWzIsIDQsIDIsIDJdID0gMTAiLCJyb2xscyI6W3sicm9sbHMiOlt7ImNhbGN1bGF0aW9uVmFsdWUiOjIsImluaXRpYWxWYWx1ZSI6MiwibW9kaWZpZXJGbGFncyI6IiIsIm1vZGlmaWVycyI6W10sInR5cGUiOiJyZXN1bHQiLCJ1c2VJblRvdGFsIjp0cnVlLCJ2YWx1ZSI6Mn0seyJjYWxjdWxhdGlvblZhbHVlIjo0LCJpbml0aWFsVmFsdWUiOjQsIm1vZGlmaWVyRmxhZ3MiOiIiLCJtb2RpZmllcnMiOltdLCJ0eXBlIjoicmVzdWx0IiwidXNlSW5Ub3RhbCI6dHJ1ZSwidmFsdWUiOjR9LHsiY2FsY3VsYXRpb25WYWx1ZSI6MiwiaW5pdGlhbFZhbHVlIjoyLCJtb2RpZmllckZsYWdzIjoiIiwibW9kaWZpZXJzIjpbXSwidHlwZSI6InJlc3VsdCIsInVzZUluVG90YWwiOnRydWUsInZhbHVlIjoyfSx7ImNhbGN1bGF0aW9uVmFsdWUiOjIsImluaXRpYWxWYWx1ZSI6MiwibW9kaWZpZXJGbGFncyI6IiIsIm1vZGlmaWVycyI6W10sInR5cGUiOiJyZXN1bHQiLCJ1c2VJblRvdGFsIjp0cnVlLCJ2YWx1ZSI6Mn1dLCJ2YWx1ZSI6MTB9XSwidG90YWwiOjEwLCJ0eXBlIjoiZGljZS1yb2xsIn0='
+```
+
+### Exporting logs
+
+You can also export the data from a `DiceRoller` instance, in exactly the same way. It too has an `export()` method, that accepts the same [export formats](../api/utilities/ExportFormats.md).
+
+```javascript
+import { DiceRoller, exportFormats } from 'rpg-dice-roller';
+
+const roller = new DiceRoller();
+roller.roll('4d6');
+roller.roll('2d10');
+```
+
+The plain object export returns something like this:
+```javascript
+{
+  log: [
+    {
+      averageTotal: 14,
+      maxTotal: 24,
+      minTotal: 4,
+      notation: '4d6',
+      output: '4d6: [2, 4, 2, 2] = 10',
+      rolls: [...],
+      total: 10,
+      type: 'dice-roll'
+    },
+    {
+      averageTotal: 11,
+      maxTotal: 20,
+      minTotal: 2,
+      notation: '2d10',
+      output: '2d10: [8, 7] = 15',
+      rolls: [...],
+      total: 15,
+      type: 'dice-roll'
+    }
+  ],
+  output: '4d6: [2, 4, 2, 2] = 10',
+  total: 10,
+  type: 'dice-roller'
+}
+```
+
+
+## Import rolls
+
+Impotring rolls is handy if you need to be able to retrieve rolls from a database, share them across enviroments etc.
+
+Both `DiceRoll` and `DiceRoller` classes have a static `import()` method that can import form any of the exported formats [listed above](#export-rolls):
+
+### From exported rolls
+
+#### DiceRoll
+
+```javascript
+// create a `DiceRoll`
+const roll1 = new DiceRoll('4d6');
+
+// export as JSON
+let exportedRolls = roll.export();
+// import the data into a new DiceRoll instance
+const roll2 = DiceRoll.import(exportedRolls);
+
+// export the rolls as Base64
+let exportedRolls = roll.export(exportFormats.BASE_64);
+// import the data into a new DiceRoll instance
+const roll3 = DiceRoll.import(exportedRolls);
+```
+
+#### DiceRoller
+
+```javascript
+// create a `DiceRoller` and roll some dice
+const roller1 = new DiceRoller();
+roller1.roll('4d6');
+
+// export as JSON
+let exportedRolls = roll.export();
+// import the data into a new `DiceRoller` instance
+const roller2 = DiceRoller.import(exportedRolls);
+
+// export as Base64
+let exportedRolls = roll.export();
+// import the data into a new `DiceRoller` instance
+const roller3 = DiceRoller.import(exportedRolls);
+```
+
+### Manually build import data
+
+You can also build your own data to import, provided that it's formatted correctly.
+
+At it's simplest, the `DiceRoll` import expects an object that contains a string notation, and an array of roll value results:
+
+```javascript
+const data = {
+  notation: '4d6',
+  // the values rolled
+  rolls: [
+    3, 6, 2, 4,
+  ],
+};
+
+const roll = DiceRoll.import(data);
+```
+
+The `DiceRoller` expects an object that contains a `log` property. The `log` property must be an array of data that is correctly formatted to be imported into a `DiceRoll` object, as in the example above:
+
+```javascript
+const data = {
+  log: [
+    {
+      notation: '4d6',
+      rolls: [
+        3, 6, 2, 4,
+      ],
+    },
+  ],
+};
+```
+
+```javascript
+// create a `DiceRoll` and export as JSON
+const roll = new DiceRoll('4d6');
+const exportedRolls = roll.export();
+
+// import the data into a new `DiceRoller` instance
+const roller = DiceRoller.import({ log: [ exportedRolls ] });
+```
+
+### Import to existing roll log
+
+You can also import rolls into an existing `DiceRoller` instance, to  append rolls to an existing log:
+
+```javascript
+// create a `DiceRoller` and roll some dice
+const roller = new DiceRoller();
+roller.roll('4d6');
+
+// create a `DiceRoll` and export as JSON
+const roll = new DiceRoll('2d10');
+const exportedRolls = roll.export();
+
+// append the rolls to the existing roll log
+const roller = roller.import({ log: [ exportedRolls ] });
+```
+
+
 ## Examples
 
 ```javascript
-// create a DiceRoller instance - this keeps a log of previous rolls
+// create a `DiceRoller` instance that keeps a log of previous rolls
 const roller = new DiceRoller();
 
-// to roll a dice, you need to pass a formatted "notation" to the `roll()` method.
-// This would roll a 20 sided dice 4 times and store the result in a log.
-// It returns a DiceRoll object
+// roll a notation
 let roll = roller.roll('4d20');
 
-// output the latest roll - it outputs formatted text when cast to a string
+// output the roll
 console.log(`You rolled: ${roll}`);
 // You rolled: 4d20: [4, 18, 15, 11] = 48
 
-// roll several notations all at once, and store their DiceRoll objects
+// roll several notations all at once, and append them to the log
 const rolls = roller.roll('1d6', '2d4dh1', '5d10!!');
 
-// output all of the rolls from the DiceRoller log
+// output all of the rolls from the log
 console.log(`You rolled: ${roller}`);
 // You rolled: 4d20: [4, 18, 15, 11] = 48; 1d6: [3] = 3; 2d4dh1: [3d, 1] = 1; 5d10!! = [3, 2, 16!!, 3, 9] = 33
 
-// getting the total of all the rolls in the log:
+// get the sum of all the rolls in the log:
 console.log(`Log total: ${roller.total}`);
-// Log total: 33
+// Log total: 85
 
 // empty the roll log
 roller.clearLog();
 
-// output an empty log
+// output the empty log
 console.log(`Looks empty: ${roller}`);
 // Looks empty: 
 
 
-// If you don't need to keep a roll log, you can pass the notation to an instance of `DiceRoll` (Instead of `DiceRoller`)
+// If you don't need to keep a roll log, you can use a `DiceRoll, instead of `DiceRoller`
 roll = new DiceRoll('4d10*3');
 
 // output the roll
@@ -204,6 +411,18 @@ console.log(`You rolled: ${roll}`);
 // get the roll total:
 console.log(`Roll total: ${roll.total}`);
 // Roll total: 63
+
+// get the minimum possible total:
+console.log(`Min total: ${roll.minTotal}`);
+// Min total: 12
+
+// get the maximum possible total:
+console.log(`Max total: ${roll.minTotal}`);
+// Max total: 120
+
+// get the average total:
+console.log(`Average total: ${roll.minTotal}`);
+// Average total: 66
 ```
 
 
