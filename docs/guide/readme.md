@@ -50,6 +50,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 **Customisation**
 
 * [Random number generator](customisation.md#random-number-generator) <Badge text="New" vertical="middle"/>
+* [Exporting](usage.md#export-rolls) / [importing rolls](usage.md#import-rolls)
 
 **Coming soon**
 
