@@ -32,7 +32,7 @@ sidebarDepth: 2
 
 You can import the dice roller and use it in your application, using ES standard modules like so:
 
-```js
+```javascript
 // In Node.js
 import * as rpgDiceRoller from 'rpg-dice-roller';
 
@@ -45,7 +45,7 @@ import * as rpgDiceRoller from 'https://cdn.jsdelivr.net/npm/rpg-dice-roller@VER
 
 If you only want to import specific components, you can do so like:
 
-```js
+```javascript
 // In Node.js
 import { DiceRoller } from 'rpg-dice-roller';
 
@@ -65,7 +65,7 @@ If you're using Node.js >= 12 and are using [ES modules](https://nodejs.org/api/
 
 You can also load the library using CommonJS, AMD, etc. with the UMD build:
 
-```js
+```javascript
 // In Node.js 12+
 const rpgDiceRoller = require('rpg-dice-roller');
 
@@ -74,7 +74,7 @@ const rpgDiceRoller = require('rpg-dice-roller/lib/umd/bundle.js');
 ```
 
 If you only want to import specific components, you can do so like:
-```js
+```javascript
 // In Node.js 12+
 const { DiceRoller } = require('rpg-dice-roller');
 

@@ -45,11 +45,12 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 * [Operators](notation/maths.md#operators)
 * [Functions](notation/maths.md#functions)
-* [Easy min / max / average total calculations](usage.md#retrieving-totals) <Badge text="New" vertical="middle"/>
+* [Easy min / max / average total calculations](usage.md#roll-totals) <Badge text="New" vertical="middle"/>
 
 **Customisation**
 
 * [Random number generator](customisation.md#random-number-generator) <Badge text="New" vertical="middle"/>
+* [Exporting](usage.md#export-rolls) / [importing rolls](usage.md#import-rolls)
 
 **Coming soon**
 

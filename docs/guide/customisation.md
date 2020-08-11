@@ -53,8 +53,8 @@ You can access the number generator by importing the `NumberGenerator` namespace
 // ES modules
 import { DiceRoller, NumberGenerator } from 'rpg-dice-roller';
 
-// or UMD
-const { DiceRoller, NumberGenerator } = require('rpg-dice-roller/lib/umd/bundle.js');
+// or CommonJS
+const { DiceRoller, NumberGenerator } = require('rpg-dice-roller');
 ```
 
 `NumberGenerator` has two properties:
