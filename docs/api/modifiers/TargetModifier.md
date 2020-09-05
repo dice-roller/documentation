@@ -28,7 +28,7 @@ success = `1`, failure = `-1`, neutral = `0`.
     * [.isFailure(value)](#TargetModifier+isFailure) ⇒ <code>boolean</code>
     * [.isNeutral(value)](#TargetModifier+isNeutral) ⇒ <code>boolean</code>
     * [.isSuccess(value)](#TargetModifier+isSuccess) ⇒ <code>boolean</code>
-    * [.run(results, _dice)](#TargetModifier+run) ⇒ <code>RollResults</code>
+    * [.run(results, _context)](#TargetModifier+run) ⇒ <code>RollResults</code>
     * [.toJSON()](#TargetModifier+toJSON) ⇒ <code>Object</code>
 
 <a name="new_TargetModifier_new"></a>
@@ -153,7 +153,7 @@ A value could be neither a failure or a success.
 
 <a name="TargetModifier+run"></a>
 
-### targetModifier.run(results, _dice) ⇒ <code>RollResults</code>
+### targetModifier.run(results, _context) ⇒ <code>RollResults</code>
 Run the modifier on the results.
 
 **Kind**: instance method of [<code>TargetModifier</code>](#TargetModifier)  
@@ -162,7 +162,7 @@ Run the modifier on the results.
 | Param | Type | Description |
 | --- | --- | --- |
 | results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="TargetModifier+toJSON"></a>
 

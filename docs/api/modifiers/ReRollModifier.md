@@ -20,7 +20,7 @@ one.
     * [.notation](#ReRollModifier+notation) ⇒ <code>string</code>
     * [.once](#ReRollModifier+once) ⇒ <code>boolean</code>
     * [.once](#ReRollModifier+once)
-    * [.run(results, _dice)](#ReRollModifier+run) ⇒ <code>RollResults</code>
+    * [.run(results, _context)](#ReRollModifier+run) ⇒ <code>RollResults</code>
     * [.toJSON()](#ReRollModifier+toJSON) ⇒ <code>Object</code>
 
 <a name="new_ReRollModifier_new"></a>
@@ -67,7 +67,7 @@ Set whether the modifier should only re-roll once or not.
 
 <a name="ReRollModifier+run"></a>
 
-### reRollModifier.run(results, _dice) ⇒ <code>RollResults</code>
+### reRollModifier.run(results, _context) ⇒ <code>RollResults</code>
 Run the modifier on the results.
 
 **Kind**: instance method of [<code>ReRollModifier</code>](#ReRollModifier)  
@@ -76,7 +76,7 @@ Run the modifier on the results.
 | Param | Type | Description |
 | --- | --- | --- |
 | results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="ReRollModifier+toJSON"></a>
 

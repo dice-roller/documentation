@@ -7,7 +7,7 @@ title: RollResults
 <a name="RollResults"></a>
 
 ## RollResults
-A collection of roll results
+A collection of die roll results
 
 ::: tip
 You will probably not need to create your own `RollResults` instances, unless you're importing
@@ -63,13 +63,13 @@ const results = new RollResults([
 <a name="RollResults+length"></a>
 
 ### rollResults.length ⇒ <code>number</code>
-The number of rolls.
+The number of roll results.
 
 **Kind**: instance property of [<code>RollResults</code>](#RollResults)  
 <a name="RollResults+rolls"></a>
 
 ### rollResults.rolls ⇒ <code>Array.&lt;RollResult&gt;</code>
-List of rolls.
+List of roll results.
 
 **Kind**: instance property of [<code>RollResults</code>](#RollResults)  
 <a name="RollResults+rolls"></a>

@@ -20,7 +20,7 @@ A `MaxModifier` causes die rolls over a maximum value to be treated as the maxim
     * [.max](#MaxModifier+max)
     * [.name](#MaxModifier+name) ⇒ <code>string</code>
     * [.notation](#MaxModifier+notation) ⇒ <code>string</code>
-    * [.run(results, _dice)](#MaxModifier+run) ⇒ <code>RollResults</code>
+    * [.run(results, _context)](#MaxModifier+run) ⇒ <code>RollResults</code>
     * [.toJSON()](#MaxModifier+toJSON) ⇒ <code>Object</code>
 
 <a name="new_MaxModifier_new"></a>
@@ -73,7 +73,7 @@ The modifier's notation.
 **Kind**: instance property of [<code>MaxModifier</code>](#MaxModifier)  
 <a name="MaxModifier+run"></a>
 
-### maxModifier.run(results, _dice) ⇒ <code>RollResults</code>
+### maxModifier.run(results, _context) ⇒ <code>RollResults</code>
 Run the modifier on the results.
 
 **Kind**: instance method of [<code>MaxModifier</code>](#MaxModifier)  
@@ -82,7 +82,7 @@ Run the modifier on the results.
 | Param | Type | Description |
 | --- | --- | --- |
 | results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="MaxModifier+toJSON"></a>
 

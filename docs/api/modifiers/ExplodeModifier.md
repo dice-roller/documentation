@@ -19,7 +19,7 @@ An `ExplodeModifier` re-rolls dice that match a given test, and adds them to the
     * [.name](#ExplodeModifier+name) ⇒ <code>string</code>
     * [.notation](#ExplodeModifier+notation) ⇒ <code>string</code>
     * [.penetrate](#ExplodeModifier+penetrate) ⇒ <code>boolean</code>
-    * [.run(results, _dice)](#ExplodeModifier+run) ⇒ <code>RollResults</code>
+    * [.run(results, _context)](#ExplodeModifier+run) ⇒ <code>RollResults</code>
     * [.toJSON()](#ExplodeModifier+toJSON) ⇒ <code>Object</code>
 
 <a name="new_ExplodeModifier_new"></a>
@@ -67,7 +67,7 @@ Whether the modifier should penetrate the results or not.
 **Returns**: <code>boolean</code> - `true` if it should penetrate, `false` otherwise  
 <a name="ExplodeModifier+run"></a>
 
-### explodeModifier.run(results, _dice) ⇒ <code>RollResults</code>
+### explodeModifier.run(results, _context) ⇒ <code>RollResults</code>
 Run the modifier on the results.
 
 **Kind**: instance method of [<code>ExplodeModifier</code>](#ExplodeModifier)  
@@ -76,7 +76,7 @@ Run the modifier on the results.
 | Param | Type | Description |
 | --- | --- | --- |
 | results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="ExplodeModifier+toJSON"></a>
 
