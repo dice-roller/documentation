@@ -18,7 +18,7 @@ A `SortingModifier` sorts roll results by their value, either ascending or desce
     * [.direction](#SortingModifier+direction)
     * [.name](#SortingModifier+name) ⇒ <code>string</code>
     * [.notation](#SortingModifier+notation) ⇒ <code>string</code>
-    * [.run(results, _dice)](#SortingModifier+run) ⇒ <code>RollResults</code>
+    * [.run(results, _context)](#SortingModifier+run) ⇒ <code>RollResults</code>
     * [.toJSON()](#SortingModifier+toJSON) ⇒ <code>Object</code>
 
 <a name="new_SortingModifier_new"></a>
@@ -72,7 +72,7 @@ The modifier's notation.
 **Kind**: instance property of [<code>SortingModifier</code>](#SortingModifier)  
 <a name="SortingModifier+run"></a>
 
-### sortingModifier.run(results, _dice) ⇒ <code>RollResults</code>
+### sortingModifier.run(results, _context) ⇒ <code>RollResults</code>
 Run the modifier on the results.
 
 **Kind**: instance method of [<code>SortingModifier</code>](#SortingModifier)  
@@ -81,7 +81,7 @@ Run the modifier on the results.
 | Param | Type | Description |
 | --- | --- | --- |
 | results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="SortingModifier+toJSON"></a>
 

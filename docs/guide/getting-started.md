@@ -88,7 +88,7 @@ const { DiceRoller } = require('rpg-dice-roller/lib/umd/bundle.js');
 #### Modern browsers
 
 Modern browsers [support ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Browser_compatibility).
-If you're only supporting compatible browsers, you can use the [ESM bundle](#es-modules).
+If you're only supporting ESM compatible browsers, you can use the [ESM bundle](#es-modules).
 
 You can either download the file locally, or use the [CDN](#install) (_Note `esm` in the path, instead of `umd`_):
 

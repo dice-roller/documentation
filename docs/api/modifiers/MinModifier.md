@@ -20,7 +20,7 @@ A `MinModifier` causes die rolls under a minimum value to be treated as the mini
     * [.min](#MinModifier+min)
     * [.name](#MinModifier+name) ⇒ <code>string</code>
     * [.notation](#MinModifier+notation) ⇒ <code>string</code>
-    * [.run(results, _dice)](#MinModifier+run) ⇒ <code>RollResults</code>
+    * [.run(results, _context)](#MinModifier+run) ⇒ <code>RollResults</code>
     * [.toJSON()](#MinModifier+toJSON) ⇒ <code>Object</code>
 
 <a name="new_MinModifier_new"></a>
@@ -73,7 +73,7 @@ The modifier's notation.
 **Kind**: instance property of [<code>MinModifier</code>](#MinModifier)  
 <a name="MinModifier+run"></a>
 
-### minModifier.run(results, _dice) ⇒ <code>RollResults</code>
+### minModifier.run(results, _context) ⇒ <code>RollResults</code>
 Run the modifier on the results.
 
 **Kind**: instance method of [<code>MinModifier</code>](#MinModifier)  
@@ -82,7 +82,7 @@ Run the modifier on the results.
 | Param | Type | Description |
 | --- | --- | --- |
 | results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="MinModifier+toJSON"></a>
 

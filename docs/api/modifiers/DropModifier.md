@@ -14,14 +14,14 @@ A `DropModifier` will "drop" (Remove from total calculations) dice from a roll.
 **See**: [KeepModifier](KeepModifier) for the opposite of this modifier  
 
 * [DropModifier](#DropModifier) ⇐ <code>KeepModifier</code>
-    * [new DropModifier(end, [qty])](#new_DropModifier_new)
+    * [new DropModifier([end], [qty])](#new_DropModifier_new)
     * [.name](#DropModifier+name) ⇒ <code>string</code>
     * [.notation](#DropModifier+notation) ⇒ <code>string</code>
     * [.rangeToDrop(_results)](#DropModifier+rangeToDrop) ⇒ <code>Array.&lt;number&gt;</code>
 
 <a name="new_DropModifier_new"></a>
 
-### new DropModifier(end, [qty])
+### new DropModifier([end], [qty])
 Create a `DropModifier` instance.
 
 **Throws**:
@@ -32,7 +32,7 @@ Create a `DropModifier` instance.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| end | <code>string</code> |  | Either `h|l` to drop highest or lowest |
+| [end] | <code>string</code> | <code>&quot;l&quot;</code> | Either `h|l` to drop highest or lowest |
 | [qty] | <code>number</code> | <code>1</code> | The amount of dice to drop |
 
 <a name="DropModifier+name"></a>

@@ -20,7 +20,7 @@ This is meant as an abstract class and should not be used directly.
     * *[.name](#Modifier+name) ⇒ <code>string</code>*
     * *[.notation](#Modifier+notation) ⇒ <code>string</code>*
     * *[.maxIterations](#Modifier+maxIterations) ⇒ <code>number</code>*
-    * *[.run(results, _dice)](#Modifier+run) ⇒ <code>RollResults</code>*
+    * *[.run(results, _context)](#Modifier+run) ⇒ <code>RollResults</code>*
     * *[.toJSON()](#Modifier+toJSON) ⇒ <code>Object</code>*
     * *[.toString()](#Modifier+toString) ⇒ <code>string</code>*
 
@@ -51,7 +51,7 @@ The maximum number of iterations that the modifier can apply to a single die rol
 **Returns**: <code>number</code> - `1000`  
 <a name="Modifier+run"></a>
 
-### *modifier.run(results, _dice) ⇒ <code>RollResults</code>*
+### *modifier.run(results, _context) ⇒ <code>RollResults</code>*
 Run the modifier on the results.
 
 **Kind**: instance method of [<code>Modifier</code>](#Modifier)  
@@ -60,7 +60,7 @@ Run the modifier on the results.
 | Param | Type | Description |
 | --- | --- | --- |
 | results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="Modifier+toJSON"></a>
 
