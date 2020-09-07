@@ -41,9 +41,9 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [Min](notation/modifiers.md#min-min-n) <Badge text="New" vertical="middle"/>
 * [Sort dice](notation/modifiers.md#sorting-s--sa--sd)
 
-**Group rolls** <Badge text="New" vertical="middle"/>
+**Advanced**
 
-* [Group rolls](notation/group-rolls.md)
+* [Group rolls](notation/group-rolls.md) <Badge text="New" vertical="middle"/>
 
 **Mathematical equations**
 
