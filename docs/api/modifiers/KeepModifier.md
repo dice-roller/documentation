@@ -15,7 +15,7 @@ others.
 **See**: [DropModifier](DropModifier) for the opposite of this modifier  
 
 * [KeepModifier](#KeepModifier) ⇐ <code>Modifier</code>
-    * [new KeepModifier(end, [qty])](#new_KeepModifier_new)
+    * [new KeepModifier([end], [qty])](#new_KeepModifier_new)
     * [.end](#KeepModifier+end) ⇒ <code>string</code>
     * [.end](#KeepModifier+end)
     * [.name](#KeepModifier+name) ⇒ <code>string</code>
@@ -23,12 +23,12 @@ others.
     * [.qty](#KeepModifier+qty) ⇒ <code>number</code>
     * [.qty](#KeepModifier+qty)
     * [.rangeToDrop(_results)](#KeepModifier+rangeToDrop) ⇒ <code>Array.&lt;number&gt;</code>
-    * [.run(results, _dice)](#KeepModifier+run) ⇒ <code>RollResults</code>
+    * [.run(results, _context)](#KeepModifier+run) ⇒ <code>ResultGroup</code> \| <code>RollResults</code>
     * [.toJSON()](#KeepModifier+toJSON) ⇒ <code>Object</code>
 
 <a name="new_KeepModifier_new"></a>
 
-### new KeepModifier(end, [qty])
+### new KeepModifier([end], [qty])
 Create a `KeepModifier` instance
 
 **Throws**:
@@ -39,7 +39,7 @@ Create a `KeepModifier` instance
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| end | <code>string</code> |  | Either `h|l` to keep highest or lowest |
+| [end] | <code>string</code> | <code>&quot;h&quot;</code> | Either `h|l` to keep highest or lowest |
 | [qty] | <code>number</code> | <code>1</code> | The amount dice to keep |
 
 <a name="KeepModifier+end"></a>
@@ -112,16 +112,16 @@ Determine the start and end (end exclusive) range of rolls to drop.
 
 <a name="KeepModifier+run"></a>
 
-### keepModifier.run(results, _dice) ⇒ <code>RollResults</code>
+### keepModifier.run(results, _context) ⇒ <code>ResultGroup</code> \| <code>RollResults</code>
 Run the modifier on the results.
 
 **Kind**: instance method of [<code>KeepModifier</code>](#KeepModifier)  
-**Returns**: <code>RollResults</code> - The modified results  
+**Returns**: <code>ResultGroup</code> \| <code>RollResults</code> - The modified results  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| results | <code>ResultGroup</code> \| <code>RollResults</code> | The results to run the modifier against |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="KeepModifier+toJSON"></a>
 

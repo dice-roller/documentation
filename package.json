@@ -1,6 +1,6 @@
 {
   "name": "rpg-dice-roller-docs",
-  "version": "4.4.0",
+  "version": "4.5.0",
   "description": "The documentation for the rpg-dice-roller",
   "directories": {
     "doc": "docs"
@@ -35,8 +35,8 @@
   },
   "homepage": "https://github.com/GreenImp/rpg-dice-roller-docs#readme",
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.5.3",
-    "vuepress": "^1.5.3",
-    "vuepress-plugin-dice-roller": "^0.1.6"
+    "@vuepress/plugin-back-to-top": "^1.5.4",
+    "vuepress": "^1.5.4",
+    "vuepress-plugin-dice-roller": "^0.1.7"
   }
 }

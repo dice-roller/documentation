@@ -95,7 +95,7 @@ The name of the die.
 <a name="StandardDice+notation"></a>
 
 ### standardDice.notation ⇒ <code>string</code>
-The dice notation. e.g. `4d6!`
+The dice notation. e.g. `4d6!`.
 
 **Kind**: instance property of [<code>StandardDice</code>](#StandardDice)  
 <a name="StandardDice+qty"></a>

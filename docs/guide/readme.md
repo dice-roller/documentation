@@ -41,6 +41,10 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [Min](notation/modifiers.md#min-min-n) <Badge text="New" vertical="middle"/>
 * [Sort dice](notation/modifiers.md#sorting-s--sa--sd)
 
+**Advanced**
+
+* [Group rolls](notation/group-rolls.md) <Badge text="New" vertical="middle"/>
+
 **Mathematical equations**
 
 * [Operators](notation/maths.md#operators)
@@ -51,10 +55,6 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 * [Random number generator](customisation.md#random-number-generator) <Badge text="New" vertical="middle"/>
 * [Exporting](usage.md#export-rolls) / [importing rolls](usage.md#import-rolls)
-
-**Coming soon**
-
-* [Group rolls](notation/group-rolls.md)
 
 
 ## Browser support

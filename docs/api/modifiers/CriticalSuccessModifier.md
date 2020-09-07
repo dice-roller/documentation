@@ -19,7 +19,7 @@ Unlike most other modifiers, it doesn't affect the roll value, it simply "flags"
     * [new CriticalSuccessModifier(comparePoint)](#new_CriticalSuccessModifier_new)
     * [.name](#CriticalSuccessModifier+name) ⇒ <code>string</code>
     * [.notation](#CriticalSuccessModifier+notation) ⇒ <code>string</code>
-    * [.run(results, _dice)](#CriticalSuccessModifier+run) ⇒ <code>RollResults</code>
+    * [.run(results, _context)](#CriticalSuccessModifier+run) ⇒ <code>RollResults</code>
 
 <a name="new_CriticalSuccessModifier_new"></a>
 
@@ -50,7 +50,7 @@ The modifier's notation.
 **Kind**: instance property of [<code>CriticalSuccessModifier</code>](#CriticalSuccessModifier)  
 <a name="CriticalSuccessModifier+run"></a>
 
-### criticalSuccessModifier.run(results, _dice) ⇒ <code>RollResults</code>
+### criticalSuccessModifier.run(results, _context) ⇒ <code>RollResults</code>
 Runs the modifier on the rolls.
 
 **Kind**: instance method of [<code>CriticalSuccessModifier</code>](#CriticalSuccessModifier)  
@@ -58,5 +58,5 @@ Runs the modifier on the rolls.
 | Param | Type | Description |
 | --- | --- | --- |
 | results | <code>RollResults</code> | The results to run the modifier against |
-| _dice | <code>StandardDice</code> | The die that the modifier is attached to |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 

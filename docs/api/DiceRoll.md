@@ -20,9 +20,10 @@ A `DiceRoll` handles rolling of a single dice notation and storing it's result.
         * [.minTotal](#DiceRoll+minTotal) ⇒ <code>number</code>
         * [.notation](#DiceRoll+notation) ⇒ <code>string</code>
         * [.output](#DiceRoll+output) ⇒ <code>string</code>
-        * [.rolls](#DiceRoll+rolls) ⇒ <code>Array.&lt;RollResults&gt;</code>
+        * [.rolls](#DiceRoll+rolls) ⇒ <code>Array.&lt;(ResultGroup\|RollResults\|string\|number)&gt;</code>
         * [.total](#DiceRoll+total) ⇒ <code>number</code>
         * [.export([format])](#DiceRoll+export) ⇒ <code>string</code> \| <code>null</code>
+        * [.hasExpressions()](#DiceRoll+hasExpressions) ⇒ <code>boolean</code>
         * [.hasRolls()](#DiceRoll+hasRolls) ⇒ <code>boolean</code>
         * [.roll()](#DiceRoll+roll) ⇒ <code>Array.&lt;RollResults&gt;</code>
         * [.toJSON()](#DiceRoll+toJSON) ⇒ <code>Object</code>
@@ -42,14 +43,14 @@ It can also have an optional array of `RollResults`, in the `rolls` property.
 
 - <code>NotationError</code> notation is invalid
 - <code>RequiredArgumentError</code> notation is required
-- <code>TypeError</code> Rolls must be an array
+- <code>TypeError</code> Rolls must be a valid result object, or an array
 
 
 | Param | Type | Description |
 | --- | --- | --- |
 | notation | <code>string</code> \| <code>Object</code> | The notation to roll |
 | notation.notation | <code>string</code> | If `notation is an object; the notation to roll |
-| [notation.rolls] | <code>Array.&lt;RollResults&gt;</code> | If `notation is an object; the rolls to import |
+| [notation.rolls] | <code>ResultGroup</code> \| <code>Array.&lt;(ResultGroup\|RollResults\|string\|number)&gt;</code> | If `notation` is an object; the rolls to import |
 
 **Example** *(String notation)*  
 ```js
@@ -101,7 +102,7 @@ String representation of the rolls
 ```
 <a name="DiceRoll+rolls"></a>
 
-### diceRoll.rolls ⇒ <code>Array.&lt;RollResults&gt;</code>
+### diceRoll.rolls ⇒ <code>Array.&lt;(ResultGroup\|RollResults\|string\|number)&gt;</code>
 The dice rolled for the notation
 
 **Kind**: instance property of [<code>DiceRoll</code>](#DiceRoll)  
@@ -129,17 +130,24 @@ If no format is specified, JSON is returned.
 | --- | --- | --- | --- |
 | [format] | <code>exportFormats</code> | <code>exportFormats.JSON</code> | The format to export the data as |
 
+<a name="DiceRoll+hasExpressions"></a>
+
+### diceRoll.hasExpressions() ⇒ <code>boolean</code>
+Check whether the DiceRoll has expressions or not.
+
+**Kind**: instance method of [<code>DiceRoll</code>](#DiceRoll)  
+**Returns**: <code>boolean</code> - `true` if the object has expressions, `false` otherwise  
 <a name="DiceRoll+hasRolls"></a>
 
 ### diceRoll.hasRolls() ⇒ <code>boolean</code>
 Check whether the object has rolled dice or not
 
 **Kind**: instance method of [<code>DiceRoll</code>](#DiceRoll)  
-**Returns**: <code>boolean</code> - `True` if the object has rolls, `false` otherwise  
+**Returns**: <code>boolean</code> - `true` if the object has rolls, `false` otherwise  
 <a name="DiceRoll+roll"></a>
 
 ### diceRoll.roll() ⇒ <code>Array.&lt;RollResults&gt;</code>
-Rolls the dice for the stored notation.
+Roll the dice for the stored notation.
 
 This is called in the constructor, so you'll only need this if you want to re-roll the
 notation. However, it's usually better to create a new `DiceRoll` instance instead.
@@ -190,7 +198,7 @@ array of RollResults, in the `rolls` property.
 ```js
 DiceRoll.import({
   notation: '4d6',
-  rolls: ..., // RollResults object or array of roll results
+  rolls: ..., // ResultGroup object or array of roll results
 });
 ```
 **Example** *(JSON)*  
