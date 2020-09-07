@@ -12,7 +12,7 @@ A `RollGroup` is a group of one or more "sub-rolls".
 A sub-roll is just simple roll notation (e.g. `4d6`, `2d10*3`, `5/10d20`)
 
 **Kind**: global class  
-**Since**: 5.0.0  
+**Since**: 4.5.0  
 
 * [RollGroup](#RollGroup)
     * [new RollGroup([expressions], [modifiers])](#new_RollGroup_new)

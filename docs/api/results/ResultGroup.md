@@ -18,7 +18,7 @@ rolls, but `ResultGroup` objects will be returned when rolling group rolls.
 :::
 
 **Kind**: global class  
-**Since**: 5.0.0  
+**Since**: 4.5.0  
 
 * [ResultGroup](#ResultGroup)
     * [new ResultGroup([results], [modifiers], [isRollGroup], [useInTotal])](#new_ResultGroup_new)
