@@ -409,9 +409,14 @@ The Failure modifier is a [Compare Point](#compare-point), preceded with the low
 ::: roll 4d6>4f<3 :::
 
 
-## Critical Success (`cs{cp}`)
+## Multiply (`mul{n}` / `mul{n}{cp}`)
 
 **Order:** 8
+
+
+## Critical Success (`cs{cp}`)
+
+**Order:** 9
 
 ::: tip
 This is purely aesthetic and makes no functional difference to the rolls or their values.
@@ -440,7 +445,7 @@ The roll result output will look something like this:
 
 ## Critical Failure (`cf{cp}`)
 
-**Order:** 9
+**Order:** 10
 
 ::: tip
 This is purely aesthetic and makes no functional difference to the rolls or their values.
@@ -469,7 +474,7 @@ The roll result output will look something like this:
 
 ## Sorting (`s` / `sa` / `sd`)
 
-**Order:** 10
+**Order:** 11
 
 You can sort the dice rolls, so that they are displayed in numerical order by appending the `s` flag after the dice notation.
 

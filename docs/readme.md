@@ -14,7 +14,7 @@ features:
   details: Roll notation based on a standard syntax, with some extra bells and whistles
 ---
 
-[![Build Status](https://travis-ci.org/GreenImp/rpg-dice-roller.svg?branch=master)](https://travis-ci.org/GreenImp/rpg-dice-roller)
+[![Build Status](https://travis-ci.org/GreenImp/rpg-dice-roller.svg?branch=main)](https://travis-ci.org/GreenImp/rpg-dice-roller)
 [![Coverage Status](https://coveralls.io/repos/github/GreenImp/rpg-dice-roller/badge.svg)](https://coveralls.io/github/GreenImp/rpg-dice-roller)
 ![Tyepscript supported](https://img.shields.io/badge/typescript-supported-blue)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](licence.txt)

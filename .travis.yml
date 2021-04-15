@@ -5,7 +5,7 @@ node_js:
   - "node"
 branches:
   only:
-    - master
+    - main
     - develop
 script:
   - npm run docs:build
@@ -17,6 +17,6 @@ deploy:
   repo: GreenImp/rpg-dice-roller
   keep_history: false
   on:
-    branch: master
+    branch: main
     # all_branches: true
 
