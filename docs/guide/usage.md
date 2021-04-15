@@ -421,7 +421,7 @@ console.log(`Max total: ${roll.minTotal}`);
 // Max total: 120
 
 // get the average total:
-console.log(`Average total: ${roll.minTotal}`);
+console.log(`Average total: ${roll.averageTotal}`);
 // Average total: 66
 ```
 
