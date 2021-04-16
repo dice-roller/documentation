@@ -99,10 +99,10 @@ This way, it's easier to keep track on what is being worked on, and we can try t
 
 The code is stored in a Git repository. To get started either [clone repository or fork the repository](https://github.com/GreenImp/rpg-dice-roller).
 
-Make sure that you're either checkout the `develop` branch, or a `feature` / `hotfix` branch for the task you're working on, and _not_ the `master` branch.
+Make sure that you're either checkout the `develop` branch, or a `feature` / `hotfix` branch for the task you're working on, and _not_ the `main` branch.
 
 ::: warning
-You should **never** work directly on the `master` branch. You should work on either the `develop` branch or a `feature` branch.
+You should **never** work directly on the `main` branch. You should work on either the `develop` branch or a `feature` branch.
 
 See the [Branching model](#branching-model) section for more information.
 :::
@@ -173,7 +173,7 @@ Check what is failing. If you believe that the failure is unrelated to your chan
 :::
 
 ::: warning
-You should **never** work directly on the `master` branch. Any pull requests on to `master` will, unfortunately, have to be rejected and you'll have to re-create it on `develop`.
+You should **never** work directly on the `main` branch. Any pull requests on to `main` will, unfortunately, have to be rejected and you'll have to re-create it on `develop`.
 
 See the [Branching model](#branching-model) section for more information.
 :::
@@ -186,9 +186,9 @@ See the [Branching model](#branching-model) section for more information.
 #### Branching model
 
 We use the [git-flow branching model](https://nvie.com/posts/a-successful-git-branching-model/).
-This means that there is always a `master` branch and a `develop` branch, and there may be other branches that follow the git-flow naming conventions.
+This means that there is always a `main` branch and a `develop` branch, and there may be other branches that follow the git-flow naming conventions.
 
-* The `master` branch is is the current latest release, and should _only be modified when making a release_.
+* The `main` branch is the current latest release, and should _only be modified when making a release_.
 * The `develop` branch is where all the fun happens, and where we can work and make our changes (Although these should generally be done on a feature branch).
 
 
