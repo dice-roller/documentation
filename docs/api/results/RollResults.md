@@ -38,7 +38,7 @@ Create a `RollResults` instance.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [rolls] | <code>Array.&lt;RollResult&gt;</code> \| <code>Array.&lt;number&gt;</code> | <code>[]</code> | The roll results |
+| [rolls] | <code>Array.&lt;(RollResult\|number)&gt;</code> | <code>[]</code> | The roll results |
 
 **Example** *(&#x60;RollResult&#x60; objects)*  
 ```js
