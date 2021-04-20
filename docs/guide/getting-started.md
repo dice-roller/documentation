@@ -59,27 +59,23 @@ import { DiceRoller } from 'https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION
 
 ### CommonJS
 
+::: warning Node.js
+We only support Node.js 12+. Please check the [browser support](readme.md#browser-support).
+:::
+
 ::: tip
-If you're using Node.js >= 12 and are using [ES modules](https://nodejs.org/api/esm.html) (`import`) instead of CommonJS (`require`) follow the [ES modules](#es-modules) examples above.
+If you're using Node.js, with [ES modules](https://nodejs.org/api/esm.html) (`import`) instead of CommonJS (`require`) follow the [ES modules](#es-modules) examples above.
 :::
 
 You can also load the library using CommonJS, AMD, etc. with the UMD build:
 
 ```javascript
-// In Node.js 12+
 const rpgDiceRoller = require('rpg-dice-roller');
-
-// In Node.js < 12 you need the path to the UMD script
-const rpgDiceRoller = require('rpg-dice-roller/lib/umd/bundle.js');
 ```
 
 If you only want to import specific components, you can do so like:
 ```javascript
-// In Node.js 12+
 const { DiceRoller } = require('rpg-dice-roller');
-
-// In Node.js < 12 you need the path to the UMD script
-const { DiceRoller } = require('rpg-dice-roller/lib/umd/bundle.js');
 ```
 
 
