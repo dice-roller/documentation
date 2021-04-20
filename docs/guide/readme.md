@@ -66,12 +66,12 @@ We also provide a bundled UMD version that can be used in environments that don'
 We actively support the latest versions of Firefox, Chrome, Opera, Safari, Microsoft Edge, and Node.js.
 
 ::: warning Node.js
-We recommend Node.js >= 12, but it should work on 11 as well.
+We only support Node.js >= 12.
 There's no guarantee that it will work on older versions.
 :::
 
 ::: danger Internet Explorer
-We do **not** support IE, and the library will **not** work in IE.
+We do **not** support IE, and the library will **not** work in IE (Check out Microsoft Edge instead!).
 
 It _may_ be possible to make it work by creating polyfills for functionality that is missing in IE, but we cannot guarantee it.
 :::

@@ -16,14 +16,11 @@ sidebarDepth: 2
     ```
 * CDN:
     [![JSDelivr](https://data.jsdelivr.com/v1/package/npm/rpg-dice-roller/badge)](https://www.jsdelivr.com/package/npm/rpg-dice-roller)
-    * ESM:
-      ```html
-      <script src="https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/esm/bundle.min.js"></script>
-      ```
-    * UMD:
-      ```html
-      <script src="https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/umd/bundle.min.js"></script>
-      ```
+    
+    ```html
+    <script src="https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/umd/bundle.min.js"></script>
+    ```
+    <small>_Replace `VERSION` with the version you want to use._</small>
 
 
 ## Setup
@@ -33,92 +30,68 @@ sidebarDepth: 2
 You can import the dice roller and use it in your application, using ES standard modules like so:
 
 ```javascript
-// In Node.js
 import * as rpgDiceRoller from 'rpg-dice-roller';
-
-// Using relative path (e.g. in browser)
-import * as rpgDiceRoller from './path/to/lib/esm/bundle.js';
-
-// Using CDN (e.g. in browser)
-import * as rpgDiceRoller from 'https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/esm/bundle.min.js';
 ```
 
 If you only want to import specific components, you can do so like:
 
 ```javascript
-// In Node.js
 import { DiceRoller } from 'rpg-dice-roller';
-
-// Using relative path (e.g. in browser)
-import { DiceRoller } from './path/to/lib/esm/bundle.js';
-
-// Using CDN (e.g. in browser)
-import { DiceRoller } from 'https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/esm/bundle.min.js';
 ```
 
 
-### CommonJS
+### CommonJS 
+
+::: warning Node.js
+We only support Node.js 12+. Please check the [browser support](readme.md#browser-support).
+:::
 
 ::: tip
-If you're using Node.js >= 12 and are using [ES modules](https://nodejs.org/api/esm.html) (`import`) instead of CommonJS (`require`) follow the [ES modules](#es-modules) examples above.
+If you're using Node.js, with [ES modules](https://nodejs.org/api/esm.html) (`import`) instead of CommonJS (`require`) follow the [ES modules](#es-modules) examples above.
 :::
 
 You can also load the library using CommonJS, AMD, etc. with the UMD build:
 
 ```javascript
-// In Node.js 12+
 const rpgDiceRoller = require('rpg-dice-roller');
-
-// In Node.js < 12 you need the path to the UMD script
-const rpgDiceRoller = require('rpg-dice-roller/lib/umd/bundle.js');
 ```
 
 If you only want to import specific components, you can do so like:
 ```javascript
-// In Node.js 12+
 const { DiceRoller } = require('rpg-dice-roller');
-
-// In Node.js < 12 you need the path to the UMD script
-const { DiceRoller } = require('rpg-dice-roller/lib/umd/bundle.js');
 ```
 
 
 ### Browsers
-
-#### Modern browsers
-
-Modern browsers [support ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Browser_compatibility).
-If you're only supporting ESM compatible browsers, you can use the [ESM bundle](#es-modules).
-
-You can either download the file locally, or use the [CDN](#install) (_Note `esm` in the path, instead of `umd`_):
-
-```html
-<script type="module">
-// relative path
-import * as rpgDiceRoller from './path/to/lib/esm/bundle.js';
-
-// Using CDN
-import * as rpgDiceRoller from 'https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/esm/bundle.min.js';
-</script>
-```
-
-
-#### Older browsers
 
 ::: warning Browser support
 We don't guarantee that the library works with all older browsers.
 We advise you to check the [browser support](readme.md#browser-support).
 :::
 
-For browsers that don't [support ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Browser_compatibility), you can use the UMD bundle.
+
+#### Dependencies
+
+First, you'll need to include some third party dependencies:
+
+* [Math.js](https://mathjs.org/download.html#download)
+* [Random.js](https://github.com/ckknight/random-js#browser-using-script-tag)
+
+```html
+<script src="https://unpkg.com/mathjs@9.3.2/lib/browser/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/random-js@2.1.0/dist/random-js.umd.min.js"></script>
+```
+
+
+#### Dice Roller
 
 You can either download the file locally, or use the [CDN](#install) (_Note `umd` in the path, instead of `esm`_):
 
 ```html
-<!-- download the file locally -->
+<!-- local file -->
 <script src="./path/to/lib/umd/bundle.min.js"></script>
 
-<!-- or use the CDN -->
+<!-- or CDN -->
 <script src="https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/umd/bundle.min.js"></script>
 ```
 
