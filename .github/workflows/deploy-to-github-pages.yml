@@ -34,7 +34,7 @@ jobs:
           BASE_PATH=${{ env.BASE_PATH }} npm run docs:build
 
       - name: Deploy to Live
-        if: ${{ github.ref == 'main' }}
+        if: ${{ github.ref_name == 'main' }}
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages
@@ -44,7 +44,7 @@ jobs:
           token: ${{ env.DEPLOY_TOKEN }}
 
       - name: Deploy to Staging
-        if: ${{ github.ref != 'main' }}
+        if: ${{ github.ref_name != 'main' }}
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages
