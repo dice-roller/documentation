@@ -28,12 +28,12 @@
     "manual",
     "help"
   ],
-  "author": "GreenImp <info@greenimp.co.uk> (http://greenimp.co.uk)",
+  "author": "GreenImp Media <info@greenimp.co.uk> (http://greenimp.co.uk)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GreenImp/rpg-dice-roller-docs/issues"
   },
-  "homepage": "https://github.com/GreenImp/rpg-dice-roller-docs#readme",
+  "homepage": "https://github.com/GreenImp/rpg-dice-roller-docs",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "vuepress": "^1.8.2",
