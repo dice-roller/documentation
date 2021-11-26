@@ -3,13 +3,13 @@ const { sidebarTree } = require("../api/config");
 module.exports = ctx => ({
   title: 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
-  base: '/rpg-dice-roller/',
+  base: process.env.BASE_PATH || '/rpg-dice-roller/',
   themeConfig: {
     logo: '/hero.svg',
     repo: 'GreenImp/rpg-dice-roller',
 
     docsDir: 'docs',
-    docsRepo: 'GreenImp/rpg-dice-roller-docs',
+    docsRepo: 'dice-roller/rpg-dice-roller-docs',
     docsBranch: 'develop',
     editLinks: true,
     lastUpdated: 'Last Updated',
