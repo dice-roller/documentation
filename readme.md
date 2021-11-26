@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://greenimp.github.io/rpg-dice-roller/hero.svg" alt="RPG Dice Roller" style="max-width: 100%;" width="180"/>
+</p>
+
 # RPG Dice Roller Documentation
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
