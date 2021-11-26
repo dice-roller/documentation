@@ -7,16 +7,18 @@ on:
 jobs:
   deploy:
     env:
+      BASE_PATH_LIVE: rpg-dice-roller
+      BASE_PATH_STAGING: ${{ github.event.repository.name }}
       DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       DIST_FOLDER: docs/.vuepress/dist
     runs-on: ubuntu-latest
     steps:
-      - name: Set bramch-based env variables
+      - name: Set branch-based env variables
         uses: iamtheyammer/branch-env-vars@v1.0.4
         with:
           BASE_PATH: |
-            main:/rpg-dice-roller/
-            !default:/rpg-dice-roller-docs/
+            main:/${{ env.BASE_PATH_LIVE }}/
+            !default:/${{ env.BASE_PATH_STAGING }}/
 
       - name: Checkout
         uses: actions/checkout@v2
