@@ -1,5 +1,5 @@
 {
-  "name": "rpg-dice-roller-docs",
+  "name": "@dice-roller/rpg-dice-roller-docs",
   "version": "4.5.0",
   "description": "The documentation for the rpg-dice-roller",
   "directories": {
@@ -28,15 +28,15 @@
     "manual",
     "help"
   ],
-  "author": "GreenImp <info@greenimp.co.uk> (http://greenimp.co.uk)",
+  "author": "GreenImp Media <info@greenimp.co.uk> (http://greenimp.co.uk)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GreenImp/rpg-dice-roller-docs/issues"
   },
-  "homepage": "https://github.com/GreenImp/rpg-dice-roller-docs#readme",
+  "homepage": "https://github.com/GreenImp/rpg-dice-roller-docs",
   "devDependencies": {
+    "@dice-roller/vuepress-plugin-dice-roller": "^0.1.9",
     "@vuepress/plugin-back-to-top": "^1.8.2",
-    "vuepress": "^1.8.2",
-    "vuepress-plugin-dice-roller": "^0.1.7"
+    "vuepress": "^1.8.2"
   }
 }

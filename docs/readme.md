@@ -4,7 +4,7 @@ heroImage: /hero.svg
 tagline: Easy advanced dice rolling
 actionText: Get Started →
 actionLink: /guide/
-footer: MIT Licensed | Copyright © 2015-present GreenImp ltd.
+footer: MIT Licensed | Copyright © GreenImp Media ltd.
 features:
 - title: Highly advanced
   details: Can handle multiple types of dice, with a range of modifiers and mathematical functions
@@ -25,6 +25,6 @@ features:
 
 Have a play and see how it works
 
-::: roll 4d6d1 :::
+::: roll 4d6 :::
 
 <iframe src="https://github.com/sponsors/GreenImp/button" title="Sponsor GreenImp" height="35" width="107" style="border: 0; margin: 0 auto 1rem; display: block;"></iframe>
