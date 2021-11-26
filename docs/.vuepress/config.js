@@ -53,7 +53,7 @@ module.exports = ctx => ({
     },
   },
   plugins: [
+    '@dice-roller/vuepress-plugin-dice-roller',
     '@vuepress/back-to-top',
-    'dice-roller',
   ],
 });
