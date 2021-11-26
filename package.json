@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/GreenImp/rpg-dice-roller-docs",
   "devDependencies": {
-    "@dice-roller/vuepress-plugin-dice-roller": "^0.1.9",
+    "@dice-roller/vuepress-plugin-dice-roller": "^0.1.10",
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "vuepress": "^1.8.2"
   }
