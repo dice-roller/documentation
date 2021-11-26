@@ -1,5 +1,5 @@
 {
-  "name": "rpg-dice-roller-docs",
+  "name": "@dice-roller/rpg-dice-roller-docs",
   "version": "4.5.0",
   "description": "The documentation for the rpg-dice-roller",
   "directories": {
