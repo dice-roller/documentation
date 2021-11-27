@@ -17,7 +17,7 @@ This is currently in progress, but generally; be nice, be understanding, and don
 
 ## I have a question
 
-We don't have a message board or similar, so feel free to use the [Github tickets](https://github.com/GreenImp/rpg-dice-roller/issues/new?labels=question&template=question.md) to raise questions
+We don't have a message board or similar, so feel free to use the [Github tickets](https://github.com/dice-roller/rpg-dice-roller/issues/new?labels=question&template=question.md) to raise questions.
 
 
 ## How to contribute
@@ -33,14 +33,14 @@ If you find a bug, please let us know.
 
 #### Before submitting a bug report
 
-* [Search through existing tickets](https://github.com/GreenImp/rpg-dice-roller/issues?q=is%3Aissue+label%3Abug) to see if the issue has already been reported.
+* [Search through existing tickets](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+label%3Abug) to see if the issue has already been reported.
   * If it has, and the issue is still _open_, add a comment to it, rather than creating a new ticket.
   * If it has, and the issue is _closed_, see if any suggested fix resolves the issue for you.
 
 
 #### How to submit a bug report
 
-Bugs are tracked as Github issues, and you can [report a bug through Github](https://github.com/GreenImp/rpg-dice-roller/issues/new?labels=bug&template=bug_report.md).
+Bugs are tracked as Github issues, and you can [report a bug through Github](https://github.com/dice-roller/rpg-dice-roller/issues/new?labels=bug&template=bug_report.md).
 
 Explain the problem in as much detail as possible, including any additional details that could help to reproduce the problem.
 
@@ -62,12 +62,12 @@ We'd love to hear any ideas you've got for new features or improvements. Followi
 #### Before submitting a feature suggestion
 
 * **Check you're using the latest version.** The feature may have been added in a newer version.
-* [Search through existing tickets](https://github.com/GreenImp/rpg-dice-roller/issues?q=is%3Aissue+label%3Aenhancement+label%3Asuggestion+label%3Aquestion) to see if the feature has already been suggested. If it has, add a comment to the existing one, rather than creating a new one.
+* [Search through existing tickets](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+label%3Aenhancement+label%3Asuggestion+label%3Aquestion) to see if the feature has already been suggested. If it has, add a comment to the existing one, rather than creating a new one.
 
 
 #### How to submit a feature suggestion
 
-Feature suggestions are tracked as Github tickets, and you can [suggest a feature through Github](https://github.com/GreenImp/rpg-dice-roller/issues/new?labels=suggestion&template=feature-request.md).
+Feature suggestions are tracked as Github tickets, and you can [suggest a feature through Github](https://github.com/dice-roller/rpg-dice-roller/issues/new?labels=suggestion&template=feature-request.md).
 
 * **Use a clear and descriptive title** for the ticket, that identifies the suggestion.
 * **Provide a step-by-step description of the feature** with as much detail as possible.
@@ -84,7 +84,7 @@ If you want to help out with the development itself then please dive in.
 
 #### Finding something to work on
 
-If you're unsure where to begin, you can start by having a look at the tickets flagged as [help wanted](https://github.com/GreenImp/rpg-dice-roller/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), and see if you can help with any of them.
+If you're unsure where to begin, you can start by having a look at the tickets flagged as [help wanted](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), and see if you can help with any of them.
 
 If there aren't any flagged as `help wanted` that doesn't mean we don't want your help! Generally, we're happy for people to dig into any ticket that hasn't been assigned to someone.
 A ticket that has been assigned means that someone else is working on it.
@@ -97,7 +97,7 @@ This way, it's easier to keep track on what is being worked on, and we can try t
 
 #### Setting up
 
-The code is stored in a Git repository. To get started either [clone repository or fork the repository](https://github.com/GreenImp/rpg-dice-roller).
+The code is stored in a Git repository. To get started either [clone repository or fork the repository](https://github.com/dice-roller/rpg-dice-roller).
 
 Make sure that you're either checkout the `develop` branch, or a `feature` / `hotfix` branch for the task you're working on, and _not_ the `main` branch.
 

@@ -42,7 +42,7 @@ Check if `a` is comparative to `b` with the given operator.
 | --- | --- | --- |
 | a | <code>number</code> | The number to compare with `b` |
 | b | <code>number</code> | The number to compare with `a` |
-| operator | <code>string</code> | A valid comparative operator: `=, <, >, <=, >=, !=` |
+| operator | <code>string</code> | A valid comparative operator: `=, <, >, <=, >=, !=, <>` |
 
 **Example** *(Is &#x60;a&#x60; greater than &#x60;b&#x60;?)*  
 ```js

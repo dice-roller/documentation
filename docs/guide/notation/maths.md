@@ -58,5 +58,5 @@ min(4d6, 2d10): min([3, 4, 1, 5], [10, 6]) = 13
 ::: roll min(4d6, 2d10) :::
 
 :::tip
-If we're missing a math function that you want, [let us know](https://github.com/GreenImp/rpg-dice-roller/issues)!
+If we're missing a math function that you want, [let us know](https://github.com/dice-roller/rpg-dice-roller/issues)!
 :::

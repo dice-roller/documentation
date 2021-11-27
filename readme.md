@@ -1,23 +1,23 @@
 <p align="center">
-    <img src="http://greenimp.github.io/rpg-dice-roller/dice-roller-logo.png" alt="RPG Dice Roller" style="max-width: 100%;" width="200"/>
+    <img src="http://dice-roller.github.io/documentation/dice-roller-logo.png" alt="RPG Dice Roller" style="max-width: 100%;" width="200"/>
 </p>
 
 # RPG Dice Roller Documentation
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-The documentation for the [rpg-dice-roller](https://github.com/GreenImp/rpg-dice-roller).
+The documentation for the [rpg-dice-roller](https://github.com/dice-roller/rpg-dice-roller).
 
 
 ## View the docs
 
-Check out the documentation at [https://greenimp.github.io/rpg-dice-roller/](https://greenimp.github.io/rpg-dice-roller/).
+Check out the documentation at https://dice-roller.github.io/documentation
 
 
 ## Contributing
 
 We're always happy for contributions to both the docs and the dice roller itself.
-You can find our contributing guide in the docs: [https://greenimp.github.io/rpg-dice-roller/contributing/](https://greenimp.github.io/rpg-dice-roller/contributing/).
+You can find our contributing guide in the docs: https://dice-roller.github.io/documentation/contributing
 
 
 ## Licence

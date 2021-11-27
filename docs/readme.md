@@ -14,11 +14,11 @@ features:
   details: Roll notation based on a standard syntax, with some extra bells and whistles
 ---
 
-[![Build Status](https://travis-ci.com/GreenImp/rpg-dice-roller.svg?branch=main)](https://travis-ci.com/GreenImp/rpg-dice-roller)
-[![Coverage Status](https://coveralls.io/repos/github/GreenImp/rpg-dice-roller/badge.svg)](https://coveralls.io/github/GreenImp/rpg-dice-roller)
-![Tyepscript supported](https://img.shields.io/badge/typescript-supported-blue)
+[![Build Status](https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml/badge.svg)](https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml)
+[![Coverage Status](https://coveralls.io/repos/github/dice-roller/rpg-dice-roller/badge.svg?branch=main)](https://coveralls.io/github/dice-roller/rpg-dice-roller?branch=main)
+![Tyepscript friendly](https://img.shields.io/badge/typescript-supported-blue)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](licence.txt)
-[![npm downloads](https://img.shields.io/npm/dm/rpg-dice-roller)](https://www.npmjs.com/package/rpg-dice-roller)
+[![npm downloads](https://img.shields.io/npm/dm/@dice-roller/rpg-dice-roller)](https://www.npmjs.com/package/@dice-roller/rpg-dice-roller)
 
 
 ## Try me
