@@ -8,17 +8,17 @@ sidebarDepth: 2
 
 * NPM:
     ```bash
-    npm install rpg-dice-roller
+    npm install @dice-roller/rpg-dice-roller
     ```
 * Yarn:
     ```bash
-    yarn add rpg-dice-roller
+    yarn add @dice-roller/rpg-dice-roller
     ```
 * CDN:
-    [![JSDelivr](https://data.jsdelivr.com/v1/package/npm/rpg-dice-roller/badge)](https://www.jsdelivr.com/package/npm/rpg-dice-roller)
+    [![JSDelivr](https://data.jsdelivr.com/v1/package/npm/@dice-roller/rpg-dice-roller/badge)](https://www.jsdelivr.com/package/npm/@dice-roller/rpg-dice-roller)
     
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/umd/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@dice-roller/rpg-dice-roller@VERSION/lib/umd/bundle.min.js"></script>
     ```
     <small>_Replace `VERSION` with the version you want to use._</small>
 
@@ -30,13 +30,13 @@ sidebarDepth: 2
 You can import the dice roller and use it in your application, using ES standard modules like so:
 
 ```javascript
-import * as rpgDiceRoller from 'rpg-dice-roller';
+import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
 ```
 
 If you only want to import specific components, you can do so like:
 
 ```javascript
-import { DiceRoller } from 'rpg-dice-roller';
+import { DiceRoller } from '@dice-roller/rpg-dice-roller';
 ```
 
 
@@ -53,12 +53,12 @@ If you're using Node.js, with [ES modules](https://nodejs.org/api/esm.html) (`im
 You can also load the library using CommonJS, AMD, etc. with the UMD build:
 
 ```javascript
-const rpgDiceRoller = require('rpg-dice-roller');
+const rpgDiceRoller = require('@dice-roller/rpg-dice-roller');
 ```
 
 If you only want to import specific components, you can do so like:
 ```javascript
-const { DiceRoller } = require('rpg-dice-roller');
+const { DiceRoller } = require('@dice-roller/rpg-dice-roller');
 ```
 
 
@@ -92,7 +92,7 @@ You can either download the file locally, or use the [CDN](#install) (_Note `umd
 <script src="./path/to/lib/umd/bundle.min.js"></script>
 
 <!-- or CDN -->
-<script src="https://cdn.jsdelivr.net/npm/rpg-dice-roller@VERSION/lib/umd/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@dice-roller/rpg-dice-roller@VERSION/lib/umd/bundle.min.js"></script>
 ```
 
 The UMD bundle provides the global variable, `rpgDiceRoller`, that is used to access the library.
