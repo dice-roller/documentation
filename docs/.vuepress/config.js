@@ -3,6 +3,9 @@ const { sidebarTree } = require("../api/config");
 module.exports = ctx => ({
   title: 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
+  head: [
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
+  ],
   base: `/${process.env.BASE_PATH || 'documentation'}/`,
   themeConfig: {
     logo: '/hero.svg',

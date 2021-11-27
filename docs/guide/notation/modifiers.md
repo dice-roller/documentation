@@ -112,14 +112,16 @@ Read more about [Compare Points below](#compare-point).
 
 ::: roll 4d10!<=3 :::
 
-::: warning `!=` compare point with exploding dice
-You can't have a die that only explodes if you _don't_ roll a specific number:
+::: warning `!=` (Not equal) compare point with exploding dice
+If you want a die that only explodes on a specific value, the `!=` (Not equal) operator will **not** work here, and you must use the alternative ["not equal to" operator](#not-equal-to) instead, `<>`:
 
-```javascript
+```javascript {5}
+// Wrong! Creates a compound roll if you roll a 4.
 2d6!!=4
-```
 
-This notation will instead create a [compound roll](#compounding-cp) if you roll a 4.
+// Correct!
+2d6!<>4
+```
 :::
 
 ::: tip Iteration limit
@@ -496,6 +498,7 @@ The following are valid comparative operators:
 ```javascript
 =   // equal to
 !=  // not equal to
+<>  // Also not equal to
 <   // less than
 >   // greater than
 <=  // less than or equal to
@@ -514,7 +517,33 @@ Here are some examples with full notation strings:
 d6!=3    // roll a d6 and explode any roll equal to 3
 d10!>=5  // roll a d10 and explode on any roll greater than or equal to 5
 d6!!>4   // roll a d6 and compound only on rolls greater than 4
+d6!<>4   // roll a d6 and explode on any roll not equal to 4
 d4r<3    // roll a d4 and re-roll anything less than 3
 ```
 
 ::: roll d4r<3 :::
+
+
+### Not equal to (`!=` | `<>`)
+
+There are two different operators for "not equal to"; `!=` and `<>`.
+
+These operators both function exactly the same, and are interchangeable.
+Typically, throughout the documentation, you'll see the former used for consistency.
+
+The second form `<>` was introduced as a way of being able to use "not equal" checks in combination with exploding dice.
+
+::: tip Example
+If we wanted to explode any dice that do **not** roll a `4`.
+
+This will not work, and will instead create a [compound roll](#compounding-cp) if you roll a `4`:
+```javascript
+2d6!!=4
+```
+
+This will correctly explode if the value is _not_ `4`:
+
+```javascript
+2d6!<>4
+```
+:::
