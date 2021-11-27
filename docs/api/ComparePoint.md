@@ -39,7 +39,7 @@ Create a `ComparePoint` instance.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| operator | <code>string</code> | The comparison operator (One of `=`, `!=`, `<`, `>`, `<=`, `>=`) |
+| operator | <code>string</code> | The comparison operator (One of `=`, `!=`, `<>`, `<`, `>`, `<=`, `>=`) |
 | value | <code>number</code> | The value to compare to |
 
 <a name="ComparePoint+operator"></a>
@@ -55,7 +55,7 @@ Set the comparison operator.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| operator | <code>string</code> | One of `=`, `!=`, `<`, `>`, `<=`, `>=` |
+| operator | <code>string</code> | One of `=`, `!=`, `<>`, `<`, `>`, `<=`, `>=` |
 
 <a name="ComparePoint+operator"></a>
 

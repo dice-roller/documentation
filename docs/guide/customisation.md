@@ -51,10 +51,10 @@ You can access the number generator by importing the `NumberGenerator` namespace
 
 ```javascript
 // ES modules
-import { DiceRoller, NumberGenerator } from 'rpg-dice-roller';
+import { DiceRoller, NumberGenerator } from '@dice-roller/rpg-dice-roller';
 
 // or CommonJS
-const { DiceRoller, NumberGenerator } = require('rpg-dice-roller');
+const { DiceRoller, NumberGenerator } = require('@dice-roller/rpg-dice-roller');
 ```
 
 `NumberGenerator` has two properties:

@@ -15,7 +15,7 @@ For example, This will both [Explode](#exploding-cp) any maximum rolls, and [Kee
 ```
 
 ::: tip Missing a modifier?
-We have tried to cover all the commonly used modifiers. [Let us know](https://github.com/GreenImp/rpg-dice-roller/issues) if we've missed one that you use!
+We have tried to cover all the commonly used modifiers. [Let us know](https://github.com/dice-roller/rpg-dice-roller/issues) if we've missed one that you use!
 :::
 
 ::: warning Modifier order

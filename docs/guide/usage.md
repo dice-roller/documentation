@@ -10,7 +10,7 @@ Read the sections below for details usage instructions.
 Dice are rolled with a string [notation](./notation/readme.md). The quickest method is using the `DiceRoll` class:
 
 ```javascript
-import { DiceRoll } from 'rpg-dice-roller';
+import { DiceRoll } from '@dice-roller/rpg-dice-roller';
 
 const roll = new DiceRoll('4d6');
 ```
@@ -74,7 +74,7 @@ console.log(`You rolled: ${roll}`);
 If you want to keep a log of previous rolls, you can use the `DiceRoller` class instead:
 
 ```javascript
-import { DiceRoller } from 'rpg-dice-roller';
+import { DiceRoller } from '@dice-roller/rpg-dice-roller';
 
 const roller = new DiceRoller();
 ```
@@ -161,11 +161,11 @@ console.log(roller.total); // 62
 
 ## Export rolls
 
-The `DiceRoll` classe has an `export()` method, which can export the rolls in several different formats, as defined in the [`ExportFormats` utility object](../api/utilities/ExportFormats.md).
+The `DiceRoll` class has an `export()` method, which can export the rolls in several formats, as defined in the [`ExportFormats` utility object](../api/utilities/ExportFormats.md).
 
 ```javascript
 // we need to import the exportFormats object
-import { DiceRoll, exportFormats } from 'rpg-dice-roller';
+import { DiceRoll, exportFormats } from '@dice-roller/rpg-dice-roller';
 
 const roll = new DiceRoll('4d6');
 ```
@@ -227,7 +227,7 @@ Returns base64 encoded version of the JSON string:
 You can also export the data from a `DiceRoller` instance, in exactly the same way. It too has an `export()` method, that accepts the same [export formats](../api/utilities/ExportFormats.md).
 
 ```javascript
-import { DiceRoller, exportFormats } from 'rpg-dice-roller';
+import { DiceRoller, exportFormats } from '@dice-roller/rpg-dice-roller';
 
 const roller = new DiceRoller();
 roller.roll('4d6');

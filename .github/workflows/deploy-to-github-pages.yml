@@ -7,19 +7,11 @@ on:
 jobs:
   deploy:
     env:
-      BASE_PATH_LIVE: rpg-dice-roller
-      BASE_PATH_STAGING: ${{ github.event.repository.name }}
+      BASE_PATH: ${{ github.event.repository.name }}
       DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       DIST_FOLDER: docs/.vuepress/dist
     runs-on: ubuntu-latest
     steps:
-      - name: Set branch-based env variables
-        uses: iamtheyammer/branch-env-vars@v1.0.4
-        with:
-          BASE_PATH: |
-            main:/${{ env.BASE_PATH_LIVE }}/
-            !default:/${{ env.BASE_PATH_STAGING }}/
-
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -33,18 +25,8 @@ jobs:
           npm install
           BASE_PATH=${{ env.BASE_PATH }} npm run docs:build
 
-      - name: Deploy to Live
+      - name: Deploy
         if: ${{ github.ref_name == 'main' }}
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          branch: gh-pages
-          repository-name: GreenImp/rpg-dice-roller
-          folder: ${{ env.DIST_FOLDER }}
-          single-commit: true
-          token: ${{ env.DEPLOY_TOKEN }}
-
-      - name: Deploy to Staging
-        if: ${{ github.ref_name != 'main' }}
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages

@@ -15,7 +15,7 @@ necessary.
 **Kind**: global class  
 **See**
 
-- [https://greenimp.github.io/rpg-dice-roller/guide/notation/](https://greenimp.github.io/rpg-dice-roller/guide/notation/)
+- [https://dice-roller.github.io/documentation/guide/notation/](https://dice-roller.github.io/documentation/guide/notation/)
 - [https://en.m.wikipedia.org/wiki/Dice_notation](https://en.m.wikipedia.org/wiki/Dice_notation)
 
 <a name="Parser.parse"></a>
