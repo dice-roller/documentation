@@ -4,11 +4,14 @@ on:
     branches:
       - main
       - develop
+  pull_request:
+    branches:
+      - main
+      - develop
 jobs:
   deploy:
     env:
       BASE_PATH: ${{ github.event.repository.name }}
-      DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       DIST_FOLDER: docs/.vuepress/dist
     runs-on: ubuntu-latest
     steps:
@@ -26,10 +29,9 @@ jobs:
           BASE_PATH=${{ env.BASE_PATH }} npm run docs:build
 
       - name: Deploy
-        if: ${{ github.ref_name == 'main' }}
+        #if: ${{ github.ref_name == 'main' }}
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages
           folder: ${{ env.DIST_FOLDER }}
           single-commit: true
-          token: ${{ env.DEPLOY_TOKEN }}
