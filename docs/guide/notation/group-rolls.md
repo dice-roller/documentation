@@ -1,7 +1,3 @@
----
-sidebarDepth: 2
----
-
 # Group Rolls <Badge text="New" vertical="middle"/>
 
 You can perform rolls in a group using comma separated sub-roll expressions. The sub-roll results will be [summed together](#basic) and [modifiers](#modifiers) can be run on entire expressions, rather than individual die rolls.
