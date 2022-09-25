@@ -136,7 +136,7 @@ Single sub-rolls, will only ever return a result of `1` or `0`:
 
 #### Multiple sub-rolls
 
-With mutliple sub-rolls, the success values get added together:
+With mutliple sub-rolls, the number of sucesses are added together
 
 ```javascript
 {4d6+2d8, 3d20+3, 5d10+1}>40: {[4, 3, 3, 2]+[2, 6], ([17, 5, 20]+3)*, ([7, 9, 6, 10, 8]+1)*} = 2
@@ -176,14 +176,14 @@ Single sub-rolls, will only ever return a result of `1`, `-1`, or `0`:
 
 #### Multiple sub-rolls
 
-With mutliple sub-rolls, the success values get added together:
+With mutliple sub-rolls, the number of sucesses are added together, and the number of failures are subtracted from the value:
 
 ```javascript
 {4d6+2d8, 3d20+3, 5d10+1}>40f<30: {([4, 3, 3, 2]+[2, 6])_, ([17, 5, 20]+3)*, ([7, 9, 6, 10, 8]+1)*} = 1
 ```
 
 The above has `1` success because;
-* The first sub-roll, `4d6+2d8`, rolled `[4, 3, 3, 2]+[2, 6] = 20` <Badge type="error" text="Failure" vertical="middle"/>
+* The first sub-roll, `4d6+2d8`, rolled `[4, 3, 3, 2]+[2, 6] = 20` <Badge type="danger" text="Failure" vertical="middle"/>
 * The second sub-roll, `3d20+3`, rolled `[17, 5, 20]+3 = 45` <Badge text="Success" vertical="middle"/>
 * The third sub-roll, `5d10+1`, rolled `[7, 9, 6, 10, 8]+1 = 41` <Badge text="Success" vertical="middle"/>
 
