@@ -1,7 +1,3 @@
----
-sidebarDepth: 2
----
-
 # Get Started
 
 ## Install
