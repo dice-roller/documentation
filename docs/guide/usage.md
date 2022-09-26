@@ -1,3 +1,7 @@
+---
+sidebarDepth: 1
+---
+
 # Usage
 
 Read the sections below for details usage instructions.

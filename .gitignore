@@ -35,6 +35,7 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
+.temp
 
 
 # Package Managers

@@ -2,8 +2,9 @@
 home: true
 heroImage: /hero.svg
 tagline: Easy advanced dice rolling
-actionText: Get Started →
-actionLink: /guide/
+actions:
+  - text: Get Started →
+    link: /guide/
 footer: MIT Licensed | Copyright © GreenImp Media ltd.
 features:
 - title: Highly advanced

@@ -1,3 +1,8 @@
+---
+sidebarDepth: 1
+next: /guide/notation/
+---
+
 # Customisation
 
 ## Random number generator <Badge text="New" vertical="middle"/>

@@ -1,28 +1,23 @@
-const { sidebarTree } = require("../api/config");
+import { defaultTheme, defineUserConfig } from 'vuepress'
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+//import { searchPlugin } from '@vuepress/plugin-search'
+import { diceRollerPlugin } from '@dice-roller/vuepress-plugin-dice-roller';
+import { sidebarTree } from '../api/config';
 
-module.exports = ctx => ({
+export default defineUserConfig({
+  lang: 'en-GB',
   title: 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
-  head: [
-    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
-  ],
-  base: `/${process.env.BASE_PATH || 'documentation'}/`,
-  themeConfig: {
+  home: `/${process.env.BASE_PATH || 'documentation'}/`,
+  theme: defaultTheme({
     logo: '/hero.svg',
     repo: 'dice-roller/rpg-dice-roller',
-
-    docsDir: 'docs',
     docsRepo: 'dice-roller/documentation',
     docsBranch: 'develop',
-    editLinks: true,
-    lastUpdated: 'Last Updated',
-
-    smoothScroll: true,
-    algolia: ctx.isProd ? ({
-      apiKey: 'f5ccf286c5bf08a4db96d17194b54c41',
-      indexName: 'rpg-dice-roller'
-    }) : null,
-    nav: [
+    docsDir: 'docs',
+    contributors: false,
+    navbar: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
       { text: 'API', link: '/api/' },
@@ -32,31 +27,50 @@ module.exports = ctx => ({
       ...{
         '/guide/': [
           {
-            title: 'Guide',
+            text: 'Guide',
             children: [
-              '',
-              'getting-started',
-              'usage',
-              'customisation',
+              '/guide/',
+              '/guide/getting-started',
+              '/guide/usage',
+              '/guide/customisation',
             ],
+            collapsible: true,
           },
           {
-            title: 'Notation',
+            text: 'Notation',
             children: [
-              'notation/',
-              'notation/dice',
-              'notation/modifiers',
-              'notation/group-rolls',
-              'notation/maths',
+              '/guide/notation/',
+              '/guide/notation/dice',
+              '/guide/notation/modifiers',
+              '/guide/notation/group-rolls',
+              '/guide/notation/maths',
             ],
+            collapsible: true,
           },
         ],
       },
       ...sidebarTree('Introduction'),
     },
-  },
+  }),
   plugins: [
-    '@dice-roller/vuepress-plugin-dice-roller',
-    '@vuepress/back-to-top',
+    backToTopPlugin(),
+    diceRollerPlugin(),
+    docsearchPlugin({
+      apiKey: '01e04cdac0da20e46c358d3c975962bf',
+      appId: 'KJX1KIQOVL',
+      indexName: 'rpg-dice-roller'
+    }),
+    /*searchPlugin({
+      hotKeys: [
+        {
+          key: 's',
+          ctrl: true,
+        },
+        {
+          key: '/',
+          ctrl: true,
+        }
+      ],
+    }),*/
   ],
-});
+})
