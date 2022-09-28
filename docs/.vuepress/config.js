@@ -56,8 +56,8 @@ export default defineUserConfig({
     backToTopPlugin(),
     diceRollerPlugin(),
     docsearchPlugin({
-      apiKey: '01e04cdac0da20e46c358d3c975962bf',
-      appId: 'KJX1KIQOVL',
+      apiKey: 'f5ccf286c5bf08a4db96d17194b54c41',
+      appId: 'BH4D9OD16A',
       indexName: 'rpg-dice-roller'
     }),
     /*searchPlugin({
