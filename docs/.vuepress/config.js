@@ -14,7 +14,7 @@ export default defineUserConfig({
     logo: '/hero.svg',
     repo: 'dice-roller/rpg-dice-roller',
     docsRepo: 'dice-roller/documentation',
-    docsBranch: 'develop',
+    docsBranch: 'main',
     docsDir: 'docs',
     contributors: false,
     navbar: [
