@@ -57,6 +57,14 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [Exporting](usage.md#export-rolls) / [importing rolls](usage.md#import-rolls)
 
 
+## Usage in the wild
+
+### Official
+
+* [Vue components](https://github.com/dice-roller/vue) - For Tailwind, Bootstrap, basic HTML, and renderless
+* [Vuepress plugin](https://github.com/dice-roller/vuepress-plugin) - Dice roller plugin used in this documentation
+
+
 ## Browser support
 
 This library uses ES6+ and native JS modules, which work in all the latest browsers, and Node.js.
