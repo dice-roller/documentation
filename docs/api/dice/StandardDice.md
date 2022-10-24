@@ -12,7 +12,7 @@ Represents a standard numerical die.
 **Kind**: global class  
 
 * [StandardDice](#StandardDice)
-    * [new StandardDice(sides, [qty], [modifiers], [min], [max])](#new_StandardDice_new)
+    * [new StandardDice(sides, [qty], [modifiers], [min], [max], [description])](#new_StandardDice_new)
     * [.average](#StandardDice+average) ⇒ <code>number</code>
     * [.modifiers](#StandardDice+modifiers) ⇒ <code>Map.&lt;string, Modifier&gt;</code> \| <code>null</code>
     * [.modifiers](#StandardDice+modifiers)
@@ -29,7 +29,7 @@ Represents a standard numerical die.
 
 <a name="new_StandardDice_new"></a>
 
-### new StandardDice(sides, [qty], [modifiers], [min], [max])
+### new StandardDice(sides, [qty], [modifiers], [min], [max], [description])
 Create a `StandardDice` instance.
 
 **Throws**:
@@ -45,6 +45,7 @@ Create a `StandardDice` instance.
 | [modifiers] | <code>Map.&lt;string, Modifier&gt;</code> \| <code>Array.&lt;Modifier&gt;</code> \| <code>Object</code> \| <code>null</code> | <code></code> | The modifiers that affect the die |
 | [min] | <code>number</code> \| <code>null</code> | <code>1</code> | The minimum possible roll value |
 | [max] | <code>number</code> \| <code>null</code> | <code></code> | The maximum possible roll value. Defaults to number of `sides` |
+| [description] | <code>Description</code> \| <code>string</code> \| <code>null</code> | <code></code> | The roll description. |
 
 <a name="StandardDice+average"></a>
 

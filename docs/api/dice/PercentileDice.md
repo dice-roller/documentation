@@ -13,13 +13,13 @@ Represents a percentile die.
 **Extends**: <code>StandardDice</code>  
 
 * [PercentileDice](#PercentileDice) ⇐ <code>StandardDice</code>
-    * [new PercentileDice([qty], [modifiers], [sidesAsNumber])](#new_PercentileDice_new)
+    * [new PercentileDice([qty], [modifiers], [sidesAsNumber], [description])](#new_PercentileDice_new)
     * [.name](#PercentileDice+name) ⇒ <code>string</code>
     * [.sides](#PercentileDice+sides) ⇒ <code>number</code> \| <code>string</code>
 
 <a name="new_PercentileDice_new"></a>
 
-### new PercentileDice([qty], [modifiers], [sidesAsNumber])
+### new PercentileDice([qty], [modifiers], [sidesAsNumber], [description])
 Create a `PercentileDice` instance.
 
 **Throws**:
@@ -32,6 +32,7 @@ Create a `PercentileDice` instance.
 | [qty] | <code>number</code> | <code>1</code> | The number of dice to roll (e.g. `4`) |
 | [modifiers] | <code>Map.&lt;string, Modifier&gt;</code> \| <code>Array.&lt;Modifier&gt;</code> \| <code>Object</code> \| <code>null</code> | <code></code> | The modifiers that affect the die |
 | [sidesAsNumber] | <code>boolean</code> | <code>false</code> | Whether to show the sides as `%` (default) or `100` |
+| [description] | <code>Description</code> \| <code>string</code> \| <code>null</code> | <code></code> | The roll description. |
 
 <a name="PercentileDice+name"></a>
 
