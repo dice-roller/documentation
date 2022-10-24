@@ -13,7 +13,7 @@ Represents a Fudge / Fate type die.
 **Extends**: <code>StandardDice</code>  
 
 * [FudgeDice](#FudgeDice) ⇐ <code>StandardDice</code>
-    * [new FudgeDice([nonBlanks], [qty], [modifiers])](#new_FudgeDice_new)
+    * [new FudgeDice([nonBlanks], [qty], [modifiers], [description])](#new_FudgeDice_new)
     * [.name](#FudgeDice+name) ⇒ <code>string</code>
     * [.nonBlanks](#FudgeDice+nonBlanks) ⇒ <code>number</code>
     * [.sides](#FudgeDice+sides) ⇒ <code>string</code>
@@ -21,7 +21,7 @@ Represents a Fudge / Fate type die.
 
 <a name="new_FudgeDice_new"></a>
 
-### new FudgeDice([nonBlanks], [qty], [modifiers])
+### new FudgeDice([nonBlanks], [qty], [modifiers], [description])
 Create a `FudgeDice` instance.
 
 **Throws**:
@@ -35,6 +35,7 @@ Create a `FudgeDice` instance.
 | [nonBlanks] | <code>number</code> | <code>2</code> | The number of sides each symbol should cover (`1` or `2`) |
 | [qty] | <code>number</code> | <code>1</code> | The number of dice to roll (e.g. `4`) |
 | [modifiers] | <code>Map.&lt;string, Modifier&gt;</code> \| <code>Array.&lt;Modifier&gt;</code> \| <code>Object</code> \| <code>null</code> | <code></code> | The modifiers that affect the die |
+| [description] | <code>Description</code> \| <code>string</code> \| <code>null</code> | <code></code> | The roll description. |
 
 <a name="FudgeDice+name"></a>
 

@@ -1,115 +1,183 @@
 exports.fileTree = [{
   'name': 'ComparePoint',
   'path': '/ComparePoint',
-  'fullPath': './docs/api/ComparePoint'
-}, {'name': 'DiceRoll', 'path': '/DiceRoll', 'fullPath': './docs/api/DiceRoll'}, {
-  'name': 'DiceRoller',
-  'path': '/DiceRoller',
-  'fullPath': './docs/api/DiceRoller'
-}, {'name': 'RollGroup', 'path': '/RollGroup', 'fullPath': './docs/api/RollGroup'}, {
+  'fullPath': 'src/ComparePoint',
+  'ext': '.js'
+}, {'name': 'Description', 'path': '/Description', 'fullPath': 'src/Description', 'ext': '.js'}, {
+  'name': 'DiceRoll',
+  'path': '/DiceRoll',
+  'fullPath': 'src/DiceRoll',
+  'ext': '.js'
+}, {'name': 'DiceRoller', 'path': '/DiceRoller', 'fullPath': 'src/DiceRoller', 'ext': '.js'}, {
+  'name': 'RollGroup',
+  'path': '/RollGroup',
+  'fullPath': 'src/RollGroup',
+  'ext': '.js'
+}, {
   'name': 'dice',
-  'children': [{'name': 'FudgeDice', 'path': '/FudgeDice', 'fullPath': 'dice/FudgeDice'}, {
+  'children': [{
+    'name': 'FudgeDice',
+    'path': '/FudgeDice',
+    'fullPath': 'src/dice/FudgeDice',
+    'ext': '.js'
+  }, {
     'name': 'PercentileDice',
     'path': '/PercentileDice',
-    'fullPath': 'dice/PercentileDice'
-  }, {'name': 'StandardDice', 'path': '/StandardDice', 'fullPath': 'dice/StandardDice'}]
+    'fullPath': 'src/dice/PercentileDice',
+    'ext': '.js'
+  }, {'name': 'StandardDice', 'path': '/StandardDice', 'fullPath': 'src/dice/StandardDice', 'ext': '.js'}]
 }, {
   'name': 'exceptions',
   'children': [{
     'name': 'CompareOperatorError',
     'path': '/CompareOperatorError',
-    'fullPath': 'exceptions/CompareOperatorError'
+    'fullPath': 'src/exceptions/CompareOperatorError',
+    'ext': '.js'
   }, {
     'name': 'DataFormatError',
     'path': '/DataFormatError',
-    'fullPath': 'exceptions/DataFormatError'
+    'fullPath': 'src/exceptions/DataFormatError',
+    'ext': '.js'
   }, {
     'name': 'DieActionValueError',
     'path': '/DieActionValueError',
-    'fullPath': 'exceptions/DieActionValueError'
+    'fullPath': 'src/exceptions/DieActionValueError',
+    'ext': '.js'
   }, {
     'name': 'NotationError',
     'path': '/NotationError',
-    'fullPath': 'exceptions/NotationError'
+    'fullPath': 'src/exceptions/NotationError',
+    'ext': '.js'
   }, {
     'name': 'RequiredArgumentError',
     'path': '/RequiredArgumentError',
-    'fullPath': 'exceptions/RequiredArgumentError'
+    'fullPath': 'src/exceptions/RequiredArgumentError',
+    'ext': '.js'
   }]
 }, {
   'name': 'modifiers',
   'children': [{
     'name': 'ComparisonModifier',
     'path': '/ComparisonModifier',
-    'fullPath': 'modifiers/ComparisonModifier'
+    'fullPath': 'src/modifiers/ComparisonModifier',
+    'ext': '.js'
   }, {
     'name': 'CriticalFailureModifier',
     'path': '/CriticalFailureModifier',
-    'fullPath': 'modifiers/CriticalFailureModifier'
+    'fullPath': 'src/modifiers/CriticalFailureModifier',
+    'ext': '.js'
   }, {
     'name': 'CriticalSuccessModifier',
     'path': '/CriticalSuccessModifier',
-    'fullPath': 'modifiers/CriticalSuccessModifier'
+    'fullPath': 'src/modifiers/CriticalSuccessModifier',
+    'ext': '.js'
   }, {
     'name': 'DropModifier',
     'path': '/DropModifier',
-    'fullPath': 'modifiers/DropModifier'
+    'fullPath': 'src/modifiers/DropModifier',
+    'ext': '.js'
   }, {
     'name': 'ExplodeModifier',
     'path': '/ExplodeModifier',
-    'fullPath': 'modifiers/ExplodeModifier'
-  }, {'name': 'KeepModifier', 'path': '/KeepModifier', 'fullPath': 'modifiers/KeepModifier'}, {
+    'fullPath': 'src/modifiers/ExplodeModifier',
+    'ext': '.js'
+  }, {
+    'name': 'KeepModifier',
+    'path': '/KeepModifier',
+    'fullPath': 'src/modifiers/KeepModifier',
+    'ext': '.js'
+  }, {
     'name': 'MaxModifier',
     'path': '/MaxModifier',
-    'fullPath': 'modifiers/MaxModifier'
-  }, {'name': 'MinModifier', 'path': '/MinModifier', 'fullPath': 'modifiers/MinModifier'}, {
+    'fullPath': 'src/modifiers/MaxModifier',
+    'ext': '.js'
+  }, {
+    'name': 'MinModifier',
+    'path': '/MinModifier',
+    'fullPath': 'src/modifiers/MinModifier',
+    'ext': '.js'
+  }, {
     'name': 'Modifier',
     'path': '/Modifier',
-    'fullPath': 'modifiers/Modifier'
+    'fullPath': 'src/modifiers/Modifier',
+    'ext': '.js'
   }, {
     'name': 'ReRollModifier',
     'path': '/ReRollModifier',
-    'fullPath': 'modifiers/ReRollModifier'
+    'fullPath': 'src/modifiers/ReRollModifier',
+    'ext': '.js'
   }, {
     'name': 'SortingModifier',
     'path': '/SortingModifier',
-    'fullPath': 'modifiers/SortingModifier'
+    'fullPath': 'src/modifiers/SortingModifier',
+    'ext': '.js'
   }, {
     'name': 'TargetModifier',
     'path': '/TargetModifier',
-    'fullPath': 'modifiers/TargetModifier'
-  }, {'name': 'modifier-flags', 'path': '/modifier-flags', 'fullPath': 'modifiers/modifier-flags'}]
+    'fullPath': 'src/modifiers/TargetModifier',
+    'ext': '.js'
+  }, {'name': 'modifier-flags', 'path': '/modifier-flags', 'fullPath': 'src/modifiers/modifier-flags', 'ext': '.js'}]
 }, {
   'name': 'parser',
-  'children': [{'name': 'Parser', 'path': '/Parser', 'fullPath': 'parser/Parser'}, {'name': 'grammars', 'children': []}]
+  'children': [{
+    'name': 'Parser',
+    'path': '/Parser',
+    'fullPath': 'src/parser/Parser',
+    'ext': '.js'
+  }, {
+    'name': 'grammars',
+    'children': [{
+      'name': 'grammar',
+      'path': '/grammar',
+      'fullPath': 'src/parser/grammars/grammar',
+      'ext': '.js'
+    }, {'name': 'grammar', 'path': '/grammar', 'fullPath': 'src/parser/grammars/grammar', 'ext': '.pegjs'}]
+  }]
 }, {
   'name': 'results',
   'children': [{
     'name': 'ResultGroup',
     'path': '/ResultGroup',
-    'fullPath': 'results/ResultGroup'
-  }, {'name': 'RollResult', 'path': '/RollResult', 'fullPath': 'results/RollResult'}, {
-    'name': 'RollResults',
-    'path': '/RollResults',
-    'fullPath': 'results/RollResults'
+    'fullPath': 'src/results/ResultGroup',
+    'ext': '.js'
+  }, {
+    'name': 'RollResult',
+    'path': '/RollResult',
+    'fullPath': 'src/results/RollResult',
+    'ext': '.js'
+  }, {'name': 'RollResults', 'path': '/RollResults', 'fullPath': 'src/results/RollResults', 'ext': '.js'}]
+}, {
+  'name': 'traits',
+  'children': [{
+    'name': 'HasDescription',
+    'path': '/HasDescription',
+    'fullPath': 'src/traits/HasDescription',
+    'ext': '.js'
   }]
 }, {
   'name': 'utilities',
   'children': [{
     'name': 'ExportFormats',
     'path': '/ExportFormats',
-    'fullPath': 'utilities/ExportFormats'
-  }, {'name': 'NumberGenerator', 'path': '/NumberGenerator', 'fullPath': 'utilities/NumberGenerator'}, {
-    'name': 'math',
-    'path': '/math',
-    'fullPath': 'utilities/math'
-  }, {'name': 'utils', 'path': '/utils', 'fullPath': 'utilities/utils'}]
+    'fullPath': 'src/utilities/ExportFormats',
+    'ext': '.js'
+  }, {
+    'name': 'NumberGenerator',
+    'path': '/NumberGenerator',
+    'fullPath': 'src/utilities/NumberGenerator',
+    'ext': '.js'
+  }, {'name': 'math', 'path': '/math', 'fullPath': 'src/utilities/math', 'ext': '.js'}, {
+    'name': 'utils',
+    'path': '/utils',
+    'fullPath': 'src/utilities/utils',
+    'ext': '.js'
+  }]
 }];
 exports.sidebarTree = (title = 'Mainpage') => ({
   '/api/': [{
     'text': 'API',
     'collapsable': false,
-    'children': [{link: '/api/', text: '' + title + ''}, '/api/ComparePoint.md', '/api/DiceRoll', '/api/DiceRoller', '/api/RollGroup']
+    'children': [{link: '/api/', text: '' + title + ''}, '/api/ComparePoint', '/api/Description', '/api/DiceRoll', '/api/DiceRoller', '/api/RollGroup']
   }, {
     'text': 'dice',
     'collapsable': false,
@@ -126,7 +194,7 @@ exports.sidebarTree = (title = 'Mainpage') => ({
     'text': 'results',
     'collapsable': false,
     'children': ['/api/results/ResultGroup', '/api/results/RollResult', '/api/results/RollResults']
-  }, {
+  }, {'text': 'traits', 'collapsable': false, 'children': ['/api/traits/HasDescription']}, {
     'text': 'utilities',
     'collapsable': false,
     'children': ['/api/utilities/ExportFormats', '/api/utilities/NumberGenerator', '/api/utilities/math', '/api/utilities/utils']

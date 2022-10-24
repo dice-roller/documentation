@@ -43,6 +43,7 @@ export default defineUserConfig({
               '/guide/notation/dice',
               '/guide/notation/modifiers',
               '/guide/notation/group-rolls',
+              '/guide/notation/roll-descriptions',
               '/guide/notation/maths',
             ],
             collapsible: true,

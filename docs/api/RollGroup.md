@@ -15,7 +15,7 @@ A sub-roll is just simple roll notation (e.g. `4d6`, `2d10*3`, `5/10d20`)
 **Since**: 4.5.0  
 
 * [RollGroup](#RollGroup)
-    * [new RollGroup([expressions], [modifiers])](#new_RollGroup_new)
+    * [new RollGroup([expressions], [modifiers], [description])](#new_RollGroup_new)
     * [.expressions](#RollGroup+expressions) ⇒ <code>Array.&lt;Array.&lt;(StandardDice\|string\|number)&gt;&gt;</code>
     * [.expressions](#RollGroup+expressions)
     * [.modifiers](#RollGroup+modifiers) ⇒ <code>Map.&lt;string, Modifier&gt;</code> \| <code>null</code>
@@ -27,7 +27,7 @@ A sub-roll is just simple roll notation (e.g. `4d6`, `2d10*3`, `5/10d20`)
 
 <a name="new_RollGroup_new"></a>
 
-### new RollGroup([expressions], [modifiers])
+### new RollGroup([expressions], [modifiers], [description])
 Create a `RollGroup` instance.
 
 
@@ -35,6 +35,7 @@ Create a `RollGroup` instance.
 | --- | --- | --- | --- |
 | [expressions] | <code>Array.&lt;Array.&lt;(StandardDice\|string\|number)&gt;&gt;</code> | <code>[]</code> | List of sub-rolls |
 | [modifiers] | <code>Map.&lt;string, Modifier&gt;</code> \| <code>Array.&lt;Modifier&gt;</code> \| <code>Object</code> \| <code>null</code> | <code>[]</code> | The modifiers that affect the group |
+| [description] | <code>Description</code> \| <code>string</code> \| <code>null</code> | <code></code> | The roll description. |
 
 **Example** *(&#x60;{4d6+4, 2d%/5}k1&#x60;)*  
 ```js
