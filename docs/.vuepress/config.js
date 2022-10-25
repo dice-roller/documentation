@@ -31,6 +31,7 @@ export default defineUserConfig({
             children: [
               '/guide/',
               '/guide/getting-started',
+              '/guide/cli',
               '/guide/usage',
               '/guide/customisation',
             ],

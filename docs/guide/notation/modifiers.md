@@ -26,7 +26,7 @@ These two are equivalent, and the [explode modifier](#exploding-cp) will always 
 :::
 
 
-## Min (`min{n}`) <Badge text="New" vertical="middle"/>
+## Min (`min{n}`)
 
 **Order:** 1
 
@@ -53,7 +53,7 @@ e.g. `d6min3` 4, 5, and 6 only have a  _1 in 6 (16.66%)_ chance of being rolled,
 :::
 
 
-## Max (`max{n}`) <Badge text="New" vertical="middle"/>
+## Max (`max{n}`)
 
 **Order:** 2
 

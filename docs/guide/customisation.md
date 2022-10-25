@@ -5,7 +5,7 @@ next: /guide/notation/
 
 # Customisation
 
-## Random number generator <Badge text="New" vertical="middle"/>
+## Random number generator
 
 By default, the dice rolls use Javascript's built-in [`Math.random()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) to generate the roll values. This is a form of [psudeo random number generation](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) (PRNG).
 

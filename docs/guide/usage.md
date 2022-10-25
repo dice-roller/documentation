@@ -38,7 +38,7 @@ const roll = new DiceRoll('4d8+1');
 console.log(roll.total); // e.g. 26
 ```
 
-### Min / max / average <Badge text="New" vertical="middle"/>
+### Min / max / average
 
 The `DiceRoll` object has the following properties for comparative totals:
 

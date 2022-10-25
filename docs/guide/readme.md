@@ -37,8 +37,8 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [Re-roll](notation/modifiers.md#re-roll-r--ro--rcp--rocp)
 * [Target success](notation/modifiers.md#target-success--dice-pool-cp)
 * [Target failure](notation/modifiers.md#target-failures--dice-pool-fcp)
-* [Max](notation/modifiers.md#max-max-n) <Badge text="New" vertical="middle"/>
-* [Min](notation/modifiers.md#min-min-n) <Badge text="New" vertical="middle"/>
+* [Max](notation/modifiers.md#max-max-n)
+* [Min](notation/modifiers.md#min-min-n)
 * [Sort dice](notation/modifiers.md#sorting-s--sa--sd)
 
 **Advanced**
@@ -49,11 +49,11 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 * [Operators](notation/maths.md#operators)
 * [Functions](notation/maths.md#functions)
-* [Easy min / max / average total calculations](usage.md#roll-totals) <Badge text="New" vertical="middle"/>
+* [Easy min / max / average total calculations](usage.md#roll-totals)
 
 **Customisation**
 
-* [Random number generator](customisation.md#random-number-generator) <Badge text="New" vertical="middle"/>
+* [Random number generator](customisation.md#random-number-generator)
 * [Exporting](usage.md#export-rolls) / [importing rolls](usage.md#import-rolls)
 
 
@@ -63,6 +63,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 * [Vue components](https://github.com/dice-roller/vue) - For Tailwind, Bootstrap, basic HTML, and renderless
 * [Vuepress plugin](https://github.com/dice-roller/vuepress-plugin) - Dice roller plugin used in this documentation
+* [CLI](https://github.com/dice-roller/cli) <Badge text="New" vertical="middle"/> - Command Line Interface for rolling dice
 
 
 ## Browser support
