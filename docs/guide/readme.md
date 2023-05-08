@@ -25,21 +25,22 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 * [Standard dice](notation/dice.md#standard-dn)
 * [Percentile dice](notation/dice.md#percentile-dice-d)
-* [Fudge / fate dice](notation/dice.md#fudge--fate-dice-df--df2--df1)
+* [Fudge / fate dice](notation/dice.md#fudge-fate-dice-df-df-2-df-1)
 
 **Roll modifiers**
 
-* [Exploding](notation/modifiers.md#exploding---cp)
-* [Compounding](notation/modifiers.md#compounding---cp)
-* [Penetrating](notation/modifiers.md#penetrating-p--p--pcp--pcp)
-* [Keep rolls](notation/modifiers.md#keep-kn--khn--kln)
-* [Drop rolls](notation/modifiers.md#drop-dn--dhn--dln)
-* [Re-roll](notation/modifiers.md#re-roll-r--ro--rcp--rocp)
-* [Target success](notation/modifiers.md#target-success--dice-pool-cp)
-* [Target failure](notation/modifiers.md#target-failures--dice-pool-fcp)
+* [Exploding](notation/modifiers.md#exploding-cp)
+* [Compounding](notation/modifiers.md#compounding-cp)
+* [Penetrating](notation/modifiers.md#penetrating-p-p-p-cp-p-cp)
+* [Keep rolls](notation/modifiers.md#keep-k-n-kh-n-kl-n)
+* [Drop rolls](notation/modifiers.md#drop-d-n-dh-n-dl-n)
+* [Re-roll](notation/modifiers.md#re-roll-r-ro-r-cp-ro-cp)
+* [Unique](notation/modifiers.md#unique-u-uo-u-cp-uo-cp) <Badge text="New" vertical="middle"/>
+* [Target success](notation/modifiers.md#target-success-dice-pool-cp)
+* [Target failure](notation/modifiers.md#target-failures-dice-pool-f-cp)
 * [Max](notation/modifiers.md#max-max-n)
 * [Min](notation/modifiers.md#min-min-n)
-* [Sort dice](notation/modifiers.md#sorting-s--sa--sd)
+* [Sort dice](notation/modifiers.md#sorting-s-sa-sd)
 
 **Advanced**
 
