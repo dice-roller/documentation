@@ -10,6 +10,12 @@ export default defineUserConfig({
   title: 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
   base: `/${process.env.BASE_PATH || 'documentation'}/`,
+  head: [
+    [
+      'link',
+      { rel: 'icon', href: '/dice-roller-logo.png' }
+    ],
+  ],
   theme: defaultTheme({
     logo: '/hero.svg',
     repo: 'dice-roller/rpg-dice-roller',
