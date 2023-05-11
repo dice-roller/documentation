@@ -126,7 +126,7 @@ To stop infinite loops, when running something like `d10!>0`, modifiers are limi
 * `1d10!>0` would return 1001 rolls; the initial roll, and 1000 exploded rolls.
 * `2d10!>0` would return 2002 rolls; the initial 2 rolls, and 100 exploded rolls per initial roll.
 
-This also applies to [Compounding](#compounding-cp), [Penetrating](#penetrating-p-p-p-cp-p-cp), and [Re-roll](#re-roll-r-ro-r-cp-ro-cp) modifiers.
+This also applies to [Compounding](#compounding-cp), [Penetrating](#penetrating-p-p-p-cp-p-cp), [Re-roll](#re-roll-r-ro-r-cp-ro-cp), and [Unique](#unique-u-uo-u-cp-uo-cp) modifiers.
 :::
 
 
@@ -223,9 +223,9 @@ d6ro
 If you want to change the number that a dice will re-roll on, you can use a [Compare Point](#compare-point):
 
 ```javascript
-2d6r=5   // re-roll on any rolls equal to 5
+2d6r=5    // re-roll on any rolls equal to 5
 2d6ro>4   // re-roll once on any roll greater than 4
-4d10r<=3 // re-roll on any roll less than or equal to 3
+4d10r<=3  // re-roll on any roll less than or equal to 3
 ```
 
 Read more about [Compare Points below](#compare-point).
@@ -236,15 +236,62 @@ Read more about [Compare Points below](#compare-point).
 To stop infinite loops, when running something like `d10r>0`, modifiers are limited to 1000 iterations per dice roll:
 
 * `1d10r>0`would only re-roll 1000 times.
-* `2d10r>0` would re-roll 2000; once for each initial roll.
+* `2d10r>0` would re-roll 2000; 1000 for each initial roll.
 
-This also applies to [Exploding](#exploding-cp), [Compounding](#compounding-cp), and [Penetrating](#penetrating-p-p-p-cp-p-cp) modifiers.
+This also applies to [Exploding](#exploding-cp), [Compounding](#compounding-cp), [Penetrating](#penetrating-p-p-p-cp-p-cp), and [Unique](#unique-u-uo-u-cp-uo-cp) modifiers.
+:::
+
+
+## Unique (`u` / `uo` / `u{cp}` / `uo{cp}`) <Badge text="New" vertical="middle"/>
+
+**Order:** 5
+
+The unique modifier wil re-roll any dice where the value is not unique. It will keep rolling until a unique value is rolled, disregarding any of the previous rolls.
+
+You can keep rolls unique by adding a `u` after the die notation:
+
+```javascript
+// re-roll any duplicate rolls and keep re-rolling until they are unique
+2d10u
+```
+
+If you only want to roll a duplicate die once, the use `uo`:
+
+```javascript
+// re-roll any duplicates but only once, even if the re-roll is not unique
+2d10uo
+```
+
+This could end up with duplicates, if the re-roll also rolls a duplicate.
+
+If you only want to re-roll duplicates if they match certain criteria (ie. below a certain threshold, or equal a certain value), you can use a [Compare Point](#compare-point):
+
+```javascript
+4d6u=5    // Only re-roll duplicates that roll a 5
+3d8ro>6   // Re-roll duplicates once on any roll greater than 6
+10d4u<=2  // Re-roll any duplicates less than or equal to 2
+```
+
+Read more about [Compare Points below](#compare-point).
+
+::: roll 5d4u :::
+
+::: tip Iteration limit
+When using the unique modifier on a die set that has more rolls than the number of sides on the die, it is impossible for all the rolls to be unique.
+
+For example, `5d3u` will produce more results than possible unique values, and could result in an infinite re-roll loop.
+
+To stop infinite loops, modifiers are limited to 1000 iterations per dice roll:
+
+* `5d3u` would only re-roll a maximum of 4000 times; 1000 for each initial roll (excluding the first).
+
+This also applies to [Exploding](#exploding-cp), [Compounding](#compounding-cp), [Penetrating](#penetrating-p-p-p-cp-p-cp), and [Re-roll](#re-roll-r-ro-r-cp-ro-cp) modifiers.
 :::
 
 
 ## Keep (`k{n}` / `kh{n}` / `kl{n}`)
 
-**Order:** 5
+**Order:** 6
 
 The keep modifier allows you to roll a collection of dice but to disregard all except for the highest or lowest result(s).
 It is the opposite of the [Drop modifier](#drop-dn-dhn-dln).
@@ -295,7 +342,7 @@ The `k1` will drop the `6` and `1`, and the `d1` will also drop the `6`.
 
 ## Drop (`d{n}` / `dh{n}` / `dl{n}`)
 
-**Order:** 6
+**Order:** 7
 
 Sometimes you may want to roll a certain number of dice, but "drop" or remove high or low rolls from the results.
 It is the opposite of the [Keep modifier](#keep-kn-khn-kln).
@@ -334,7 +381,7 @@ See the note in the [Keep modifier section](#keep-kn-khn-kln) regarding using th
 
 ## Target success / Dice pool (`{cp}`)
 
-**Order:** 7
+**Order:** 8
 
 Some systems use dice pool, or success counts, whereby the total is equal to the quantity of dice rolled that meet a fixed condition, rather than the total value of the rolls.
 
@@ -389,7 +436,7 @@ But you can work around this by specifying the Target compare point first:
 
 ## Target Failures / Dice Pool (`f{cp}`)
 
-**Order:** 7
+**Order:** 8
 
 Sometimes, when counting success, you also need to consider failures.
 
@@ -409,7 +456,7 @@ The Failure modifier is a [Compare Point](#compare-point), preceded with the low
 
 ## Critical Success (`cs{cp}`)
 
-**Order:** 8
+**Order:** 9
 
 ::: tip
 This is purely aesthetic and makes no functional difference to the rolls or their values.
@@ -438,7 +485,7 @@ The roll result output will look something like this:
 
 ## Critical Failure (`cf{cp}`)
 
-**Order:** 9
+**Order:** 10
 
 ::: tip
 This is purely aesthetic and makes no functional difference to the rolls or their values.
@@ -467,7 +514,7 @@ The roll result output will look something like this:
 
 ## Sorting (`s` / `sa` / `sd`)
 
-**Order:** 10
+**Order:** 11
 
 You can sort the dice rolls, so that they are displayed in numerical order by appending the `s` flag after the dice notation.
 
