@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="http://dice-roller.github.io/documentation/dice-roller-logo.png" alt="RPG Dice Roller" style="max-width: 100%;" width="200"/>
+    <img src="https://dice-roller.github.io/documentation/dice-roller-logo.png" alt="RPG Dice Roller" style="max-width: 100%;" width="200"/>
 </p>
 
 # RPG Dice Roller Documentation
