@@ -13,7 +13,7 @@ export default defineUserConfig({
   head: [
     [
       'link',
-      { rel: 'icon', href: '/dice-roller-logo.png' }
+      { rel: 'icon', href: 'dice-roller-logo.png' }
     ],
   ],
   theme: defaultTheme({
