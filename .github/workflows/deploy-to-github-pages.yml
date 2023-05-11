@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.4.1
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 'lts/*'
 
       - name: Build
         run: |
@@ -27,7 +27,7 @@ jobs:
           BASE_PATH=${{ env.BASE_PATH }} npm run docs:build
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.7
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
           folder: ${{ env.DIST_FOLDER }}
