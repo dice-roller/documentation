@@ -15,10 +15,11 @@ features:
   details: Roll notation based on a standard syntax, with some extra bells and whistles
 ---
 
+[![npm (scoped)](https://img.shields.io/npm/v/@dice-roller/rpg-dice-roller?label=version)](https://www.npmjs.com/package/@dice-roller/rpg-dice-roller)
 [![Build Status](https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml/badge.svg)](https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml)
 [![Coverage Status](https://coveralls.io/repos/github/dice-roller/rpg-dice-roller/badge.svg?branch=main)](https://coveralls.io/github/dice-roller/rpg-dice-roller?branch=main)
-![Tyepscript friendly](https://img.shields.io/badge/typescript-supported-blue)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](licence.txt)
+![npm type definitions](https://img.shields.io/npm/types/@dice-roller/rpg-dice-roller)
+[![License](https://img.shields.io/npm/l/@dice-roller/rpg-dice-roller)](https://github.com/dice-roller/rpg-dice-roller/blob/develop/licence.txt)
 [![npm downloads](https://img.shields.io/npm/dm/@dice-roller/rpg-dice-roller)](https://www.npmjs.com/package/@dice-roller/rpg-dice-roller)
 
 

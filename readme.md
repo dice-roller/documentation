@@ -4,7 +4,7 @@
 
 # RPG Dice Roller Documentation
 
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/npm/l/@dice-roller/rpg-dice-roller)](./LICENSE)
 
 The documentation for the [rpg-dice-roller](https://github.com/dice-roller/rpg-dice-roller).
 
