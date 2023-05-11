@@ -3,12 +3,12 @@ exports.fileTree = [{
   'path': '/ComparePoint',
   'fullPath': 'src/ComparePoint',
   'ext': '.js'
-}, {'name': 'Description', 'path': '/Description', 'fullPath': 'src/Description', 'ext': '.js'}, {
+}, { 'name': 'Description', 'path': '/Description', 'fullPath': 'src/Description', 'ext': '.js' }, {
   'name': 'DiceRoll',
   'path': '/DiceRoll',
   'fullPath': 'src/DiceRoll',
   'ext': '.js'
-}, {'name': 'DiceRoller', 'path': '/DiceRoller', 'fullPath': 'src/DiceRoller', 'ext': '.js'}, {
+}, { 'name': 'DiceRoller', 'path': '/DiceRoller', 'fullPath': 'src/DiceRoller', 'ext': '.js' }, {
   'name': 'RollGroup',
   'path': '/RollGroup',
   'fullPath': 'src/RollGroup',
@@ -25,7 +25,7 @@ exports.fileTree = [{
     'path': '/PercentileDice',
     'fullPath': 'src/dice/PercentileDice',
     'ext': '.js'
-  }, {'name': 'StandardDice', 'path': '/StandardDice', 'fullPath': 'src/dice/StandardDice', 'ext': '.js'}]
+  }, { 'name': 'StandardDice', 'path': '/StandardDice', 'fullPath': 'src/dice/StandardDice', 'ext': '.js' }]
 }, {
   'name': 'exceptions',
   'children': [{
@@ -116,7 +116,12 @@ exports.fileTree = [{
     'path': '/TargetModifier',
     'fullPath': 'src/modifiers/TargetModifier',
     'ext': '.js'
-  }, {'name': 'modifier-flags', 'path': '/modifier-flags', 'fullPath': 'src/modifiers/modifier-flags', 'ext': '.js'}]
+  }, {
+    'name': 'UniqueModifier',
+    'path': '/UniqueModifier',
+    'fullPath': 'src/modifiers/UniqueModifier',
+    'ext': '.js'
+  }, { 'name': 'modifier-flags', 'path': '/modifier-flags', 'fullPath': 'src/modifiers/modifier-flags', 'ext': '.js' }]
 }, {
   'name': 'parser',
   'children': [{
@@ -124,15 +129,7 @@ exports.fileTree = [{
     'path': '/Parser',
     'fullPath': 'src/parser/Parser',
     'ext': '.js'
-  }, {
-    'name': 'grammars',
-    'children': [{
-      'name': 'grammar',
-      'path': '/grammar',
-      'fullPath': 'src/parser/grammars/grammar',
-      'ext': '.js'
-    }, {'name': 'grammar', 'path': '/grammar', 'fullPath': 'src/parser/grammars/grammar', 'ext': '.pegjs'}]
-  }]
+  }, { 'name': 'grammars', 'children': [] }]
 }, {
   'name': 'results',
   'children': [{
@@ -145,7 +142,7 @@ exports.fileTree = [{
     'path': '/RollResult',
     'fullPath': 'src/results/RollResult',
     'ext': '.js'
-  }, {'name': 'RollResults', 'path': '/RollResults', 'fullPath': 'src/results/RollResults', 'ext': '.js'}]
+  }, { 'name': 'RollResults', 'path': '/RollResults', 'fullPath': 'src/results/RollResults', 'ext': '.js' }]
 }, {
   'name': 'traits',
   'children': [{
@@ -166,7 +163,7 @@ exports.fileTree = [{
     'path': '/NumberGenerator',
     'fullPath': 'src/utilities/NumberGenerator',
     'ext': '.js'
-  }, {'name': 'math', 'path': '/math', 'fullPath': 'src/utilities/math', 'ext': '.js'}, {
+  }, { 'name': 'math', 'path': '/math', 'fullPath': 'src/utilities/math', 'ext': '.js' }, {
     'name': 'utils',
     'path': '/utils',
     'fullPath': 'src/utilities/utils',
@@ -189,8 +186,8 @@ exports.sidebarTree = (title = 'Mainpage') => ({
   }, {
     'text': 'modifiers',
     'collapsable': false,
-    'children': ['/api/modifiers/ComparisonModifier', '/api/modifiers/CriticalFailureModifier', '/api/modifiers/CriticalSuccessModifier', '/api/modifiers/DropModifier', '/api/modifiers/ExplodeModifier', '/api/modifiers/KeepModifier', '/api/modifiers/MaxModifier', '/api/modifiers/MinModifier', '/api/modifiers/Modifier', '/api/modifiers/ReRollModifier', '/api/modifiers/SortingModifier', '/api/modifiers/TargetModifier', '/api/modifiers/modifier-flags']
-  }, {'text': 'parser', 'collapsable': false, 'children': ['/api/parser/Parser']}, {
+    'children': ['/api/modifiers/ComparisonModifier', '/api/modifiers/CriticalFailureModifier', '/api/modifiers/CriticalSuccessModifier', '/api/modifiers/DropModifier', '/api/modifiers/ExplodeModifier', '/api/modifiers/KeepModifier', '/api/modifiers/MaxModifier', '/api/modifiers/MinModifier', '/api/modifiers/Modifier', '/api/modifiers/ReRollModifier', '/api/modifiers/SortingModifier', '/api/modifiers/TargetModifier', '/api/modifiers/UniqueModifier', '/api/modifiers/modifier-flags']
+  }, { 'text': 'parser', 'collapsable': false, 'children': ['/api/parser/Parser'] }, {
     'text': 'results',
     'collapsable': false,
     'children': ['/api/results/ResultGroup', '/api/results/RollResult', '/api/results/RollResults']
