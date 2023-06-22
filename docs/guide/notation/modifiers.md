@@ -44,7 +44,7 @@ For example:
 4d6min3: [3^, 4, 3, 3^] = 13
 ```
 
-::: roll 4d6min3 :::
+::: roller 4d6min3 :::
 
 ::: tip Statistic probability
 It's worth noting that it is statistically more likely to roll the minimum value than any others.
@@ -71,7 +71,7 @@ For example:
 4d6max3: [3v, 3v, 3, 2] = 11
 ```
 
-::: roll 4d6max3 :::
+::: roller 4d6max3 :::
 
 ::: tip Statistic probability
 It's worth noting that it is statistically more likely to roll the maximum value than any others.
@@ -106,7 +106,7 @@ If you want to change the number that a die will explode on, you can use a [Comp
 
 Read more about [Compare Points below](#compare-point).
 
-::: roll 4d10!<=3 :::
+::: roller 4d10!<=3 :::
 
 ::: warning `!=` (Not equal) compare point with exploding dice
 If you want a die that only explodes on a specific value, the `!=` (Not equal) operator will **not** work here, and you must use the alternative ["not equal to" operator](#not-equal-to) instead, `<>`:
@@ -152,7 +152,7 @@ You can also use [Compare Points](#compare-point) to change when a die will comp
 4d10!!<=3 // compound on any roll less than or equal to 3
 ```
 
-::: roll 4d10!!<=3 :::
+::: roller 4d10!!<=3 :::
 
 
 ### Penetrating (`!p` / `!!p` / `!p{cp}` / `!!p{cp}`)
@@ -195,7 +195,7 @@ You can also use [Compare Points](#compare-point) to change when a dice will pen
 4d10!p<=3 // penetrate on any roll less than or equal to 3
 ```
 
-::: roll 4d10!p<=3 :::
+::: roller 4d10!p<=3 :::
 
 
 ## Re-roll (`r` / `ro` / `r{cp}` / `ro{cp}`)
@@ -230,7 +230,7 @@ If you want to change the number that a dice will re-roll on, you can use a [Com
 
 Read more about [Compare Points below](#compare-point).
 
-::: roll 4d10r<=3 :::
+::: roller 4d10r<=3 :::
 
 ::: tip Iteration limit
 To stop infinite loops, when running something like `d10r>0`, modifiers are limited to 1000 iterations per dice roll:
@@ -274,7 +274,7 @@ If you only want to re-roll duplicates if they match certain criteria (ie. below
 
 Read more about [Compare Points below](#compare-point).
 
-::: roll 5d4u :::
+::: roller 5d4u :::
 
 ::: tip Iteration limit
 When using the unique modifier on a die set that has more rolls than the number of sides on the die, it is impossible for all the rolls to be unique.
@@ -314,7 +314,7 @@ When outputting the roll, the kept rolls aren't modified, but the dropped rolls 
 6d8k3: [3d, 6, 7, 2d, 5, 4d] = 9
 ```
 
-::: roll 6d8k3 :::
+::: roller 6d8k3 :::
 
 ::: tip Using Drop and Keep modifiers together
 The keep and [drop](#drop-dn-dhn-dln) modifiers work really well together, but there are some caveats.
@@ -372,7 +372,7 @@ You can also use "drop lowest" and "drop highest" modifiers together:
 4d10dh1dl2: [5, 3d, 7, 8d] = 12
 ```
 
-::: roll 4d10dh1dl2 :::
+::: roller 4d10dh1dl2 :::
 
 ::: tip Using Drop and Keep modifiers together
 See the note in the [Keep modifier section](#keep-kn-khn-kln) regarding using the two together
@@ -431,7 +431,7 @@ But you can work around this by specifying the Target compare point first:
 ```
 :::
 
-::: roll 6d10<=4 :::
+::: roller 6d10<=4 :::
 
 
 ## Target Failures / Dice Pool (`f{cp}`)
@@ -451,7 +451,7 @@ The Failure modifier is a [Compare Point](#compare-point), preceded with the low
 4d6>4f<3: [2_, 5*, 4, 5*] = 1
 ```
 
-::: roll 4d6>4f<3 :::
+::: roller 4d6>4f<3 :::
 
 
 ## Critical Success (`cs{cp}`)
@@ -480,7 +480,7 @@ The roll result output will look something like this:
 5d20cs>=16: [3, 20**, 18**, 15, 6] = 62
 ```
 
-::: roll 5d20cs>=16 :::
+::: roller 5d20cs>=16 :::
 
 
 ## Critical Failure (`cf{cp}`)
@@ -509,7 +509,7 @@ The roll result output will look something like this:
 5d20cf<=6: [3__, 20, 18, 15, 6__] = 62
 ```
 
-::: roll 5d20cf<=6 :::
+::: roller 5d20cf<=6 :::
 
 
 ## Sorting (`s` / `sa` / `sd`)
@@ -527,7 +527,7 @@ The default order is ascending, but you can specify the sort order using `sa` an
 4d6sd: [5, 4, 3, 1] // sort the results descending
 ```
 
-::: roll 4d6sd :::
+::: roller 4d6sd :::
 
 
 ## Compare point
@@ -564,7 +564,7 @@ d6!<>4   // roll a d6 and explode on any roll not equal to 4
 d4r<3    // roll a d4 and re-roll anything less than 3
 ```
 
-::: roll d4r<3 :::
+::: roller d4r<3 :::
 
 
 ### Not equal to (`!=` | `<>`)

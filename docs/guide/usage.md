@@ -432,7 +432,7 @@ console.log(`Average total: ${roll.averageTotal}`);
 
 ## Try it yourself
 
-::: roll :::
+::: roller :::
 
 Check the [notation](./notation/readme.md) section for more examples.
 

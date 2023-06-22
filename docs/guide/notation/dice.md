@@ -22,7 +22,7 @@ d6    // roll a single 6 sided dice
 4d10  // roll a 10 sided dice 4 times and add the results together
 ```
 
-::: roll 4d10 :::
+::: roller 4d10 :::
 
 
 ## Percentile dice (`d%`)
@@ -38,7 +38,7 @@ Is equivalent to:
 4d100  // roll a 100 sided die 4 times and add the results together
 ```
 
-::: roll 4d% :::
+::: roller 4d% :::
 
 
 ## Fudge / Fate dice (`dF` / `dF.2` / `dF.1`)
@@ -54,4 +54,4 @@ dF.1  // roll the variant Fudge dice
 4dF   // Roll a standard Fudge die 4 times and add the results together
 ```
 
-::: roll 4dF :::
+::: roller 4dF :::

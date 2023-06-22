@@ -26,7 +26,7 @@ The notation can be split into several types:
 
 ## Try it out
 
-::: roll 4d6d1 + 5 :::
+::: roller 4d6d1 + 5 :::
 
 
 ## Reference

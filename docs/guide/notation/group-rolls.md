@@ -31,7 +31,7 @@ Without modifiers, single sub-rolls are functionally the same as a standard expr
 ```
 :::
 
-::: roll {4d6, 2d10, d4} :::
+::: roller {4d6, 2d10, d4} :::
 
 
 ## Modifiers
@@ -44,7 +44,7 @@ The functionality of them differs slightly when used with roll groups.
 If you haven't already, we suggest you read [how modifiers work](./modifiers.md) with standard expressions.
 :::
 
-::: roll {4d10+5d6}k2 :::
+::: roller {4d10+5d6}k2 :::
 
 
 ### Keep (`k{n}` / `kh{n}` / `kl{n}`)
@@ -63,7 +63,7 @@ For a single sub-roll, it will keep the specified number of individual _die roll
 {4d10*(2+5d6)}k2: {[8, 1d, 4d, 1d]*(2+[1d, 6, 1d, 5d, 3d])} = 64
 ```
 
-::: roll {4d10*(2+5d6)}k2 :::
+::: roller {4d10*(2+5d6)}k2 :::
 
 
 #### Multiple sub-rolls
@@ -78,7 +78,7 @@ For multiple sub-rolls, it will keep the specified number of _sub-rolls_ based o
 {5+d10, 3d4*2}k1: {(5+[8])d, [3, 2, 2]*2} = 14
 ```
 
-::: roll {4d10, 5d6, 2d10}k2 :::
+::: roller {4d10, 5d6, 2d10}k2 :::
 
 
 ### Drop (`d{n}` / `dh{n}` / `dl{n}`)
@@ -97,7 +97,7 @@ For a single sub-roll, it will keep the specified number of individual _die roll
 {4d6+2d8-3d30}d3: {[3d, 5, 3, 2d]+[7, 4]-[2d, 14, 7]} = −2
 ```
 
-::: roll {4d6+2d8-3d30}d3 :::
+::: roller {4d6+2d8-3d30}d3 :::
 
 
 #### Multiple sub-rolls
@@ -112,7 +112,7 @@ For multiple sub-rolls, it will keep the specified number of _sub-rolls_ based o
 {5+d10, 3d4*2}d1: {(5+[8])d, [3, 2, 2]*2} = 14
 ```
 
-::: roll {4d10, 5d6, 2d10}d2 :::
+::: roller {4d10, 5d6, 2d10}d2 :::
 
 
 ### Target Success / Dice pool (`{cp}`)
@@ -131,7 +131,7 @@ Single sub-rolls, will only ever return a result of `1` or `0`:
 {3d20+5}>40: {([11, 7, 19]+5)*} = 1
 ```
 
-::: roll {3d20+5}>21 :::
+::: roller {3d20+5}>21 :::
 
 
 #### Multiple sub-rolls
@@ -147,7 +147,7 @@ The above has `2` successes because;
 * The second sub-roll, `3d20+3`, rolled `[17, 5, 20]+3 = 45` <Badge text="Success" vertical="middle"/>
 * The third sub-roll, `5d10+1`, rolled `[7, 9, 6, 10, 8]+1 = 41` <Badge text="Success" vertical="middle"/>
 
-::: roll {4d6+2d8, 3d20+3, 5d10+1}>40 :::
+::: roller {4d6+2d8, 3d20+3, 5d10+1}>40 :::
 
 
 ### Target Failure / Dice Pool (`f{cp}`)
@@ -171,7 +171,7 @@ Single sub-rolls, will only ever return a result of `1`, `-1`, or `0`:
 {3d10+5}>30f<15: {[5, 3, 1]+5} = -1
 ```
 
-::: roll {3d10+5}>30f<15 :::
+::: roller {3d10+5}>30f<15 :::
 
 
 #### Multiple sub-rolls
@@ -187,7 +187,7 @@ The above has `1` success because;
 * The second sub-roll, `3d20+3`, rolled `[17, 5, 20]+3 = 45` <Badge text="Success" vertical="middle"/>
 * The third sub-roll, `5d10+1`, rolled `[7, 9, 6, 10, 8]+1 = 41` <Badge text="Success" vertical="middle"/>
 
-::: roll {4d6+2d8, 3d20+3, 5d10+1}>40f<30 :::
+::: roller {4d6+2d8, 3d20+3, 5d10+1}>40f<30 :::
 
 
 ### Sorting (`s` / `sa` / `sd`)
@@ -210,7 +210,7 @@ For a single sub-roll, it will sort the individual rolls:
 {4d6+4}sd: {[5, 4, 3, 1]+4} = 17
 ```
 
-::: roll {4d6 + 4}s :::
+::: roller {4d6 + 4}s :::
 
 
 #### Multiple sub-rolls
@@ -228,4 +228,4 @@ For multiple sub-rolls, it sorts both the individual rolls, and then the sub-rol
 {4d6/2, 3d4+3, 2d10}sd: {[3, 2, 4]+5, [8, 4], [4, 3, 5, 1]/2} = 32.5
 ```
 
-::: roll {4d6/2, 3d4+3, 2d10}s :::
+::: roller {4d6/2, 3d4+3, 2d10}s :::

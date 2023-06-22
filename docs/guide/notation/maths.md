@@ -22,7 +22,7 @@ You can even use them to determine the number of dice to roll, or how many sides
 3d(2*6)  // multiple 2 by 6 (`12`) and roll a dice with that many sides 3 times
 ```
 
-::: roll 3d(2*6) :::
+::: roller 3d(2*6) :::
 
 ## Parenthesis
 
@@ -33,7 +33,7 @@ Parenthesis are recognised anywhere in notations to group sections and define th
 (1d6+2)*3: ([4]+2)*3 = 18
 ```
 
-::: roll (1d6+2)*3 :::
+::: roller (1d6+2)*3 :::
 
 
 ## Functions
@@ -55,7 +55,7 @@ sqrt(4d10/3): sqrt([3, 6, 1, 1]) = 1.91
 min(4d6, 2d10): min([3, 4, 1, 5], [10, 6]) = 13
 ```
 
-::: roll min(4d6, 2d10) :::
+::: roller min(4d6, 2d10) :::
 
 ::: warning Rounding negative numbers
 Rounding negative numbers is handled differently to Javascript's `Math.round()`.

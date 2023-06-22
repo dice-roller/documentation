@@ -27,6 +27,6 @@ features:
 
 Have a play and see how it works
 
-::: roll 4d6 :::
+::: roller 4d6 :::
 
 <iframe src="https://github.com/sponsors/dice-roller/button" title="Sponsor dice-roller" height="35" width="116" style="border: 0; margin: 0 auto 1rem; display: block;"></iframe>

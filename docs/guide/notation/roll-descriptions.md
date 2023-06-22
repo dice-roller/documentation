@@ -27,7 +27,7 @@ Any notation inside a description will not be parsed:
 2d10 // Ice damage 2d10! / 3
 ```
 
-::: roll 4d6 // Fire damage :::
+::: roller 4d6 // Fire damage :::
 
 
 ## Block
@@ -52,4 +52,4 @@ Any notation inside a description block will not be parsed:
 4d6 /* Ice damage 5d10 + 7 */
 ```
 
-::: roll 4d6 /* Ice damage */ :::
+::: roller 4d6 /* Ice damage */ :::
