@@ -25,7 +25,7 @@ A random number generation (RNG) engine is a class, or object, that determines t
 
 #### Custom engine
 
-And you can also create your own engines, which can be any class or object that has a `next()`  method and returns a 32 bit integer. e.g:
+You can also create your own engines. This can be any class or object that has a `next()`  method which returns a 32-bit integer. e.g:
 
 ```javascript
 // a simple object
@@ -128,18 +128,16 @@ generator.engine = null;
 #### Generating a random number
 
 ::: tip
-You'll likely never need to generate your own random numbers, as the dice rolls handle this for you, but the functionality is there if you need to work with it.
+It's unlikely that you'll need to generate your own random numbers, as the dice rolls handle this for you, but the functionality is there if you need to work with it.
 :::
 
-As you can see above, rolling dice will use whichever engine is currently set so, for most cases, you'll never need to generate a random number yourself.
-
-However, if you need to, the `generator` has two methods, `integer` and `real`, which produce a random integer or float number respectively.
+If you need to generate random numbers outside of rolling dice, the `generator` has two methods, `integer` and `real`, which produce a random integer or float number respectively.
 
 ```javascript
 // generate an integer between 1 and 4
 generator.integer(1, 4);
 
-// generate an float between 1 and 4 exclusive - [min, max)
+// generate a float between 1 and 4 exclusive - [min, max)
 generator.real(1, 4);
 
 // generate an float between 1 and 4 inclusive - [min, max]

@@ -5,9 +5,9 @@ The simplest form of notation is just a basic dice roll.
 ::: warning Die quantity
 A single die has a minimum quantity of `1`, and a maximum quantity of `999`.
 
-These are valid: `d8`, `1d10`, `999d6`, `20d4 + 999d10`
+:white_check_mark: These are valid: `d8`, `1d10`, `999d6`, `20d4 + 999d10`
 
-These are not: `0d10`, `1000d6`, `-1d20`
+:x: These are not: `0d10`, `1000d6`, `-1d20`
 :::
 
 

@@ -50,7 +50,7 @@ import { DiceRoller } from '@dice-roller/rpg-dice-roller';
 @tab CommonJS
 
 ::: tip
-If you're using Node.js, with [ES modules](https://nodejs.org/api/esm.html) (`import`) instead of CommonJS (`require`) follow the ESM instead.
+If you're using Node.js with [ES modules](https://nodejs.org/api/esm.html) (`import`), instead of CommonJS (`require`), follow the ESM section instead.
 :::
 
 You can also load the library using CommonJS, AMD, etc. with the UMD build:
@@ -67,7 +67,7 @@ const { DiceRoller } = require('@dice-roller/rpg-dice-roller');
 @tab Browser
 
 ::: warning Browser support
-The dice roller may not work with all older browsers.
+The dice roller may not work with older browsers.
 Please check the [browser support](readme.md#browser-support).
 :::
 
