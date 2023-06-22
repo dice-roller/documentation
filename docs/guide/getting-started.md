@@ -27,9 +27,15 @@ yarn add @dice-roller/rpg-dice-roller
 
 ## Setup
 
-### ES modules
+::: warning Node.js
+We only support Node.js 12+. Please check the [browser support](readme.md#browser-support).
+:::
 
-You can import the dice roller and use it in your application, using ES standard modules like so:
+:::: tabs#module-type
+
+@tab ESM
+
+You can import the dice roller and use it in your application, using [ES standard modules]((https://nodejs.org/api/esm.html)) like so:
 
 ```javascript
 import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
@@ -41,15 +47,10 @@ If you only want to import specific components, you can do so like:
 import { DiceRoller } from '@dice-roller/rpg-dice-roller';
 ```
 
-
-### CommonJS 
-
-::: warning Node.js
-We only support Node.js 12+. Please check the [browser support](readme.md#browser-support).
-:::
+@tab CommonJS
 
 ::: tip
-If you're using Node.js, with [ES modules](https://nodejs.org/api/esm.html) (`import`) instead of CommonJS (`require`) follow the [ES modules](#es-modules) examples above.
+If you're using Node.js, with [ES modules](https://nodejs.org/api/esm.html) (`import`) instead of CommonJS (`require`) follow the ESM instead.
 :::
 
 You can also load the library using CommonJS, AMD, etc. with the UMD build:
@@ -63,8 +64,7 @@ If you only want to import specific components, you can do so like:
 const { DiceRoller } = require('@dice-roller/rpg-dice-roller');
 ```
 
-
-### Browsers
+@tab Browser
 
 ::: warning Browser support
 The dice roller may not work with all older browsers.
@@ -105,3 +105,5 @@ The UMD bundle provides the global variable, `rpgDiceRoller`, that is used to ac
   var diceRoller = new rpgDiceRoller.DiceRoller();
 </script>
 ```
+
+::::

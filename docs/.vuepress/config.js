@@ -85,6 +85,7 @@ export default defineUserConfig({
     }),*/
     mdEnhancePlugin({
       codetabs: true,
+      tabs: true,
     }),
   ],
 })
