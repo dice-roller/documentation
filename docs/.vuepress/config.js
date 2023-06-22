@@ -5,15 +5,17 @@ import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { diceRollerPlugin } from '@dice-roller/vuepress-plugin-dice-roller';
 import { sidebarTree } from '../api/config';
 
+const base = `/${process.env.BASE_PATH || 'documentation'}/`;
+
 export default defineUserConfig({
   lang: 'en-GB',
   title: 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
-  base: `/${process.env.BASE_PATH || 'documentation'}/`,
+  base: base,
   head: [
     [
       'link',
-      { rel: 'icon', href: 'dice-roller-logo.png' }
+      { rel: 'icon', href: `${base}/dice-roller-logo.png` }
     ],
   ],
   theme: defaultTheme({
