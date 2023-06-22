@@ -4,6 +4,7 @@ import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 //import { searchPlugin } from '@vuepress/plugin-search'
 import { diceRollerPlugin } from '@dice-roller/vuepress-plugin-dice-roller';
 import { sidebarTree } from '../api/config';
+import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
 
 const base = `/${process.env.BASE_PATH || 'documentation'}/`;
 
@@ -82,5 +83,8 @@ export default defineUserConfig({
         }
       ],
     }),*/
+    mdEnhancePlugin({
+      codetabs: true,
+    }),
   ],
 })
