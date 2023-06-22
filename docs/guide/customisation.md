@@ -54,13 +54,28 @@ We use [random-js](https://github.com/ckknight/random-js) behind the scenes, and
 
 You can access the number generator by importing the `NumberGenerator` namespace:
 
-```javascript
-// ES modules
-import { DiceRoller, NumberGenerator } from '@dice-roller/rpg-dice-roller';
+::: code-tabs#module-type
 
-// or CommonJS
+@tab ESM
+
+```javascript
+import { DiceRoller, NumberGenerator } from '@dice-roller/rpg-dice-roller';
+```
+
+@tab CommonJS
+
+```javascript
 const { DiceRoller, NumberGenerator } = require('@dice-roller/rpg-dice-roller');
 ```
+
+@tab Browser
+
+```javascript
+// `NumberGenerator` is available on the global `rpgDiceRoller` variable
+rpgDiceRoller.NumberGenerator
+```
+
+:::
 
 `NumberGenerator` has two properties:
 * `engines`: a list of the built-in engines (See [list above](#engines)).

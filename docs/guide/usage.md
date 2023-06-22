@@ -13,11 +13,31 @@ Read the sections below for details usage instructions.
 
 Dice are rolled with a string [notation](./notation/readme.md). The quickest method is using the `DiceRoll` class:
 
+::: code-tabs#module-type
+
+@tab ESM
+
 ```javascript
 import { DiceRoll } from '@dice-roller/rpg-dice-roller';
 
 const roll = new DiceRoll('4d6');
 ```
+
+@tab CommonJS
+
+```javascript
+const { DiceRoll } = require('@dice-roller/rpg-dice-roller');
+
+const roll = new DiceRoll('4d6');
+```
+
+@tab Browser
+
+```javascript
+const roll = rpgDiceRoller.DiceRoll('4d6');
+```
+
+:::
 
 The above will parse the [notation](./notation/readme.md), roll the dice, and store the result.
 
@@ -77,13 +97,33 @@ console.log(`You rolled: ${roll}`);
 
 If you want to keep a log of previous rolls, you can use the `DiceRoller` class instead:
 
+::: code-tabs#module-type
+
+@tab ESM
+
 ```javascript
 import { DiceRoller } from '@dice-roller/rpg-dice-roller';
 
 const roller = new DiceRoller();
 ```
 
-Any [notations](./notation/readme.md) rolled on a `DiceRoller` instance get stored in it's log.
+@tab CommonJS
+
+```javascript
+const { DiceRoller } = require('@dice-roller/rpg-dice-roller');
+
+const roller = new DiceRoller();
+```
+
+@tab Browser
+
+```javascript
+const roller = rpgDiceRoller.DiceRoller();
+```
+
+:::
+
+Any [notations](./notation/readme.md) rolled on a `DiceRoller` instance get stored in its log.
 
 ### Store
 
@@ -134,7 +174,7 @@ console.log(roller.log); // an empty array
 ### Output
 
 To return a formatted output of the entire log, use the `output` property.
-It contains a semi-colon separated list of the individual [`DiceRoll` outputs](#output).
+It contains a semicolon separated list of the individual [`DiceRoll` outputs](#output).
 
 ```javascript
 const roller = new DiceRoller();
@@ -167,12 +207,41 @@ console.log(roller.total); // 62
 
 The `DiceRoll` class has an `export()` method, which can export the rolls in several formats, as defined in the [`ExportFormats` utility object](../api/utilities/ExportFormats.md).
 
+::: code-tabs#module-type
+
+@tab ESM
+
 ```javascript
 // we need to import the exportFormats object
 import { DiceRoll, exportFormats } from '@dice-roller/rpg-dice-roller';
 
 const roll = new DiceRoll('4d6');
+
+roll.export('format');
 ```
+
+@tab CommonJs
+
+```javascript
+// we need to import the exportFormats object
+const { DiceRoll, exportFormats } = require('@dice-roller/rpg-dice-roller');
+
+const roll = new DiceRoll('4d6');
+
+roll.export('format');
+```
+
+@tab Browser
+
+```javascript
+// export formats is available on the global `rpgDiceRoller.exportFormats` variable
+
+const roll = new rpgDiceRoller.DiceRoll('4d6');
+
+roll.export('format');
+```
+
+:::
 
 ### Plain object
 
@@ -226,9 +295,13 @@ Returns base64 encoded version of the JSON string:
 'eyJtYXhUb3RhbCI6MjQsIm1pblRvdGFsIjo0LCJub3RhdGlvbiI6IjRkNiIsIm91dHB1dCI6IjRkNjogWzIsIDQsIDIsIDJdID0gMTAiLCJyb2xscyI6W3sicm9sbHMiOlt7ImNhbGN1bGF0aW9uVmFsdWUiOjIsImluaXRpYWxWYWx1ZSI6MiwibW9kaWZpZXJGbGFncyI6IiIsIm1vZGlmaWVycyI6W10sInR5cGUiOiJyZXN1bHQiLCJ1c2VJblRvdGFsIjp0cnVlLCJ2YWx1ZSI6Mn0seyJjYWxjdWxhdGlvblZhbHVlIjo0LCJpbml0aWFsVmFsdWUiOjQsIm1vZGlmaWVyRmxhZ3MiOiIiLCJtb2RpZmllcnMiOltdLCJ0eXBlIjoicmVzdWx0IiwidXNlSW5Ub3RhbCI6dHJ1ZSwidmFsdWUiOjR9LHsiY2FsY3VsYXRpb25WYWx1ZSI6MiwiaW5pdGlhbFZhbHVlIjoyLCJtb2RpZmllckZsYWdzIjoiIiwibW9kaWZpZXJzIjpbXSwidHlwZSI6InJlc3VsdCIsInVzZUluVG90YWwiOnRydWUsInZhbHVlIjoyfSx7ImNhbGN1bGF0aW9uVmFsdWUiOjIsImluaXRpYWxWYWx1ZSI6MiwibW9kaWZpZXJGbGFncyI6IiIsIm1vZGlmaWVycyI6W10sInR5cGUiOiJyZXN1bHQiLCJ1c2VJblRvdGFsIjp0cnVlLCJ2YWx1ZSI6Mn1dLCJ2YWx1ZSI6MTB9XSwidG90YWwiOjEwLCJ0eXBlIjoiZGljZS1yb2xsIn0='
 ```
 
-### Exporting logs
+## Exporting logs
 
 You can also export the data from a `DiceRoller` instance, in exactly the same way. It too has an `export()` method, that accepts the same [export formats](../api/utilities/ExportFormats.md).
+
+::: code-tabs#module-type
+
+@tab ESM
 
 ```javascript
 import { DiceRoller, exportFormats } from '@dice-roller/rpg-dice-roller';
@@ -236,7 +309,34 @@ import { DiceRoller, exportFormats } from '@dice-roller/rpg-dice-roller';
 const roller = new DiceRoller();
 roller.roll('4d6');
 roller.roll('2d10');
+
+roller.export('format');
 ```
+http://localhost:8080/documentation/guide/usage.html#examples
+@tab CommonJs
+
+```javascript
+const { DiceRoller, exportFormats } = require('@dice-roller/rpg-dice-roller');
+
+const roller = new DiceRoller();
+roller.roll('4d6');
+roller.roll('2d10');
+
+roller.export('format');
+```
+
+@tab Browser
+
+```javascript
+const roller = new rpgDiceRoller.DiceRoller();
+
+roller.roll('4d6');
+roller.roll('2d10');
+
+roller.export('format');
+```
+
+:::
 
 The plain object export returns something like this:
 ```javascript
@@ -272,7 +372,7 @@ The plain object export returns something like this:
 
 ## Import rolls
 
-Impotring rolls is handy if you need to be able to retrieve rolls from a database, share them across enviroments etc.
+Importing rolls is handy if you need to be able to retrieve rolls from a database, share them across enviroments etc.
 
 Both `DiceRoll` and `DiceRoller` classes have a static `import()` method that can import form any of the exported formats [listed above](#export-rolls):
 
