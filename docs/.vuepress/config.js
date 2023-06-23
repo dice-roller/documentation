@@ -31,7 +31,11 @@ export default defineUserConfig({
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
       { text: 'API', link: '/api/' },
-      { text: 'Contribute', link: '/contributing/' },
+      {
+        text: 'Contribute',
+        //link: '/contributing/'
+        children: ['/contributing/', '/contributing/code-of-conduct.md'],
+      },
     ],
     sidebar: {
       ...{

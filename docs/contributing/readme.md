@@ -12,7 +12,7 @@ The following is a set of guidelines for contributing to the library. They expla
 
 ## Code of Conduct
 
-This is currently in progress, but generally; be nice, be understanding, and don't make anyone feel unwelcome. This library is here to help people across the world play together, so let's keep the development of it that way too.
+Check out our [Code of Conduct](./code-of-conduct.md).
 
 
 ## I have a question
