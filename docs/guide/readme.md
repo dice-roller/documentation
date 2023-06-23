@@ -1,3 +1,7 @@
+---
+sidebarDepth: 1
+---
+
 # Introduction
 
 This library is a JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.
@@ -12,7 +16,7 @@ Dice can be rolled through the use of "notations", which are strings of characte
 You can read more about it in the [Notation section](notation/readme.md).
 
 
-## How random is it?
+##  How random is it?
 
 This library uses [psudeo random number generation](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) (PRNG) to determine die rolls. It is not _true_ random but it is suitable for most purposes. PRNGs are used globally for computer-based random number generation.
 
@@ -21,38 +25,38 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 ## Features
 
-**Different dice types**
+### Different dice types
 
-* [Standard dice](notation/dice.md#standard-dn)
-* [Percentile dice](notation/dice.md#percentile-dice-d)
-* [Fudge / fate dice](notation/dice.md#fudge-fate-dice-df-df-2-df-1)
+* [Standard dice](notation/dice.md#standard)
+* [Percentile dice](notation/dice.md#percentile)
+* [Fudge / fate dice](notation/dice.md#fudge-fate-dice)
 
-**Roll modifiers**
+### Roll modifiers
 
-* [Exploding](notation/modifiers.md#exploding-cp)
-* [Compounding](notation/modifiers.md#compounding-cp)
-* [Penetrating](notation/modifiers.md#penetrating-p-p-p-cp-p-cp)
-* [Keep rolls](notation/modifiers.md#keep-k-n-kh-n-kl-n)
-* [Drop rolls](notation/modifiers.md#drop-d-n-dh-n-dl-n)
-* [Re-roll](notation/modifiers.md#re-roll-r-ro-r-cp-ro-cp)
-* [Unique](notation/modifiers.md#unique-u-uo-u-cp-uo-cp) <Badge text="New" vertical="middle"/>
-* [Target success](notation/modifiers.md#target-success-dice-pool-cp)
-* [Target failure](notation/modifiers.md#target-failures-dice-pool-f-cp)
-* [Max](notation/modifiers.md#max-max-n)
-* [Min](notation/modifiers.md#min-min-n)
-* [Sort dice](notation/modifiers.md#sorting-s-sa-sd)
+* [Exploding](notation/modifiers.md#exploding)
+* [Compounding](notation/modifiers.md#compounding)
+* [Penetrating](notation/modifiers.md#penetrating)
+* [Keep rolls](notation/modifiers.md#keep)
+* [Drop rolls](notation/modifiers.md#drop)
+* [Re-roll](notation/modifiers.md#re-roll)
+* [Unique](notation/modifiers.md#unique) <Badge text="New" vertical="middle"/>
+* [Target success](notation/modifiers.md#target-success-dice-pool)
+* [Target failure](notation/modifiers.md#target-failures-dice-pool)
+* [Max](notation/modifiers.md#max-max)
+* [Min](notation/modifiers.md#min-min)
+* [Sort dice](notation/modifiers.md#sorting)
 
-**Advanced**
+### Advanced
 
 * [Group rolls](notation/group-rolls.md) <Badge text="New" vertical="middle"/>
 
-**Mathematical equations**
+### Mathematical equations
 
 * [Operators](notation/maths.md#operators)
 * [Functions](notation/maths.md#functions)
 * [Easy min / max / average total calculations](usage.md#roll-totals)
 
-**Customisation**
+### Customisation
 
 * [Random number generator](customisation.md#random-number-generator)
 * [Exporting](usage.md#export-rolls) / [importing rolls](usage.md#import-rolls)

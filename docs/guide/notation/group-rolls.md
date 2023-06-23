@@ -47,11 +47,13 @@ If you haven't already, we suggest you read [how modifiers work](./modifiers.md)
 ::: roller {4d10+5d6}k2 :::
 
 
-### Keep (`k{n}` / `kh{n}` / `kl{n}`)
+### Keep
 
-This works in much the same way as the standard [Keep modifier](./modifiers.md#keep-kn-khn-kln); it allows you to roll a collection of dice, disregarding all except for the highest or lowest result(s).
+**Notation:** `k{n}` / `kh{n}` / `kl{n}`
 
-It is the opposite of the [Drop modifier](#drop-dn-dhn-dln).
+This works in much the same way as the standard [Keep modifier](./modifiers.md#keep); it allows you to roll a collection of dice, disregarding all except for the highest or lowest result(s).
+
+It is the opposite of the [Drop modifier](#drop).
 
 
 #### Single sub-roll
@@ -81,11 +83,13 @@ For multiple sub-rolls, it will keep the specified number of _sub-rolls_ based o
 ::: roller {4d10, 5d6, 2d10}k2 :::
 
 
-### Drop (`d{n}` / `dh{n}` / `dl{n}`)
+### Drop
 
-This works in much the same way as the standard [Drop modifier](./modifiers.md#drop-dn-dhn-dln); it allows you roll a collection of dice, but disregard the highest or lowest results.
+**Notation:** `d{n}` / `dh{n}` / `dl{n}`
 
-It is the opposite of the [Keep modifier](#keep-kn-khn-kln).
+This works in much the same way as the standard [Drop modifier](./modifiers.md#drop); it allows you roll a collection of dice, but disregard the highest or lowest results.
+
+It is the opposite of the [Keep modifier](#keep).
 
 
 #### Single sub-roll
@@ -115,9 +119,11 @@ For multiple sub-rolls, it will keep the specified number of _sub-rolls_ based o
 ::: roller {4d10, 5d6, 2d10}d2 :::
 
 
-### Target Success / Dice pool (`{cp}`)
+### Target Success / Dice pool
 
-This is similar to the standard [Target success modifier](./modifiers.md#target-success-dice-pool-cp); It allows you to count the number of successes in a collection of dice.
+**Notation:** `{cp}`
+
+This is similar to the standard [Target success modifier](./modifiers.md#target-success-dice-pool); It allows you to count the number of successes in a collection of dice.
 
 It looks at the total value of each sub-roll and compares it to the success value. Returning a `1` for each sub-roll that matches the compare point, and `0` for those that don't.
 
@@ -150,13 +156,15 @@ The above has `2` successes because;
 ::: roller {4d6+2d8, 3d20+3, 5d10+1}>40 :::
 
 
-### Target Failure / Dice Pool (`f{cp}`)
+### Target Failure / Dice Pool
+
+**Notation:** `f{cp}`
 
 ::: warning Remember
-A failure modifier _must_ directly preceed a [Success modifier](#target-success-dice-pool-cp).
+A failure modifier _must_ directly preceed a [Success modifier](#target-success-dice-pool).
 :::
 
-This is similar to the standard [Target failure modifier](./modifiers.md#target-failure-dice-pool-f-cp); It allows you to count the number of failures in a collection of dice.
+This is similar to the standard [Target failure modifier](./modifiers.md#target-failure-dice-pool); It allows you to count the number of failures in a collection of dice.
 
 It looks at the total value of each sub-roll and compares it to the failure value. Returning a `-1` for each sub-roll that matches the compare point.
 Those that don't match will either return `1` if they match the success compare point, or `0` if they don't match either.
@@ -190,9 +198,11 @@ The above has `1` success because;
 ::: roller {4d6+2d8, 3d20+3, 5d10+1}>40f<30 :::
 
 
-### Sorting (`s` / `sa` / `sd`)
+### Sorting
 
-This is equivalent to the standard [Sorting modifier](./modifiers.md#sorting-s-sa-sd); It allows you to sort the dice rolls, and the sub-rolls by total value.
+**Notation:** `s` / `sa` / `sd`
+
+This is equivalent to the standard [Sorting modifier](./modifiers.md#sorting); It allows you to sort the dice rolls, and the sub-rolls by total value.
 
 
 #### Single sub-roll

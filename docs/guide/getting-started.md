@@ -35,7 +35,7 @@ We only support Node.js 12+. Please check the [browser support](readme.md#browse
 
 @tab ESM
 
-You can import the dice roller and use it in your application, using [ES standard modules]((https://nodejs.org/api/esm.html)) like so:
+You can import the dice roller and use it in your application, using [ES standard modules](https://nodejs.org/api/esm.html) like so:
 
 ```javascript
 import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';

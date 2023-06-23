@@ -11,7 +11,9 @@ A single die has a minimum quantity of `1`, and a maximum quantity of `999`.
 :::
 
 
-## Standard (`d{n}`)
+## Standard
+
+**Notation:** `d{n}`
 
 A standard die has a positive numerical number of sides, like typical 6 sided dice, or a d20.
 
@@ -25,7 +27,9 @@ d6    // roll a single 6 sided dice
 ::: roller 4d10 :::
 
 
-## Percentile dice (`d%`)
+## Percentile dice
+
+**Notation:** `d%`
 
 Percentile dice roll a whole number between `1-100`, and are specified with the format `d%`.
 This is a shorthand for a standard die with 100 sides, `d100`
@@ -41,7 +45,9 @@ Is equivalent to:
 ::: roller 4d% :::
 
 
-## Fudge / Fate dice (`dF` / `dF.2` / `dF.1`)
+## Fudge / Fate dice
+
+**Notation:** `dF` / `dF.2` / `dF.1`
 
 Fudge dice are 6 sided dice marked with minus (`-`), plus (`+`), and blank sides, which correlate to `-1`, `+1`, and `0` respectively.
 
