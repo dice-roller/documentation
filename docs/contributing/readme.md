@@ -7,18 +7,16 @@ sidebarDepth: 2
 
 Thanks for helping out with the dice roller!
 
-The following is a set of guidelines for contributing to the library. They explain the process to get started, and ensure that the it's as easy as possible for people to work with the project.
-
+The following is a set of guidelines for contributing to the library. They explain the process to get started, and
+ensure that it's as easy as possible for people to work with the project.
 
 ## Code of Conduct
 
 Check out our [Code of Conduct](./code-of-conduct.md).
 
-
 ## I have a question
 
-Please use the [Github discussion board](https://github.com/dice-roller/rpg-dice-roller/discussions) to raise questions.
-
+Please use the [GitHub discussion board](https://github.com/dice-roller/rpg-dice-roller/discussions) to raise questions.
 
 ## How to contribute
 
@@ -30,44 +28,49 @@ Before raising a ticket, please check it hasn't already been raised!
 
 If you find a bug, please let us know.
 
-
 #### Before submitting a bug report
 
-* [Search through existing tickets](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+label%3Abug) to see if the issue has already been reported.
-  * If it has, and the issue is still _open_, add a comment to it, rather than creating a new ticket.
-  * If it has, and the issue is _closed_, see if any suggested fix resolves the issue for you.
-
+* [Search through existing tickets](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+label%3Abug) to
+  see if the issue has already been reported.
+    * If it has, and the issue is still _open_, add a comment to it, rather than creating a new ticket.
+    * If it has, and the issue is _closed_, see if any suggested fix resolves the issue for you.
 
 #### How to submit a bug report
 
-Bugs are tracked as Github issues, and you can [report a bug through Github](https://github.com/dice-roller/rpg-dice-roller/issues/new/choose).
+Bugs are tracked as GitHub issues, and you
+can [report a bug through GitHub](https://github.com/dice-roller/rpg-dice-roller/issues/new/choose).
 
-Explain the problem in as much detail as possible, including any additional details that could help to reproduce the problem.
+Explain the problem in as much detail as possible, including any additional details that could help to reproduce the
+problem.
 
 * **Use a clear and descriptive title** for the issue, that identifies the problem.
 * **Describe the exact steps which reproduce the problem** with as much detail as possible.
-* **Provide specific examples to demonstrate the steps.** Include links to source code, or copy/paste code snippets. If providing code snippets, please use [Markdown code blocks](https://help.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks).
+* **Provide specific examples to demonstrate the steps.** Include links to source code, or copy/paste code snippets. If
+  providing code snippets, please
+  use [Markdown code blocks](https://help.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks).
 * **Describe the behaviour that you observed after following the steps** and explain why this is a problem.
 * **Describe the behaviour that you expected to see and why.**
 * **Include any screenshots** if relevant.
 * **If you receive any error messages**, `console` output, or similar, please include them.
-* **Provide the library version number** that you're using. If it's not the latest version, can you reproduce the problem in the latest release?
-
+* **Provide the library version number** that you're using. If it's not the latest version, can you reproduce the
+  problem in the latest release?
 
 ### Suggesting improvements and new features
 
-We'd love to hear any ideas you've got for new features or improvements. Following these guidelines helps us to understand your suggestion better.
-
+We'd love to hear any ideas you've got for new features or improvements. Following these guidelines helps us to
+understand your suggestion better.
 
 #### Before submitting a feature suggestion
 
 * **Check you're using the latest version.** The feature may have been added in a newer version.
-* [Search through existing tickets](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+label%3Aenhancement,suggestion,question) to see if the feature has already been suggested. If it has, add a comment to the existing one, rather than creating a new one.
-
+* [Search through existing tickets](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+label%3Aenhancement,suggestion,question)
+  to see if the feature has already been suggested. If it has, add a comment to the existing one, rather than creating a
+  new one.
 
 #### How to submit a feature suggestion
 
-Feature suggestions are tracked as Github tickets, and you can [suggest a feature through Github](https://github.com/dice-roller/rpg-dice-roller/issues/new/choose).
+Feature suggestions are tracked as GitHub tickets, and you
+can [suggest a feature through GitHub](https://github.com/dice-roller/rpg-dice-roller/issues/new/choose).
 
 * **Use a clear and descriptive title** for the ticket, that identifies the suggestion.
 * **Provide a step-by-step description of the feature** with as much detail as possible.
@@ -76,37 +79,41 @@ Feature suggestions are tracked as Github tickets, and you can [suggest a featur
 * **Include any screenshots** if relevant.
 * **Explain why the feature would be useful**
 
-
 ### Contributing code
 
 If you want to help out with the development itself then please dive in.
 
-
 #### Finding something to work on
 
-If you're unsure where to begin, you can start by having a look at the tickets flagged as ["help wanted" or "good first issue"](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22,%22good+first+issue%22), and see if you can help with any of them.
+If you're unsure where to begin, you can start by having a look at the tickets flagged
+as ["help wanted" or "good first issue"](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22,%22good+first+issue%22),
+and see if you can help with any of them.
 
-If there aren't any flagged as with either label, that doesn't mean we don't want your help! Generally, we're happy for people to dig into any ticket that hasn't been assigned to someone.
+If there aren't any flagged as with either label, that doesn't mean we don't want your help! Generally, we're happy for
+people to dig into any ticket that hasn't been assigned to someone.
 A ticket that has been assigned means that someone else is working on it.
 
 So have a look around the open tickets and see if you feel as though you can help with any of them.
 
-If you've got an idea for a feature, but there isn't a ticket for it, feel free to [create one](#suggesting-improvements-and-new-features) and assign it to yourself.
-This way, it's easier to keep track on what is being worked on, and we can try to ensure that multiple people aren't unknowingly working on the same thing.
-
+If you've got an idea for a feature, but there isn't a ticket for it, feel free
+to [create one](#suggesting-improvements-and-new-features) and assign it to yourself.
+This way, it's easier to keep track on what is being worked on, and we can try to ensure that multiple people aren't
+unknowingly working on the same thing.
 
 #### Setting up
 
-The code is stored in a Git repository. To get started either [clone or fork the repository](https://github.com/dice-roller/rpg-dice-roller).
+The code is stored in a Git repository. To get started
+either [clone or fork the repository](https://github.com/dice-roller/rpg-dice-roller).
 
-Make sure that you checkout the `develop` branch, or create a `feature` / `hotfix` branch for the task you're working on, and _not_ the `main` branch.
+Make sure that you check out the `develop` branch, or create a `feature` / `hotfix` branch for the task you're working
+on, and _not_ the `main` branch.
 
 ::: warning
-You should **never** work directly on the `main` branch. You should work on either the `develop` branch or a `feature` branch.
+You should **never** work directly on the `main` branch. You should work on either the `develop` branch or a `feature`
+branch.
 
 See the [Branching model](#branching-model) section for more information.
 :::
-
 
 #### File structure
 
@@ -122,17 +129,21 @@ The project file structure is split up into logical groups:
 |- tests/
 ```
 
-* `root` contains mostly meta files, such as the `.babelrc`, `eslintrc.json`. `rollup.config.js` and other files used for the generation of the library.
-* `lib` contains the compiled Javascript files, in both EcmaScript and UMD versions, in the `esm` and `umd` directories respectively.
-  
-  Do **not** manually change the files in this directory as any changes will be overwritten.
-* `src` is where the magic happens. This contains all the source Javascript ES modules that get compiled into the `lib` directory. It is these files that you should modify.
-* `tests` contain [Jest tests](#testing-your-code). If you make changes to the source code, you should update / add tests to cover the changes.
+* `root` contains mostly meta files, such as the `.babelrc`, `eslintrc.json`. `rollup.config.js` and other files used
+  for the generation of the library.
+* `lib` contains the compiled Javascript files, in both EcmaScript and UMD versions, in the `esm` and `umd` directories
+  respectively.
 
+  Do **not** manually change the files in this directory as any changes will be overwritten.
+* `src` is where the magic happens. This contains all the source Javascript ES modules that get compiled into the `lib`
+  directory. It is these files that you should modify.
+* `tests` contain [Jest tests](#testing-your-code). If you make changes to the source code, you should update / add
+  tests to cover the changes.
 
 #### Compiling and building the code
 
-If you want to see what how your code functions, you'll need to compile the source code to the `lib` directory. There are several ways of doing this, depending on the required outcome.
+If you want to see what how your code functions, you'll need to compile the source code to the `lib` directory. There
+are several ways of doing this, depending on the required outcome.
 
 There are several scripts to help:
 
@@ -147,37 +158,45 @@ npm run build:dev
 npm run watch
 ```
 
-
 #### Testing your code
 
-We utilise both a [JavaScript linter](#javaScript-style-guide) and a [testing framework](#testing) to ensure that all code conforms to certain standards and any new code doesn't break existing code, or otherwise behave unexpectedly.
+We utilise both a [JavaScript linter](#javaScript-style-guide) and a [testing framework](#testing) to ensure that all
+code conforms to certain standards and any new code doesn't break existing code, or otherwise behave unexpectedly.
 
-You do **not** need to build / compile the code before linting or testing. Both the linter and tests run on the original source code.
+You do **not** need to build / compile the code before linting or testing. Both the linter and tests run on the original
+source code.
 
-All code must pass both the linter and the tests. You can read more about them in the [Styles and standards](#styles-and-standards) section.
-
+All code must pass both the linter and the tests. You can read more about them in
+the [Styles and standards](#styles-and-standards) section.
 
 ### Pull requests
 
-When creating a pull request, there are several things that need to be considered, to ensure that the quality of the library is kept, and that the code remains readable and manageable
+When creating a pull request, there are several things that need to be considered, to ensure that the quality of the
+library is kept, and that the code remains readable and manageable
 
 Please follow these steps so that your pull request can be considered by the maintainers:
 
-* If the pull request relates to a ticket, ensure that the ticket number is referenced in the description of the pull request.
-* Provide a description of what the pull request is trying to achieve. If there is a related ticket, then the description can be brief. Otherwise, please provide enough detail for the reviewer to understand what bug it fixes, or feature it implements, and why.
+* If the pull request relates to a ticket, ensure that the ticket number is referenced in the description of the pull
+  request.
+* Provide a description of what the pull request is trying to achieve. If there is a related ticket, then the
+  description can be brief. Otherwise, please provide enough detail for the reviewer to understand what bug it fixes, or
+  feature it implements, and why.
 * Follow the [style guides](#styles-and-standards).
-* After submitting your pull request, verify that all [status checks](https://help.github.com/articles/about-status-checks/) are passing.
+* After submitting your pull request, verify that
+  all [status checks](https://help.github.com/articles/about-status-checks/) are passing.
 
 ::: tip What if the status checks are failing?
-Check what is failing. If you believe that the failure is unrelated to your change, please leave a comment on the pull request explaining why you believe the failure is unrelated. A maintainer can re-run the status checks and determine if it's a false positive, or otherwise unrelated to your changes.
+Check what is failing. If you believe that the failure is unrelated to your change, please leave a comment on the pull
+request explaining why you believe the failure is unrelated. A maintainer can re-run the status checks and determine if
+it's a false positive, or otherwise unrelated to your changes.
 :::
 
 ::: warning
-You should **never** work directly on the `main` branch. Any pull requests on to `main` will, unfortunately, have to be rejected and you'll have to re-create it on `develop`.
+You should **never** work directly on the `main` branch. Any pull requests on to `main` will, unfortunately, have to be
+rejected, and you'll have to re-create it on `develop`.
 
 See the [Branching model](#branching-model) section for more information.
 :::
-
 
 ## Styles and standards
 
@@ -186,23 +205,24 @@ See the [Branching model](#branching-model) section for more information.
 #### Branching model
 
 We use the [git-flow branching model](https://nvie.com/posts/a-successful-git-branching-model/).
-This means that there is always a `main` branch and a `develop` branch, and there may be other branches that follow the git-flow naming conventions.
+This means that there is always a `main` branch and a `develop` branch, and there may be other branches that follow the
+git-flow naming conventions.
 
 * The `main` branch is the current latest release, and should _only be modified when making a release_.
-* The `develop` branch is where all the fun happens, and where we can work and make our changes (Although these should generally be done on a feature branch).
-
+* The `develop` branch is where all the fun happens, and where we can work and make our changes (Although these should
+  generally be done on a feature branch).
 
 #### Commit messages
 
 * Use the present tense (e.g. "Add feature" not "Added feature").
 * Use the imperative mood (e.g. "Enhance fudge die rolls" not "Enhances fudge die rolls").
-* Limit the first line to 72 characters or less.
+* Limit the first line to 72 characters or fewer.
 * Reference relevant ticket numbers after the first line.
-
 
 ### JavaScript style guide
 
-All JavaScript must adhere to the [Airbnb standard style](https://airbnb.io/javascript/). This is to make sure that the code is readable and more maintainable for everyone.
+All JavaScript must adhere to the [Airbnb standard style](https://airbnb.io/javascript/). This is to make sure that the
+code is readable and more maintainable for everyone.
 
 We use [ESLint](https://eslint.org/) to ensure that the syntax is correct and meets the standards.
 
@@ -214,17 +234,31 @@ npm run lint
 
 If there are problems, it will show you the files and line numbers for each issue.
 
-
 ### Testing
 
 We use [Jest](https://jestjs.io/) to test the library. The tests can be found in the `/tests` directory.
 
-When writing tests, ensure that they are thoughtfully-worded, and well structured, so that it is both easy to understand and maintain.
+When writing tests, ensure that they are thoughtfully-worded, and well-structured, so that it is both easy to understand
+and maintain.
 
-You can check if the code passes all of the tests by running the following in the console:
+You can check if the code passes all the tests by running the following in the console:
 
 ```bash
 npm test
 ```
 
-This runs the [JavaScript Linter](#javaScript-style-guide) first, and then the tests, so if the linter fails, then the tests will not be run.
+This runs the [JavaScript Linter](#javaScript-style-guide) first, and then the tests, so if the linter fails, then the
+tests will not be run.
+
+### Use of AI
+
+With the rise of AI, such as ChatGPT, being used to write code, it is important that we stress that such services are
+more often than not, completely inaccurate, and introduce bugs and unintended behaviour.
+
+It also leads to some ambiguous copyright issues, whereby it is uncertain who owns the copyright for the generated code.
+
+Moderating such content is very time-consuming, often for very little ultimate gain.
+
+Any content suspected of being generated by a bot / AI will be tagged
+as ["is bot"](https://github.com/dice-roller/rpg-dice-roller/issues?q=label%3A%22is+bot%22+).
+At our discretion, the content may also be immediately rejected / removed, or clarification asked for.
