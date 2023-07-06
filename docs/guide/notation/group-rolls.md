@@ -41,7 +41,7 @@ Group rolls can be used with a sub-set of the [standard modifiers](./modifiers.m
 The functionality of them differs slightly when used with roll groups.
 
 ::: tip
-If you haven't already, we suggest you read [how modifiers work](./modifiers.md) with standard expressions.
+If you haven't already, you should read [how modifiers work](./modifiers.md) with standard expressions before continuing.
 :::
 
 ::: roller {4d10+5d6}k2 :::
@@ -149,7 +149,7 @@ With mutliple sub-rolls, the number of sucesses are added together
 ```
 
 The above has `2` successes because;
-* The first sub-roll, `4d6+2d8`, rolled `[4, 3, 3, 2]+[2, 6] = 20` <Badge type="warning" text="Not success" vertical="middle"/>
+* The first sub-roll, `4d6+2d8`, rolled `[4, 3, 3, 2]+[2, 6] = 20` <Badge type="warning" text="Not a success" vertical="middle"/>
 * The second sub-roll, `3d20+3`, rolled `[17, 5, 20]+3 = 45` <Badge text="Success" vertical="middle"/>
 * The third sub-roll, `5d10+1`, rolled `[7, 9, 6, 10, 8]+1 = 41` <Badge text="Success" vertical="middle"/>
 
@@ -232,10 +232,10 @@ For multiple sub-rolls, it sorts both the individual rolls, and then the sub-rol
 {4d6/2, 3d4+3, 2d10}: {[4, 3, 5, 1]/2, [3, 2, 4]+5, [8, 4]} = 32.5
 
 // default sort ascending (6.5, 12, 14)
-{4d6/2, 3d4+3, 2d10}s: {[4, 3, 5, 1]/2, [8, 4], [3, 2, 4]+5} = 32.5
+{4d6/2, 3d4+3, 2d10}s: {[1, 3, 4, 5]/2, [4, 8], [2, 3, 4]+5} = 32.5
 
 // sort descending (14, 12, 6.5)
-{4d6/2, 3d4+3, 2d10}sd: {[3, 2, 4]+5, [8, 4], [4, 3, 5, 1]/2} = 32.5
+{4d6/2, 3d4+3, 2d10}sd: {[4, 3, 2]+5, [8, 4], [5, 4, 3, 1]/2} = 32.5
 ```
 
 ::: roller {4d6/2, 3d4+3, 2d10}s :::
