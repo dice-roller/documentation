@@ -60,24 +60,28 @@ min(4d6, 2d10): min([3, 4, 1, 5], [10, 6]) = 13
 ::: warning Rounding negative numbers
 Rounding negative numbers is handled differently to Javascript's `Math.round()`.
 
-`round()` always [rounds half _away_ from zero](https://en.wikipedia.org/wiki/Rounding#Round_half_away_from_zero), whereas Javascript's `Math.round()` simply rounds half up.
+`round()` always [rounds half _away_ from zero](https://en.wikipedia.org/wiki/Rounding#Round_half_away_from_zero), whereas Javascript's `Math.round()` rounds half up.
 
 Some examples:
 
 ```javascript
-Math.round(1.5) === 2
-Math.round(1.3) === 1
-Math.round(1.6) === 2
-Math.round(-1.3) === -1
-Math.round(-1.6) === -2
-Math.round(-1.5) === -1  // Half is rounded "up" to -1
+Math.round(1.5)   === 2
+round(1.5)        === 2
 
-round(1.5) === 2
-round(1.3) === 1
-round(1.6) === 2
-round(-1.3) === -1
-round(-1.6) === -2
-round(-1.5) === -2  // Half is rounded "down" to -2
+Math.round(1.3)   === 1
+round(1.3)        === 1
+
+Math.round(1.6)   === 2
+round(1.6)        === 2
+
+Math.round(-1.3)  === -1
+round(-1.3)       === -1
+
+Math.round(-1.6)  === -2
+round(-1.6)       === -2
+
+Math.round(-1.5)  === -1  // Half is rounded "up" to -1
+round(-1.5)       === -2  // Half is rounded "down" to -2
 ```
 :::
 
