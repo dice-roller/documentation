@@ -18,6 +18,7 @@ A `Modifier` is the base modifier class that all others extend from.
 
 * *[Modifier](#Modifier)*
     * *[new Modifier()](#new_Modifier_new)*
+    * *[.order](#Modifier+order) : <code>number</code>*
     * *[.name](#Modifier+name) ⇒ <code>string</code>*
     * *[.notation](#Modifier+notation) ⇒ <code>string</code>*
     * *[.maxIterations](#Modifier+maxIterations) ⇒ <code>number</code>*
@@ -30,6 +31,12 @@ A `Modifier` is the base modifier class that all others extend from.
 ### *new Modifier()*
 Create a `Modifier` instance.
 
+<a name="Modifier+order"></a>
+
+### *modifier.order : <code>number</code>*
+The default modifier execution order.
+
+**Kind**: instance property of [<code>Modifier</code>](#Modifier)  
 <a name="Modifier+name"></a>
 
 ### *modifier.name ⇒ <code>string</code>*

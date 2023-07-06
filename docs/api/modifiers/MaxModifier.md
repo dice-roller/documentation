@@ -16,6 +16,7 @@ A `MaxModifier` causes die rolls over a maximum value to be treated as the maxim
 
 * [MaxModifier](#MaxModifier) ⇐ <code>Modifier</code>
     * [new MaxModifier(max)](#new_MaxModifier_new)
+    * [.order](#MaxModifier+order) : <code>number</code>
     * [.max](#MaxModifier+max) ⇒ <code>Number</code>
     * [.max](#MaxModifier+max)
     * [.name](#MaxModifier+name) ⇒ <code>string</code>
@@ -37,6 +38,12 @@ Create a `MaxModifier` instance.
 | --- | --- | --- |
 | max | <code>number</code> | The maximum value |
 
+<a name="MaxModifier+order"></a>
+
+### maxModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>MaxModifier</code>](#MaxModifier)  
 <a name="MaxModifier+max"></a>
 
 ### maxModifier.max ⇒ <code>Number</code>

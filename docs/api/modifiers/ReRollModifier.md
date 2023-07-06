@@ -16,6 +16,7 @@ one.
 
 * [ReRollModifier](#ReRollModifier) ⇐ <code>ComparisonModifier</code>
     * [new ReRollModifier([once], [comparePoint])](#new_ReRollModifier_new)
+    * [.order](#ReRollModifier+order) : <code>number</code>
     * [.name](#ReRollModifier+name) ⇒ <code>string</code>
     * [.notation](#ReRollModifier+notation) ⇒ <code>string</code>
     * [.once](#ReRollModifier+once) ⇒ <code>boolean</code>
@@ -34,6 +35,12 @@ Create a `ReRollModifier` instance.
 | [once] | <code>boolean</code> | <code>false</code> | Whether to only re-roll once or not |
 | [comparePoint] | <code>ComparePoint</code> | <code></code> | The comparison object |
 
+<a name="ReRollModifier+order"></a>
+
+### reRollModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>ReRollModifier</code>](#ReRollModifier)  
 <a name="ReRollModifier+name"></a>
 
 ### reRollModifier.name ⇒ <code>string</code>

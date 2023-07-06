@@ -14,6 +14,7 @@ A `UniqueModifier` re-rolls any non-unique dice values and, optionally that matc
 
 * [UniqueModifier](#UniqueModifier) ⇐ <code>ComparisonModifier</code>
     * [new UniqueModifier([once], [comparePoint])](#new_UniqueModifier_new)
+    * [.order](#UniqueModifier+order) : <code>number</code>
     * [.name](#UniqueModifier+name) ⇒ <code>string</code>
     * [.notation](#UniqueModifier+notation) ⇒ <code>string</code>
     * [.once](#UniqueModifier+once) ⇒ <code>boolean</code>
@@ -32,6 +33,12 @@ Create a `UniqueModifier` instance.
 | [once] | <code>boolean</code> | <code>false</code> | Whether to only re-roll once or not |
 | [comparePoint] | <code>ComparePoint</code> | <code></code> | The comparison object |
 
+<a name="UniqueModifier+order"></a>
+
+### uniqueModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>UniqueModifier</code>](#UniqueModifier)  
 <a name="UniqueModifier+name"></a>
 
 ### uniqueModifier.name ⇒ <code>string</code>

@@ -16,6 +16,7 @@ A `MinModifier` causes die rolls under a minimum value to be treated as the mini
 
 * [MinModifier](#MinModifier) ⇐ <code>Modifier</code>
     * [new MinModifier(min)](#new_MinModifier_new)
+    * [.order](#MinModifier+order) : <code>number</code>
     * [.min](#MinModifier+min) ⇒ <code>Number</code>
     * [.min](#MinModifier+min)
     * [.name](#MinModifier+name) ⇒ <code>string</code>
@@ -37,6 +38,12 @@ Create a `MinModifier` instance.
 | --- | --- | --- |
 | min | <code>number</code> | The minimum value |
 
+<a name="MinModifier+order"></a>
+
+### minModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>MinModifier</code>](#MinModifier)  
 <a name="MinModifier+min"></a>
 
 ### minModifier.min ⇒ <code>Number</code>

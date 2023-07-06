@@ -18,6 +18,7 @@ success = `1`, failure = `-1`, neutral = `0`.
 
 * [TargetModifier](#TargetModifier) ⇐ <code>ComparisonModifier</code>
     * [new TargetModifier(successCP, [failureCP])](#new_TargetModifier_new)
+    * [.order](#TargetModifier+order) : <code>number</code>
     * [.failureComparePoint](#TargetModifier+failureComparePoint) ⇒ <code>ComparePoint</code> \| <code>null</code>
     * [.failureComparePoint](#TargetModifier+failureComparePoint)
     * [.name](#TargetModifier+name) ⇒ <code>string</code>
@@ -46,6 +47,12 @@ Create a `TargetModifier` instance.
 | successCP | <code>ComparePoint</code> |  | The success comparison object |
 | [failureCP] | <code>ComparePoint</code> | <code></code> | The failure comparison object |
 
+<a name="TargetModifier+order"></a>
+
+### targetModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>TargetModifier</code>](#TargetModifier)  
 <a name="TargetModifier+failureComparePoint"></a>
 
 ### targetModifier.failureComparePoint ⇒ <code>ComparePoint</code> \| <code>null</code>

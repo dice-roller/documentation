@@ -15,6 +15,7 @@ An `ExplodeModifier` re-rolls dice that match a given test, and adds them to the
 
 * [ExplodeModifier](#ExplodeModifier) ⇐ <code>ComparisonModifier</code>
     * [new ExplodeModifier([comparePoint], [compound], [penetrate])](#new_ExplodeModifier_new)
+    * [.order](#ExplodeModifier+order) : <code>number</code>
     * [.compound](#ExplodeModifier+compound) ⇒ <code>boolean</code>
     * [.name](#ExplodeModifier+name) ⇒ <code>string</code>
     * [.notation](#ExplodeModifier+notation) ⇒ <code>string</code>
@@ -38,6 +39,12 @@ Create an `ExplodeModifier` instance
 | [compound] | <code>boolean</code> | <code>false</code> | Whether to compound or not |
 | [penetrate] | <code>boolean</code> | <code>false</code> | Whether to penetrate or not |
 
+<a name="ExplodeModifier+order"></a>
+
+### explodeModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>ExplodeModifier</code>](#ExplodeModifier)  
 <a name="ExplodeModifier+compound"></a>
 
 ### explodeModifier.compound ⇒ <code>boolean</code>

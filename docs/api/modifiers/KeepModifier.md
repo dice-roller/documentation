@@ -16,6 +16,7 @@ others.
 
 * [KeepModifier](#KeepModifier) ⇐ <code>Modifier</code>
     * [new KeepModifier([end], [qty])](#new_KeepModifier_new)
+    * [.order](#KeepModifier+order) : <code>number</code>
     * [.end](#KeepModifier+end) ⇒ <code>string</code>
     * [.end](#KeepModifier+end)
     * [.name](#KeepModifier+name) ⇒ <code>string</code>
@@ -42,6 +43,12 @@ Create a `KeepModifier` instance
 | [end] | <code>string</code> | <code>&quot;h&quot;</code> | Either `h|l` to keep highest or lowest |
 | [qty] | <code>number</code> | <code>1</code> | The amount dice to keep |
 
+<a name="KeepModifier+order"></a>
+
+### keepModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>KeepModifier</code>](#KeepModifier)  
 <a name="KeepModifier+end"></a>
 
 ### keepModifier.end ⇒ <code>string</code>

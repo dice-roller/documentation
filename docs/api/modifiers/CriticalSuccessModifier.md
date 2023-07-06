@@ -17,6 +17,7 @@ Unlike most other modifiers, it doesn't affect the roll value, it simply "flags"
 
 * [CriticalSuccessModifier](#CriticalSuccessModifier) ⇐ <code>ComparisonModifier</code>
     * [new CriticalSuccessModifier(comparePoint)](#new_CriticalSuccessModifier_new)
+    * [.order](#CriticalSuccessModifier+order) : <code>number</code>
     * [.name](#CriticalSuccessModifier+name) ⇒ <code>string</code>
     * [.notation](#CriticalSuccessModifier+notation) ⇒ <code>string</code>
     * [.run(results, _context)](#CriticalSuccessModifier+run) ⇒ <code>RollResults</code>
@@ -35,6 +36,12 @@ Create a `CriticalSuccessModifier` instance.
 | --- | --- | --- |
 | comparePoint | <code>ComparePoint</code> | The comparison object |
 
+<a name="CriticalSuccessModifier+order"></a>
+
+### criticalSuccessModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>CriticalSuccessModifier</code>](#CriticalSuccessModifier)  
 <a name="CriticalSuccessModifier+name"></a>
 
 ### criticalSuccessModifier.name ⇒ <code>string</code>

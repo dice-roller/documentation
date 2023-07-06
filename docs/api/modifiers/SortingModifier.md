@@ -14,6 +14,7 @@ A `SortingModifier` sorts roll results by their value, either ascending or desce
 
 * [SortingModifier](#SortingModifier) ⇐ <code>ComparisonModifier</code>
     * [new SortingModifier([direction])](#new_SortingModifier_new)
+    * [.order](#SortingModifier+order) : <code>number</code>
     * [.direction](#SortingModifier+direction) ⇒ <code>string</code>
     * [.direction](#SortingModifier+direction)
     * [.name](#SortingModifier+name) ⇒ <code>string</code>
@@ -35,6 +36,12 @@ Create a `SortingModifier` instance.
 | --- | --- | --- | --- |
 | [direction] | <code>string</code> | <code>&quot;a&quot;</code> | The direction to sort in; 'a' (Ascending) or 'd' (Descending) |
 
+<a name="SortingModifier+order"></a>
+
+### sortingModifier.order : <code>number</code>
+The default modifier execution order.
+
+**Kind**: instance property of [<code>SortingModifier</code>](#SortingModifier)  
 <a name="SortingModifier+direction"></a>
 
 ### sortingModifier.direction ⇒ <code>string</code>
