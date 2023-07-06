@@ -7,6 +7,11 @@ title: HasDescription
 <a name="HasDescription"></a>
 
 ## *HasDescription*
+::: warning Abstract class
+This is an abstract class and should not be used directly.
+You should use one of the extended classes, or extend the class yourself.
+:::
+
 A base class for description functionality.
 
 **Kind**: global abstract class  

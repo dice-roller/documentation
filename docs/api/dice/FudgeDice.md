@@ -7,7 +7,7 @@ title: FudgeDice
 <a name="FudgeDice"></a>
 
 ## FudgeDice ⇐ <code>StandardDice</code>
-Represents a Fudge / Fate type die.
+Represents a Fudge / Fate type die. FOO
 
 **Kind**: global class  
 **Extends**: <code>StandardDice</code>  

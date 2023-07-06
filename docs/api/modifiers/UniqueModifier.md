@@ -7,7 +7,7 @@ title: UniqueModifier
 <a name="UniqueModifier"></a>
 
 ## UniqueModifier ⇐ <code>ComparisonModifier</code>
-A `UniqueModifier` re-rolls any dice that roll non-unique values and, optionally that match a given test.
+A `UniqueModifier` re-rolls any non-unique dice values and, optionally that match a given test.
 
 **Kind**: global class  
 **Extends**: <code>ComparisonModifier</code>  

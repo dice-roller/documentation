@@ -7,12 +7,12 @@ title: ComparisonModifier
 <a name="ComparisonModifier"></a>
 
 ## *ComparisonModifier ⇐ <code>Modifier</code>*
-A `ComparisonModifier` is the base modifier class for comparing values.
-
 ::: warning Abstract class
-This is meant as an abstract class and should not be used directly.
-You can use one of the extended modifiers, or extend the class yourself.
+This is an abstract class and should not be used directly.
+You should use one of the extended classes, or extend the class yourself.
 :::
+
+A `ComparisonModifier` is the base modifier class for comparing values.
 
 **Kind**: global abstract class  
 **Extends**: <code>Modifier</code>  

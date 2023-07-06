@@ -7,11 +7,12 @@ title: Modifier
 <a name="Modifier"></a>
 
 ## *Modifier*
-A `Modifier` is the base modifier class that all others extend from.
-
 ::: warning Abstract class
-This is meant as an abstract class and should not be used directly.
+This is an abstract class and should not be used directly.
+You should use one of the extended classes, or extend the class yourself.
 :::
+
+A `Modifier` is the base modifier class that all others extend from.
 
 **Kind**: global abstract class  
 
