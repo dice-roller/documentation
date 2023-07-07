@@ -8,7 +8,6 @@ Read the sections below for details usage instructions.
 
 **TLDR;** just [show me some examples](#examples).
 
-
 ## Rolling dice
 
 Dice are rolled with a string [notation](./notation/readme.md). The quickest method is using the `DiceRoll` class:
@@ -217,7 +216,7 @@ import { DiceRoll, exportFormats } from '@dice-roller/rpg-dice-roller';
 
 const roll = new DiceRoll('4d6');
 
-roll.export('format');
+roll.export(exportFormats.JSON);
 ```
 
 @tab CommonJs
@@ -228,7 +227,7 @@ const { DiceRoll, exportFormats } = require('@dice-roller/rpg-dice-roller');
 
 const roll = new DiceRoll('4d6');
 
-roll.export('format');
+roll.export(exportFormats.JSON);
 ```
 
 @tab Browser
@@ -238,18 +237,44 @@ roll.export('format');
 
 const roll = new rpgDiceRoller.DiceRoll('4d6');
 
-roll.export('format');
+roll.export(rpgDiceRoller.exportFormats.JSON);
 ```
 
 :::
 
-### Plain object
+### JSON string _(Default)_
+
+The default output type is a JSON formatted string.
 
 ```javascript
-// export as a plain object
+// default export as a JSON string
+const jsonString = roll.export();
+// equivalent to:
+const jsonString = roll.export(exportFormats.JSON);
+```
+Returns stringified version of the [plain object](#plain-object):
+```javascript
+'{"averageTotal":14,"maxTotal":24,"minTotal":4,"notation":"4d6","output":"4d6: [2, 4, 2, 2] = 10","rolls":[...],"total":10,"type":"dice-roll"}'
+```
+
+::: tip
+Calling `JSON.stringify()` on a `DiceRoll` instance returns the same as a JSON `export()`:
+
+```javascript
+JSON.stringify(roll) === roll.export();
+```
+:::
+
+### Plain object
+
+You can export to a plain Javascript object:
+
+```javascript
 const jsonString = roll.export(exportFormats.OBJECT);
 ```
+
 Returns something like:
+
 ```javascript
 {
   averageTotal: 14,
@@ -263,34 +288,15 @@ Returns something like:
 }
 ```
 
-### JSON string _(Default)_
-
-```javascript
-// default export as a JSON string
-const jsonString = roll.export();
-// equivalent to:
-const jsonString = roll.export(exportFormats.JSON);
-```
-Returns stringified version of the plain object:
-```javascript
-'{"averageTotal":14,"maxTotal":24,"minTotal":4,"notation":"4d6","output":"4d6: [2, 4, 2, 2] = 10","rolls":[...],"total":10,"type":"dice-roll"}'
-```
-
-::: tip
-Calling `JSON.stringify()` on a `DiceRoll` instance returns the same as a JSON `export()`:
-
-```javascript
-JSON.stringify(roll) === roll.export();
-```
-:::
-
 ### Base64 string
 
 ```javascript
 // export as base64 encoded string
 const jsonString = roll.export(exportFormats.BASE_64);
 ```
-Returns base64 encoded version of the JSON string:
+
+Returns base64 encoded version of the [JSON string](#json-string-default):
+
 ```javascript
 'eyJtYXhUb3RhbCI6MjQsIm1pblRvdGFsIjo0LCJub3RhdGlvbiI6IjRkNiIsIm91dHB1dCI6IjRkNjogWzIsIDQsIDIsIDJdID0gMTAiLCJyb2xscyI6W3sicm9sbHMiOlt7ImNhbGN1bGF0aW9uVmFsdWUiOjIsImluaXRpYWxWYWx1ZSI6MiwibW9kaWZpZXJGbGFncyI6IiIsIm1vZGlmaWVycyI6W10sInR5cGUiOiJyZXN1bHQiLCJ1c2VJblRvdGFsIjp0cnVlLCJ2YWx1ZSI6Mn0seyJjYWxjdWxhdGlvblZhbHVlIjo0LCJpbml0aWFsVmFsdWUiOjQsIm1vZGlmaWVyRmxhZ3MiOiIiLCJtb2RpZmllcnMiOltdLCJ0eXBlIjoicmVzdWx0IiwidXNlSW5Ub3RhbCI6dHJ1ZSwidmFsdWUiOjR9LHsiY2FsY3VsYXRpb25WYWx1ZSI6MiwiaW5pdGlhbFZhbHVlIjoyLCJtb2RpZmllckZsYWdzIjoiIiwibW9kaWZpZXJzIjpbXSwidHlwZSI6InJlc3VsdCIsInVzZUluVG90YWwiOnRydWUsInZhbHVlIjoyfSx7ImNhbGN1bGF0aW9uVmFsdWUiOjIsImluaXRpYWxWYWx1ZSI6MiwibW9kaWZpZXJGbGFncyI6IiIsIm1vZGlmaWVycyI6W10sInR5cGUiOiJyZXN1bHQiLCJ1c2VJblRvdGFsIjp0cnVlLCJ2YWx1ZSI6Mn1dLCJ2YWx1ZSI6MTB9XSwidG90YWwiOjEwLCJ0eXBlIjoiZGljZS1yb2xsIn0='
 ```
@@ -310,9 +316,9 @@ const roller = new DiceRoller();
 roller.roll('4d6');
 roller.roll('2d10');
 
-roller.export('format');
+roller.export(exportFormats.JSON);
 ```
-http://localhost:8080/documentation/guide/usage.html#examples
+
 @tab CommonJs
 
 ```javascript
@@ -322,7 +328,7 @@ const roller = new DiceRoller();
 roller.roll('4d6');
 roller.roll('2d10');
 
-roller.export('format');
+roller.export(exportFormats.JSON);
 ```
 
 @tab Browser
@@ -333,7 +339,7 @@ const roller = new rpgDiceRoller.DiceRoller();
 roller.roll('4d6');
 roller.roll('2d10');
 
-roller.export('format');
+roller.export(exportFormats.JSON);
 ```
 
 :::
