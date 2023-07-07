@@ -71,7 +71,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [CLI](https://github.com/dice-roller/cli) <Badge text="New" vertical="middle"/> - Command Line Interface for rolling dice
 
 
-## Browser support
+## Environment support
 
 This library uses ES6+ and native JS modules, which work in all the latest browsers, and Node.js.
 
@@ -80,8 +80,10 @@ We also provide a bundled UMD version that can be used in environments that don'
 We actively support the latest versions of Firefox, Chrome, Opera, Safari, Microsoft Edge, and Node.js.
 
 ::: warning Node.js
-We only support Node.js >= 12.
+We only support the [current Node LTS release](https://github.com/nodejs/release#release-schedule) and newer.
 There's no guarantee that it will work on older versions.
+
+![Supported node version](https://img.shields.io/node/v/%40dice-roller/rpg-dice-roller)
 :::
 
 ::: danger Internet Explorer

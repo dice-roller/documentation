@@ -27,10 +27,6 @@ yarn add @dice-roller/rpg-dice-roller
 
 ## Setup
 
-::: warning Node.js
-We only support Node.js 12+. Please check the [browser support](readme.md#browser-support).
-:::
-
 :::: tabs#module-type
 
 @tab ESM
@@ -68,7 +64,7 @@ const { DiceRoller } = require('@dice-roller/rpg-dice-roller');
 
 ::: warning Browser support
 The dice roller may not work with older browsers.
-Please check the [browser support](readme.md#browser-support).
+Please check the [environment support](readme.md#environment-support).
 :::
 
 
@@ -105,5 +101,4 @@ The UMD bundle provides the global variable, `rpgDiceRoller`, that is used to ac
   var diceRoller = new rpgDiceRoller.DiceRoller();
 </script>
 ```
-
 ::::
