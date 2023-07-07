@@ -140,7 +140,7 @@ This also applies to [Compounding](#compounding), [Penetrating](#penetrating), [
 
 **Notation:** `!!` / `!!{cp}`
 
-Sometimes, you may want the exploded dice rolls to be combined together into a single roll. In this situation, you can compound the dice by using two exclamation marks: `4d10!!`
+Sometimes, you may want the exploded dice rolls to be combined into a single roll. In this situation, you can compound the dice by using two exclamation marks: `4d10!!`
 
 For example:
 
@@ -169,7 +169,7 @@ You can also use [Compare Points](#compare-point) to change when a die will comp
 
 Some exploding dice system use a penetrating rule.
 
-Taken from the Hackmaster Basic rules:
+Taken from the HackMaster Basic rules:
 
 > Should you roll the maximum value 
   on this particular die, you may re-roll and add the result of 
@@ -198,7 +198,7 @@ Remember that we subtract 1 from penetrated rolls, which is why we see `5`, `5`,
 
 You can also compound penetrating dice, like so: `2d6!!p`
 
-You can also use [Compare Points](#compare-point) to change when a dice will penetrate:
+You can also use [Compare Points](#compare-point) to change when a die will penetrate:
 
 ```javascript
 2d6!p=5   // penetrate on any rolls equal to 5
@@ -233,7 +233,7 @@ If you only want to re-roll once, even if the second roll also rolls the minimum
 d6ro
 ```
 
-If you want to change the number that a dice will re-roll on, you can use a [Compare Point](#compare-point):
+If you want to change the number that a die will re-roll on, you can use a [Compare Point](#compare-point):
 
 ```javascript
 2d6r=5    // re-roll on any rolls equal to 5
@@ -279,7 +279,7 @@ If you only want to roll a duplicate die once, the use `uo`:
 
 This could end up with duplicates, if the re-roll also rolls a duplicate.
 
-If you only want to re-roll duplicates if they match certain criteria (ie. below a certain threshold, or equal a certain value), you can use a [Compare Point](#compare-point):
+If you only want to re-roll duplicates if they match certain criteria (i.e. below a certain threshold, or equal a certain value), you can use a [Compare Point](#compare-point):
 
 ```javascript
 4d6u=5    // Only re-roll duplicates that roll a 5
@@ -408,7 +408,7 @@ Some systems use dice pool, or success counts, whereby the total is equal to the
 
 This can be achieved by adding a [Compare Point](#compare-point) notation directly after the die notation.
 
-For example; a "pool" of 10 sided dice where you count the number of dice that roll an 8 or higher as "successes":
+For example; a "pool" of 10 sided dice where you count the number of dice that roll an 8, or higher, as "successes":
 
 ```javascript
 5d10>=8

@@ -7,7 +7,7 @@ title: DieActionValueError
 <a name="DieActionValueError"></a>
 
 ## DieActionValueError
-An error thrown when an invalid die action (e.g Exploding on a d1) occurs
+An error thrown when an invalid die action (e.g. Exploding on a d1) occurs
 
 **Kind**: global class  
 <a name="new_DieActionValueError_new"></a>

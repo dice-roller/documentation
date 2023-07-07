@@ -50,7 +50,7 @@ const roll2 = new DiceRoll('8dF.2 - 3');
 
 ## Roll totals
 
-You can get the total value of a dice roll using the `total` property on the `DiceRoll` object:
+You can get the total value of a die roll using the `total` property on the `DiceRoll` object:
 
 ```javascript
 const roll = new DiceRoll('4d8+1');
@@ -303,7 +303,7 @@ Returns base64 encoded version of the [JSON string](#json-string-default):
 
 ## Exporting logs
 
-You can also export the data from a `DiceRoller` instance, in exactly the same way. It too has an `export()` method, that accepts the same [export formats](../api/utilities/ExportFormats.md).
+You can also export the data from a `DiceRoller` instance, in exactly the same way. It also has an `export()` method, that accepts the same [export formats](../api/utilities/ExportFormats.md).
 
 ::: code-tabs#module-type
 
@@ -378,7 +378,7 @@ The plain object export returns something like this:
 
 ## Import rolls
 
-Importing rolls is handy if you need to be able to retrieve rolls from a database, share them across enviroments etc.
+Importing rolls is handy if you need to be able to retrieve rolls from a database, share them across environments etc.
 
 Both `DiceRoll` and `DiceRoller` classes have a static `import()` method that can import form any of the exported formats [listed above](#export-rolls):
 

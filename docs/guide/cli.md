@@ -92,4 +92,4 @@ roller play --players=Barbara Ian
 roller play --count=2 --players=Susan
 ```
 
-You can use all of the [notation](./notation/readme.md) in the CLI.
+You can use all the [notation](./notation/readme.md) in the CLI.

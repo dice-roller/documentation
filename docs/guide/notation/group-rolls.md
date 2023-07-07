@@ -142,7 +142,7 @@ Single sub-rolls, will only ever return a result of `1` or `0`:
 
 #### Multiple sub-rolls
 
-With mutliple sub-rolls, the number of sucesses are added together
+With multiple sub-rolls, the number of successes are added together
 
 ```javascript
 {4d6+2d8, 3d20+3, 5d10+1}>40: {[4, 3, 3, 2]+[2, 6], ([17, 5, 20]+3)*, ([7, 9, 6, 10, 8]+1)*} = 2
@@ -161,7 +161,7 @@ The above has `2` successes because;
 **Notation:** `f{cp}`
 
 ::: warning Remember
-A failure modifier _must_ directly preceed a [Success modifier](#target-success-dice-pool).
+A failure modifier _must_ directly follow a [Success modifier](#target-success-dice-pool).
 :::
 
 This is similar to the standard [Target failure modifier](./modifiers.md#target-failure-dice-pool); It allows you to count the number of failures in a collection of dice.
@@ -184,7 +184,7 @@ Single sub-rolls, will only ever return a result of `1`, `-1`, or `0`:
 
 #### Multiple sub-rolls
 
-With mutliple sub-rolls, the number of sucesses are added together, and the number of failures are subtracted from the value:
+With multiple sub-rolls, the number of successes are added together, and the number of failures are subtracted from the value:
 
 ```javascript
 {4d6+2d8, 3d20+3, 5d10+1}>40f<30: {([4, 3, 3, 2]+[2, 6])_, ([17, 5, 20]+3)*, ([7, 9, 6, 10, 8]+1)*} = 1

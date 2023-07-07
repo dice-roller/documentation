@@ -7,11 +7,9 @@ next: /guide/notation/
 
 ## Random number generator
 
-By default, the dice rolls use Javascript's built-in [`Math.random()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) to generate the roll values. This is a form of [psudeo random number generation](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) (PRNG).
+By default, the dice rolls use Javascript's built-in [`Math.random()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) to generate the roll values. This is a form of [pseudo random number generation](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) (PRNG).
 
-For most purposes, `Math.random()` should be suitable, but you may feel as though it's not random enough, or would rather something more powerful, or even cryptographically secure.
-
-For this purposes, you can change "[engine](#engines)" used for the number generation.
+For most purposes, `Math.random()` should be suitable, however, if you want something more random, or would rather something more powerful, or even cryptographically secure, you can change the "[engine](#engines)" used for the number generation.
 
 
 ### Engines
@@ -117,7 +115,7 @@ generator.engine = {
 roller.roll('d6');
 ```
 
-If you want to revert back to using the default `Math.random()`, you can either set the engine to `nativeMath`, or to a falsey value (e.g. `null`):
+If you want to revert back to using the default `Math.random()`, you can either set the engine to `nativeMath`, or to a falsy value (e.g. `null`):
 
 ```javascript
 generator.engine = engines.nativeMath;

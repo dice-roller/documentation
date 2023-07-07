@@ -123,7 +123,7 @@ Check if the `value` matches the failure compare point.
 
 A response of `false` does _NOT_ indicate a success.
 A value is a success _ONLY_ if it passes the success compare point.
-A value could be neither a failure or a success.
+A value could be neither a failure nor a success.
 
 **Kind**: instance method of [<code>TargetModifier</code>](#TargetModifier)  
 
@@ -134,7 +134,7 @@ A value could be neither a failure or a success.
 <a name="TargetModifier+isNeutral"></a>
 
 ### targetModifier.isNeutral(value) ⇒ <code>boolean</code>
-Check if the `value` is neither a success or a failure.
+Check if the `value` is neither a success nor a failure.
 
 **Kind**: instance method of [<code>TargetModifier</code>](#TargetModifier)  
 **Returns**: <code>boolean</code> - `true` if the value doesn't match the success and failure compare points  
@@ -150,7 +150,7 @@ Check if the `value` matches the success compare point.
 
 A response of `false` does _NOT_ indicate a failure.
 A value is a failure _ONLY_ if it passes the failure compare point.
-A value could be neither a failure or a success.
+A value could be neither a failure nor a success.
 
 **Kind**: instance method of [<code>TargetModifier</code>](#TargetModifier)  
 

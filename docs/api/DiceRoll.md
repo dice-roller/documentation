@@ -7,7 +7,7 @@ title: DiceRoll
 <a name="DiceRoll"></a>
 
 ## DiceRoll
-A `DiceRoll` handles rolling of a single dice notation and storing it's result.
+A `DiceRoll` handles rolling of a single dice notation and storing the result.
 
 **Kind**: global class  
 **See**: [DiceRoller](DiceRoller) if you need to keep a history of rolls  
