@@ -15,14 +15,16 @@ We have tried to cover all the commonly used modifiers. [Let us know](https://gi
 :::
 
 ::: warning Modifier order
-Modifiers always run in a specific order, regardless of the order you specify them in.
+Modifiers always run in a specific order, regardless of the order you specify them in the notation.
 This is determined by the modifier's `order` property, and works in ascending order.
 
-These two are equivalent, and the [explode modifier](#exploding) will always run before the [drop modifier](#drop):
+These two are equivalent and, by default, the [explode modifier](#exploding) will always run before the [drop modifier](#drop):
 ```javascript
 4d6!d1
 4d6d1!
 ```
+
+You can [change the modifier execution order](../customisation.md#modifier-execution-order).
 :::
 
 
