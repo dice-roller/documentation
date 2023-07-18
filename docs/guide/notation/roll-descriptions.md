@@ -1,4 +1,4 @@
-# Describing Roles  <Badge text="New" vertical="middle"/>
+# Describing Rolls  <Badge text="New" vertical="middle"/>
 
 You can add a textual description or label to both [Dice](dice.md) and [Roll Group](group-rolls.md), to help identify them.
 
