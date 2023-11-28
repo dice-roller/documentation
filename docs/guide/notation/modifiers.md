@@ -483,7 +483,7 @@ The Failure modifier is a [Compare Point](#compare-point), preceded with the low
 
 ## Critical success
 
-**Notation:** `cs{cp}`
+**Notation:** `cs` / `cs{cp}`
 
 **Order:** 9
 
@@ -491,22 +491,25 @@ The Failure modifier is a [Compare Point](#compare-point), preceded with the low
 This is purely aesthetic and makes no functional difference to the rolls or their values.
 :::
 
-When a die rolls the highest possible value, such as rolling a 20 on a d20, this is called a critical success.
+Typically, when a die rolls the highest possible value, such as rolling a `20` on a d20, this is called a critical success.
 
-However, sometimes you want a critical success to be on a different value, or a range, such as 18-20 on a d20.
+You can highlight a critical success roll by adding `cs` after the die notation: `2d20cs`
 
-To specify what is considered as a critical success, add `cs` and a [Compare Point](#compare-point), after the die notation:
+Critical success rolls will be marked with a double asterisk:
 
 ```javascript
-// roll a d10 4 times, anything greater than 7 is a critical success
-4d10cs>7
+2d20cs: [4, 20**] = 24
 ```
 
-The roll result output will look something like this:
+However, sometimes you want a critical success to be on a different value, or a range.
+
+To specify what is considered as a critical success, use a [Compare Point](#compare-point):
 
 ```javascript
-// the rolls of 20 and 18 are critical successes
-5d20cs>=16: [3, 20**, 18**, 15, 6] = 62
+// rolls greater than 7 are a critical success
+4d10cs>7
+// rolls equal to 2 is a critical success
+5d3cs=2
 ```
 
 ::: roller 5d20cs>=16 :::
@@ -514,7 +517,7 @@ The roll result output will look something like this:
 
 ## Critical Failure
 
-**Notation:** `cf{cp}`
+**Notation:** `cf` / `cf{cp}`
 
 **Order:** 10
 
@@ -522,22 +525,25 @@ The roll result output will look something like this:
 This is purely aesthetic and makes no functional difference to the rolls or their values.
 :::
 
-When a die rolls the lowest possible value, such as rolling a 1 on a d20, this is called a critical failure.
+Typically, when a die rolls the lowest possible value, such as rolling a `1` on a d20, this is called a critical failure.
 
-However, sometimes you want a critical failure to be on a different value, or a range, such as 1-3 on a d20.
+You can highlight a critical failure roll by adding `cf` after the die notation: `2d20cf`
 
-To specify what is considered as a critical failure, add `cf` and a [Compare Point](#compare-point), after the die notation:
+Critical success rolls will be marked with a double underscore:
 
 ```javascript
-// roll a d10 4 times, anything less than 3 is a critical failure
-4d10cf<3
+2d20cf: [4, 1__] = 5
 ```
 
-The roll result output will look something like this:
+However, sometimes you want a critical failure to be on a different value, or a range.
+
+To specify what is considered as a critical failure, use a [Compare Point](#compare-point):
 
 ```javascript
-// the rolls of 3 and 6 are critical failures
-5d20cf<=6: [3__, 20, 18, 15, 6__] = 62
+// rolls less than 3 is a critical failure
+4d10cf<3
+// rolls equal to 2 is a critical failure
+6d4cf=2
 ```
 
 ::: roller 5d20cf<=6 :::
