@@ -34,7 +34,7 @@
   },
   "homepage": "https://dice-roller.github.io/documentation",
   "devDependencies": {
-    "@dice-roller/vuepress-plugin-dice-roller": "^1.3.2",
+    "@dice-roller/vuepress-plugin-dice-roller": "^1.3.3",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.63",
     "@vuepress/plugin-docsearch": "2.0.0-beta.63",
     "@vuepress/plugin-search": "2.0.0-beta.63",
