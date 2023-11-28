@@ -22,6 +22,8 @@ A `Modifier` is the base modifier class that all others extend from.
     * *[.name](#Modifier+name) ⇒ <code>string</code>*
     * *[.notation](#Modifier+notation) ⇒ <code>string</code>*
     * *[.maxIterations](#Modifier+maxIterations) ⇒ <code>number</code>*
+    * *[.defaults(_context)](#Modifier+defaults) ⇒ <code>object</code>*
+    * *[.useDefaultsIfNeeded(_context)](#Modifier+useDefaultsIfNeeded) ⇒ <code>void</code>*
     * *[.run(results, _context)](#Modifier+run) ⇒ <code>RollResults</code>*
     * *[.toJSON()](#Modifier+toJSON) ⇒ <code>Object</code>*
     * *[.toString()](#Modifier+toString) ⇒ <code>string</code>*
@@ -57,6 +59,28 @@ The maximum number of iterations that the modifier can apply to a single die rol
 
 **Kind**: instance property of [<code>Modifier</code>](#Modifier)  
 **Returns**: <code>number</code> - `1000`  
+<a name="Modifier+defaults"></a>
+
+### *modifier.defaults(_context) ⇒ <code>object</code>*
+No default values present
+
+**Kind**: instance method of [<code>Modifier</code>](#Modifier)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
+
+<a name="Modifier+useDefaultsIfNeeded"></a>
+
+### *modifier.useDefaultsIfNeeded(_context) ⇒ <code>void</code>*
+Processing default values definitions
+
+**Kind**: instance method of [<code>Modifier</code>](#Modifier)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
+
 <a name="Modifier+run"></a>
 
 ### *modifier.run(results, _context) ⇒ <code>RollResults</code>*

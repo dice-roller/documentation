@@ -21,6 +21,7 @@ one.
     * [.notation](#ReRollModifier+notation) ⇒ <code>string</code>
     * [.once](#ReRollModifier+once) ⇒ <code>boolean</code>
     * [.once](#ReRollModifier+once)
+    * [.defaultComparePoint(_context)](#ReRollModifier+defaultComparePoint) ⇒ <code>array</code>
     * [.run(results, _context)](#ReRollModifier+run) ⇒ <code>RollResults</code>
     * [.toJSON()](#ReRollModifier+toJSON) ⇒ <code>Object</code>
 
@@ -71,6 +72,17 @@ Set whether the modifier should only re-roll once or not.
 | Param | Type |
 | --- | --- |
 | value | <code>boolean</code> | 
+
+<a name="ReRollModifier+defaultComparePoint"></a>
+
+### reRollModifier.defaultComparePoint(_context) ⇒ <code>array</code>
+The default compare point definition
+
+**Kind**: instance method of [<code>ReRollModifier</code>](#ReRollModifier)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
 
 <a name="ReRollModifier+run"></a>
 

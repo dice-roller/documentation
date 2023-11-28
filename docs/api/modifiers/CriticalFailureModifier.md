@@ -20,6 +20,7 @@ Unlike most other modifiers, it doesn't affect the roll value, it simply "flags"
     * [.order](#CriticalFailureModifier+order) : <code>number</code>
     * [.name](#CriticalFailureModifier+name) ⇒ <code>string</code>
     * [.notation](#CriticalFailureModifier+notation) ⇒ <code>string</code>
+    * [.defaultComparePoint(_context)](#CriticalFailureModifier+defaultComparePoint) ⇒ <code>array</code>
     * [.run(results, _context)](#CriticalFailureModifier+run) ⇒ <code>RollResults</code>
 
 <a name="new_CriticalFailureModifier_new"></a>
@@ -55,6 +56,17 @@ The name of the modifier.
 The modifier's notation.
 
 **Kind**: instance property of [<code>CriticalFailureModifier</code>](#CriticalFailureModifier)  
+<a name="CriticalFailureModifier+defaultComparePoint"></a>
+
+### criticalFailureModifier.defaultComparePoint(_context) ⇒ <code>array</code>
+The default compare point definition
+
+**Kind**: instance method of [<code>CriticalFailureModifier</code>](#CriticalFailureModifier)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
+
 <a name="CriticalFailureModifier+run"></a>
 
 ### criticalFailureModifier.run(results, _context) ⇒ <code>RollResults</code>

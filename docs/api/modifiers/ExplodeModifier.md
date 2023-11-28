@@ -20,6 +20,7 @@ An `ExplodeModifier` re-rolls dice that match a given test, and adds them to the
     * [.name](#ExplodeModifier+name) ⇒ <code>string</code>
     * [.notation](#ExplodeModifier+notation) ⇒ <code>string</code>
     * [.penetrate](#ExplodeModifier+penetrate) ⇒ <code>boolean</code>
+    * [.defaultComparePoint(_context)](#ExplodeModifier+defaultComparePoint) ⇒ <code>array</code>
     * [.run(results, _context)](#ExplodeModifier+run) ⇒ <code>RollResults</code>
     * [.toJSON()](#ExplodeModifier+toJSON) ⇒ <code>Object</code>
 
@@ -72,6 +73,17 @@ Whether the modifier should penetrate the results or not.
 
 **Kind**: instance property of [<code>ExplodeModifier</code>](#ExplodeModifier)  
 **Returns**: <code>boolean</code> - `true` if it should penetrate, `false` otherwise  
+<a name="ExplodeModifier+defaultComparePoint"></a>
+
+### explodeModifier.defaultComparePoint(_context) ⇒ <code>array</code>
+The default compare point definition
+
+**Kind**: instance method of [<code>ExplodeModifier</code>](#ExplodeModifier)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
+
 <a name="ExplodeModifier+run"></a>
 
 ### explodeModifier.run(results, _context) ⇒ <code>RollResults</code>

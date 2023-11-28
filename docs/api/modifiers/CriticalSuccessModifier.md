@@ -20,6 +20,7 @@ Unlike most other modifiers, it doesn't affect the roll value, it simply "flags"
     * [.order](#CriticalSuccessModifier+order) : <code>number</code>
     * [.name](#CriticalSuccessModifier+name) ⇒ <code>string</code>
     * [.notation](#CriticalSuccessModifier+notation) ⇒ <code>string</code>
+    * [.defaultComparePoint(_context)](#CriticalSuccessModifier+defaultComparePoint) ⇒ <code>array</code>
     * [.run(results, _context)](#CriticalSuccessModifier+run) ⇒ <code>RollResults</code>
 
 <a name="new_CriticalSuccessModifier_new"></a>
@@ -55,6 +56,17 @@ The name of the modifier.
 The modifier's notation.
 
 **Kind**: instance property of [<code>CriticalSuccessModifier</code>](#CriticalSuccessModifier)  
+<a name="CriticalSuccessModifier+defaultComparePoint"></a>
+
+### criticalSuccessModifier.defaultComparePoint(_context) ⇒ <code>array</code>
+The default compare point definition
+
+**Kind**: instance method of [<code>CriticalSuccessModifier</code>](#CriticalSuccessModifier)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
+
 <a name="CriticalSuccessModifier+run"></a>
 
 ### criticalSuccessModifier.run(results, _context) ⇒ <code>RollResults</code>

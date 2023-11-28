@@ -31,6 +31,8 @@ A `ComparisonModifier` is the base modifier class for comparing values.
     * *[.comparePoint](#ComparisonModifier+comparePoint)*
     * *[.name](#ComparisonModifier+name) ⇒ <code>string</code>*
     * *[.notation](#ComparisonModifier+notation) ⇒ <code>string</code>*
+    * *[.defaultComparePoint(_context)](#ComparisonModifier+defaultComparePoint) ⇒ <code>null</code>*
+    * *[.defaults(_context)](#ComparisonModifier+defaults) ⇒ <code>object</code>*
     * *[.isComparePoint(value)](#ComparisonModifier+isComparePoint) ⇒ <code>boolean</code>*
     * *[.toJSON()](#ComparisonModifier+toJSON) ⇒ <code>Object</code>*
 
@@ -82,6 +84,28 @@ The name of the modifier.
 The modifier's notation.
 
 **Kind**: instance property of [<code>ComparisonModifier</code>](#ComparisonModifier)  
+<a name="ComparisonModifier+defaultComparePoint"></a>
+
+### *comparisonModifier.defaultComparePoint(_context) ⇒ <code>null</code>*
+Empty default compare point definition
+
+**Kind**: instance method of [<code>ComparisonModifier</code>](#ComparisonModifier)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
+
+<a name="ComparisonModifier+defaults"></a>
+
+### *comparisonModifier.defaults(_context) ⇒ <code>object</code>*
+Eases processing of simple "compare point only" defaults
+
+**Kind**: instance method of [<code>ComparisonModifier</code>](#ComparisonModifier)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| _context | <code>StandardDice</code> \| <code>RollGroup</code> | The object that the modifier is attached to |
+
 <a name="ComparisonModifier+isComparePoint"></a>
 
 ### *comparisonModifier.isComparePoint(value) ⇒ <code>boolean</code>*
