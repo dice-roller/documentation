@@ -6,18 +6,21 @@ on:
   pull_request:
     branches:
       - main
+permissions:
+  contents: write
 jobs:
   deploy:
     env:
       BASE_PATH: ${{ github.event.repository.name }}
       DIST_FOLDER: docs/.vuepress/dist
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: 'lts/*'
 
@@ -27,7 +30,7 @@ jobs:
           BASE_PATH=${{ env.BASE_PATH }} npm run docs:build
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: ${{ env.DIST_FOLDER }}
