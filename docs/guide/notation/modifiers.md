@@ -330,7 +330,7 @@ For example:
 When outputting the roll, the kept rolls aren't modified, but the dropped rolls are given the "d" flag:
 
 ```javascript
-6d8k3: [3d, 6, 7, 2d, 5, 4d] = 9
+6d8k3: [3d, 6, 7, 2d, 5, 4d] = 18
 ```
 
 ::: roller 6d8k3 :::
