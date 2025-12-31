@@ -452,7 +452,7 @@ You can work around this by specifying the Target compare point first:
 
 ```javascript
 2d6>3!   // explode on a roll of 6, greater than 3 is a success
-2d6>3!<4 // explode on any roll greater than 4, greater than 3 is a success
+2d6>3!<4 // explode on any roll less than 4, greater than 3 is a success
 ```
 :::
 
