@@ -1,15 +1,21 @@
-import { defaultTheme, defineUserConfig } from 'vuepress'
+import { defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 //import { searchPlugin } from '@vuepress/plugin-search'
 import { diceRollerPlugin } from '@dice-roller/vuepress-plugin-dice-roller';
 import { sidebarTree } from '../api/config';
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
-import { copyCodePlugin } from "vuepress-plugin-copy-code2";
+import { copyCodePlugin } from '@vuepress/plugin-copy-code';
 
 const base = `/${process.env.BASE_PATH || 'documentation'}/`;
 
 export default defineUserConfig({
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
   lang: 'en-GB',
   title: 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
