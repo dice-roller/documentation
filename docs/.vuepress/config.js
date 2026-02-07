@@ -1,14 +1,12 @@
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
-import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
-//import { searchPlugin } from '@vuepress/plugin-search'
+import { searchPlugin } from '@vuepress/plugin-search'
 import { diceRollerPlugin } from '@dice-roller/vuepress-plugin-dice-roller';
 import { sidebarTree } from '../api/config';
-import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
-import { copyCodePlugin } from '@vuepress/plugin-copy-code';
 
+const isDev = process.env.NODE_ENV === 'development';
 const base = `/${process.env.BASE_PATH || 'documentation'}/`;
 
 export default defineUserConfig({
@@ -75,29 +73,24 @@ export default defineUserConfig({
     },
   }),
   plugins: [
-    backToTopPlugin(),
-    copyCodePlugin(),
     diceRollerPlugin(),
-    docsearchPlugin({
-      apiKey: '01e04cdac0da20e46c358d3c975962bf',
-      appId: 'KJX1KIQOVL',
-      indexName: 'rpg-dice-roller'
-    }),
-    /*searchPlugin({
-      hotKeys: [
-        {
-          key: 's',
-          ctrl: true,
-        },
-        {
-          key: '/',
-          ctrl: true,
-        }
-      ],
-    }),*/
-    mdEnhancePlugin({
-      codetabs: true,
-      tabs: true,
-    }),
+    isDev
+        ? searchPlugin({
+          hotKeys: [
+            {
+              key: 's',
+              ctrl: true,
+            },
+            {
+              key: '/',
+              ctrl: true,
+            }
+          ],
+        })
+        : docsearchPlugin({
+          apiKey: '01e04cdac0da20e46c358d3c975962bf',
+          appId: 'KJX1KIQOVL',
+          indexName: 'rpg-dice-roller'
+        }),
   ],
 })

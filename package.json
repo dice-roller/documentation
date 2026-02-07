@@ -34,16 +34,13 @@
   },
   "homepage": "https://dice-roller.github.io/documentation",
   "devDependencies": {
-    "@dice-roller/vuepress-plugin-dice-roller": "^1.5.1",
+    "@dice-roller/vuepress-plugin-dice-roller": "^1.5.2",
     "@vuepress/bundler-vite": "^2.0.0-rc.26",
-    "@vuepress/plugin-back-to-top": "2.0.0-rc.122",
-    "@vuepress/plugin-copy-code": "^2.0.0-rc.122",
     "@vuepress/plugin-docsearch": "2.0.0-rc.122",
     "@vuepress/plugin-search": "2.0.0-rc.122",
     "@vuepress/theme-default": "2.0.0-rc.122",
     "sass-embedded": "^1.97.3",
     "vite": "^7.3.1",
-    "vuepress": "2.0.0-rc.26",
-    "vuepress-plugin-md-enhance": "^2.0.0-rc.102"
+    "vuepress": "2.0.0-rc.26"
   }
 }
