@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.26" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <link rel="icon" href="/documentation//dice-roller-logo.png"><title>RPG Dice Roller</title><meta name="description" content="A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.">
+    <link rel="preload" href="/documentation/assets/style-DgangsaD.css" as="style"><link rel="stylesheet" href="/documentation/assets/style-DgangsaD.css">
+    <link rel="modulepreload" href="/documentation/assets/app-B_W5UWK4.js"><link rel="modulepreload" href="/documentation/assets/404.html-C5kP5g5Q.js">
+    <link rel="prefetch" href="/documentation/assets/index.html-P9otjaai.js" as="script"><link rel="prefetch" href="/documentation/assets/ComparePoint.html-C-Ff_ua9.js" as="script"><link rel="prefetch" href="/documentation/assets/Description.html-By7HRb9V.js" as="script"><link rel="prefetch" href="/documentation/assets/DiceRoll.html-UaUoKJLH.js" as="script"><link rel="prefetch" href="/documentation/assets/DiceRoller.html-B5xOD2s0.js" as="script"><link rel="prefetch" href="/documentation/assets/index.html-jp6FLH3W.js" as="script"><link rel="prefetch" href="/documentation/assets/RollGroup.html-BctbGIfT.js" as="script"><link rel="prefetch" href="/documentation/assets/code-of-conduct.html-BontLayv.js" as="script"><link rel="prefetch" href="/documentation/assets/index.html-Caj4CMLU.js" as="script"><link rel="prefetch" href="/documentation/assets/cli.html-Bb2Uc20A.js" as="script"><link rel="prefetch" href="/documentation/assets/customisation.html-b-7HzagF.js" as="script"><link rel="prefetch" href="/documentation/assets/getting-started.html-Dpkxet6Y.js" as="script"><link rel="prefetch" href="/documentation/assets/index.html-Bs9GRgXW.js" as="script"><link rel="prefetch" href="/documentation/assets/usage.html-BaO72_za.js" as="script"><link rel="prefetch" href="/documentation/assets/FudgeDice.html-DQB-SND0.js" as="script"><link rel="prefetch" href="/documentation/assets/PercentileDice.html-DQvWovfq.js" as="script"><link rel="prefetch" href="/documentation/assets/StandardDice.html-BhYuJSl9.js" as="script"><link rel="prefetch" href="/documentation/assets/CompareOperatorError.html-CWKLsdBB.js" as="script"><link rel="prefetch" href="/documentation/assets/DataFormatError.html-CWspMb2x.js" as="script"><link rel="prefetch" href="/documentation/assets/DieActionValueError.html-veTjVU3N.js" as="script"><link rel="prefetch" href="/documentation/assets/NotationError.html-CvVGZe1q.js" as="script"><link rel="prefetch" href="/documentation/assets/RequiredArgumentError.html-CV_oQVv1.js" as="script"><link rel="prefetch" href="/documentation/assets/ComparisonModifier.html-BB8W4tRD.js" as="script"><link rel="prefetch" href="/documentation/assets/CriticalFailureModifier.html-CAd-Uyz5.js" as="script"><link rel="prefetch" href="/documentation/assets/CriticalSuccessModifier.html-DCxz8Ejw.js" as="script"><link rel="prefetch" href="/documentation/assets/DropModifier.html-CXh4dFZU.js" as="script"><link rel="prefetch" href="/documentation/assets/ExplodeModifier.html-Cas2h91_.js" as="script"><link rel="prefetch" href="/documentation/assets/KeepModifier.html-wxzV4UJL.js" as="script"><link rel="prefetch" href="/documentation/assets/MaxModifier.html-JJ4F8qSa.js" as="script"><link rel="prefetch" href="/documentation/assets/MinModifier.html-B93HLDOA.js" as="script"><link rel="prefetch" href="/documentation/assets/Modifier.html-x1IYG3qx.js" as="script"><link rel="prefetch" href="/documentation/assets/ReRollModifier.html-D_7d1Vib.js" as="script"><link rel="prefetch" href="/documentation/assets/SortingModifier.html-Cwgu4boa.js" as="script"><link rel="prefetch" href="/documentation/assets/TargetModifier.html-CwWJo1pD.js" as="script"><link rel="prefetch" href="/documentation/assets/UniqueModifier.html-DYN9bjyb.js" as="script"><link rel="prefetch" href="/documentation/assets/modifier-flags.html-BfNVjobU.js" as="script"><link rel="prefetch" href="/documentation/assets/Parser.html-BoOSwvVv.js" as="script"><link rel="prefetch" href="/documentation/assets/ResultGroup.html-CrSJYJTr.js" as="script"><link rel="prefetch" href="/documentation/assets/RollResult.html-DUDP3-_a.js" as="script"><link rel="prefetch" href="/documentation/assets/RollResults.html-Drn4CxX4.js" as="script"><link rel="prefetch" href="/documentation/assets/HasDescription.html-Y9blw5ib.js" as="script"><link rel="prefetch" href="/documentation/assets/ExportFormats.html-DmqU-D81.js" as="script"><link rel="prefetch" href="/documentation/assets/NumberGenerator.html-Dei05d3f.js" as="script"><link rel="prefetch" href="/documentation/assets/math.html-CE4iLc-6.js" as="script"><link rel="prefetch" href="/documentation/assets/utils.html-67DIXXmw.js" as="script"><link rel="prefetch" href="/documentation/assets/dice.html-BEmhqwbG.js" as="script"><link rel="prefetch" href="/documentation/assets/group-rolls.html-y7Bk1Eo0.js" as="script"><link rel="prefetch" href="/documentation/assets/maths.html-BgGLCQp3.js" as="script"><link rel="prefetch" href="/documentation/assets/modifiers.html-DQk-NNml.js" as="script"><link rel="prefetch" href="/documentation/assets/index.html-DESOkYnT.js" as="script"><link rel="prefetch" href="/documentation/assets/roll-descriptions.html-DES6MBAg.js" as="script"><link rel="prefetch" href="/documentation/assets/index-DsTF9jUL.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-33d3430e><main class="page" data-v-33d3430e><div vp-content data-v-33d3430e><h1 data-v-33d3430e>404</h1><blockquote data-v-33d3430e>There&#39;s nothing here.</blockquote><a class="route-link" href="/documentation/" data-v-33d3430e>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/documentation/assets/app-B_W5UWK4.js" defer></script>
+  </body>
+</html>
