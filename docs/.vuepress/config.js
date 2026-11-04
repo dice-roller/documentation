@@ -24,7 +24,7 @@ export default defineUserConfig({
       'link',
       { rel: 'icon', href: `${base}dice-roller-logo.png` }
     ],
-    ...(preview ? [['meta', { name: 'robots', content: 'noindex, nofollow' }]] : []),
+    ...((preview || base.endsWith('/versions/next/')) ? [['meta', { name: 'robots', content: 'noindex, nofollow' }]] : []),
   ],
   theme: defaultTheme({
     logo: '/hero.svg',
