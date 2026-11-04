@@ -60,11 +60,12 @@ jobs:
               if (!['push', 'workflow_dispatch'].includes(run.event) || run.head_repository.id !== context.payload.repository.id) return;
               // Version names become URL paths and deployment-action inputs.
               const version = /^versions\/[A-Za-z0-9][A-Za-z0-9._-]*$/.test(run.head_branch);
-              if (run.event === 'push' && !['main', 'develop'].includes(run.head_branch) && !version) return;
+              if (run.event === 'push' && !['main', 'develop', 'next'].includes(run.head_branch) && !version) return;
               const { data: branch } = await github.rest.repos.getBranch({ ...repo, branch: run.head_branch });
               if (branch.commit.sha !== run.head_sha) return;
               if (run.event === 'push' && run.head_branch === 'main') { mode = 'production'; target = ''; }
               if (run.event === 'push' && version) { mode = 'version'; target = run.head_branch; }
+              if (run.event === 'push' && run.head_branch === 'next') { mode = 'version'; target = 'versions/next'; }
             }
             core.setOutput('mode', mode);
             core.setOutput('target', target);

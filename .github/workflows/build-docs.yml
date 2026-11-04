@@ -2,7 +2,7 @@ name: build-docs
 
 on:
   push:
-    branches: [main, develop, 'versions/*']
+    branches: [main, develop, next, 'versions/*']
   pull_request:
     branches: [main, develop, next]
     types: [opened, synchronize, reopened, edited]
@@ -24,12 +24,14 @@ jobs:
       BASE_PATH: >-
         ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'
             && github.event.repository.name
+            || github.event_name == 'push' && github.ref == 'refs/heads/next'
+            && format('{0}/versions/next', github.event.repository.name)
             || github.event_name == 'push' && startsWith(github.ref, 'refs/heads/versions/')
             && format('{0}/{1}', github.event.repository.name, github.ref_name)
             || format('{0}/staging{1}', github.event.repository.name,
                 github.event.pull_request.number && format('/pr-{0}', github.event.pull_request.number) || '') }}
       DOCS_PREVIEW: >-
-        ${{ (github.event_name != 'push' || (github.ref != 'refs/heads/main' && !startsWith(github.ref, 'refs/heads/versions/')))
+        ${{ (github.event_name != 'push' || (github.ref != 'refs/heads/main' && github.ref != 'refs/heads/next' && !startsWith(github.ref, 'refs/heads/versions/')))
             && (github.event.pull_request.number && format('PR #{0} preview', github.event.pull_request.number) || 'Staging')
             || '' }}
       DOCS_BRANCH: ${{ github.head_ref || github.ref_name }}
