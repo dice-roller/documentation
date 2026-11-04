@@ -1,8 +1,8 @@
-name: deploy-to-github-pages
+name: build-docs
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop, 'versions/*']
   pull_request:
     branches: [main, develop, next]
     types: [opened, synchronize, reopened, edited]
@@ -16,8 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # main's branch protection requires this check name.
-  deploy:
+  build-docs:
     # Fork PRs do not run build commands or upload artifacts.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.event.repository.id
     runs-on: ubuntu-latest
@@ -25,10 +24,12 @@ jobs:
       BASE_PATH: >-
         ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'
             && github.event.repository.name
+            || github.event_name == 'push' && startsWith(github.ref, 'refs/heads/versions/')
+            && format('{0}/{1}', github.event.repository.name, github.ref_name)
             || format('{0}/staging{1}', github.event.repository.name,
                 github.event.pull_request.number && format('/pr-{0}', github.event.pull_request.number) || '') }}
       DOCS_PREVIEW: >-
-        ${{ (github.event_name != 'push' || github.ref != 'refs/heads/main')
+        ${{ (github.event_name != 'push' || (github.ref != 'refs/heads/main' && !startsWith(github.ref, 'refs/heads/versions/')))
             && (github.event.pull_request.number && format('PR #{0} preview', github.event.pull_request.number) || 'Staging')
             || '' }}
       DOCS_BRANCH: ${{ github.head_ref || github.ref_name }}
