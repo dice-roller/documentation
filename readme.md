@@ -14,6 +14,18 @@ The documentation for the [rpg-dice-roller](https://github.com/dice-roller/rpg-d
 Check out the documentation at https://dice-roller.github.io/documentation
 
 
+## Deployment and previews
+
+| Site | Updated from | URL |
+| --- | --- | --- |
+| Main | Pushes to `main` | https://dice-roller.github.io/documentation/ |
+| Staging | Pushes to `develop` | https://dice-roller.github.io/documentation/staging/ |
+| PR preview | Internal PRs targeting `main`, `develop` or `next` | `https://dice-roller.github.io/documentation/staging/pr-{number}/` |
+
+Each PR preview updates when new commits are pushed and is removed when the PR
+is closed or merged. PRs from forks are excluded.
+
+
 ## Contributing
 
 We're always happy for contributions to both the docs and the dice roller itself.
@@ -27,4 +39,3 @@ These docs have been released under the MIT licence, meaning you can do pretty m
 You **can** use it in commercial products.
 
 If the licence terminology in the LICENSE file is confusing, check out this: https://www.tldrlegal.com/l/mit
-
