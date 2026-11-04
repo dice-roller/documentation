@@ -23,7 +23,7 @@ concurrency:
 jobs:
   publish:
     if: >-
-      ${{ (github.event_name == 'delete' && github.event.ref_type == 'branch' && github.event.ref == 'develop')
+      ${{ (github.event_name == 'delete' && github.event.ref_type == 'branch' && (github.event.ref == 'develop' || github.event.ref == 'next' || startsWith(github.event.ref, 'versions/')))
           || (github.event_name == 'pull_request_target'
             && github.event.pull_request.head.repo.id == github.event.repository.id)
           || (github.event.workflow_run.conclusion == 'success'
@@ -46,15 +46,18 @@ jobs:
               if (workflow.path !== '.github/workflows/build-docs.yml') return;
             }
             if (context.eventName === 'delete') {
-              if (context.payload.ref_type !== 'branch' || context.payload.ref !== 'develop') return;
-              // Ignore delayed deletion events if develop has since been recreated.
+              const branch = context.payload.ref;
+              const version = /^versions\/[A-Za-z0-9][A-Za-z0-9._-]*$/.test(branch);
+              if (context.payload.ref_type !== 'branch' || (!['develop', 'next'].includes(branch) && !version)) return;
+              // Ignore delayed deletion events if the branch has since been recreated.
               try {
-                await github.rest.repos.getBranch({ ...repo, branch: 'develop' });
+                await github.rest.repos.getBranch({ ...repo, branch });
                 return;
               } catch (error) {
                 if (error.status !== 404) throw error;
               }
               mode = 'cleanup';
+              target = branch === 'next' ? 'versions/next' : version ? branch : 'staging';
             } else if (!run) {
               const { data: pr } = await github.rest.pulls.get({ ...repo, pull_number: context.payload.number });
               if (pr.state !== 'closed' || !['main', 'develop', 'next'].includes(pr.base.ref) || pr.head.repo?.id !== context.payload.repository.id) return;
