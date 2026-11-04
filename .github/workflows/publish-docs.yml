@@ -2,7 +2,7 @@ name: publish-docs
 
 on:
   workflow_run:
-    workflows: [deploy-to-github-pages]
+    workflows: [build-docs]
     types: [completed]
   # This runs trusted workflow code, never the PR's build commands.
   pull_request_target:
@@ -41,7 +41,7 @@ jobs:
             if (run) {
               if (run.conclusion !== 'success' || run.head_repository.id !== context.payload.repository.id) return;
               const { data: workflow } = await github.rest.actions.getWorkflow({ ...repo, workflow_id: run.workflow_id });
-              if (workflow.path !== '.github/workflows/deploy-to-github-pages.yml') return;
+              if (workflow.path !== '.github/workflows/build-docs.yml') return;
             }
             if (!run) {
               const { data: pr } = await github.rest.pulls.get({ ...repo, pull_number: context.payload.number });
@@ -58,10 +58,13 @@ jobs:
               target = `staging/pr-${pr.number}`;
             } else {
               if (!['push', 'workflow_dispatch'].includes(run.event) || run.head_repository.id !== context.payload.repository.id) return;
-              if (run.event === 'push' && !['main', 'develop'].includes(run.head_branch)) return;
+              // Version names become URL paths and deployment-action inputs.
+              const version = /^versions\/[A-Za-z0-9][A-Za-z0-9._-]*$/.test(run.head_branch);
+              if (run.event === 'push' && !['main', 'develop'].includes(run.head_branch) && !version) return;
               const { data: branch } = await github.rest.repos.getBranch({ ...repo, branch: run.head_branch });
               if (branch.commit.sha !== run.head_sha) return;
               if (run.event === 'push' && run.head_branch === 'main') { mode = 'production'; target = ''; }
+              if (run.event === 'push' && version) { mode = 'version'; target = run.head_branch; }
             }
             core.setOutput('mode', mode);
             core.setOutput('target', target);
@@ -96,7 +99,7 @@ jobs:
             echo 'Build contains hidden files or symlinks'; exit 1
           fi
           case "$MODE" in
-            production) test ! -e "$SITE/staging"; touch "$SITE/.nojekyll" ;;
+            production) test ! -e "$SITE/staging"; test ! -e "$SITE/versions"; touch "$SITE/.nojekyll" ;;
             staging) if find "$SITE" -maxdepth 1 -name 'pr-*' -print -quit | grep -q .; then exit 1; fi ;;
           esac
 
@@ -109,9 +112,10 @@ jobs:
           branch: gh-pages
           folder: ${{ env.SITE }}
           target-folder: ${{ steps.destination.outputs.target }}
-          clean-exclude: >-
-            ${{ steps.destination.outputs.mode == 'production' && 'staging'
-                || steps.destination.outputs.mode == 'staging' && 'pr-*' || '' }}
+          clean-exclude: |
+            ${{ steps.destination.outputs.mode == 'production' && '/staging/' || '' }}
+            ${{ steps.destination.outputs.mode == 'production' && '/versions/' || '' }}
+            ${{ steps.destination.outputs.mode == 'staging' && '/pr-*/' || '' }}
           force: false
 
       - name: Request GitHub Pages update
