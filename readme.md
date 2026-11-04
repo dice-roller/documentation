@@ -19,6 +19,7 @@ Check out the documentation at https://dice-roller.github.io/documentation
 | Site | Updated from | URL |
 | --- | --- | --- |
 | Main | Pushes to `main` | https://dice-roller.github.io/documentation/ |
+| Next | Pushes to `next` | https://dice-roller.github.io/documentation/versions/next/ |
 | Versions | Pushes to `versions/*` (e.g. `versions/v5`) | `https://dice-roller.github.io/documentation/versions/{version}/` |
 | Staging | Pushes to `develop` | https://dice-roller.github.io/documentation/staging/ |
 | PR preview | Internal PRs targeting `main`, `develop` or `next` | `https://dice-roller.github.io/documentation/staging/pr-{number}/` |
