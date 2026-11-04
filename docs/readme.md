@@ -1,18 +1,18 @@
 ---
 home: true
 heroImage: /hero.svg
-tagline: Easy advanced dice rolling
+tagline: Your game, your rules, your roll
 actions:
   - text: Get Started →
     link: /guide/
 footer: MIT Licensed | Copyright © GreenImp Media ltd.
 features:
-- title: Highly advanced
-  details: Can handle multiple types of dice, with a range of modifiers and mathematical functions
-- title: Easy to use
-  details: Simple to implement, and easy as rolling dice
-- title: Standard syntax
-  details: Roll notation based on a standard syntax, with some extra bells and whistles
+- title: Familiar dice notation
+  details: Roll d20 + 5, 2d% or 4dF. Combine different dice, group rolls and use maths in the same expression.
+- title: Roll by your game’s rules
+  details: Keep the highest dice, reroll ones, explode on a maximum roll or count successes. Combine modifiers to express the mechanics your game uses.
+- title: Make the results your own
+  details: Use the roll total or inspect the individual dice. Build a presenter plugin to format the results for your app, chat bot or virtual tabletop.
 ---
 
 [![npm (scoped)](https://img.shields.io/npm/v/@dice-roller/rpg-dice-roller?label=version)](https://www.npmjs.com/package/@dice-roller/rpg-dice-roller)
