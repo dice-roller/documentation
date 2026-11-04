@@ -1,37 +1,55 @@
 name: deploy-to-github-pages
+
 on:
   push:
-    branches:
-      - main
+    branches: [main, develop]
   pull_request:
-    branches:
-      - main
-permissions:
-  contents: write
-jobs:
-  deploy:
-    env:
-      BASE_PATH: ${{ github.event.repository.name }}
-      DIST_FOLDER: docs/.vuepress/dist
-    concurrency: ci-${{ github.ref }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
+    branches: [main, develop, next]
+    types: [opened, synchronize, reopened, edited]
+  workflow_dispatch:
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-build-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # main's branch protection requires this check name.
+  deploy:
+    # Fork PRs do not run build commands or upload artifacts.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.event.repository.id
+    runs-on: ubuntu-latest
+    env:
+      BASE_PATH: >-
+        ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'
+            && github.event.repository.name
+            || format('{0}/staging{1}', github.event.repository.name,
+                github.event.pull_request.number && format('/pr-{0}', github.event.pull_request.number) || '') }}
+      DOCS_PREVIEW: >-
+        ${{ (github.event_name != 'push' || github.ref != 'refs/heads/main')
+            && (github.event.pull_request.number && format('PR #{0} preview', github.event.pull_request.number) || 'Staging')
+            || '' }}
+      DOCS_BRANCH: ${{ github.head_ref || github.ref_name }}
+      DOCS_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v6
         with:
           node-version: 'lts/*'
 
-      - name: Build
+      - name: Build documentation
         run: |
-          npm install
-          BASE_PATH=${{ env.BASE_PATH }} npm run docs:build
+          npm ci
+          npm run docs:build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - uses: actions/upload-artifact@v4
         with:
-          branch: gh-pages
-          folder: ${{ env.DIST_FOLDER }}
-          single-commit: true
+          name: docs-site
+          path: docs/.vuepress/dist
+          if-no-files-found: error
+          retention-days: 7

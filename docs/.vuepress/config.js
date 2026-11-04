@@ -7,6 +7,7 @@ import { diceRollerPlugin } from '@dice-roller/vuepress-plugin-dice-roller';
 import { sidebarTree } from '../api/config';
 
 const isDev = process.env.NODE_ENV === 'development';
+const preview = process.env.DOCS_PREVIEW || '';
 const base = `/${process.env.BASE_PATH || 'documentation'}/`;
 
 export default defineUserConfig({
@@ -15,20 +16,21 @@ export default defineUserConfig({
     vuePluginOptions: {},
   }),
   lang: 'en-GB',
-  title: 'RPG Dice Roller',
+  title: preview ? `RPG Dice Roller — ${preview}` : 'RPG Dice Roller',
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
   base: base,
   head: [
     [
       'link',
-      { rel: 'icon', href: `${base}/dice-roller-logo.png` }
+      { rel: 'icon', href: `${base}dice-roller-logo.png` }
     ],
+    ...(preview ? [['meta', { name: 'robots', content: 'noindex, nofollow' }]] : []),
   ],
   theme: defaultTheme({
     logo: '/hero.svg',
     repo: 'dice-roller/rpg-dice-roller',
-    docsRepo: 'dice-roller/documentation',
-    docsBranch: 'main',
+    docsRepo: process.env.DOCS_REPO || 'dice-roller/documentation',
+    docsBranch: process.env.DOCS_BRANCH || 'main',
     docsDir: 'docs',
     contributors: false,
     navbar: [
@@ -74,7 +76,7 @@ export default defineUserConfig({
   }),
   plugins: [
     diceRollerPlugin(),
-    isDev
+    (isDev || preview)
         ? searchPlugin({
           hotKeys: [
             {

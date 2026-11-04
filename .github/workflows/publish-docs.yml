@@ -1,0 +1,130 @@
+name: publish-docs
+
+on:
+  workflow_run:
+    workflows: [deploy-to-github-pages]
+    types: [completed]
+  # This runs trusted workflow code, never the PR's build commands.
+  pull_request_target:
+    branches: [main, develop, next]
+    types: [closed]
+
+permissions:
+  actions: read
+  contents: write
+  pages: write
+  pull-requests: read
+
+concurrency:
+  group: docs-pages-publish
+  queue: max
+
+jobs:
+  publish:
+    if: >-
+      ${{ (github.event_name == 'pull_request_target'
+            && github.event.pull_request.head.repo.id == github.event.repository.id)
+          || (github.event.workflow_run.conclusion == 'success'
+            && github.event.workflow_run.head_repository.id == github.event.repository.id) }}
+    runs-on: ubuntu-latest
+    env:
+      SITE: docs-site
+    steps:
+      - name: Select destination and skip outdated builds
+        id: destination
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const repo = context.repo;
+            const run = context.payload.workflow_run;
+            let mode = 'staging', target = 'staging';
+            if (run) {
+              if (run.conclusion !== 'success' || run.head_repository.id !== context.payload.repository.id) return;
+              const { data: workflow } = await github.rest.actions.getWorkflow({ ...repo, workflow_id: run.workflow_id });
+              if (workflow.path !== '.github/workflows/deploy-to-github-pages.yml') return;
+            }
+            if (!run) {
+              const { data: pr } = await github.rest.pulls.get({ ...repo, pull_number: context.payload.number });
+              if (pr.state !== 'closed' || !['main', 'develop', 'next'].includes(pr.base.ref) || pr.head.repo?.id !== context.payload.repository.id) return;
+              mode = 'cleanup';
+              target = `staging/pr-${pr.number}`;
+            } else if (run.event === 'pull_request') {
+              const number = run.pull_requests[0]?.number;
+              if (!number) return;
+              const { data: pr } = await github.rest.pulls.get({ ...repo, pull_number: number });
+              if (pr.state !== 'open' || !['main', 'develop', 'next'].includes(pr.base.ref) || pr.head.sha !== run.head_sha
+                || pr.head.repo?.id !== context.payload.repository.id) return;
+              mode = 'preview';
+              target = `staging/pr-${pr.number}`;
+            } else {
+              if (!['push', 'workflow_dispatch'].includes(run.event) || run.head_repository.id !== context.payload.repository.id) return;
+              if (run.event === 'push' && !['main', 'develop'].includes(run.head_branch)) return;
+              const { data: branch } = await github.rest.repos.getBranch({ ...repo, branch: run.head_branch });
+              if (branch.commit.sha !== run.head_sha) return;
+              if (run.event === 'push' && run.head_branch === 'main') { mode = 'production'; target = ''; }
+            }
+            core.setOutput('mode', mode);
+            core.setOutput('target', target);
+            core.setOutput('publish', 'true');
+
+      - name: Checkout trusted repository
+        if: steps.destination.outputs.publish == 'true'
+        uses: actions/checkout@v6
+        with:
+          ref: refs/heads/main
+          persist-credentials: false
+
+      - name: Download completed build
+        if: steps.destination.outputs.publish == 'true' && steps.destination.outputs.mode != 'cleanup'
+        uses: actions/download-artifact@v8
+        with:
+          name: docs-site
+          path: ${{ env.SITE }}
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Prepare static files
+        if: steps.destination.outputs.publish == 'true'
+        env:
+          MODE: ${{ steps.destination.outputs.mode }}
+        run: |
+          mkdir -p "$SITE"
+          if [ "$MODE" = cleanup ]; then exit 0; fi
+          test -f "$SITE/index.html"
+          # Only publish ordinary static files, without git metadata or symlinks.
+          if find "$SITE" -mindepth 1 \( -type l -o -name '.*' \) -print -quit | grep -q .; then
+            echo 'Build contains hidden files or symlinks'; exit 1
+          fi
+          case "$MODE" in
+            production) test ! -e "$SITE/staging"; touch "$SITE/.nojekyll" ;;
+            staging) if find "$SITE" -maxdepth 1 -name 'pr-*' -print -quit | grep -q .; then exit 1; fi ;;
+          esac
+
+      # An empty source directory removes a closed PR's preview. Other deployments
+      # preserve their neighbours using the action's standard cleanup exclusions.
+      - name: Publish or remove site
+        if: steps.destination.outputs.publish == 'true'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ${{ env.SITE }}
+          target-folder: ${{ steps.destination.outputs.target }}
+          clean-exclude: >-
+            ${{ steps.destination.outputs.mode == 'production' && 'staging'
+                || steps.destination.outputs.mode == 'staging' && 'pr-*' || '' }}
+          force: false
+
+      - name: Request GitHub Pages update
+        if: steps.destination.outputs.publish == 'true'
+        uses: actions/github-script@v8
+        env:
+          MODE: ${{ steps.destination.outputs.mode }}
+          TARGET: ${{ steps.destination.outputs.target }}
+        with:
+          script: |
+            await github.rest.repos.requestPagesBuild(context.repo);
+            if (process.env.MODE !== 'cleanup') {
+              const base = `https://${context.repo.owner}.github.io/${context.repo.repo}/`;
+              const suffix = process.env.TARGET ? `${process.env.TARGET}/` : '';
+              await core.summary.addLink('View published site', `${base}${suffix}`).write();
+            }
