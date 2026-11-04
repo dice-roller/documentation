@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.26" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <link rel="icon" href="/documentation/staging/pr-73/dice-roller-logo.png"><meta name="robots" content="noindex, nofollow"><title>RPG Dice Roller — PR #73 preview</title><meta name="description" content="A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.">
+    <link rel="preload" href="/documentation/staging/pr-73/assets/style-CmcX49a2.css" as="style"><link rel="stylesheet" href="/documentation/staging/pr-73/assets/style-CmcX49a2.css">
+    <link rel="modulepreload" href="/documentation/staging/pr-73/assets/app-vcNxMqnV.js"><link rel="modulepreload" href="/documentation/staging/pr-73/assets/404.html-BqVwYLsO.js">
+    <link rel="prefetch" href="/documentation/staging/pr-73/assets/index.html-B7F6lD2J.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/ComparePoint.html-GkLcZE86.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/Description.html-CuJV0CIx.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/DiceRoll.html-BeuikVBa.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/DiceRoller.html-CIZ9_S6K.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/index.html-2oGfsmo3.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/RollGroup.html-CWjcCUhZ.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/code-of-conduct.html-CbtjPUvy.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/index.html-Cnq6VKPT.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/cli.html-DxYOTau1.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/customisation.html-C_PPxevb.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/getting-started.html-IxxLb8dX.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/index.html-Dd7K6sUb.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/usage.html-cXYh_N3o.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/FudgeDice.html-DxXawkOW.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/PercentileDice.html-Beovu1hq.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/StandardDice.html-DsemHNoH.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/CompareOperatorError.html-DKSonX9O.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/DataFormatError.html-B8X0tv8E.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/DieActionValueError.html-CLx05AHG.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/NotationError.html-CmaUcVG3.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/RequiredArgumentError.html-BBnAImdv.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/ComparisonModifier.html-CkmgrtBx.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/CriticalFailureModifier.html-DFbOb0Ro.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/CriticalSuccessModifier.html-CpoiryqH.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/DropModifier.html-CsO3CsXy.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/ExplodeModifier.html-DJUG9Vsx.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/KeepModifier.html-BmgilAil.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/MaxModifier.html-DR0OaoeQ.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/MinModifier.html-DocLdD5N.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/Modifier.html-DFvgGCHN.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/ReRollModifier.html-BshCA56z.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/SortingModifier.html-C848V9wh.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/TargetModifier.html-DCIvqdD4.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/UniqueModifier.html-DYMg6yO1.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/modifier-flags.html-Cok9K2v_.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/Parser.html-VjOLqXAw.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/ResultGroup.html-LPCLZZaq.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/RollResult.html-CIsHBpKS.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/RollResults.html-DUhRdzr2.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/HasDescription.html-BZCNxXXM.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/ExportFormats.html-D-s_PJJG.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/NumberGenerator.html-D_pN797-.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/math.html-CUiY7Aik.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/utils.html-Bdi6OHch.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/dice.html-w0MQE5Yd.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/group-rolls.html-CF9X3XWu.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/maths.html-B1AlUKe7.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/modifiers.html-DnykpMRH.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/index.html-CEPVFgQw.js" as="script"><link rel="prefetch" href="/documentation/staging/pr-73/assets/roll-descriptions.html-aUtqjiPe.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-33d3430e><main class="page" data-v-33d3430e><div vp-content data-v-33d3430e><h1 data-v-33d3430e>404</h1><blockquote data-v-33d3430e>There&#39;s nothing here.</blockquote><a class="route-link" href="/documentation/staging/pr-73/" data-v-33d3430e>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/documentation/staging/pr-73/assets/app-vcNxMqnV.js" defer></script>
+  </body>
+</html>
