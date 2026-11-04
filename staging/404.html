@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.26" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <link rel="icon" href="/documentation/staging/dice-roller-logo.png"><meta name="robots" content="noindex, nofollow"><title>RPG Dice Roller — Staging</title><meta name="description" content="A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.">
+    <link rel="preload" href="/documentation/staging/assets/style-CmcX49a2.css" as="style"><link rel="stylesheet" href="/documentation/staging/assets/style-CmcX49a2.css">
+    <link rel="modulepreload" href="/documentation/staging/assets/app-EBMGquzM.js"><link rel="modulepreload" href="/documentation/staging/assets/404.html-CPeA4JLQ.js">
+    <link rel="prefetch" href="/documentation/staging/assets/index.html-p1EuxegY.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/ComparePoint.html-BMH6kQzE.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/Description.html-Ca7BJoh6.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/DiceRoll.html-Blm8hcOX.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/DiceRoller.html-iThW4Gj5.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/index.html-512DEJJq.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/RollGroup.html-e1sC1xzS.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/code-of-conduct.html-BkuTRt-S.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/index.html-DkBClzi4.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/cli.html-oRkhtp2w.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/customisation.html-BjeToYBU.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/getting-started.html-hNjfudXO.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/index.html-APJWw7h8.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/usage.html-D7trCso8.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/FudgeDice.html-D0t1ARFT.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/PercentileDice.html-DpGhfebB.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/StandardDice.html-Cu-iOmv3.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/CompareOperatorError.html-DYuALs_Y.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/DataFormatError.html-KMJ12MAy.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/DieActionValueError.html-RZnUSBBk.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/NotationError.html-DayKJkpP.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/RequiredArgumentError.html-B-5scpZa.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/ComparisonModifier.html-CyWnvrtO.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/CriticalFailureModifier.html-CGVrPrNH.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/CriticalSuccessModifier.html-CQ67eH_c.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/DropModifier.html-2wOIHXGU.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/ExplodeModifier.html-DFcKfx09.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/KeepModifier.html-Clqoe0Vr.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/MaxModifier.html-ClXl9dyb.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/MinModifier.html-HSIbkgP-.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/Modifier.html-Bb9sYF2z.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/ReRollModifier.html-DkgC_PVy.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/SortingModifier.html-D-iCqkEf.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/TargetModifier.html-BzLwvnDU.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/UniqueModifier.html-CtJtVEcp.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/modifier-flags.html-DatN2D3Y.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/Parser.html-BCwsIths.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/ResultGroup.html--MqhBIKu.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/RollResult.html-Ciqsb1K_.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/RollResults.html-CM2H79Pj.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/HasDescription.html-BTpX_Jzj.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/ExportFormats.html-DP6bWPGc.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/NumberGenerator.html-Dx-XT2D8.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/math.html-BzEyB7r_.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/utils.html-D_MfgQPK.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/dice.html-BIyF6xvv.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/group-rolls.html-BhiLxKZD.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/maths.html-1E78ErP2.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/modifiers.html-CfDCzSjA.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/index.html-B0qEnUWM.js" as="script"><link rel="prefetch" href="/documentation/staging/assets/roll-descriptions.html-BcKwEuKj.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-33d3430e><main class="page" data-v-33d3430e><div vp-content data-v-33d3430e><h1 data-v-33d3430e>404</h1><blockquote data-v-33d3430e>There&#39;s nothing here.</blockquote><a class="route-link" href="/documentation/staging/" data-v-33d3430e>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/documentation/staging/assets/app-EBMGquzM.js" defer></script>
+  </body>
+</html>
