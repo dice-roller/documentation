@@ -10,6 +10,8 @@ const isDev = process.env.NODE_ENV === 'development';
 const preview = process.env.DOCS_PREVIEW || '';
 const base = `/${process.env.BASE_PATH || 'documentation'}/`;
 
+const docsVersion = base.match(/\/versions\/([^/]+)\/$/)?.[1] || 'main';
+
 export default defineUserConfig({
   bundler: viteBundler({
     viteOptions: {},
@@ -20,6 +22,7 @@ export default defineUserConfig({
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
   base: base,
   head: [
+    ['meta', { name: 'docsearch:version', content: docsVersion }],
     [
       'link',
       { rel: 'icon', href: `${base}dice-roller-logo.png` }
@@ -92,7 +95,10 @@ export default defineUserConfig({
         : docsearchPlugin({
           apiKey: '01e04cdac0da20e46c358d3c975962bf',
           appId: 'KJX1KIQOVL',
-          indexName: 'rpg-dice-roller'
+          indexName: 'rpg-dice-roller',
+          searchParameters: {
+            facetFilters: [`version:${docsVersion}`],
+          }
         }),
   ],
 })
