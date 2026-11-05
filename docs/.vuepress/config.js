@@ -76,7 +76,7 @@ export default defineUserConfig({
   }),
   plugins: [
     diceRollerPlugin(),
-    (isDev || preview)
+    (isDev || preview || base.endsWith('/versions/next/'))
         ? searchPlugin({
           hotKeys: [
             {
