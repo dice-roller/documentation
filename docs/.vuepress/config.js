@@ -4,11 +4,22 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { diceRollerPlugin } from '@dice-roller/vuepress-plugin-dice-roller';
-import { sidebarTree } from '../api/config';
+import apiConfig from '../api/typedoc-sidebar.json' with { type: 'json' };
 
 const isDev = process.env.NODE_ENV === 'development';
 const preview = process.env.DOCS_PREVIEW || '';
 const base = `/${process.env.BASE_PATH || 'documentation'}/`;
+const apiSidebarTree = (title = 'API') => ([{
+  text: 'API',
+  collapsable: false,
+  children: [
+    {
+      link: '/api/',
+      text: title,
+    },
+    ...apiConfig,
+  ],
+}]);
 
 const docsVersion = base.match(/\/versions\/([^/]+)\/$/)?.[1] || 'main';
 
@@ -42,7 +53,6 @@ export default defineUserConfig({
       { text: 'API', link: '/api/' },
       {
         text: 'Contribute',
-        //link: '/contributing/'
         children: ['/contributing/', '/contributing/code-of-conduct.md'],
       },
     ],
@@ -74,7 +84,9 @@ export default defineUserConfig({
           },
         ],
       },
-      ...sidebarTree('Introduction'),
+      ...{
+        '/api/': apiSidebarTree('Introduction'),
+      },
     },
   }),
   plugins: [
