@@ -93,6 +93,7 @@ export default defineUserConfig({
           ],
         })
         : docsearchPlugin({
+          disableUserPersonalization: true,
           apiKey: '01e04cdac0da20e46c358d3c975962bf',
           appId: 'KJX1KIQOVL',
           indexName: 'rpg-dice-roller',
