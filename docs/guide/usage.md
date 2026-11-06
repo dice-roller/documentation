@@ -1,7 +1,3 @@
----
-outline: 2
----
-
 # Usage
 
 Read the sections below for details usage instructions.

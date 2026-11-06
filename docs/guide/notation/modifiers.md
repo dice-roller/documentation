@@ -1,3 +1,7 @@
+---
+outline: [2]
+---
+
 # Modifiers
 
 Modifiers are special flags that can change the value of dice rolls, their appearance, order, and more.

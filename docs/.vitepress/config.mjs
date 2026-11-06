@@ -18,6 +18,7 @@ const apiSidebarItems = (items) => items.map(({ text, link, children, collapsibl
     items: apiSidebarItems(children),
     ...(collapsible ? { collapsed: false } : {}),
   } : {}),
+  collapsed: true,
 }));
 
 export default defineConfig({
@@ -62,7 +63,7 @@ export default defineConfig({
       '/guide/': [
         {
           text: 'Guide',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: 'Introduction', link: '/guide/' },
             { text: 'Get Started', link: '/guide/getting-started' },
@@ -73,9 +74,9 @@ export default defineConfig({
         },
         {
           text: 'Notation',
-          collapsed: false,
+          collapsed: true,
           items: [
-            { text: 'Introduction', link: '/guide/notation/' },
+            { text: 'What are notations?', link: '/guide/notation/' },
             { text: 'Dice', link: '/guide/notation/dice' },
             { text: 'Modifiers', link: '/guide/notation/modifiers' },
             { text: 'Group Rolls', link: '/guide/notation/group-rolls' },
@@ -91,6 +92,10 @@ export default defineConfig({
           ...apiSidebarItems(apiConfig),
         ],
       }],
+      '/contributing/': [
+        { text: 'Contributing', link: '/contributing/' },
+        { text: 'Code of Conduct', link: '/contributing/code-of-conduct' },
+      ],
     },
     search: (isDev || preview || docsVersion === 'next')
       ? { provider: 'local' }
