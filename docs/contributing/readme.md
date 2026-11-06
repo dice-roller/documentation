@@ -1,266 +1,220 @@
 ---
-sidebar: auto
-sidebarDepth: 2
+sidebar: heading
 ---
 
 # Contributing
 
-Thanks for helping out with the dice roller!
+Thanks for helping improve RPG Dice Roller! Bug reports, ideas, documentation fixes and code contributions are all welcome.
 
-The following is a set of guidelines for contributing to the library. They explain the process to get started, and
-ensure that it's as easy as possible for people to work with the project.
+Please follow our [Code of Conduct](./code-of-conduct.md) when participating.
 
-## Code of Conduct
+## Questions, bugs and ideas
 
-Check out our [Code of Conduct](./code-of-conduct.md).
+Use [GitHub Discussions](https://github.com/dice-roller/rpg-dice-roller/discussions) for questions and general discussion.
 
-## I have a question
+For bugs and feature suggestions, [open an issue](https://github.com/dice-roller/rpg-dice-roller/issues/new/choose). Please search existing issues first and add to an existing discussion where appropriate.
 
-Please use the [GitHub discussion board](https://github.com/dice-roller/rpg-dice-roller/discussions) to raise questions.
+For a bug report, include:
 
-## How to contribute
+* The library version and environment you’re using.
+* A small code example or dice notation that reproduces the problem.
+* What you expected to happen and what actually happened.
+* Any relevant error messages.
 
-### Reporting bugs
+For a feature suggestion, explain the use case and give an example of how you’d like it to work.
 
-::: tip
-Before raising a ticket, please check it hasn't already been raised!
-:::
+## Choosing something to work on
 
-If you find a bug, please let us know.
+Browse the [open issues](https://github.com/dice-roller/rpg-dice-roller/issues), particularly those labelled [good first issue or help wanted](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22,%22good+first+issue%22).
 
-#### Before submitting a bug report
+If you’d like to work on an issue, leave a comment so others know. For larger changes or new features, discuss the approach before spending too much time on the implementation.
 
-* [Search through existing tickets](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+label%3Abug) to
-  see if the issue has already been reported.
-    * If it has, and the issue is still _open_, add a comment to it, rather than creating a new ticket.
-    * If it has, and the issue is _closed_, see if any suggested fix resolves the issue for you.
+Small fixes, including typo corrections and clearer examples, are welcome too.
 
-#### How to submit a bug report
+## Development
 
-Bugs are tracked as GitHub issues, and you
-can [report a bug through GitHub](https://github.com/dice-roller/rpg-dice-roller/issues/new/choose).
+### Getting started
 
-Explain the problem in as much detail as possible, including any additional details that could help to reproduce the
-problem.
+You’ll need Node.js and npm. Use the latest Node.js LTS release, which is also used by the project’s CI checks.
 
-* **Use a clear and descriptive title** for the issue, that identifies the problem.
-* **Describe the exact steps which reproduce the problem** with as much detail as possible.
-* **Provide specific examples to demonstrate the steps.** Include links to source code, or copy/paste code snippets. If
-  providing code snippets, please
-  use [Markdown code blocks](https://help.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks).
-* **Describe the behaviour that you observed after following the steps** and explain why this is a problem.
-* **Describe the behaviour that you expected to see and why.**
-* **Include any screenshots** if relevant.
-* **If you receive any error messages**, `console` output, or similar, please include them.
-* **Provide the library version number** that you're using. If it's not the latest version, can you reproduce the
-  problem in the latest release?
+Fork the [library repository](https://github.com/dice-roller/rpg-dice-roller) and create a branch for your changes.
 
-### Suggesting improvements and new features
+Choose the base branch that matches your contribution:
 
-We'd love to hear any ideas you've got for new features or improvements. Following these guidelines helps us to
-understand your suggestion better.
+* `develop` — fixes and improvements for the current released major version.
+* `next` — development of the next major version.
 
-#### Before submitting a feature suggestion
+Open your pull request against the branch you started from. If you’re unsure which branch to use, ask in the related issue or discussion.
 
-* **Check you're using the latest version.** The feature may have been added in a newer version.
-* [Search through existing tickets](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+label%3Aenhancement,suggestion,question)
-  to see if the feature has already been suggested. If it has, add a comment to the existing one, rather than creating a
-  new one.
-
-#### How to submit a feature suggestion
-
-Feature suggestions are tracked as GitHub tickets, and you
-can [suggest a feature through GitHub](https://github.com/dice-roller/rpg-dice-roller/issues/new/choose).
-
-* **Use a clear and descriptive title** for the ticket, that identifies the suggestion.
-* **Provide a step-by-step description of the feature** with as much detail as possible.
-* **Provide any relevant examples to demonstrate the feature**, such as code snippets.
-* **Describe the current behaviour** and **explain the behaviour you'd like to see instead** and why.
-* **Include any screenshots** if relevant.
-* **Explain why the feature would be useful**
-
-### Contributing code
-
-If you want to help out with the development itself then please dive in.
-
-#### Finding something to work on
-
-If you're unsure where to begin, you can start by having a look at the tickets flagged
-as ["help wanted" or "good first issue"](https://github.com/dice-roller/rpg-dice-roller/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22,%22good+first+issue%22),
-and see if you can help with any of them.
-
-If there aren't any flagged as with either label, that doesn't mean we don't want your help! Generally, we're happy for
-people to dig into any ticket that hasn't been assigned to someone.
-A ticket that has been assigned means that someone else is working on it.
-
-So have a look around the open tickets and see if you feel as though you can help with any of them.
-
-If you've got an idea for a feature, but there isn't a ticket for it, feel free
-to [create one](#suggesting-improvements-and-new-features) and assign it to yourself.
-This way, it's easier to keep track on what is being worked on, and we can try to ensure that multiple people aren't
-unknowingly working on the same thing.
-
-#### Setting up
-
-The code is stored in a Git repository. To get started
-either [clone or fork the repository](https://github.com/dice-roller/rpg-dice-roller).
-
-Make sure that you check out the `develop` branch, or create a `feature` / `hotfix` branch for the task you're working
-on, and _not_ the `main` branch.
-
-::: warning
-You should **never** work directly on the `main` branch. You should work on either the `develop` branch or a `feature`
-branch.
-
-See the [Branching model](#branching-model) section for more information.
-:::
-
-#### File structure
-
-The project file structure is split up into logical groups:
-
-```
-/
-|- demo/
-|- lib/
-   |- esm/
-   |- umd/
-|- src/
-|- tests/
-```
-
-* `root` contains mostly meta files, such as the `.babelrc`, `eslintrc.json`. `rollup.config.js` and other files used
-  for the generation of the library.
-* `lib` contains the compiled Javascript files, in both EcmaScript and UMD versions, in the `esm` and `umd` directories
-  respectively.
-
-  Do **not** manually change the files in this directory as any changes will be overwritten.
-* `src` is where the magic happens. This contains all the source Javascript ES modules that get compiled into the `lib`
-  directory. It is these files that you should modify.
-* `tests` contain [Jest tests](#testing-your-code). If you make changes to the source code, you should update / add
-  tests to cover the changes.
-
-#### Compiling and building the code
-
-If you want to see what how your code functions, you'll need to compile the source code to the `lib` directory. There
-are several ways of doing this, depending on the required outcome.
-
-There are several scripts to help:
+Install dependencies:
 
 ```bash
-# compile compressed / minified the ES and UMD files
-npm run build
-
-# compile un-compressed version of the ES and UMD files
-npm run build:dev
-
-# watch the `src` directory for changes and compile un-compressed ES files on change
-npm run watch
+npm ci
 ```
 
-#### Testing your code
-
-We utilise both a [JavaScript linter](#javaScript-style-guide) and a [testing framework](#testing) to ensure that all
-code conforms to certain standards and any new code doesn't break existing code, or otherwise behave unexpectedly.
-
-You do **not** need to build / compile the code before linting or testing. Both the linter and tests run on the original
-source code.
-
-**All code must pass both the linter and the tests.** You can read more about them in
-the [Styles and standards](#styles-and-standards) section.
-
-### Pull requests
-
-When creating a pull request, there are several things that need to be considered, to ensure that the quality of the
-library is kept, and that the code remains readable and manageable
-
-Please follow these steps so that your pull request can be considered by the maintainers:
-
-* Ensure all [tests](#testing) pass locally before creating a pull request. If they do not, explain the reason in
-  description of the pull request.
-* If the pull request relates to a ticket, ensure that the ticket number is referenced in the description of the pull
-  request.
-* Provide a description of what the pull request is trying to achieve. If there is a related ticket, then the
-  description can be brief. Otherwise, please provide enough detail for the reviewer to understand what bug it fixes, or
-  feature it implements, and why.
-* Follow the [style guides](#styles-and-standards).
-* After submitting your pull request, verify that
-  all [status checks](https://help.github.com/articles/about-status-checks/) are passing.
-
-::: tip What if the tests / status checks are failing?
-Check what is failing. If you believe that the failure is unrelated to your change, please leave a comment on the pull
-request explaining why you believe the failure is unrelated. A maintainer can re-run the status checks and determine if
-it's a false positive, or otherwise unrelated to your changes.
-:::
-
-::: warning
-You should **never** work directly on the `main` branch. Any pull requests on to `main` will, unfortunately, have to be
-rejected, and you'll have to re-create it on `develop`.
-
-See the [Branching model](#branching-model) section for more information.
-:::
-
-## Styles and standards
-
-### Git
-
-#### Branching model
-
-We use the [git-flow branching model](https://nvie.com/posts/a-successful-git-branching-model/).
-This means that there is always a `main` branch and a `develop` branch, and there may be other branches that follow the
-git-flow naming conventions.
-
-* The `main` branch is the current latest release, and should _only be modified when making a release_.
-* The `develop` branch is where all the fun happens, and where we can work and make our changes (Although these should
-  generally be done on a feature branch).
-
-#### Commit messages
-
-* Use the present tense (e.g. "Add feature" not "Added feature").
-* Use the imperative mood (e.g. "Enhance fudge die rolls" not "Enhances fudge die rolls").
-* Limit the first line to 72 characters or fewer.
-* Reference relevant ticket numbers after the first line.
-
-### JavaScript style guide
-
-All JavaScript must adhere to the [Airbnb standard style](https://airbnb.io/javascript/). This is to make sure that the
-code is readable and more maintainable for everyone.
-
-We use [ESLint](https://eslint.org/) to ensure that the syntax is correct and meets the standards.
-
-You can check if the code conforms to the standards by running the following in the console:
-
-```bash
-npm run lint
-```
-
-If there are problems, it will show you the files and line numbers for each issue.
-
-### Testing
-
-We use [Jest](https://jestjs.io/) to test the library. The tests can be found in the `/tests` directory.
-
-When writing tests, ensure that they are thoughtfully-worded, and well-structured, so that it is both easy to understand
-and maintain.
-
-You can check if the code passes all the tests by running the following in the console:
+Then run the checks:
 
 ```bash
 npm test
 ```
 
-This runs the [JavaScript Linter](#javaScript-style-guide) first, and then the tests, so if the linter fails, then the
-tests will not be run.
+This generates the parser, checks TypeScript types, runs linting and formatting checks, and then runs the Jest tests. You do not need to build the library bundles first.
 
-### Use of AI
+### Finding your way around
 
-You’re welcome to use AI tools to help write code, improve documentation, or draft issues and comments. The same 
-contribution guidelines apply whether or not you use AI.
+| Path | Purpose |
+| --- | --- |
+| `src/` | TypeScript source code and the public entry point, `src/index.ts`. |
+| `src/ast/` | The parsed notation structure and helpers for working with it. |
+| `src/parser/` | The notation parser and Peggy grammar. |
+| `src/dice/` | Dice definitions and their registry. |
+| `src/modifiers/` | Modifier implementations and their registry. |
+| `src/evaluator/` | Evaluates parsed notation and applies dice and modifiers. |
+| `src/results/` | Result types, flags and helpers. |
+| `src/presenters/` | Formats evaluated results for display. |
+| `src/random/` | Random number generation. |
+| `src/serialization/` | Roll import and export. |
+| `tests/` | Automated tests. |
+| `dist/` | Generated ESM and UMD bundles and TypeScript declarations. |
+| `docs/api/` | Generated API documentation. |
 
-Please review and verify anything you submit. If you’re reporting a bug, check that you can reproduce it. If you’re
-opening a pull request, make sure you understand the changes, can explain why they’re needed, and have run the relevant
-tests. Be prepared to answer questions about your contribution.
+Make changes in the source files rather than editing generated bundles, parser files or API documentation.
 
-Maintainers may close or remove spam, irrelevant submissions, or bulk-generated content posted without meaningful 
-review. Accounts that repeatedly post this material or engage in deliberate abuse may be blocked from participating in
-the project.
+### Code style
+
+The project uses ESLint for code checks and Prettier for formatting. Follow the existing code and let these tools handle the formatting details.
+
+Check your changes:
+
+```bash
+npm run lint
+```
+
+Apply automatic fixes:
+
+```bash
+npm run lint:fix
+```
+
+You can also run formatting separately:
+
+```bash
+npm run format
+```
+
+TypeScript type checking is available independently:
+
+```bash
+npm run typecheck
+```
+
+On a fresh checkout, generate the parser before running type checking directly:
+
+```bash
+npm run build:grammars
+```
+
+### Tests
+
+Tests use Jest and are written in TypeScript under `tests/`.
+
+Add or update tests when changing behaviour. For a bug fix, include a test that reproduces the problem and verifies the fix.
+
+```bash
+# Run all checks and tests
+npm test
+
+# Run a particular test file
+npm test -- tests/parser/dice.test.ts
+
+# Run tests in watch mode
+npm run test:watch
+
+# Generate a coverage report
+npm run test:coverage
+```
+
+Use descriptive test names and examples that make the expected behaviour clear.
+
+The files under `tests/v5/` are retained as reference material and are excluded from the active test suite.
+
+### Changing the notation grammar
+
+The notation parser is generated using [Peggy](https://github.com/peggyjs/peggy). Its grammar lives in `src/parser/grammar.pegjs`.
+
+If you’re unfamiliar with the syntax, start with the [Peggy documentation](https://peggyjs.org/documentation.html). The [editor extensions wiki](https://github.com/peggyjs/peggy/wiki/Editor-Extensions) lists syntax-highlighting plugins for various editors and IDEs.
+
+After editing the grammar, regenerate the parser:
+
+```bash
+npm run build:grammars
+```
+
+This writes the generated parser and its declarations into `src/parser/generated/`. Do not edit those generated files directly.
+
+Add parser tests for new or changed syntax, along with evaluation tests where the change affects how rolls behave.
+
+The normal test and build commands regenerate the parser automatically. If you edit the grammar during a watch session, run the grammar command again.
+
+### Building the library
+
+Rollup builds the library into ESM and UMD bundles.
+
+```bash
+# Build development and minified production bundles, plus type declarations
+npm run build
+
+# Build unminified ESM and UMD bundles
+npm run build:dev
+
+# Build minified ESM and UMD bundles
+npm run build:prod
+
+# Build TypeScript declarations
+npm run build:definitions
+
+# Watch for source changes and rebuild development bundles
+npm run watch
+```
+
+Generated files are written to `dist/`.
+
+### Documentation
+
+The website guides are maintained in the separate [documentation repository](https://github.com/dice-roller/documentation).
+
+The library’s API reference is generated from its TypeScript source and documentation comments:
+
+```bash
+# Generate the API reference
+npm run docs:build
+
+# Regenerate it as source files change
+npm run docs:watch
+```
+
+The generated reference is written to `docs/api/`. Update the source comments rather than editing the generated Markdown.
+
+## Pull requests
+
+Keep each pull request focused on one change where practical.
+
+Include a short explanation of:
+
+* What changed and why.
+* Any related issues.
+* How you checked the change.
+
+Before submitting, run `npm test`. If your changes affect the build, public types or API documentation, also run the relevant build commands.
+
+Use short, descriptive commit messages such as “Fix exploding dice comparison”.
+
+After opening the pull request, check the CI results. If a check fails and you believe it is unrelated to your changes, explain that in the pull request.
+
+## Use of AI
+
+You’re welcome to use AI tools to help write code, improve documentation, or draft issues and comments. The same contribution guidelines apply whether or not you use AI.
+
+Please review and verify anything you submit. If you’re reporting a bug, check that you can reproduce it. If you’re opening a pull request, make sure you understand the changes, can explain why they’re needed, and have run the relevant tests. Be prepared to answer questions about your contribution.
+
+Maintainers may close or remove spam, irrelevant submissions, or bulk-generated content posted without meaningful review. Accounts that repeatedly post this material or engage in deliberate abuse may be blocked from participating in the project.
