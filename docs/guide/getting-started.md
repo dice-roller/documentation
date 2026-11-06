@@ -1,10 +1,15 @@
-# Get Started
+# Get started
+
+Install RPG Dice Roller and load it using the setup that matches your application.
+
 
 ## Install
 
+Install the library using your preferred package manager:
+
 ::: code-tabs#install-method
 
-@tab NPM
+@tab npm
 
 ```bash
 npm install @dice-roller/rpg-dice-roller
@@ -16,89 +21,98 @@ npm install @dice-roller/rpg-dice-roller
 yarn add @dice-roller/rpg-dice-roller
 ```
 
-@tab CDN
-
-```html
-<!-- Replace {VERSION} with the version you want to use -->
-<script src="https://cdn.jsdelivr.net/npm/@dice-roller/rpg-dice-roller@{VERSION}/lib/umd/bundle.min.js"></script>
-```
-
 :::
+
+To use the library directly in a browser without a build tool, see [Browser setup](#browser-setup).
+
 
 ## Setup
 
-:::: tabs#module-type
+Use ES modules in applications that support `import`, or CommonJS in applications that use `require`.
+
+::: code-tabs#module-type
 
 @tab ESM
 
-You can import the dice roller and use it in your application, using [ES standard modules](https://nodejs.org/api/esm.html) like so:
+Import the components you need:
+
+```javascript
+import { Roll, Roller } from '@dice-roller/rpg-dice-roller';
+```
+
+This works in Node.js projects configured for ES modules and browser applications using a build tool such as Vite.
+
+You can also import the library as a namespace:
 
 ```javascript
 import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
 ```
 
-If you only want to import specific components, you can do so like:
-
-```javascript
-import { DiceRoller } from '@dice-roller/rpg-dice-roller';
-```
-
 @tab CommonJS
 
-::: tip
-If you're using Node.js with [ES modules](https://nodejs.org/api/esm.html) (`import`), instead of CommonJS (`require`), follow the ESM section instead.
-:::
+Load the components using `require`:
 
-You can also load the library using CommonJS, AMD, etc. with the UMD build:
+```javascript
+const { Roll, Roller } = require('@dice-roller/rpg-dice-roller');
+```
+
+You can also load the library as a namespace:
 
 ```javascript
 const rpgDiceRoller = require('@dice-roller/rpg-dice-roller');
 ```
 
-If you only want to import specific components, you can do so like:
-```javascript
-const { DiceRoller } = require('@dice-roller/rpg-dice-roller');
-```
-
-@tab Browser
-
-::: warning Browser support
-The dice roller may not work with older browsers.
-Please check the [environment support](readme.md#environment-support).
 :::
 
-
-#### Dependencies
-
-First, you'll need to include some third party dependencies:
-
-* [Math.js](https://mathjs.org/download.html#download)
-* [Random.js](https://github.com/ckknight/random-js#browser-using-script-tag)
-
-```html
-<script src="https://unpkg.com/mathjs@11.8.2/lib/browser/math.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/random-js@2.1.0/dist/random-js.umd.min.js"></script>
-```
+TypeScript type definitions are included with the package. No additional types package is required.
 
 
-#### Dice Roller
+## Browser setup
 
-You can either download the file locally, or use the [CDN](#install) (_Note `umd` in the path, instead of `esm`_):
+You can use RPG Dice Roller directly in a modern browser without an application build tool.
+
+:::: tabs#browser-module-type
+
+@tab ESM
+
+Use a `<script type="module">` element to import the library.
+
+An ESM-aware CDN such as [esm.sh](https://esm.sh/) can resolve the library’s dependencies for you. Replace `{VERSION}` with the library version you want to use.
 
 ```html
-<!-- local file -->
-<script src="./path/to/lib/umd/bundle.min.js"></script>
+<script type="module">
+  import { Roll, Roller } from 'https://esm.sh/@dice-roller/rpg-dice-roller@{VERSION}';
 
-<!-- or CDN - Replace {VERSION} with the version you want to use -->
-<script src="https://cdn.jsdelivr.net/npm/@dice-roller/rpg-dice-roller@{VERSION}/lib/umd/bundle.min.js"></script>
-```
-
-The UMD bundle provides the global variable, `rpgDiceRoller`, that is used to access the library.
-
-```html
-<script>
-  // create a new instance of the DiceRoller
-  var diceRoller = new rpgDiceRoller.DiceRoller();
+  // Use Roll and Roller here.
 </script>
 ```
+
+If you host the ESM build yourself, its runtime dependencies must also be resolvable by the browser, for example through an import map. The ESM bundle is not a standalone file.
+
+@tab UMD
+
+The UMD build includes its runtime dependencies and exposes the library through the global `rpgDiceRoller` variable.
+
+Copy `dist/umd/bundle.min.js` from the package into your application, then load it before the code that uses it:
+
+```html
+<script src="./path/to/bundle.min.js"></script>
+
+<script>
+  const { Roll, Roller } = rpgDiceRoller;
+
+  // Use Roll and Roller here.
+</script>
+```
+
+You do not need to load the library’s dependencies separately.
+
 ::::
+
+
+## Next steps
+
+Continue to the [usage guide](usage.md) to roll dice and work with the results.
+
+* Explore the [notation guide](notation/readme.md) for dice types, modifiers and mathematical expressions.
+* See [environment support](readme.md#environment-support) for supported browsers and Node.js versions.
