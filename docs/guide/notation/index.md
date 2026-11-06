@@ -1,7 +1,3 @@
----
-outline: false
----
-
 # What are notations?
 
 Dice can be rolled through the use of "notations".

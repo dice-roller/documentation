@@ -1,7 +1,3 @@
----
-outline: 2
----
-
 # Introduction
 
 This library is a JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.
