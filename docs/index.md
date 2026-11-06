@@ -1,11 +1,15 @@
 ---
-home: true
-heroImage: /hero.svg
-tagline: Your game, your rules, your roll
-actions:
-  - text: Get Started →
-    link: /guide/
-footer: MIT Licensed | Copyright © GreenImp Media ltd.
+layout: home
+hero:
+  name: RPG Dice Roller
+  text: Your game, your rules, your roll
+  image:
+    src: /hero.svg
+    alt: RPG Dice Roller
+  actions:
+    - theme: brand
+      text: Get Started →
+      link: /guide/
 features:
 - title: Familiar dice notation
   details: Roll d20 + 5, 2d% or 4dF. Combine different dice, group rolls and use maths in the same expression.
