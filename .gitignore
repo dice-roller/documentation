@@ -48,3 +48,6 @@ bower_components
 
 ## Documentation
 /docs/.vuepress/dist/
+
+/docs/.vitepress/dist/
+/docs/.vitepress/cache/

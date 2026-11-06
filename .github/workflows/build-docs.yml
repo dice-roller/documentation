@@ -53,6 +53,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: docs-site
-          path: docs/.vuepress/dist
+          path: docs/.vitepress/dist
           if-no-files-found: error
           retention-days: 7
