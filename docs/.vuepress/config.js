@@ -71,7 +71,10 @@ export default defineUserConfig({
             children: [
               '/guide/',
               '/guide/getting-started',
-              '/guide/usage',
+              {
+                text: 'Usage',
+                link: '/guide/usage/',
+              },
               '/guide/customisation',
             ],
             collapsible: true,
