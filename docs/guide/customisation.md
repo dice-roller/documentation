@@ -203,7 +203,7 @@ When changing a modifier order, any modifiers with the same order value should b
 
 #### Example
 
-Using the [Open Legend example]((https://openlegendrpg.com/core-rules/actions-attributes#advantage--disadvantage-are-only-applied-before-explosions)), we would need the [keep modifier](./notation/modifiers.md#keep) to run before the [explode modifier](./notation/modifiers.md#exploding).
+Using the [Open Legend example](https://openlegendrpg.com/core-rules/actions-attributes#advantage--disadvantage-are-only-applied-before-explosions), we would need the [keep modifier](./notation/modifiers.md#keep) to run before the [explode modifier](./notation/modifiers.md#exploding).
 
 ```javascript
 // With the default order;
