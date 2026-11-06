@@ -1,4 +1,4 @@
-# Group Rolls <Badge text="New" vertical="middle"/>
+# Group Rolls <Badge text="New"/>
 
 You can perform rolls in a group using comma separated sub-roll expressions. The sub-roll results will be [summed together](#basic) and [modifiers](#modifiers) can be run on entire expressions, rather than individual die rolls.
 
@@ -149,9 +149,9 @@ With multiple sub-rolls, the number of successes are added together
 ```
 
 The above has `2` successes because;
-* The first sub-roll, `4d6+2d8`, rolled `[4, 3, 3, 2]+[2, 6] = 20` <Badge type="warning" text="Not a success" vertical="middle"/>
-* The second sub-roll, `3d20+3`, rolled `[17, 5, 20]+3 = 45` <Badge text="Success" vertical="middle"/>
-* The third sub-roll, `5d10+1`, rolled `[7, 9, 6, 10, 8]+1 = 41` <Badge text="Success" vertical="middle"/>
+* The first sub-roll, `4d6+2d8`, rolled `[4, 3, 3, 2]+[2, 6] = 20` <Badge type="warning" text="Not a success"/>
+* The second sub-roll, `3d20+3`, rolled `[17, 5, 20]+3 = 45` <Badge text="Success"/>
+* The third sub-roll, `5d10+1`, rolled `[7, 9, 6, 10, 8]+1 = 41` <Badge text="Success"/>
 
 ::: roller {4d6+2d8, 3d20+3, 5d10+1}>40 :::
 
@@ -191,9 +191,9 @@ With multiple sub-rolls, the number of successes are added together, and the num
 ```
 
 The above has `1` success because;
-* The first sub-roll, `4d6+2d8`, rolled `[4, 3, 3, 2]+[2, 6] = 20` <Badge type="danger" text="Failure" vertical="middle"/>
-* The second sub-roll, `3d20+3`, rolled `[17, 5, 20]+3 = 45` <Badge text="Success" vertical="middle"/>
-* The third sub-roll, `5d10+1`, rolled `[7, 9, 6, 10, 8]+1 = 41` <Badge text="Success" vertical="middle"/>
+* The first sub-roll, `4d6+2d8`, rolled `[4, 3, 3, 2]+[2, 6] = 20` <Badge type="danger" text="Failure"/>
+* The second sub-roll, `3d20+3`, rolled `[17, 5, 20]+3 = 45` <Badge text="Success"/>
+* The third sub-roll, `5d10+1`, rolled `[7, 9, 6, 10, 8]+1 = 41` <Badge text="Success"/>
 
 ::: roller {4d6+2d8, 3d20+3, 5d10+1}>40f<30 :::
 

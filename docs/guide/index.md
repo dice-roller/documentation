@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 1
+outline: 2
 ---
 
 # Introduction
@@ -39,7 +39,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [Keep rolls](notation/modifiers.md#keep)
 * [Drop rolls](notation/modifiers.md#drop)
 * [Re-roll](notation/modifiers.md#re-roll)
-* [Unique](notation/modifiers.md#unique) <Badge text="New" vertical="middle"/>
+* [Unique](notation/modifiers.md#unique) <Badge text="New"/>
 * [Target success](notation/modifiers.md#target-success-dice-pool)
 * [Target failure](notation/modifiers.md#target-failure-dice-pool)
 * [Max](notation/modifiers.md#max)
@@ -48,7 +48,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 ### Advanced
 
-* [Group rolls](notation/group-rolls.md) <Badge text="New" vertical="middle"/>
+* [Group rolls](notation/group-rolls.md) <Badge text="New"/>
 
 ### Mathematical equations
 
@@ -68,7 +68,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 * [Vue components](https://github.com/dice-roller/vue) - For Tailwind, Bootstrap, basic HTML, and renderless
 * [Vuepress plugin](https://github.com/dice-roller/vuepress-plugin) - Dice roller plugin used in this documentation
-* [CLI](https://github.com/dice-roller/cli) <Badge text="New" vertical="middle"/> - Command Line Interface for rolling dice
+* [CLI](https://github.com/dice-roller/cli) <Badge text="New"/> - Command Line Interface for rolling dice
 
 
 ## Environment support

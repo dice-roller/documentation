@@ -1,6 +1,5 @@
 ---
-sidebar: auto
-sidebarDepth: 1
+outline: 2
 ---
 
 # Code of Conduct

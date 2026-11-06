@@ -1,6 +1,8 @@
 ---
-sidebarDepth: 1
-next: /guide/notation/
+outline: 2
+next:
+  text: Notation
+  link: /guide/notation/
 ---
 
 # Customisation

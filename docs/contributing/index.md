@@ -1,6 +1,5 @@
 ---
-sidebar: auto
-sidebarDepth: 2
+outline: [2, 3]
 ---
 
 # Contributing

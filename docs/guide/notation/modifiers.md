@@ -257,7 +257,7 @@ This also applies to [Exploding](#exploding), [Compounding](#compounding), [Pene
 :::
 
 
-## Unique <Badge text="New" vertical="middle"/>
+## Unique <Badge text="New"/>
 
 **Notation:** `u` / `uo` / `u{cp}` / `uo{cp}`
 
