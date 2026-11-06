@@ -1,6 +1,6 @@
 # Describing rolls
 
-Add descriptions to your [dice](dice.md) and [roll groups](group-rolls.md) to identify what they represent, such as an attack, a damage type or a skill check.
+Add descriptions to your [dice](dice.md) and [roll groups](roll-groups.md) to identify what they represent, such as an attack, a damage type or a skill check.
 
 Descriptions are labels only. They do not affect the results, and any dice notation inside them is treated as text.
 

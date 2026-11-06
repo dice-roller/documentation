@@ -109,7 +109,7 @@ export default defineConfig({
             { text: 'What are notations?', link: '/guide/notation/' },
             { text: 'Dice', link: '/guide/notation/dice' },
             { text: 'Modifiers', link: '/guide/notation/modifiers' },
-            { text: 'Group Rolls', link: '/guide/notation/group-rolls' },
+            { text: 'Roll Groups', link: '/guide/notation/roll-groups' },
             { text: 'Roll Descriptions', link: '/guide/notation/roll-descriptions' },
             { text: 'Maths', link: '/guide/notation/maths' },
           ],
