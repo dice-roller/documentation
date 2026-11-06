@@ -24,6 +24,27 @@ html.dark .VPNavBarTitle .logo {
   padding: 1rem;
 }
 
+.VPHomeHero {
+  --hero-background-image: url('./home-background.png');
+  --hero-background-position: center;
+  --hero-background-overlay: rgb(255 255 255 / 75%);
+
+  background-image:
+    linear-gradient(var(--hero-background-overlay), var(--hero-background-overlay)),
+    var(--hero-background-image);
+  background-position: var(--hero-background-position);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html.dark .VPHomeHero {
+  --hero-background-overlay: rgb(27 27 31 / 75%);
+}
+
+.VPHomeFeatures {
+  margin: 24px auto;
+}
+
 /* Inline SVGs inherit the primary button colour; sizes come from frontmatter. */
 .VPHomeFeatures .icon:has(> svg) {
   width: fit-content;
