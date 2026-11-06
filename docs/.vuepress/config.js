@@ -53,7 +53,14 @@ export default defineUserConfig({
       { text: 'API', link: '/api/' },
       {
         text: 'Contribute',
-        children: ['/contributing/', '/contributing/code-of-conduct.md'],
+        children: [
+          {
+            text: 'Contributing',
+            link: '/contributing/',
+            activeMatch: '/contributing/$',
+          },
+          '/contributing/code-of-conduct.md',
+        ],
       },
     ],
     sidebar: {
