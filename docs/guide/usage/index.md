@@ -187,17 +187,31 @@ const nextAttack = roller.roll(attack.notation);
 
 ## Roll options
 
-Pass an options object as the second argument to `Roll` or the `roll()` shorthand:
+Pass an options object as the second argument to `Roll` or the `roll()` shorthand. For `Roller`, pass options to its constructor; they apply to every roll made through that roller:
+
+::: code-tabs#roll-options
+
+@tab Roll
 
 ```javascript
-const roll = new Roll('4d6', {
+const result = new Roll('4d6', {
   limits: {
     maxQty: 100,
   },
 });
 ```
 
-For `Roller`, pass options to its constructor. They apply to every roll made through that roller:
+@tab roll()
+
+```javascript
+const result = roll('4d6', {
+  limits: {
+    maxQty: 100,
+  },
+});
+```
+
+@tab Roller
 
 ```javascript
 const roller = new Roller({
@@ -206,8 +220,10 @@ const roller = new Roller({
   },
 });
 
-const roll = roller.roll('4d6');
+const result = roller.roll('4d6');
 ```
+
+:::
 
 All options are optional:
 
@@ -230,7 +246,33 @@ The default limits are:
 | `maxQty` | `999` | Maximum number of dice in each set. |
 | `maxIterations` | `1000` | Maximum repetitions per die for repeating modifiers. |
 
-You can override either limit:
+You can override either limit when creating a roll or roller:
+
+::: code-tabs#roll-options
+
+@tab Roll
+
+```javascript
+const result = new Roll('4d6', {
+  limits: {
+    maxQty: 100,
+    maxIterations: 200,
+  },
+});
+```
+
+@tab roll()
+
+```javascript
+const result = roll('4d6', {
+  limits: {
+    maxQty: 100,
+    maxIterations: 200,
+  },
+});
+```
+
+@tab Roller
 
 ```javascript
 const roller = new Roller({
@@ -239,7 +281,11 @@ const roller = new Roller({
     maxIterations: 200,
   },
 });
+
+const result = roller.roll('4d6');
 ```
+
+:::
 
 Both values must be positive safe integers.
 
