@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
 import apiConfig from '../api/typedoc-sidebar.json' with { type: 'json' };
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -25,6 +26,11 @@ export default defineConfig({
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
   base,
   lastUpdated: true,
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin);
+    },
+  },
   head: [
     ['meta', { name: 'docsearch:version', content: docsVersion }],
     ['link', { rel: 'icon', href: `${base}dice-roller-logo.png` }],

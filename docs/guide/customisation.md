@@ -52,21 +52,21 @@ We use [random-js](https://github.com/ckknight/random-js) behind the scenes, and
 
 You can access the number generator by importing the `NumberGenerator` namespace:
 
-::: code-tabs#module-type
+:::tabs key:module-type variant:code
 
-@tab ESM
+== ESM
 
 ```javascript
 import { DiceRoller, NumberGenerator } from '@dice-roller/rpg-dice-roller';
 ```
 
-@tab CommonJS
+== CommonJS
 
 ```javascript
 const { DiceRoller, NumberGenerator } = require('@dice-roller/rpg-dice-roller');
 ```
 
-@tab Browser
+== Browser
 
 ```javascript
 // `NumberGenerator` is available on the global `rpgDiceRoller` variable

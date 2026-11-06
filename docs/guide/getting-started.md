@@ -2,21 +2,21 @@
 
 ## Install
 
-::: code-tabs#install-method
+:::tabs key:install-method variant:code
 
-@tab NPM
+== NPM
 
 ```bash
 npm install @dice-roller/rpg-dice-roller
 ```
 
-@tab Yarn
+== Yarn
 
 ```bash
 yarn add @dice-roller/rpg-dice-roller
 ```
 
-@tab CDN
+== CDN
 
 ```html
 <!-- Replace {VERSION} with the version you want to use -->
@@ -27,9 +27,9 @@ yarn add @dice-roller/rpg-dice-roller
 
 ## Setup
 
-:::: tabs#module-type
+::::tabs key:module-type
 
-@tab ESM
+=== ESM
 
 You can import the dice roller and use it in your application, using [ES standard modules](https://nodejs.org/api/esm.html) like so:
 
@@ -43,7 +43,7 @@ If you only want to import specific components, you can do so like:
 import { DiceRoller } from '@dice-roller/rpg-dice-roller';
 ```
 
-@tab CommonJS
+=== CommonJS
 
 ::: tip
 If you're using Node.js with [ES modules](https://nodejs.org/api/esm.html) (`import`), instead of CommonJS (`require`), follow the ESM section instead.
@@ -60,7 +60,7 @@ If you only want to import specific components, you can do so like:
 const { DiceRoller } = require('@dice-roller/rpg-dice-roller');
 ```
 
-@tab Browser
+=== Browser
 
 ::: warning Browser support
 The dice roller may not work with older browsers.
