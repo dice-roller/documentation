@@ -42,12 +42,12 @@ Roll the dice your game needs:
 
 Apply modifiers individually or combine them to build more complex rolls:
 
-* [Exploding](notation/modifiers.md#exploding), [compounding](notation/modifiers.md#compounding) and [penetrating](notation/modifiers.md#penetrating) dice.
+* [Exploding](notation/modifiers.md#explode), [compounding](notation/modifiers.md#compound) and [penetrating](notation/modifiers.md#penetrate) dice.
 * [Keep](notation/modifiers.md#keep) or [drop](notation/modifiers.md#drop) results.
 * [Re-roll](notation/modifiers.md#re-roll) dice or require [unique results](notation/modifiers.md#unique).
-* Count [successes](notation/modifiers.md#target-success-dice-pool) and [failures](notation/modifiers.md#target-failures-dice-pool).
-* Set [minimum](notation/modifiers.md#min-min) and [maximum](notation/modifiers.md#max-max) die results.
-* [Sort results](notation/modifiers.md#sorting).
+* Count [successes](notation/modifiers.md#target-success-dice-pool) and [failures](notation/modifiers.md#target-failure-dice-pool).
+* Set [minimum](notation/modifiers.md#min) and [maximum](notation/modifiers.md#max) die results.
+* [Sort results](notation/modifiers.md#sort).
 
 ### Groups and calculations
 
