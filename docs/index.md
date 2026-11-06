@@ -32,5 +32,3 @@ features:
 Have a play and see how it works
 
 ::: roller 4d6 :::
-
-<SponsorButton />

@@ -9,10 +9,10 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'doc-footer-before': () => h(SponsorButton),
+      'home-features-after': () => h(SponsorButton),
     });
   },
   enhanceApp({ app }) {
     enhanceAppWithTabs(app);
-    app.component('SponsorButton', SponsorButton);
   },
 };
