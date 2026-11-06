@@ -75,7 +75,7 @@ export default defineUserConfig({
               '/guide/notation/',
               '/guide/notation/dice',
               '/guide/notation/modifiers',
-              '/guide/notation/group-rolls',
+              '/guide/notation/roll-groups',
               '/guide/notation/roll-descriptions',
               '/guide/notation/maths',
             ],

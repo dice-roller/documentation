@@ -42,6 +42,6 @@ The following pages explain the different parts of the notation and how to combi
 
 * [Dice](dice.md) — Choose which dice to roll, such as standard, percentile or Fudge dice.
 * [Modifiers](modifiers.md) — Change how rolls behave, with rules such as exploding, re-rolling, and keeping or dropping results.
-* [Group rolls](group-rolls.md) — Combine roll expressions into a group and apply modifiers to the group.
+* [Roll groups](roll-groups.md) — Combine roll expressions into a group and apply modifiers to the group.
 * [Roll descriptions](roll-descriptions.md) — Add labels or descriptions to identify your rolls.
 * [Maths](maths.md) — Combine dice rolls with arithmetic, parentheses and mathematical functions.
