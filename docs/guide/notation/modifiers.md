@@ -10,7 +10,7 @@ Add modifiers after the dice notation. You can combine different modifiers to ap
 
 This example combines [Explode](#explode) with [Keep](#keep).
 
-Some modifiers also work with [group rolls](group-rolls.md), where their behaviour can differ. This page describes how they work with individual sets of dice.
+Some modifiers also work with [roll groups](roll-groups.md), where their behaviour can differ. This page describes how they work with individual sets of dice.
 
 Throughout this page, `{n}` represents a number and `{cp}` represents a [compare point](#compare-point). These are placeholders; do not include the braces in your notation.
 

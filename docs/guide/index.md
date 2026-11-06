@@ -53,7 +53,7 @@ Apply modifiers individually or combine them to build more complex rolls:
 
 Build expressions that bring several rolls together:
 
-* [Group rolls](notation/group-rolls.md) and apply modifiers to their results.
+* [Roll groups](notation/roll-groups.md) and apply modifiers to their results.
 * Combine dice with [mathematical operators](notation/maths.md#operators) and [functions](notation/maths.md#functions).
 * Use parentheses to control the order of calculations.
 
