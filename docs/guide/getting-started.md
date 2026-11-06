@@ -64,7 +64,7 @@ const { DiceRoller } = require('@dice-roller/rpg-dice-roller');
 
 ::: warning Browser support
 The dice roller may not work with older browsers.
-Please check the [environment support](readme.md#environment-support).
+Please check the [environment support](index.md#environment-support).
 :::
 
 

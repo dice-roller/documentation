@@ -10,7 +10,7 @@ Read the sections below for details usage instructions.
 
 ## Rolling dice
 
-Dice are rolled with a string [notation](./notation/readme.md). The quickest method is using the `DiceRoll` class:
+Dice are rolled with a string [notation](./notation/index.md). The quickest method is using the `DiceRoll` class:
 
 ::: code-tabs#module-type
 
@@ -38,9 +38,9 @@ const roll = rpgDiceRoller.DiceRoll('4d6');
 
 :::
 
-The above will parse the [notation](./notation/readme.md), roll the dice, and store the result.
+The above will parse the [notation](./notation/index.md), roll the dice, and store the result.
 
-If you want to roll another [notation](./notation/readme.md), you can create another `DiceRoll` instance:
+If you want to roll another [notation](./notation/index.md), you can create another `DiceRoll` instance:
 
 ```javascript
 const roll1 = new DiceRoll('2d10 + 1d4');
@@ -122,11 +122,11 @@ const roller = rpgDiceRoller.DiceRoller();
 
 :::
 
-Any [notations](./notation/readme.md) rolled on a `DiceRoller` instance get stored in its log.
+Any [notations](./notation/index.md) rolled on a `DiceRoller` instance get stored in its log.
 
 ### Store
 
-The `DiceRoller` has a `roll()` method, that takes a string [notation](./notation/readme.md), and returns a single `DiceRoll` object:
+The `DiceRoller` has a `roll()` method, that takes a string [notation](./notation/index.md), and returns a single `DiceRoll` object:
 
 ```javascript
 const roller = new DiceRoller();
@@ -204,7 +204,7 @@ console.log(roller.total); // 62
 
 ## Export rolls
 
-The `DiceRoll` class has an `export()` method, which can export the rolls in several formats, as defined in the [`ExportFormats` utility object](../api/utilities/ExportFormats.md).
+The `DiceRoll` class has an `export()` method, which can export the rolls in several formats, as defined in the [`EXPORT_FORMATS` constant](../api/variables/EXPORT_FORMATS.md).
 
 ::: code-tabs#module-type
 
@@ -303,7 +303,7 @@ Returns base64 encoded version of the [JSON string](#json-string-default):
 
 ## Exporting logs
 
-You can also export the data from a `DiceRoller` instance, in exactly the same way. It also has an `export()` method, that accepts the same [export formats](../api/utilities/ExportFormats.md).
+You can also export the data from a `DiceRoller` instance, in exactly the same way. It also has an `export()` method, that accepts the same [export formats](../api/variables/EXPORT_FORMATS.md).
 
 ::: code-tabs#module-type
 
@@ -540,6 +540,6 @@ console.log(`Average total: ${roll.averageTotal}`);
 
 ::: roller :::
 
-Check the [notation](./notation/readme.md) section for more examples.
+Check the [notation](./notation/index.md) section for more examples.
 
-Check the [API](../api/README.md) section for more details on using the dice roller.
+Check the [API](../api/index.md) section for more details on using the dice roller.

@@ -25,8 +25,6 @@ export default defineConfig({
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
   base,
   lastUpdated: true,
-  // Preserve directory index URLs without renaming the Markdown sources yet.
-  rewrites: (path) => path.replace(/(^|\/)readme\.md$/i, '$1index.md'),
   head: [
     ['meta', { name: 'docsearch:version', content: docsVersion }],
     ['link', { rel: 'icon', href: `${base}dice-roller-logo.png` }],

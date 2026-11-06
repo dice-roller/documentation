@@ -147,7 +147,7 @@ generator.real(1, 4, true);
 
 For more information on the engines, and how the generator works, check out:
 * [random-js documentation](https://github.com/ckknight/random-js); this is used behind the scenes. You can find more info on the engines and how to use the Mersenne Twister engine.
-* [API docs](../api/utilities/NumberGenerator.md) for more detail on the `NumberGenerator` class.
+* [API docs](../api/interfaces/NumberGenerator.md) for more detail on the `NumberGenerator` interface.
 
 
 ## Modifier execution order
@@ -175,7 +175,7 @@ Fortunately, you can modify the execution order for any modifier either [globall
 
 To change the execution order when rolling string notations (e.g. `DiceRoll('4d6!kh1')`), you can set the default order for a modifier.
 
-Each [`Modifier`](../api/modifiers/Modifier.md) class has a static [`order`](../api/modifiers/Modifier.md#modifier-order-number) property, which is used to set the order when a new Modifier is created.
+For modifier execution order in the current API, see [`ModifierHandler`](../api/rpg-dice-roller/namespaces/modifiers/interfaces/ModifierHandler.md) and its [`order`](../api/rpg-dice-roller/namespaces/modifiers/interfaces/ModifierHandler.md#order) property. The examples below still use the previous modifier classes and need updating.
 
 You can change it like:
 
@@ -189,7 +189,7 @@ KeepModifier.order = 2;
 
 Any new `ExplodeModifier`, and `KeepModifier` objects will now have the new orders. Other modifiers will retain their original order.
 
-This also works with manually created [`Modifier`](../api/modifiers/Modifier.md) objects:
+This also works with manually created `Modifier` objects:
 
 ```javascript
 const mod = new ExplodeModifier();
@@ -203,7 +203,7 @@ When changing a modifier order, any modifiers with the same order value should b
 
 #### Example
 
-Using the [Open Legend example]((https://openlegendrpg.com/core-rules/actions-attributes#advantage--disadvantage-are-only-applied-before-explosions)), we would need the [keep modifier](./notation/modifiers.md#keep) to run before the [explode modifier](./notation/modifiers.md#exploding).
+Using the [Open Legend example](https://openlegendrpg.com/core-rules/actions-attributes#advantage--disadvantage-are-only-applied-before-explosions), we would need the [keep modifier](./notation/modifiers.md#keep) to run before the [explode modifier](./notation/modifiers.md#exploding).
 
 ```javascript
 // With the default order;
