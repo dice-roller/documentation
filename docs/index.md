@@ -19,14 +19,6 @@ features:
   details: Use the roll total or inspect the individual dice. Build a presenter plugin to format the results for your app, chat bot or virtual tabletop.
 ---
 
-[![npm (scoped)](https://img.shields.io/npm/v/@dice-roller/rpg-dice-roller?label=version)](https://www.npmjs.com/package/@dice-roller/rpg-dice-roller)
-[![Build Status](https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml/badge.svg)](https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml)
-[![Coverage Status](https://coveralls.io/repos/github/dice-roller/rpg-dice-roller/badge.svg?branch=main)](https://coveralls.io/github/dice-roller/rpg-dice-roller?branch=main)
-![npm type definitions](https://img.shields.io/npm/types/@dice-roller/rpg-dice-roller)
-[![License](https://img.shields.io/npm/l/@dice-roller/rpg-dice-roller)](https://github.com/dice-roller/rpg-dice-roller/blob/develop/licence.txt)
-[![npm downloads](https://img.shields.io/npm/dm/@dice-roller/rpg-dice-roller)](https://www.npmjs.com/package/@dice-roller/rpg-dice-roller)
-
-
 ## Try me
 
 Have a play and see how it works
