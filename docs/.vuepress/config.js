@@ -53,7 +53,14 @@ export default defineUserConfig({
       { text: 'API', link: '/api/' },
       {
         text: 'Contribute',
-        children: ['/contributing/', '/contributing/code-of-conduct.md'],
+        children: [
+          {
+            text: 'Contributing',
+            link: '/contributing/',
+            activeMatch: '/contributing/$',
+          },
+          '/contributing/code-of-conduct.md',
+        ],
       },
     ],
     sidebar: {
@@ -64,8 +71,10 @@ export default defineUserConfig({
             children: [
               '/guide/',
               '/guide/getting-started',
-              '/guide/cli',
-              '/guide/usage',
+              {
+                text: 'Usage',
+                link: '/guide/usage/',
+              },
               '/guide/customisation',
             ],
             collapsible: true,
@@ -76,12 +85,16 @@ export default defineUserConfig({
               '/guide/notation/',
               '/guide/notation/dice',
               '/guide/notation/modifiers',
-              '/guide/notation/group-rolls',
+              '/guide/notation/roll-groups',
               '/guide/notation/roll-descriptions',
               '/guide/notation/maths',
             ],
             collapsible: true,
           },
+          {
+            text: 'CLI',
+            link: '/guide/cli',
+          }
         ],
       },
       ...{

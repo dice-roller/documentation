@@ -12,7 +12,7 @@ features:
 - title: Roll by your game’s rules
   details: Keep the highest dice, reroll ones, explode on a maximum roll or count successes. Combine modifiers to express the mechanics your game uses.
 - title: Make the results your own
-  details: Use the roll total or inspect the individual dice. Build a presenter plugin to format the results for your app, chat bot or virtual tabletop.
+  details: Use the roll total or inspect the individual dice. Display the results how you want for your app, chat bot or virtual tabletop.
 ---
 
 [![npm (scoped)](https://img.shields.io/npm/v/@dice-roller/rpg-dice-roller?label=version)](https://www.npmjs.com/package/@dice-roller/rpg-dice-roller)

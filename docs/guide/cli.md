@@ -1,95 +1,132 @@
-# CLI <Badge text="New" vertical="middle"/>
+# CLI
 
-To use this library directly in the command line, you need to install the [CLI library](https://github.com/dice-roller/cli).
+Roll dice directly in your terminal with the [RPG Dice Roller CLI](https://github.com/dice-roller/cli). Use it to make individual rolls, roll several expressions at once, or play an interactive dice game.
+
 
 ## Install
 
-Install the script globally:
+Install the CLI globally using npm:
 
 ```bash
 npm install -g @dice-roller/cli
 ```
 
-## Usage
+This makes the `roller` command available in your terminal.
 
-### Roll some dice
 
-```:no-line-numbers
-roller <notation..> [options]
+## Roll dice
 
-Commands:
-  roller roll <notation..>  roll the dice                              [default]
-  roller play               play an interactive CLI dice game
-
-Positionals:
-  notation  space separated list of notation to roll                    [string]
-
-Options:
-  -V, --version      Show version number                               [boolean]
-      --help         Show help                                         [boolean]
-  -s, --separator    String to separate dice rolls      [string] [default: "; "]
-  -e, --engine       The RNG engine to use                              [string]
-      --seed         The RNG engine seed                                [number]
-  -f, --format       The output format              [string] [default: "string"]
-      --result-only  Only return the roll result, without the notation or dice
-                     rolled                           [boolean] [default: false]
-
-Examples:
-  roller 4d6     roll a 6 sided die 4 times
-  roller 2d10+7  roll a 10 sided die 2 times and add 7
-  roller play    start the interactive CLI dice game
-
-For more information visit https://dice-roller.github.io/documentation
-```
-
-### Play a game
-
-```:no-line-numbers
-roller play
-
-play an interactive CLI dice game
-
-Options:
-  -V, --version  Show version number                                   [boolean]
-      --help     Show help                                             [boolean]
-      --players  The name of a player                                    [array]
-      --count    The number of players                                  [number]
-
-For more information visit https://dice-roller.github.io/documentation
-```
-
-## Examples
+Pass a [dice notation](./notation/readme.md) to `roller`:
 
 ```bash
-# Roll a 6 sided die 4 times
 roller 4d6
+```
 
-# Roll a series of dice
+You can also roll several expressions in one command, separated by spaces:
+
+```bash
 roller 2d10 7d% 5dF
+```
 
-# Notation with spaces must be surrounded with quotes
+Surround expressions containing spaces with quotes:
+
+```bash
 roller "4d6 # roll description"
+```
 
-# Use the MersenneTwister19937 engine (`seed` is not required)
+All supported dice notation is available in the CLI.
+
+Rolling dice is the default command, so `roller 4d6` and `roller roll 4d6` are equivalent.
+
+### Options
+
+```text:no-line-numbers
+roller <notation..> [options]
+```
+
+| Option | Description | Default |
+| --- | --- | --- |
+| `-s`, `--separator` | Text used to separate the output of multiple rolls. | `"; "` |
+| `-e`, `--engine` | The random number generator engine to use. | |
+| `--seed` | A numeric seed for the random number generator. | |
+| `-f`, `--format` | The output format. | `"string"` |
+| `--result-only` | Return only the roll results, without the notation or individual dice. | `false` |
+
+### Examples
+
+Use the Mersenne Twister engine with a seed. The seed is optional:
+
+```bash
 roller 4d6 -e=MersenneTwister19937 --seed=415
+```
 
-# Return just the result rolled
+Return only the result:
+
+```bash
 roller 2d20 --result-only
+```
 
-# Output the result in base64 encoding
-roller 6d8*4 -f=BASE_64
+Export the roll as Base64:
 
-# Start the interactive dice game
+```bash
+roller "6d8*4" -f=BASE_64
+```
+
+
+## Play an interactive game
+
+Start an interactive dice game:
+
+```bash
 roller play
+```
 
-# Start the game with 4 players
+### Options
+
+| Option | Description |
+| --- | --- |
+| `--players` | Player names, separated by spaces. |
+| `--count` | The number of players. |
+
+### Examples
+
+Start a game with four players:
+
+```bash
 roller play --count=4
+```
 
-# Start the game with 2 players called Barbara and Ian
+Start a game with two players named Barbara and Ian:
+
+```bash
 roller play --players=Barbara Ian
+```
 
-# Start the game with two players, but only name the first one
+Set the number of players and name only the first:
+
+```bash
 roller play --count=2 --players=Susan
 ```
 
-You can use all the [notation](./notation/readme.md) in the CLI.
+
+## Help and version
+
+Show the available commands and options:
+
+```bash
+roller --help
+```
+
+Show help for the interactive game:
+
+```bash
+roller play --help
+```
+
+Display the installed CLI version:
+
+```bash
+roller --version
+```
+
+You can also use `-V` instead of `--version`.

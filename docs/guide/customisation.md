@@ -165,9 +165,9 @@ This is determined by the modifier's `order` property, and works in ascending or
 However, sometimes the default order is not desired, because certain games require a slightly different order.
 
 For example, Open Legend requires the [keep modifier to be run **before** the explode modifier](https://openlegendrpg.com/core-rules/actions-attributes#advantage--disadvantage-are-only-applied-before-explosions).
-However, by default, the [explode modifier](./notation/modifiers.md#exploding) runs first.
+However, by default, the [explode modifier](./notation/modifiers.md#explode) runs first.
 
-This is because the [explode modifier](./notation/modifiers.md#exploding) has an order of `3`, and the [keep modifier](./notation/modifiers.md#keep) has an order of `6`.
+This is because the [explode modifier](./notation/modifiers.md#explode) has an order of `3`, and the [keep modifier](./notation/modifiers.md#keep) has an order of `6`.
 
 Fortunately, you can modify the execution order for any modifier either [globally](#change-default-order), or on a [per-instance basis](#change-individual-instance-order).
 
@@ -203,7 +203,7 @@ When changing a modifier order, any modifiers with the same order value should b
 
 #### Example
 
-Using the [Open Legend example]((https://openlegendrpg.com/core-rules/actions-attributes#advantage--disadvantage-are-only-applied-before-explosions)), we would need the [keep modifier](./notation/modifiers.md#keep) to run before the [explode modifier](./notation/modifiers.md#exploding).
+Using the [Open Legend example](https://openlegendrpg.com/core-rules/actions-attributes#advantage--disadvantage-are-only-applied-before-explosions), we would need the [keep modifier](./notation/modifiers.md#keep) to run before the [explode modifier](./notation/modifiers.md#explode).
 
 ```javascript
 // With the default order;

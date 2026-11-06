@@ -1,27 +1,28 @@
-# Describing Rolls  <Badge text="New" vertical="middle"/>
+# Describing rolls
 
-You can add a textual description or label to both [Dice](dice.md) and [Roll Group](group-rolls.md), to help identify them.
+Add descriptions to your [dice](dice.md) and [roll groups](roll-groups.md) to identify what they represent, such as an attack, a damage type or a skill check.
 
-Both inline and block description are supported.
+Descriptions are labels only. They do not affect the results, and any dice notation inside them is treated as text.
 
+You can use either inline or block descriptions.
 
-## Inline
+## Inline descriptions
 
-Inline descriptions are marked with `#` or `//`, and can appear after any [Dice](dice.md) or [Roll Group](group-rolls.md):
+Start an inline description with `#` or `//`, after the dice notation and any modifiers, or after a roll group:
 
 ```javascript
 4d6 # Fire damage
 
 4d6 // Fire damage
 
-{4d6, 2d10, d4} // Fire damage, Frost damage, and Falling damage (A bad day)
-
-{5d6 + 5} // Fire
-
 4d6dl2 // Drop the lowest two
+
+{4d6, 2d10, d4} // Combined damage
 ```
 
-Any notation inside a description will not be parsed:
+Everything after the marker, up to the end of the line, becomes part of the description.
+
+For example, this rolls only `2d10`. The `2d10! / 3` inside the description is text, so it is not evaluated:
 
 ```javascript
 2d10 // Ice damage 2d10! / 3
@@ -29,24 +30,32 @@ Any notation inside a description will not be parsed:
 
 ::: roller 4d6 // Fire damage :::
 
+## Block descriptions
 
-## Block
-
-Block descriptions are enclosed between either `[ ... ]` or `/* ... */`, and can appear after any [Dice](dice.md) or [Roll Group](group-rolls.md):
+Enclose a block description in `[ ... ]` or `/* ... */`, after the dice notation and any modifiers, or after a roll group:
 
 ```javascript
-4d6 /* Ice damage */
+4d6 [Fire damage]
 
-2d10 [ Fire damage ]
+4d6 /* Fire damage */
 
-{5d6 + 5} [ Fire damage ]
-
-{4d6, 2d10, d4} /* You can even
-write them on multiple lines
-*/
+{5d6 + 5} [Fire damage]
 ```
 
-Any notation inside a description block will not be parsed:
+Unlike inline descriptions, block descriptions have a closing marker. You can continue the notation afterwards, making them useful for labelling different parts of an expression:
+
+```javascript
+2d6 [Slashing damage] + 1d4 [Fire damage]
+```
+
+Block descriptions can also span multiple lines:
+
+```javascript
+{4d6, 2d10, d4} /* Fire damage,
+frost damage and falling damage */
+```
+
+Any notation inside the description is treated as text:
 
 ```javascript
 4d6 /* Ice damage 5d10 + 7 */

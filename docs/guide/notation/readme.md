@@ -2,33 +2,46 @@
 sidebarDepth: 0
 ---
 
-# What are notations?
+# What is dice notation?
 
-Dice can be rolled through the use of "notations".
-A notation is a simple string of characters that tells the parser which dice and modifiers to roll.
+Dice notation is a compact way to describe a dice roll. It tells the library which dice to roll, how to modify their results, and how to calculate the total.
 
-The format of the notation is based on the Wikipedia article [Dice Notation](https://en.wikipedia.org/wiki/Dice_notation),
-so it's consistent and conforms to a standard of sorts, albeit a very loose one.
+For example, `2d6+3` means “roll two six-sided dice, add their results together, then add 3”.
 
-It's then been enhanced to bring in extra functionality, that is not otherwise possible with the basic notation.
+RPG Dice Roller uses familiar [dice notation](https://en.wikipedia.org/wiki/Dice_notation), extended with modifiers, roll groups and mathematical expressions to support more complex game mechanics.
 
+## Reading a notation
 
-## Types
+A basic dice notation consists of a quantity, the letter `d`, and the number of sides:
 
-The notation can be split into several types:
+```javascript
+2d6
+```
 
-* [Dice](dice.md) - _The different types of dice that can be rolled (e.g. `d6`, `d20`, `d%`, `dF`)._
-* [Modifiers](modifiers.md) - _The modifiers that can affect dice rolls (e.g. "exploding", "re-roll")._
-* [Group rolls](group-rolls.md) <Badge text="New" vertical="middle"/> - _Perform actions and modifiers on collections of rolls_
-* [Roll descriptions](roll-descriptions.md) <Badge text="New" vertical="middle"/> - _Describing or labeling a roll._
-* [Maths](maths.md) - _Generic mathematical equations._
+Here, `2` is the number of dice to roll and `6` is the number of sides on each die. If you leave out the quantity, it defaults to one: `d6` is equivalent to `1d6`.
 
+You can build on this by adding modifiers and maths. For example:
 
-## Try it out
+```javascript
+4d6d1 + 5
+```
+
+This tells the library to:
+
+1. Roll four six-sided dice.
+2. Drop the lowest result.
+3. Add the remaining results together, then add 5.
+
+Try rolling it below. You can also edit the notation to experiment with different dice and values.
 
 ::: roller 4d6d1 + 5 :::
 
+## Notation reference
 
-## Reference
+The following pages explain the different parts of the notation and how to combine them:
 
-You can read more on the basis for the dice notation on the [Dice Notation](https://en.wikipedia.org/wiki/Dice_notation) Wiki article.
+* [Dice](dice.md) — Choose which dice to roll, such as standard, percentile or Fudge dice.
+* [Modifiers](modifiers.md) — Change how rolls behave, with rules such as exploding, re-rolling, and keeping or dropping results.
+* [Roll groups](roll-groups.md) — Combine roll expressions into a group and apply modifiers to the group.
+* [Roll descriptions](roll-descriptions.md) — Add labels or descriptions to identify your rolls.
+* [Maths](maths.md) — Combine dice rolls with arithmetic, parentheses and mathematical functions.
