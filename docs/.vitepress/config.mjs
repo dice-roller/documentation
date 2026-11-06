@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+import { fileURLToPath } from 'node:url';
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
 import apiConfig from '../api/typedoc-sidebar.json' with { type: 'json' };
 
@@ -27,6 +28,18 @@ export default defineConfig({
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
   base,
   lastUpdated: true,
+  vite: {
+    resolve: {
+      alias: [
+        {
+          // Wrap the layout's footer, leaving imports of the original component
+          // available to the wrapper without recursively aliasing them.
+          find: './components/VPFooter.vue',
+          replacement: fileURLToPath(new URL('./theme/Footer.vue', import.meta.url)),
+        },
+      ],
+    },
+  },
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin);
