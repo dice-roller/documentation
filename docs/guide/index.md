@@ -28,7 +28,7 @@ Start with [Getting started](getting-started.md) to install the library, or expl
 Roll the dice your game needs:
 
 * [Standard dice](notation/dice.md#standard), including familiar dice such as d6 and d20.
-* [Percentile dice](notation/dice.md#percentile).
+* [Percentile dice](notation/dice.md#percentile-dice).
 * [Fudge and Fate dice](notation/dice.md#fudge-fate-dice).
 * [Range dice](notation/dice.md#range-dice), with custom minimum and maximum values, including negative numbers. <Badge text="New in v6" vertical="middle"/>
 * [Face dice](notation/dice.md#face-dice), with individually defined face values. <Badge text="New in v6" vertical="middle"/>
@@ -59,7 +59,7 @@ Work with the results beyond their final totals:
 
 * Inspect individual dice and evaluated expressions.
 * Keep a history of rolls.
-* [Export](usage.md#export-rolls) and [import](usage.md#import-rolls) rolls.
+* [Export](usage/index.md) and [import](usage/index.md) rolls.
 * Format results for display using presenters.
 
 ### Customisation

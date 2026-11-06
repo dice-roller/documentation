@@ -74,3 +74,11 @@ dF.1  // Roll one Fudge die with four blank faces
 ```
 
 ::: roller 4dF :::
+
+## Range dice
+
+To be completed
+
+## Face dice
+
+To be completed
