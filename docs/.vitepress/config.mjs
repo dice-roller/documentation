@@ -67,7 +67,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/hero.svg',
     footer: {
-      message: `MIT Licensed · <a href="${base}credits.html">Icon credits</a>`,
+      message: `MIT Licensed · <a href="${base}credits.html">Credits</a>`,
       copyright: 'Copyright © GreenImp Media ltd.',
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/dice-roller/rpg-dice-roller' }],
