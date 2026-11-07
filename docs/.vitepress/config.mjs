@@ -97,7 +97,6 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/guide/' },
             { text: 'Get Started', link: '/guide/getting-started' },
-            { text: 'CLI', link: '/guide/cli' },
             { text: 'Usage', link: '/guide/usage' },
             { text: 'Customisation', link: '/guide/customisation' },
           ],
@@ -114,6 +113,10 @@ export default defineConfig({
             { text: 'Maths', link: '/guide/notation/maths' },
           ],
         },
+        {
+          text: 'CLI',
+          link: '/guide/cli',
+        }
       ],
       '/api/': [{
         text: 'API',
