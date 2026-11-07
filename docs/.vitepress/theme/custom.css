@@ -23,3 +23,11 @@ html.dark .VPNavBarTitle .logo {
 .VPHomeHero .image-src {
   padding: 1rem;
 }
+
+/* Inline SVGs inherit the primary button colour; sizes come from frontmatter. */
+.VPHomeFeatures .icon:has(> svg) {
+  width: fit-content;
+  height: auto;
+  background-color: transparent;
+  color: var(--vp-home-hero-name-color);
+}
