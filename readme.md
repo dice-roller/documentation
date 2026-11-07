@@ -36,6 +36,8 @@ You can find our contributing guide in the docs: https://dice-roller.github.io/d
 
 ## Licence
 
+The homepage feature icons are by Delapouite under CC BY 3.0; see [icon credits](docs/credits.md).
+
 These docs have been released under the MIT licence, meaning you can do pretty much anything you like with it, so long as the original copyright remains in place.
 
 You **can** use it in commercial products.
