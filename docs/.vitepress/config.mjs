@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress';
 import { fileURLToPath } from 'node:url';
+import { readFile } from 'node:fs/promises';
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
 import apiConfig from '../api/typedoc-sidebar.json' with { type: 'json' };
 
@@ -28,6 +29,19 @@ export default defineConfig({
   description: 'A JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.',
   base,
   lastUpdated: true,
+  async transformPageData({ frontmatter }) {
+    if (frontmatter.layout !== 'home') return;
+
+    // Inline local SVG feature icons so they inherit the theme's CSS colour.
+    for (const feature of frontmatter.features || []) {
+      const icon = feature.icon;
+      if (!icon?.src?.startsWith('/') || !icon.src.endsWith('.svg')) continue;
+
+      const svg = await readFile(new URL(`../public${icon.src}`, import.meta.url), 'utf8');
+      feature.icon = svg.replace('<svg ',
+        `<svg width="${Number(icon.width) || 48}" height="${Number(icon.height) || 48}" aria-hidden="true" `);
+    }
+  },
   vite: {
     resolve: {
       alias: [

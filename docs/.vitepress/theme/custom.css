@@ -24,36 +24,10 @@ html.dark .VPNavBarTitle .logo {
   padding: 1rem;
 }
 
-/* Use the SVGs as masks so feature icons follow the primary button colour. */
-.VPHomeFeatures .box:has(> .VPImage[src$="/dice-twenty-faces-twenty.svg"]) {
-  --feature-icon-image: url('/icons/dice-twenty-faces-twenty.svg');
-}
-
-.VPHomeFeatures .box:has(> .VPImage[src$="/rule-book.svg"]) {
-  --feature-icon-image: url('/icons/rule-book.svg');
-}
-
-.VPHomeFeatures .box:has(> .VPImage[src$="/scroll-quill.svg"]) {
-  --feature-icon-image: url('/icons/scroll-quill.svg');
-}
-
-.VPHomeFeatures .box:has(> .VPImage:is(
-  [src$="/dice-twenty-faces-twenty.svg"],
-  [src$="/rule-book.svg"],
-  [src$="/scroll-quill.svg"]
-)) {
-  &::before {
-    content: "";
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-    margin-bottom: 20px;
-    background-color: var(--vp-button-brand-bg);
-    -webkit-mask: var(--feature-icon-image) center / contain no-repeat;
-    mask: var(--feature-icon-image) center / contain no-repeat;
-  }
-
-  > .VPImage {
-    display: none;
-  }
+/* Inline SVGs inherit the primary button colour; sizes come from frontmatter. */
+.VPHomeFeatures .icon:has(> svg) {
+  width: fit-content;
+  height: auto;
+  background-color: transparent;
+  color: var(--vp-button-brand-bg);
 }
