@@ -6,9 +6,9 @@ sidebarDepth: 1
 
 Use `Roll` to roll a dice notation and work with its results.
 
-::: code-tabs#module-type
+:::tabs key:module-type variant:code
 
-@tab ESM
+== ESM
 
 ```javascript
 import { Roll } from '@dice-roller/rpg-dice-roller';
@@ -22,7 +22,7 @@ console.log(roll.present());
 // e.g. 4d6kh3: [3d, 5, 6, 3] = 14
 ```
 
-@tab CommonJS
+== CommonJS
 
 ```javascript
 const { Roll } = require('@dice-roller/rpg-dice-roller');
@@ -36,7 +36,7 @@ console.log(roll.present());
 // e.g. 4d6kh3: [3d, 5, 6, 3] = 14
 ```
 
-@tab Browser (UMD)
+== Browser
 
 ```javascript
 const { Roll } = rpgDiceRoller;
@@ -76,9 +76,9 @@ Notation can include different [dice types](../notation/dice.md), [modifiers](..
 
 If you prefer a function call, use `roll()`:
 
-::: code-tabs#module-type
+:::tabs key:module-type variant:code
 
-@tab ESM
+== ESM
 
 ```javascript
 import { roll } from '@dice-roller/rpg-dice-roller';
@@ -88,7 +88,7 @@ const attack = roll('d20+5');
 console.log(attack.total);
 ```
 
-@tab CommonJS
+== CommonJS
 
 ```javascript
 const { roll } = require('@dice-roller/rpg-dice-roller');
@@ -98,7 +98,7 @@ const attack = roll('d20+5');
 console.log(attack.total);
 ```
 
-@tab Browser (UMD)
+== Browser
 
 ```javascript
 const { roll } = rpgDiceRoller;
@@ -132,21 +132,21 @@ Re-rolling generates fresh results, although the values may happen to be the sam
 
 Use `Roller` when you want to keep a history of rolls:
 
-::: code-tabs#module-type
+:::tabs key:module-type variant:code
 
-@tab ESM
+== ESM
 
 ```javascript
 import { Roller } from '@dice-roller/rpg-dice-roller';
 ```
 
-@tab CommonJS
+== CommonJS
 
 ```javascript
 const { Roller } = require('@dice-roller/rpg-dice-roller');
 ```
 
-@tab Browser (UMD)
+== Browser
 
 ```javascript
 const { Roller } = rpgDiceRoller;
@@ -189,9 +189,9 @@ const nextAttack = roller.roll(attack.notation);
 
 Pass an options object as the second argument to `Roll` or the `roll()` shorthand. For `Roller`, pass options to its constructor; they apply to every roll made through that roller:
 
-::: code-tabs#roll-options
+:::tabs key:roll-options variant:code
 
-@tab Roll
+== Roll
 
 ```javascript
 const result = new Roll('4d6', {
@@ -201,7 +201,7 @@ const result = new Roll('4d6', {
 });
 ```
 
-@tab roll()
+== roll()
 
 ```javascript
 const result = roll('4d6', {
@@ -211,7 +211,7 @@ const result = roll('4d6', {
 });
 ```
 
-@tab Roller
+== Roller
 
 ```javascript
 const roller = new Roller({
@@ -248,9 +248,9 @@ The default limits are:
 
 You can override either limit when creating a roll or roller:
 
-::: code-tabs#roll-options
+:::tabs key:roll-options variant:code
 
-@tab Roll
+== Roll
 
 ```javascript
 const result = new Roll('4d6', {
@@ -261,7 +261,7 @@ const result = new Roll('4d6', {
 });
 ```
 
-@tab roll()
+== roll()
 
 ```javascript
 const result = roll('4d6', {
@@ -272,7 +272,7 @@ const result = roll('4d6', {
 });
 ```
 
-@tab Roller
+== Roller
 
 ```javascript
 const roller = new Roller({
@@ -301,21 +301,21 @@ If your application accepts notation from users, handle these errors so you can 
 
 Load `Roll` and the `errors` namespace:
 
-::: code-tabs#module-type
+:::tabs key:module-type variant:code
 
-@tab ESM
+== ESM
 
 ```javascript
 import { Roll, errors } from '@dice-roller/rpg-dice-roller';
 ```
 
-@tab CommonJS
+== CommonJS
 
 ```javascript
 const { Roll, errors } = require('@dice-roller/rpg-dice-roller');
 ```
 
-@tab Browser (UMD)
+== Browser
 
 ```javascript
 const { Roll, errors } = rpgDiceRoller;

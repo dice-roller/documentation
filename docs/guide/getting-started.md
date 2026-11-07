@@ -32,7 +32,7 @@ Use ES modules in applications that support `import`, or CommonJS in application
 
 :::tabs key:module-type
 
-=== ESM
+== ESM
 
 Import the components you need:
 
@@ -48,7 +48,7 @@ You can also import the library as a namespace:
 import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
 ```
 
-=== CommonJS
+== CommonJS
 
 Load the components using `require`:
 
@@ -71,9 +71,9 @@ TypeScript type definitions are included with the package. No additional types p
 
 You can use RPG Dice Roller directly in a modern browser without an application build tool.
 
-:::: tabs#browser-module-type
+:::tabs key:browser-module-type
 
-@tab ESM
+== ESM
 
 Use a `<script type="module">` element to import the library.
 
@@ -89,7 +89,7 @@ An ESM-aware CDN such as [esm.sh](https://esm.sh/) can resolve the library’s d
 
 If you host the ESM build yourself, its runtime dependencies must also be resolvable by the browser, for example through an import map. The ESM bundle is not a standalone file.
 
-@tab UMD
+== UMD
 
 The UMD build includes its runtime dependencies and exposes the library through the global `rpgDiceRoller` variable.
 
@@ -107,7 +107,7 @@ Copy `dist/umd/bundle.min.js` from the package into your application, then load 
 
 You do not need to load the library’s dependencies separately.
 
-::::
+:::
 
 
 ## Next steps
