@@ -60,7 +60,7 @@ See [Getting started](../getting-started.md) for installation and browser setup.
 
 ## Using dice notation
 
-Pass a [dice notation](../notation/readme.md) string to describe what you want to roll:
+Pass a [dice notation](../notation/index.md) string to describe what you want to roll:
 
 ```javascript
 const attack = new Roll('d20+5');

@@ -112,7 +112,7 @@ You do not need to load the library’s dependencies separately.
 
 ## Next steps
 
-Continue to the [usage guide](usage.md) to roll dice and work with the results.
+Continue to the [usage guide](usage/index.md) to roll dice and work with the results.
 
-* Explore the [notation guide](notation/readme.md) for dice types, modifiers and mathematical expressions.
-* See [environment support](readme.md#environment-support) for supported browsers and Node.js versions.
+* Explore the [notation guide](notation/index.md) for dice types, modifiers and mathematical expressions.
+* See [environment support](index.md#environment-support) for supported browsers and Node.js versions.
