@@ -22,7 +22,7 @@ For example:
 
 The library interprets the notation, rolls the dice and applies the modifiers. You can inspect the individual results, use the calculated total, or format the roll for display.
 
-Start with [Getting started](getting-started.md) to install the library, or explore the [notation guide](notation/readme.md) to see what you can roll.
+Start with [Getting started](getting-started.md) to install the library, or explore the [notation guide](notation/index.md) to see what you can roll.
 
 
 ## Features
@@ -75,7 +75,7 @@ Adapt the library to your game or application:
 * Use seeded engines for repeatable rolls.
 * Create presenters that format results as text, HTML or other output. <Badge text="New in v6" vertical="middle"/>
 
-See the [API reference](../api/) for the available extension points.
+See the [API reference](../api/index.md) for the available extension points.
 
 
 ## Random number generation

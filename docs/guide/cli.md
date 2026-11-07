@@ -16,7 +16,7 @@ This makes the `roller` command available in your terminal.
 
 ## Roll dice
 
-Pass a [dice notation](./notation/readme.md) to `roller`:
+Pass a [dice notation](./notation/index.md) to `roller`:
 
 ```bash
 roller 4d6
