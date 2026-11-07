@@ -1,4 +1,4 @@
-# CLI <Badge text="New" vertical="middle"/>
+# CLI <Badge text="New"/>
 
 To use this library directly in the command line, you need to install the [CLI library](https://github.com/dice-roller/cli).
 
@@ -92,4 +92,4 @@ roller play --players=Barbara Ian
 roller play --count=2 --players=Susan
 ```
 
-You can use all the [notation](./notation/readme.md) in the CLI.
+You can use all the [notation](./notation/index.md) in the CLI.

@@ -1,3 +1,7 @@
+---
+outline: [2]
+---
+
 # Modifiers
 
 Modifiers are special flags that can change the value of dice rolls, their appearance, order, and more.
@@ -257,7 +261,7 @@ This also applies to [Exploding](#exploding), [Compounding](#compounding), [Pene
 :::
 
 
-## Unique <Badge text="New" vertical="middle"/>
+## Unique <Badge text="New"/>
 
 **Notation:** `u` / `uo` / `u{cp}` / `uo{cp}`
 

@@ -6,8 +6,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "repository": {
     "type": "git",
@@ -34,13 +35,7 @@
   },
   "homepage": "https://dice-roller.github.io/documentation",
   "devDependencies": {
-    "@dice-roller/vuepress-plugin-dice-roller": "^1.5.2",
-    "@vuepress/bundler-vite": "^2.0.0-rc.26",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.122",
-    "@vuepress/plugin-search": "2.0.0-rc.122",
-    "@vuepress/theme-default": "2.0.0-rc.122",
-    "sass-embedded": "^1.97.3",
-    "vite": "^7.3.1",
-    "vuepress": "2.0.0-rc.26"
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-tabs": "^0.9.1"
   }
 }

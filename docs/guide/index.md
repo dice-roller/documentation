@@ -1,7 +1,3 @@
----
-sidebarDepth: 1
----
-
 # Introduction
 
 This library is a JS based dice roller that can roll various types of dice and modifiers, along with mathematical equations.
@@ -13,14 +9,14 @@ It's main purpose is for use in pen and paper / tabletop RPGs, like Dungeons & D
 
 Dice can be rolled through the use of "notations", which are strings of characters that tell the parser which dice and modifiers to roll.
 
-You can read more about it in the [Notation section](notation/readme.md).
+You can read more about it in the [Notation section](notation/index.md).
 
 
 ##  How random is it?
 
 This library uses [pseudo random number generation](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) (PRNG) to determine die rolls. It is not _true_ random, but it is suitable for most purposes. PRNGs are used globally for computer-based random number generation.
 
-It is more than sufficient for the vast majority of uses. However, if your needs require, you can [modify the RNG engine](customisation.md#random-number-generation).
+It is more than sufficient for the vast majority of uses. However, if your needs require, you can [modify the RNG engine](customisation.md#random-number-generator).
 
 
 ## Features
@@ -28,7 +24,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 ### Different dice types
 
 * [Standard dice](notation/dice.md#standard)
-* [Percentile dice](notation/dice.md#percentile)
+* [Percentile dice](notation/dice.md#percentile-dice)
 * [Fudge / fate dice](notation/dice.md#fudge-fate-dice)
 
 ### Roll modifiers
@@ -39,16 +35,16 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 * [Keep rolls](notation/modifiers.md#keep)
 * [Drop rolls](notation/modifiers.md#drop)
 * [Re-roll](notation/modifiers.md#re-roll)
-* [Unique](notation/modifiers.md#unique) <Badge text="New" vertical="middle"/>
+* [Unique](notation/modifiers.md#unique) <Badge text="New"/>
 * [Target success](notation/modifiers.md#target-success-dice-pool)
-* [Target failure](notation/modifiers.md#target-failures-dice-pool)
-* [Max](notation/modifiers.md#max-max)
-* [Min](notation/modifiers.md#min-min)
+* [Target failure](notation/modifiers.md#target-failure-dice-pool)
+* [Max](notation/modifiers.md#max)
+* [Min](notation/modifiers.md#min)
 * [Sort dice](notation/modifiers.md#sorting)
 
 ### Advanced
 
-* [Group rolls](notation/group-rolls.md) <Badge text="New" vertical="middle"/>
+* [Group rolls](notation/group-rolls.md) <Badge text="New"/>
 
 ### Mathematical equations
 
@@ -68,7 +64,7 @@ It is more than sufficient for the vast majority of uses. However, if your needs
 
 * [Vue components](https://github.com/dice-roller/vue) - For Tailwind, Bootstrap, basic HTML, and renderless
 * [Vuepress plugin](https://github.com/dice-roller/vuepress-plugin) - Dice roller plugin used in this documentation
-* [CLI](https://github.com/dice-roller/cli) <Badge text="New" vertical="middle"/> - Command Line Interface for rolling dice
+* [CLI](https://github.com/dice-roller/cli) <Badge text="New"/> - Command Line Interface for rolling dice
 
 
 ## Environment support

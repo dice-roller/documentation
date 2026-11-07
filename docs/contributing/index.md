@@ -1,6 +1,5 @@
 ---
-sidebar: auto
-sidebarDepth: 2
+outline: [2, 3]
 ---
 
 # Contributing
@@ -160,7 +159,7 @@ npm run watch
 
 #### Testing your code
 
-We utilise both a [JavaScript linter](#javaScript-style-guide) and a [testing framework](#testing) to ensure that all
+We utilise both a [JavaScript linter](#javascript-style-guide) and a [testing framework](#testing) to ensure that all
 code conforms to certain standards and any new code doesn't break existing code, or otherwise behave unexpectedly.
 
 You do **not** need to build / compile the code before linting or testing. Both the linter and tests run on the original
@@ -249,7 +248,7 @@ You can check if the code passes all the tests by running the following in the c
 npm test
 ```
 
-This runs the [JavaScript Linter](#javaScript-style-guide) first, and then the tests, so if the linter fails, then the
+This runs the [JavaScript Linter](#javascript-style-guide) first, and then the tests, so if the linter fails, then the
 tests will not be run.
 
 ### Use of AI

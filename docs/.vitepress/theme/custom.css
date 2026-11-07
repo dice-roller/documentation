@@ -1,0 +1,54 @@
+.VPNavBarTitle .logo,
+.VPHomeHero .image-src {
+  background-image: linear-gradient(-45deg, #c6ffdd, #fbd786, #f7797d);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  box-sizing: border-box;
+}
+
+.VPNavBarTitle .logo {
+  background-position: 0;
+  transition: background-position 0.25s ease-in;
+}
+
+.VPNavBarTitle .title:hover .logo,
+.VPNavBarTitle .title:focus .logo,
+.VPNavBarTitle .title:active .logo {
+  background-position: 40px;
+}
+
+html.dark .VPNavBarTitle .logo {
+  padding: 2px;
+}
+
+.VPHomeHero .image-src {
+  padding: 1rem;
+}
+
+.VPHomeHero {
+  --hero-background-image: url('./home-background.png');
+  --hero-background-position: center;
+  --hero-background-overlay: rgb(255 255 255 / 75%);
+
+  background-image:
+    linear-gradient(var(--hero-background-overlay), var(--hero-background-overlay)),
+    var(--hero-background-image);
+  background-position: var(--hero-background-position);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html.dark .VPHomeHero {
+  --hero-background-overlay: rgb(27 27 31 / 75%);
+}
+
+.VPHomeFeatures {
+  margin: 24px auto;
+}
+
+/* Inline SVGs inherit the primary button colour; sizes come from frontmatter. */
+.VPHomeFeatures .icon:has(> svg) {
+  width: fit-content;
+  height: auto;
+  background-color: transparent;
+  color: var(--vp-home-hero-name-color);
+}
