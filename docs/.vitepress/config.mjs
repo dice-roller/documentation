@@ -32,6 +32,10 @@ export default defineConfig({
     resolve: {
       alias: [
         {
+          find: './VPHomeFeatures.vue',
+          replacement: fileURLToPath(new URL('./theme/HomeFeatures.vue', import.meta.url)),
+        },
+        {
           // Wrap the layout's footer, leaving imports of the original component
           // available to the wrapper without recursively aliasing them.
           find: './components/VPFooter.vue',

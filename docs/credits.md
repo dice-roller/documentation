@@ -12,5 +12,6 @@ and provided by [Game-icons.net](https://game-icons.net/) under the
 * [Rule Book](https://game-icons.net/1x1/delapouite/rule-book.html)
 * [Scroll Quill](https://game-icons.net/1x1/delapouite/scroll-quill.html)
 
-The icons have been modified by removing their backgrounds and changing their foreground colour.
+The icons have been modified by removing their backgrounds. They are displayed using CSS masks,
+with their colour supplied by the site's theme.
 These icons retain their CC BY 3.0 licence and are not covered by the documentation's MIT licence.
