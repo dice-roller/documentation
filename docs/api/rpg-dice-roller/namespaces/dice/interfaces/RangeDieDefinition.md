@@ -2,7 +2,7 @@
 
 # Interface: RangeDieDefinition
 
-Defined in: [src/dice/types.ts:26](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L26)
+Defined in: [src/dice/types.ts:26](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L26)
 
 A die defined by its inclusive bounds, e.g. d6 or d%.
 
@@ -16,7 +16,7 @@ A die defined by its inclusive bounds, e.g. d6 or d%.
 
 > `readonly` **max**: [`NumberOrGetter`](../type-aliases/NumberOrGetter.md)
 
-Defined in: [src/dice/types.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L28)
+Defined in: [src/dice/types.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L28)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [src/dice/types.ts:28](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **min**: [`NumberOrGetter`](../type-aliases/NumberOrGetter.md)
 
-Defined in: [src/dice/types.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L27)
+Defined in: [src/dice/types.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L27)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [src/dice/types.ts:27](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **notation?**: `string`
 
-Defined in: [src/dice/types.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L22)
+Defined in: [src/dice/types.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L22)
 
 The display label used after the `d` by presenters, e.g. `6`, `%`, `F` or `F.1`.
 

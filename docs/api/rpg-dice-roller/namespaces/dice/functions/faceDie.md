@@ -4,12 +4,13 @@
 
 > **faceDie**(`faces`, `options?`): [`FacesDieDefinition`](../interfaces/FacesDieDefinition.md)
 
-Defined in: [src/dice/presets.ts:45](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/presets.ts#L45)
+Defined in: [src/dice/presets.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/presets.ts#L47)
 
 A die with a list of faces, e.g. `faceDie([1, 1, 2, 3, 5, 8])`.
 
 Repeated faces act as weights. The faces are copied and frozen, so changing the array afterwards
 doesn't change the die. Registered in the `DieRegistry` as `face`, with the faces as arguments.
+Notation such as `d{1,1,2}` materializes at most 1,000 faces; this limit does not apply here.
 
 ## Parameters
 

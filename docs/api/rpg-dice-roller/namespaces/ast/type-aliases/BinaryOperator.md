@@ -4,6 +4,6 @@
 
 > **BinaryOperator** = *typeof* [`BINARY_OPERATORS`](../variables/BINARY_OPERATORS.md)\[`number`\]
 
-Defined in: [src/ast/nodes.ts:85](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L85)
+Defined in: [src/ast/nodes.ts:87](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L87)
 
 A supported binary operator.

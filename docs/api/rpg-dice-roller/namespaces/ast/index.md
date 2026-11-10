@@ -29,11 +29,12 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [NumberNode](interfaces/NumberNode.md) | A literal number, e.g. `4` or `-2.5`. |
 | [ParenNode](interfaces/ParenNode.md) | A parenthesised expression, e.g. `(2+3)`. Kept so the notation round-trips. |
 | [PoolNode](interfaces/PoolNode.md) | A pool of dice, e.g. `4d6kh3`. |
-| [ReRollNode](interfaces/ReRollNode.md) | `r`, `ro`. |
+| [ReRollNode](interfaces/ReRollNode.md) | `r`, `ro` and numeric re-roll limits. |
 | [SortNode](interfaces/SortNode.md) | `s`, `sa`, `sd`. |
-| [TargetNode](interfaces/TargetNode.md) | Success / failure counting, e.g. `>=8f<=2`. |
+| [TargetNode](interfaces/TargetNode.md) | Success / failure counting, e.g. `>=8:2f<=2`. The last matching rule in the block wins. |
+| [TargetRule](interfaces/TargetRule.md) | A target comparison; amount is a whole number from 1 to 10 and defaults to 1. |
 | [UnaryNode](interfaces/UnaryNode.md) | A unary minus, e.g. `-2`. |
-| [UniqueNode](interfaces/UniqueNode.md) | `u`, `uo`. |
+| [UniqueNode](interfaces/UniqueNode.md) | `u`, `uo` and numeric uniqueness limits. |
 
 ## Type Aliases
 
@@ -70,9 +71,9 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [compare](functions/compare.md) | A compare point, e.g. `compare(">=", 8)`. |
 | [criticalFailure](functions/criticalFailure.md) | Flag critical failures using the supplied compare point or the handler default. |
 | [criticalSuccess](functions/criticalSuccess.md) | Flag critical successes using the supplied compare point or the handler default. |
-| [die](functions/die.md) | A reference to a die factory, e.g. `die("percentile")` for `d%`, or `die("range", -2, 3)`. Register custom names in the die registry used by the evaluator before rolling. Registration is not checked here; custom dice and some built-ins have display-only notation. |
+| [die](functions/die.md) | A reference to a die factory, e.g. `die("percentile")` for `d%`, or `die("range", -2, 3)`. Register custom names in the die registry used by the evaluator before rolling. Registration is not checked here; valid literal `range` and `face` dice use brace notation, while custom names and unsupported arguments have display-only notation. |
 | [drop](functions/drop.md) | Drop `qty` highest (`h`) or lowest (`l`) items; quantity defaults to 1. |
-| [explode](functions/explode.md) | Explode matching rolls; compound and penetrate default to false, and the handler supplies the default compare point. |
+| [explode](functions/explode.md) | Explode matching rolls. An optional positive safe-integer `limit` bounds additional rolls per initial die and is capped by the roll context's `maxIterations`. |
 | [fn](functions/fn.md) | A maths function call, e.g. `fn("floor", binary("/", pool(2, 6), 2))`. Arity is checked at evaluation. |
 | [group](functions/group.md) | A roll group, e.g. `group([pool(4, 6), pool(2, 8)])` for `{4d6, 2d8}`. |
 | [keep](functions/keep.md) | Keep `qty` highest (`h`) or lowest (`l`) items; quantity defaults to 1. |
@@ -83,10 +84,10 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [num](functions/num.md) | A literal number. |
 | [paren](functions/paren.md) | A parenthesised expression. |
 | [pool](functions/pool.md) | A pool of dice, e.g. `pool(4, 6)` for `4d6`, or `pool(2, die("fib"))`. |
-| [reRoll](functions/reRoll.md) | Re-roll matching dice; `once` defaults to false and an omitted compare point uses the handler default. |
+| [reRoll](functions/reRoll.md) | Re-roll matching dice. `once` is the `ro` alias; numeric `limit: 1` has the same budget but retains `r1` notation. Limits count additional rolls per die and cannot exceed the context cap. |
 | [sort](functions/sort.md) | Sort ascending (`a`, the default) or descending (`d`). |
-| [target](functions/target.md) | Count successes and optional failures; the built-in handler gives successes precedence on overlap. |
-| [unique](functions/unique.md) | Re-roll duplicate dice with the built-in handler, optionally restricted by a compare point; `once` defaults to false. |
+| [target](functions/target.md) | A target block starts with a success and can contain further success or failure rules. Amounts are 1–10 and default to 1; the last matching rule wins. |
+| [unique](functions/unique.md) | Re-roll duplicate dice. `once` is the `uo` alias; numeric `limit: 1` has the same budget but retains `u1` notation. Limits count additional rolls per die and cannot exceed the context cap. |
 
 ## References
 

@@ -2,7 +2,7 @@
 
 # Class: NotationError
 
-Defined in: [src/errors/NotationError.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/errors/NotationError.ts#L20)
+Defined in: [src/errors/NotationError.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/NotationError.ts#L20)
 
 Thrown when the notation is syntactically invalid. Empty or non-string notation instead raises a
 `ValidationError`. Parser syntax errors retain the original notation, the start location, and the
@@ -18,7 +18,7 @@ underlying syntax error as `cause`; a manually constructed error may omit locati
 
 > **new NotationError**(`message`, `notation`, `location?`, `options?`): `NotationError`
 
-Defined in: [src/errors/NotationError.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/errors/NotationError.ts#L27)
+Defined in: [src/errors/NotationError.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/NotationError.ts#L27)
 
 #### Parameters
 
@@ -72,7 +72,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 > `readonly` `optional` **location?**: [`NotationErrorLocation`](../interfaces/NotationErrorLocation.md)
 
-Defined in: [src/errors/NotationError.ts:30](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/errors/NotationError.ts#L30)
+Defined in: [src/errors/NotationError.ts:30](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/NotationError.ts#L30)
 
 the optional start of the syntax error
 
@@ -106,7 +106,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1074
 
 > `readonly` **notation**: `string`
 
-Defined in: [src/errors/NotationError.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/errors/NotationError.ts#L29)
+Defined in: [src/errors/NotationError.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/NotationError.ts#L29)
 
 the original notation
 

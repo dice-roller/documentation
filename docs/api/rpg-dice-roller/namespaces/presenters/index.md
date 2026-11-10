@@ -25,7 +25,7 @@ Presenters that format evaluated rolls and their results.
 
 | Variable | Description |
 | ------ | ------ |
-| [DEFAULT\_FLAG\_SYMBOLS](variables/DEFAULT_FLAG_SYMBOLS.md) | The v5 flag symbols, e.g. `[6!, 2, 1d]`. |
+| [DEFAULT\_FLAG\_SYMBOLS](variables/DEFAULT_FLAG_SYMBOLS.md) | Default flag symbols, e.g. `[6!, 2, 1d]. |
 | [defaultTextPresenter](variables/defaultTextPresenter.md) | The frozen shared instance used by roll, history, and roller `toString()` methods. |
 
 ## Functions

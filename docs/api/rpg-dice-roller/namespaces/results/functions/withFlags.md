@@ -4,7 +4,7 @@
 
 > **withFlags**\<`T`\>(`item`, ...`flags`): `T`
 
-Defined in: [src/results/die-result.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/results/die-result.ts#L23)
+Defined in: [src/results/die-result.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/die-result.ts#L23)
 
 Returns a copy with flags deduplicated in first-occurrence order; does not change scoring.
 

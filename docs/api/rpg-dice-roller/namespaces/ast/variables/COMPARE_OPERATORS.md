@@ -4,6 +4,6 @@
 
 > `const` **COMPARE\_OPERATORS**: readonly \[`"="`, `"!="`, `"<>"`, `"<"`, `">"`, `"<="`, `">="`\]
 
-Defined in: [src/ast/nodes.ts:141](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L141)
+Defined in: [src/ast/nodes.ts:143](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L143)
 
 Operators accepted by compare points; `!=` and `<>` both mean not equal.

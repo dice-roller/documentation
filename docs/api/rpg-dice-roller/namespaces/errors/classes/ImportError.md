@@ -2,7 +2,7 @@
 
 # Class: ImportError
 
-Defined in: [src/errors/ImportError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/errors/ImportError.ts#L6)
+Defined in: [src/errors/ImportError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/ImportError.ts#L6)
 
 Thrown when imported data is malformed, or in an unknown format or version.
 
@@ -16,7 +16,7 @@ Thrown when imported data is malformed, or in an unknown format or version.
 
 > **new ImportError**(`message`, `options?`): `ImportError`
 
-Defined in: [src/errors/DiceRollerError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/errors/DiceRollerError.ts#L6)
+Defined in: [src/errors/DiceRollerError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/DiceRollerError.ts#L6)
 
 #### Parameters
 

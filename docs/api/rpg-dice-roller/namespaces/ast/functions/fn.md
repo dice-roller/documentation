@@ -4,7 +4,7 @@
 
 > **fn**(`name`, ...`args`): [`FunctionNode`](../interfaces/FunctionNode.md)
 
-Defined in: [src/ast/builders.ts:173](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/builders.ts#L173)
+Defined in: [src/ast/builders.ts:175](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/builders.ts#L175)
 
 A maths function call, e.g. `fn("floor", binary("/", pool(2, 6), 2))`. Arity is checked at evaluation.
 

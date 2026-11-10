@@ -4,9 +4,10 @@
 
 > **explode**(`options?`): [`ExplodeNode`](../interfaces/ExplodeNode.md)
 
-Defined in: [src/ast/builders.ts:203](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/builders.ts#L203)
+Defined in: [src/ast/builders.ts:208](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/builders.ts#L208)
 
-Explode matching rolls; compound and penetrate default to false, and the handler supplies the default compare point.
+Explode matching rolls. An optional positive safe-integer `limit` bounds additional rolls per
+initial die and is capped by the roll context's `maxIterations`.
 
 ## Parameters
 
@@ -19,6 +20,10 @@ Explode matching rolls; compound and penetrate default to false, and the handler
 #### compound?
 
 `boolean`
+
+#### limit?
+
+`number`
 
 #### penetrate?
 

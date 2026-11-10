@@ -2,7 +2,7 @@
 
 # Interface: DieBehaviour
 
-Defined in: [src/dice/types.ts:46](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L46)
+Defined in: [src/dice/types.ts:46](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L46)
 
 Optional behaviour a die can provide, instead of the default helpers.
 
@@ -16,7 +16,7 @@ face count to `max - min + 1`. Overrides are resolved with the die as `this`.
 
 > `readonly` **average**: [`NumberOrGetter`](../type-aliases/NumberOrGetter.md)
 
-Defined in: [src/dice/types.ts:52](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L52)
+Defined in: [src/dice/types.ts:52](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L52)
 
 Average of a single roll; override this for a custom distribution.
 
@@ -26,7 +26,7 @@ Average of a single roll; override this for a custom distribution.
 
 > `readonly` **faceCount**: [`NumberOrGetter`](../type-aliases/NumberOrGetter.md)
 
-Defined in: [src/dice/types.ts:54](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L54)
+Defined in: [src/dice/types.ts:54](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L54)
 
 Number of faces, including repeats.
 
@@ -36,7 +36,7 @@ Number of faces, including repeats.
 
 > `readonly` **max**: [`NumberOrGetter`](../type-aliases/NumberOrGetter.md)
 
-Defined in: [src/dice/types.ts:50](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L50)
+Defined in: [src/dice/types.ts:50](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L50)
 
 Highest value, used in `max` mode; defaults to the highest face for a face die.
 
@@ -46,7 +46,7 @@ Highest value, used in `max` mode; defaults to the highest face for a face die.
 
 > `readonly` **min**: [`NumberOrGetter`](../type-aliases/NumberOrGetter.md)
 
-Defined in: [src/dice/types.ts:48](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L48)
+Defined in: [src/dice/types.ts:48](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L48)
 
 Lowest value, used in `min` mode; defaults to the lowest face for a face die.
 
@@ -56,7 +56,7 @@ Lowest value, used in `min` mode; defaults to the lowest face for a face die.
 
 > **roll**(`generator`): `number`
 
-Defined in: [src/dice/types.ts:59](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L59)
+Defined in: [src/dice/types.ts:59](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L59)
 
 Rolls once using the supplied generator; called with the die as `this` in random mode.
 It must return a finite number. `min` / `max` mode ignores it and uses the resolved bounds.

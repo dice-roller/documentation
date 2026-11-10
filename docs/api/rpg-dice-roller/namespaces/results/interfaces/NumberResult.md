@@ -2,7 +2,7 @@
 
 # Interface: NumberResult
 
-Defined in: [src/results/types.ts:46](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/results/types.ts#L46)
+Defined in: [src/results/types.ts:46](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L46)
 
 The result of a numeric literal.
 
@@ -12,7 +12,7 @@ The result of a numeric literal.
 
 > `readonly` **node**: [`NumberNode`](../../ast/interfaces/NumberNode.md)
 
-Defined in: [src/results/types.ts:48](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/results/types.ts#L48)
+Defined in: [src/results/types.ts:48](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L48)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:48](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **type**: `"number"`
 
-Defined in: [src/results/types.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/results/types.ts#L47)
+Defined in: [src/results/types.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L47)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/results/types.ts:47](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:49](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/results/types.ts#L49)
+Defined in: [src/results/types.ts:49](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L49)

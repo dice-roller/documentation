@@ -4,7 +4,7 @@
 
 > **keep**(`end`, `qty?`): [`KeepNode`](../interfaces/KeepNode.md)
 
-Defined in: [src/ast/builders.ts:231](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/builders.ts#L231)
+Defined in: [src/ast/builders.ts:283](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/builders.ts#L283)
 
 Keep `qty` highest (`h`) or lowest (`l`) items; quantity defaults to 1.
 

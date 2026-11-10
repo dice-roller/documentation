@@ -4,11 +4,12 @@
 
 > **rangeDie**(`min`, `max`, `options?`): [`RangeDieDefinition`](../interfaces/RangeDieDefinition.md)
 
-Defined in: [src/dice/presets.ts:17](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/presets.ts#L17)
+Defined in: [src/dice/presets.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/presets.ts#L18)
 
 A die with every integer from `min` to `max`, e.g. `rangeDie(-2, 3)`.
 
-Registered in the `DieRegistry` as `range`.
+Registered in the `DieRegistry` as `range`; notation such as `d{0...2}` or `d{0:2}` uses it
+for implicit ascending safe-integer ranges.
 
 ## Parameters
 

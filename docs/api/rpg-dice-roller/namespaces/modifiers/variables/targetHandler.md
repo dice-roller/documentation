@@ -4,11 +4,9 @@
 
 > `const` **targetHandler**: [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`TargetNode`](../../ast/interfaces/TargetNode.md)\>
 
-Defined in: [src/modifiers/handlers/target.ts:14](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/handlers/target.ts#L14)
+Defined in: [src/modifiers/handlers/target.ts:13](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/handlers/target.ts#L13)
 
-`>=8`, `>=8f<=2`: counts successes and failures.
+`>=8`, `>=8:2f<=2`: counts weighted successes and failures.
 
-Items matching `success` count as `1` (flag `target-success`), items matching `failure` as `-1`
-(flag `target-failure`), and the rest as `0` (via `calculationValue`). An item matching both
-is a success. Dropped items are still scored and flagged, but remain excluded from the total.
-On a group, it always counts the members by their totals.
+The last matching rule determines the signed contribution. Dropped items are still scored and
+flagged, but remain excluded from the total. Groups count members by their totals.

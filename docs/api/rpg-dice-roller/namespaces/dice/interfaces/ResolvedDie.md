@@ -2,7 +2,7 @@
 
 # Interface: ResolvedDie
 
-Defined in: [src/dice/types.ts:89](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L89)
+Defined in: [src/dice/types.ts:89](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L89)
 
 A die with every value resolved to a plain number, and a `roll()` that always exists.
 
@@ -16,7 +16,7 @@ A die with every value resolved to a plain number, and a `roll()` that always ex
 
 > `readonly` **average**: `number`
 
-Defined in: [src/dice/types.ts:84](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L84)
+Defined in: [src/dice/types.ts:84](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L84)
 
 #### Inherited from
 
@@ -28,7 +28,7 @@ Defined in: [src/dice/types.ts:84](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **faceCount**: `number`
 
-Defined in: [src/dice/types.ts:85](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L85)
+Defined in: [src/dice/types.ts:85](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L85)
 
 #### Inherited from
 
@@ -40,7 +40,7 @@ Defined in: [src/dice/types.ts:85](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **max**: `number`
 
-Defined in: [src/dice/types.ts:83](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L83)
+Defined in: [src/dice/types.ts:83](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L83)
 
 #### Inherited from
 
@@ -52,7 +52,7 @@ Defined in: [src/dice/types.ts:83](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **min**: `number`
 
-Defined in: [src/dice/types.ts:82](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L82)
+Defined in: [src/dice/types.ts:82](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L82)
 
 #### Inherited from
 
@@ -64,7 +64,7 @@ Defined in: [src/dice/types.ts:82](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **notation**: `string`
 
-Defined in: [src/dice/types.ts:81](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L81)
+Defined in: [src/dice/types.ts:81](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L81)
 
 #### Inherited from
 
@@ -76,7 +76,7 @@ Defined in: [src/dice/types.ts:81](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **source**: [`DieLike`](../../../../type-aliases/DieLike.md)
 
-Defined in: [src/dice/types.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L92)
+Defined in: [src/dice/types.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L92)
 
 The die that was resolved.
 
@@ -86,7 +86,7 @@ The die that was resolved.
 
 > **roll**(`generator`): `number`
 
-Defined in: [src/dice/types.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L90)
+Defined in: [src/dice/types.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L90)
 
 #### Parameters
 

@@ -2,7 +2,7 @@
 
 # Interface: UnaryNode
 
-Defined in: [src/ast/nodes.ts:96](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L96)
+Defined in: [src/ast/nodes.ts:98](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L98)
 
 A unary minus, e.g. `-2`.
 
@@ -12,7 +12,7 @@ A unary minus, e.g. `-2`.
 
 > `readonly` **op**: `"-"`
 
-Defined in: [src/ast/nodes.ts:98](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L98)
+Defined in: [src/ast/nodes.ts:100](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L100)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:98](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **operand**: [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)
 
-Defined in: [src/ast/nodes.ts:99](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L99)
+Defined in: [src/ast/nodes.ts:101](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L101)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:99](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **type**: `"unary"`
 
-Defined in: [src/ast/nodes.ts:97](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L97)
+Defined in: [src/ast/nodes.ts:99](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L99)

@@ -2,7 +2,7 @@
 
 # Interface: MaxNode
 
-Defined in: [src/ast/nodes.ts:278](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L278)
+Defined in: [src/ast/nodes.ts:292](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L292)
 
 `max5`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:278](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"max"`
 
-Defined in: [src/ast/nodes.ts:280](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L280)
+Defined in: [src/ast/nodes.ts:294](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L294)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:280](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:279](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L279)
+Defined in: [src/ast/nodes.ts:293](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L293)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:279](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **value**: `number`
 
-Defined in: [src/ast/nodes.ts:281](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L281)
+Defined in: [src/ast/nodes.ts:295](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L295)

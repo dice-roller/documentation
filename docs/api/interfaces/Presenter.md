@@ -2,7 +2,7 @@
 
 # Interface: Presenter\<T\>
 
-Defined in: [src/presenters/Presenter.ts:8](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/presenters/Presenter.ts#L8)
+Defined in: [src/presenters/Presenter.ts:8](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/presenters/Presenter.ts#L8)
 
 Turns a roll, a roll history, or a result node into any output, e.g. text, HTML or Markdown.
 
@@ -20,7 +20,7 @@ the output type
 
 > **present**(`target`): `T`
 
-Defined in: [src/presenters/Presenter.ts:10](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/presenters/Presenter.ts#L10)
+Defined in: [src/presenters/Presenter.ts:10](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/presenters/Presenter.ts#L10)
 
 Presents a roll, history, or expression result in this presenter's output type.
 

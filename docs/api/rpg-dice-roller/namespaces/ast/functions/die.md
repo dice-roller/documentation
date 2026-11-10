@@ -4,11 +4,12 @@
 
 > **die**(`name`, ...`args`): [`DieNode`](../interfaces/DieNode.md)
 
-Defined in: [src/ast/builders.ts:107](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/builders.ts#L107)
+Defined in: [src/ast/builders.ts:109](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/builders.ts#L109)
 
 A reference to a die factory, e.g. `die("percentile")` for `d%`, or `die("range", -2, 3)`.
 Register custom names in the die registry used by the evaluator before rolling. Registration is
-not checked here; custom dice and some built-ins have display-only notation.
+not checked here; valid literal `range` and `face` dice use brace notation, while custom names
+and unsupported arguments have display-only notation.
 
 ## Parameters
 

@@ -4,7 +4,7 @@
 
 > **DieLike** = [`DieDefinition`](../rpg-dice-roller/namespaces/dice/type-aliases/DieDefinition.md) & `Partial`\<[`DieBehaviour`](../rpg-dice-roller/namespaces/dice/interfaces/DieBehaviour.md)\>
 
-Defined in: [src/dice/types.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L69)
+Defined in: [src/dice/types.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L69)
 
 A range or faces definition with optional behaviour overrides.
 

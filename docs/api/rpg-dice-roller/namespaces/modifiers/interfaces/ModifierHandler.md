@@ -2,7 +2,7 @@
 
 # Interface: ModifierHandler\<N\>
 
-Defined in: [src/modifiers/types.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L29)
+Defined in: [src/modifiers/types.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L29)
 
 The behaviour of a modifier.
 
@@ -23,7 +23,7 @@ items may be reused.
 
 > `readonly` **appliesTo**: readonly [`ModifierTarget`](../type-aliases/ModifierTarget.md)[]
 
-Defined in: [src/modifiers/types.ts:35](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L35)
+Defined in: [src/modifiers/types.ts:35](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L35)
 
 Targets on which the evaluator permits this handler.
 
@@ -33,7 +33,7 @@ Targets on which the evaluator permits this handler.
 
 > `readonly` `optional` **groupHandling?**: `"flatten"` \| `"each-pool"`
 
-Defined in: [src/modifiers/types.ts:49](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L49)
+Defined in: [src/modifiers/types.ts:49](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L49)
 
 How the handler treats the dice inside a roll group. By default it only gets the members.
 
@@ -53,7 +53,7 @@ input item with object spread). New, unassociated dice cause an `EvaluationError
 
 > `readonly` **name**: `N`\[`"name"`\]
 
-Defined in: [src/modifiers/types.ts:31](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L31)
+Defined in: [src/modifiers/types.ts:31](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L31)
 
 The existing AST modifier name this handler implements.
 
@@ -63,7 +63,7 @@ The existing AST modifier name this handler implements.
 
 > `readonly` **order**: `number`
 
-Defined in: [src/modifiers/types.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L33)
+Defined in: [src/modifiers/types.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L33)
 
 Execution order; lower runs first.
 
@@ -73,7 +73,7 @@ Execution order; lower runs first.
 
 > **apply**\<`T`\>(`items`, `input`): `T`[]
 
-Defined in: [src/modifiers/types.ts:58](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L58)
+Defined in: [src/modifiers/types.ts:58](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L58)
 
 Applies the modifier.
 

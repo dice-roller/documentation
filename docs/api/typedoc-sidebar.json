@@ -115,6 +115,11 @@
                 "collapsible": true
               },
               {
+                "text": "TargetRule",
+                "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/TargetRule.md",
+                "collapsible": true
+              },
+              {
                 "text": "UnaryNode",
                 "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/UnaryNode.md",
                 "collapsible": true

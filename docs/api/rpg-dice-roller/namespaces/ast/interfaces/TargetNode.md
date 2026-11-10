@@ -2,33 +2,25 @@
 
 # Interface: TargetNode
 
-Defined in: [src/ast/nodes.ts:217](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L217)
+Defined in: [src/ast/nodes.ts:228](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L228)
 
-Success / failure counting, e.g. `>=8f<=2`.
+Success / failure counting, e.g. `>=8:2f<=2`. The last matching rule in the block wins.
 
 ## Properties
-
-### failure?
-
-> `readonly` `optional` **failure?**: [`ComparePoint`](ComparePoint.md)
-
-Defined in: [src/ast/nodes.ts:221](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L221)
-
-***
 
 ### name
 
 > `readonly` **name**: `"target"`
 
-Defined in: [src/ast/nodes.ts:219](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L219)
+Defined in: [src/ast/nodes.ts:230](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L230)
 
 ***
 
-### success
+### rules
 
-> `readonly` **success**: [`ComparePoint`](ComparePoint.md)
+> `readonly` **rules**: readonly [`TargetRule`](TargetRule.md)[]
 
-Defined in: [src/ast/nodes.ts:220](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L220)
+Defined in: [src/ast/nodes.ts:231](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L231)
 
 ***
 
@@ -36,4 +28,4 @@ Defined in: [src/ast/nodes.ts:220](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:218](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L218)
+Defined in: [src/ast/nodes.ts:229](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L229)

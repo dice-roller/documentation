@@ -2,7 +2,7 @@
 
 # Interface: NumberGenerator
 
-Defined in: [src/random/NumberGenerator.ts:10](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/random/NumberGenerator.ts#L10)
+Defined in: [src/random/NumberGenerator.ts:10](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/random/NumberGenerator.ts#L10)
 
 Generates numbers in a range from a `RandomEngine`.
 
@@ -15,7 +15,7 @@ by default. Passing the same stateful engine to multiple rollers shares that eng
 
 > `readonly` **engine**: [`RandomEngine`](RandomEngine.md) = `nativeMath`
 
-Defined in: [src/random/NumberGenerator.ts:13](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/random/NumberGenerator.ts#L13)
+Defined in: [src/random/NumberGenerator.ts:13](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/random/NumberGenerator.ts#L13)
 
 ## Methods
 
@@ -23,7 +23,7 @@ Defined in: [src/random/NumberGenerator.ts:13](https://github.com/dice-roller/rp
 
 > **integer**(`min`, `max`): `number`
 
-Defined in: [src/random/NumberGenerator.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/random/NumberGenerator.ts#L18)
+Defined in: [src/random/NumberGenerator.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/random/NumberGenerator.ts#L18)
 
 Returns an integer between `min` and `max`, inclusive.
 
@@ -47,7 +47,7 @@ Returns an integer between `min` and `max`, inclusive.
 
 > **real**(`min`, `max`, `inclusive?`): `number`
 
-Defined in: [src/random/NumberGenerator.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/random/NumberGenerator.ts#L23)
+Defined in: [src/random/NumberGenerator.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/random/NumberGenerator.ts#L23)
 
 Returns a real number between `min` and `max` (`max` is excluded unless `inclusive` is true).
 

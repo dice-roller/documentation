@@ -2,7 +2,7 @@
 
 # Interface: ModifierInput\<N\>
 
-Defined in: [src/modifiers/types.ts:10](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L10)
+Defined in: [src/modifiers/types.ts:10](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L10)
 
 Context and modifier node supplied to a handler alongside its items.
 
@@ -18,7 +18,7 @@ Context and modifier node supplied to a handler alongside its items.
 
 > `readonly` **ctx**: [`RollContext`](../../../../interfaces/RollContext.md)
 
-Defined in: [src/modifiers/types.ts:14](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L14)
+Defined in: [src/modifiers/types.ts:14](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L14)
 
 Roll mode, random generator, and safety limits for this evaluation.
 
@@ -28,7 +28,7 @@ Roll mode, random generator, and safety limits for this evaluation.
 
 > `readonly` `optional` **die?**: [`ResolvedDie`](../../dice/interfaces/ResolvedDie.md)
 
-Defined in: [src/modifiers/types.ts:16](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L16)
+Defined in: [src/modifiers/types.ts:16](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L16)
 
 The pool's die (pools only).
 
@@ -38,7 +38,7 @@ The pool's die (pools only).
 
 > `readonly` **modifier**: `N`
 
-Defined in: [src/modifiers/types.ts:12](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L12)
+Defined in: [src/modifiers/types.ts:12](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L12)
 
 The modifier node from the AST.
 
@@ -48,7 +48,7 @@ The modifier node from the AST.
 
 > `readonly` `optional` **rollDie?**: () => [`DieResult`](../../results/interfaces/DieResult.md)
 
-Defined in: [src/modifiers/types.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/modifiers/types.ts#L18)
+Defined in: [src/modifiers/types.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/types.ts#L18)
 
 Rolls one more die of the pool (pools only), e.g. for explode and re-roll.
 

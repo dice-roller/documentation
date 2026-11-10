@@ -4,9 +4,10 @@
 
 > **reRoll**(`options?`): [`ReRollNode`](../interfaces/ReRollNode.md)
 
-Defined in: [src/ast/builders.ts:236](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/builders.ts#L236)
+Defined in: [src/ast/builders.ts:291](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/builders.ts#L291)
 
-Re-roll matching dice; `once` defaults to false and an omitted compare point uses the handler default.
+Re-roll matching dice. `once` is the `ro` alias; numeric `limit: 1` has the same budget but
+retains `r1` notation. Limits count additional rolls per die and cannot exceed the context cap.
 
 ## Parameters
 
@@ -15,6 +16,10 @@ Re-roll matching dice; `once` defaults to false and an omitted compare point use
 #### comparePoint?
 
 [`ComparePoint`](../interfaces/ComparePoint.md)
+
+#### limit?
+
+`number`
 
 #### once?
 

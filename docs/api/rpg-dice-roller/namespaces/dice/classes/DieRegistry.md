@@ -2,7 +2,7 @@
 
 # Class: DieRegistry
 
-Defined in: [src/dice/DieRegistry.ts:36](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L36)
+Defined in: [src/dice/DieRegistry.ts:36](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L36)
 
 Die factories by name.
 
@@ -22,7 +22,7 @@ re-rolling an imported expression that uses a custom name.
 
 > **new DieRegistry**(): `DieRegistry`
 
-Defined in: [src/dice/DieRegistry.ts:40](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L40)
+Defined in: [src/dice/DieRegistry.ts:40](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L40)
 
 A registry with the built-in factories: `standard`, `percentile`, `fudge`, `range`, `face`.
 
@@ -38,7 +38,7 @@ A registry with the built-in factories: `standard`, `percentile`, `fudge`, `rang
 
 > **get** **names**(): readonly `string`[]
 
-Defined in: [src/dice/DieRegistry.ts:56](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L56)
+Defined in: [src/dice/DieRegistry.ts:56](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L56)
 
 The registered names, in alphabetical order.
 
@@ -52,7 +52,7 @@ readonly `string`[]
 
 > **create**(`name`, ...`args`): [`DieLike`](../../../../type-aliases/DieLike.md)
 
-Defined in: [src/dice/DieRegistry.ts:120](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L120)
+Defined in: [src/dice/DieRegistry.ts:120](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L120)
 
 Creates a die with the named factory, e.g. `registry.create("standard", 6)`.
 
@@ -84,7 +84,7 @@ any error raised by the factory is propagated
 
 > **get**(`name`): [`DieFactory`](../type-aliases/DieFactory.md) \| `undefined`
 
-Defined in: [src/dice/DieRegistry.ts:80](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L80)
+Defined in: [src/dice/DieRegistry.ts:80](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L80)
 
 The factory registered with the name, e.g. `registry.get("standard")?.(6)`.
 
@@ -104,7 +104,7 @@ The factory registered with the name, e.g. `registry.get("standard")?.(6)`.
 
 > **getOrThrow**(`name`): [`DieFactory`](../type-aliases/DieFactory.md)
 
-Defined in: [src/dice/DieRegistry.ts:89](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L89)
+Defined in: [src/dice/DieRegistry.ts:89](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L89)
 
 Returns the factory registered with the name.
 
@@ -128,7 +128,7 @@ no factory is registered with the name
 
 > **has**(`name`): `boolean`
 
-Defined in: [src/dice/DieRegistry.ts:100](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L100)
+Defined in: [src/dice/DieRegistry.ts:100](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L100)
 
 Whether a factory is registered with the name.
 
@@ -148,7 +148,7 @@ Whether a factory is registered with the name.
 
 > **register**(`name`, `factory`): `this`
 
-Defined in: [src/dice/DieRegistry.ts:65](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L65)
+Defined in: [src/dice/DieRegistry.ts:65](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L65)
 
 Registers a factory, replacing any already registered with the same name.
 
@@ -176,7 +176,7 @@ the name isn't a string or is empty, or the factory isn't a function
 
 > **remove**(`name`): `boolean`
 
-Defined in: [src/dice/DieRegistry.ts:110](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L110)
+Defined in: [src/dice/DieRegistry.ts:110](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L110)
 
 Removes the factory registered with the name. Notation that uses a removed built-in (e.g. `d6`
 after removing `standard`) then throws when it's rolled.
@@ -199,7 +199,7 @@ whether a factory was registered with the name
 
 > `static` **empty**(): `DieRegistry`
 
-Defined in: [src/dice/DieRegistry.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/DieRegistry.ts#L47)
+Defined in: [src/dice/DieRegistry.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/DieRegistry.ts#L47)
 
 A registry with no factories, not even the built-ins.
 

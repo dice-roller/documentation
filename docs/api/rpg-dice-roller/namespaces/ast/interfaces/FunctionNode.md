@@ -2,7 +2,7 @@
 
 # Interface: FunctionNode
 
-Defined in: [src/ast/nodes.ts:130](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L130)
+Defined in: [src/ast/nodes.ts:132](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L132)
 
 A maths function call, e.g. `floor(2d6 / 2)`.
 
@@ -12,7 +12,7 @@ A maths function call, e.g. `floor(2d6 / 2)`.
 
 > `readonly` **args**: readonly [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)[]
 
-Defined in: [src/ast/nodes.ts:133](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L133)
+Defined in: [src/ast/nodes.ts:135](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L135)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:133](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"abs"` \| `"ceil"` \| `"cos"` \| `"exp"` \| `"floor"` \| `"log"` \| `"round"` \| `"sign"` \| `"sin"` \| `"sqrt"` \| `"tan"` \| `"pow"` \| `"max"` \| `"min"` \| `"trunc"`
 
-Defined in: [src/ast/nodes.ts:132](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L132)
+Defined in: [src/ast/nodes.ts:134](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L134)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:132](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"function"`
 
-Defined in: [src/ast/nodes.ts:131](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L131)
+Defined in: [src/ast/nodes.ts:133](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L133)

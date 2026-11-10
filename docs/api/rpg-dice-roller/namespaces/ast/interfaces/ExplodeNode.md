@@ -2,7 +2,7 @@
 
 # Interface: ExplodeNode
 
-Defined in: [src/ast/nodes.ts:208](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L208)
+Defined in: [src/ast/nodes.ts:210](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L210)
 
 `!`, `!!` (compound), `!p` (penetrate), `!!p`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:208](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **comparePoint?**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:213](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L213)
+Defined in: [src/ast/nodes.ts:215](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L215)
 
 ***
 
@@ -20,7 +20,17 @@ Defined in: [src/ast/nodes.ts:213](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **compound**: `boolean`
 
-Defined in: [src/ast/nodes.ts:211](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L211)
+Defined in: [src/ast/nodes.ts:213](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L213)
+
+***
+
+### limit?
+
+> `readonly` `optional` **limit?**: `number`
+
+Defined in: [src/ast/nodes.ts:217](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L217)
+
+Maximum additional explosions per initial die; omitted limits use the context cap.
 
 ***
 
@@ -28,7 +38,7 @@ Defined in: [src/ast/nodes.ts:211](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"explode"`
 
-Defined in: [src/ast/nodes.ts:210](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L210)
+Defined in: [src/ast/nodes.ts:212](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L212)
 
 ***
 
@@ -36,7 +46,7 @@ Defined in: [src/ast/nodes.ts:210](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **penetrate**: `boolean`
 
-Defined in: [src/ast/nodes.ts:212](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L212)
+Defined in: [src/ast/nodes.ts:214](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L214)
 
 ***
 
@@ -44,4 +54,4 @@ Defined in: [src/ast/nodes.ts:212](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:209](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L209)
+Defined in: [src/ast/nodes.ts:211](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L211)

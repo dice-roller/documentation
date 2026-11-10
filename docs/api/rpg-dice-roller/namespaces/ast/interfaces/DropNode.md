@@ -2,7 +2,7 @@
 
 # Interface: DropNode
 
-Defined in: [src/ast/nodes.ts:225](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L225)
+Defined in: [src/ast/nodes.ts:235](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L235)
 
 `d`, `dh`, `dl`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:225](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **end**: [`PoolEnd`](../type-aliases/PoolEnd.md)
 
-Defined in: [src/ast/nodes.ts:228](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L228)
+Defined in: [src/ast/nodes.ts:238](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L238)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:228](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"drop"`
 
-Defined in: [src/ast/nodes.ts:227](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L227)
+Defined in: [src/ast/nodes.ts:237](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L237)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/ast/nodes.ts:227](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **qty**: `number`
 
-Defined in: [src/ast/nodes.ts:229](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L229)
+Defined in: [src/ast/nodes.ts:239](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L239)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/ast/nodes.ts:229](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:226](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L226)
+Defined in: [src/ast/nodes.ts:236](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L236)

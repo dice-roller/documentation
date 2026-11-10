@@ -4,7 +4,7 @@
 
 > **NumberOrGetter** = `number` \| (() => `number`)
 
-Defined in: [src/dice/types.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L18)
+Defined in: [src/dice/types.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L18)
 
 A number, or a function that returns one.
 

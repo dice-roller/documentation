@@ -2,7 +2,7 @@
 
 # Interface: DieNode
 
-Defined in: [src/ast/nodes.ts:67](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L67)
+Defined in: [src/ast/nodes.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L69)
 
 The die of a pool: a reference to a die factory in the `DieRegistry`, and its arguments.
 
@@ -15,6 +15,8 @@ their displayed notation is not necessarily parseable.
 - `d(2+3)`: `{ name: "standard", args: [(2+3)] }`
 - `d%`: `{ name: "percentile", args: [] }`
 - `dF` / `dF.1` / `dF.2`: `{ name: "fudge", args: [] }` / `[1]` / `[2]`
+- `d{0...2}`: `{ name: "range", args: [0, 2] }`
+- `d{1,1,2}`: `{ name: "face", args: [1, 1, 2] }`
 
 ## Properties
 
@@ -22,7 +24,7 @@ their displayed notation is not necessarily parseable.
 
 > `readonly` **args**: readonly [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)[]
 
-Defined in: [src/ast/nodes.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L71)
+Defined in: [src/ast/nodes.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L73)
 
 ***
 
@@ -30,7 +32,7 @@ Defined in: [src/ast/nodes.ts:71](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **name**: `string`
 
-Defined in: [src/ast/nodes.ts:70](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L70)
+Defined in: [src/ast/nodes.ts:72](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L72)
 
 The registered name: a `BuiltInDieName`, or the name of a user-registered die.
 
@@ -40,4 +42,4 @@ The registered name: a `BuiltInDieName`, or the name of a user-registered die.
 
 > `readonly` **type**: `"die"`
 
-Defined in: [src/ast/nodes.ts:68](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/ast/nodes.ts#L68)
+Defined in: [src/ast/nodes.ts:70](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L70)

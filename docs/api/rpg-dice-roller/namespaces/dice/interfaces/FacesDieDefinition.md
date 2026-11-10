@@ -2,7 +2,7 @@
 
 # Interface: FacesDieDefinition
 
-Defined in: [src/dice/types.ts:32](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L32)
+Defined in: [src/dice/types.ts:32](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L32)
 
 A die with a non-empty list of finite faces, e.g. dF (`[-1, 0, 1]`). Repeats act as weights.
 
@@ -16,7 +16,7 @@ A die with a non-empty list of finite faces, e.g. dF (`[-1, 0, 1]`). Repeats act
 
 > `readonly` **faces**: readonly `number`[]
 
-Defined in: [src/dice/types.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L33)
+Defined in: [src/dice/types.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L33)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [src/dice/types.ts:33](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **notation?**: `string`
 
-Defined in: [src/dice/types.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/e5fc57b800027d5376a4b67c69ac191796693323/src/dice/types.ts#L22)
+Defined in: [src/dice/types.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L22)
 
 The display label used after the `d` by presenters, e.g. `6`, `%`, `F` or `F.1`.
 
