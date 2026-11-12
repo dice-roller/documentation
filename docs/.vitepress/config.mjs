@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress';
 import { fileURLToPath } from 'node:url';
 import { readFile } from 'node:fs/promises';
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
+import { diceRollerPlugin } from '@dice-roller/vitepress-plugin-dice-roller';
 import apiConfig from '../api/typedoc-sidebar.json' with { type: 'json' };
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -56,6 +57,7 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
+      md.use(diceRollerPlugin);
       md.use(tabsMarkdownPlugin);
     },
   },

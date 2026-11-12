@@ -35,7 +35,11 @@
   },
   "homepage": "https://dice-roller.github.io/documentation",
   "devDependencies": {
+    "@dice-roller/vitepress-plugin-dice-roller": "^1.0.0-beta.2",
     "vitepress": "^1.6.4",
     "vitepress-plugin-tabs": "^0.9.1"
+  },
+  "dependencies": {
+    "@dice-roller/vue": "^2.0.0-beta.0"
   }
 }
