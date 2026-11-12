@@ -97,7 +97,17 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/guide/' },
             { text: 'Get Started', link: '/guide/getting-started' },
-            { text: 'Usage', link: '/guide/usage' },
+            {
+              text: 'Usage',
+              link: '/guide/usage/',
+              collapsed: true,
+              items: [
+                { text: 'Rolling dice', link: '/guide/usage/' },
+                { text: 'Working with results', link: '/guide/usage/working-with-results' },
+                { text: 'Roll history', link: '/guide/usage/roll-history' },
+                { text: 'Importing and exporting', link: '/guide/usage/importing-and-exporting' },
+              ],
+            },
             {
               text: 'Customisation',
               link: '/guide/customisation/',
