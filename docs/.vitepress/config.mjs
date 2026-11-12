@@ -98,7 +98,15 @@ export default defineConfig({
             { text: 'Introduction', link: '/guide/' },
             { text: 'Get Started', link: '/guide/getting-started' },
             { text: 'Usage', link: '/guide/usage' },
-            { text: 'Customisation', link: '/guide/customisation' },
+            {
+              text: 'Customisation',
+              link: '/guide/customisation/',
+              collapsed: true,
+              items: [
+                { text: 'Introduction', link: '/guide/customisation/' },
+                { text: 'Presenters', link: '/guide/customisation/presenters' },
+              ],
+            },
           ],
         },
         {

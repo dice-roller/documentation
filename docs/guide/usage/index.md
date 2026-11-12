@@ -235,7 +235,7 @@ All options are optional:
 | `presenter` | Choose how `present()` formats results. |
 | `limits` | Set limits on dice quantities and repeating modifiers. |
 
-The built-in dice, modifiers and text presenter are used unless you supply alternatives. See [Customisation](../customisation.md) for details.
+The built-in dice, modifiers and text presenter are used unless you supply alternatives. See [Customisation](../customisation/index.md) for details.
 
 ### Roll limits
 
