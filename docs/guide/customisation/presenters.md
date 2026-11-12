@@ -6,7 +6,7 @@ outline: 2
 
 Presenters control how rolls are displayed. They turn an existing roll, roll history or evaluated expression into output such as plain text, SVG or a format of your own.
 
-The default is the built-in text presenter:
+The default is the built-in text presenter, which is used on the dice rollers throughout this documentation:
 
 ```javascript
 const roll = new Roll('2d6+3');
@@ -15,9 +15,13 @@ console.log(roll.present());
 // e.g. 2d6+3: [4, 2]+3 = 9
 ```
 
+::: roller 2d6+3 :::
+
 Presenting a roll reads its existing results. You can display the same roll in several ways without rolling the dice again or changing its total.
 
 ## Using a presenter
+
+## @todo this needs to be more obvious that it's optional customisation and only necessary if you want to change how the default text presenter outputs the results
 
 Import the `presenters` namespace alongside the classes you need:
 

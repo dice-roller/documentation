@@ -1,8 +1,5 @@
 ---
 outline: 2
-next:
-  text: Notation
-  link: /guide/notation/
 ---
 
 # Customisation
