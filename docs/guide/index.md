@@ -32,7 +32,7 @@ Roll the dice your game needs:
 * [Fudge and Fate dice](notation/dice.md#fudge-fate-dice).
 * [Range dice](notation/dice.md#range-dice), with custom minimum and maximum values, including negative numbers. <Badge text="New in v6" vertical="middle"/>
 * [Face dice](notation/dice.md#face-dice), with individually defined face values. <Badge text="New in v6" vertical="middle"/>
-* Custom dice definitions for your own game mechanics. <Badge text="New in v6" vertical="middle"/>
+* [Custom dice definitions](customisation/dice.md) for your own game mechanics. <Badge text="New in v6" vertical="middle"/>
 
 ### Roll modifiers
 
@@ -60,16 +60,16 @@ Work with the results beyond their final totals:
 * Inspect individual dice and evaluated expressions.
 * Keep a history of rolls.
 * [Export](usage/index.md) and [import](usage/index.md) rolls.
-* Format results for display using presenters.
+* [Format results for display](customisation/presenters.md) using presenters.
 
 ### Customisation
 
 Adapt the library to your game or application:
 
-* Customise the behaviour of built-in modifiers. <Badge text="New in v6" vertical="middle"/>
-* Choose a different random number generator.
-* Use seeded engines for repeatable rolls.
-* Create presenters that format results as text, HTML or other output. <Badge text="New in v6" vertical="middle"/>
+* [Customise the behaviour of built-in modifiers](customisation/modifiers.md). <Badge text="New in v6" vertical="middle"/>
+* [Choose a different random number generator](customisation/random-number-generator.md).
+* [Use seeded engines](customisation/random-number-generator.md) for repeatable rolls.
+* [Create presenters](customisation/presenters.md) that format results as text, HTML or other output. <Badge text="New in v6" vertical="middle"/>
 
 See the [API reference](../api/index.md) for the available extension points.
 
@@ -78,7 +78,7 @@ See the [API reference](../api/index.md) for the available extension points.
 
 By default, rolls use JavaScript’s `Math.random()` through the library’s random engine.
 
-You can [supply a different engine](customisation/index.md#random-number-generator) when you need another source of randomness, or use a seeded engine to reproduce the same sequence of rolls. This can be useful for testing, debugging and repeatable game scenarios.
+You can [supply a different engine](customisation/random-number-generator.md) when you need another source of randomness, or use a seeded engine to reproduce the same sequence of rolls. This can be useful for testing, debugging and repeatable game scenarios.
 
 
 ## Environment support

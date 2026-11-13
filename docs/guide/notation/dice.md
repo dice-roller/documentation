@@ -2,6 +2,8 @@
 
 Dice notation tells the library how many dice to roll and which type to use. The results are added together to produce a total, unless you apply [modifiers](modifiers.md) that change how they are counted.
 
+To change how existing dice behave or create your own dice, see [Custom dice](../customisation/dice.md).
+
 ## Number of dice
 
 Put a number before the dice notation to specify how many dice to roll. If you leave it out, the quantity defaults to one.
