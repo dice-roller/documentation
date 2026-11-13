@@ -238,3 +238,49 @@ Call `this.visit(childResult)` to format a nested expression. For example, `roll
 Use the stored results and totals when formatting output. Modifier flags describe effects such as exploding or dropping, and scoring can differ from the value shown on a die. A dropped group member also excludes its nested dice from the final total.
 
 See the [TreePresenter API](../../api/rpg-dice-roller/namespaces/presenters/classes/TreePresenter.md) and [result types](../../api/rpg-dice-roller/namespaces/results/index.md) when building a presenter that needs this detail.
+
+For example, this presenter returns a list of the dice rolled, leaving out the maths and numeric literals:
+
+```javascript
+import { Roll, presenters } from '@dice-roller/rpg-dice-roller';
+
+class DiceListPresenter extends presenters.TreePresenter {
+  history(history) {
+    return history.rolls.flatMap((roll) => this.roll(roll));
+  }
+
+  roll(roll) {
+    return this.visit(roll.result);
+  }
+
+  pool(result) {
+    return result.rolls.flatMap((die) => this.die(die, result));
+  }
+
+  die(result, pool) {
+    return [`d${pool.die.notation}: ${result.value}`];
+  }
+
+  binary(result) {
+    return [...this.visit(result.left), ...this.visit(result.right)];
+  }
+
+  group(result) {
+    return result.members.flatMap((member) => this.visit(member.result));
+  }
+
+  unary(result) { return this.visit(result.operand); }
+  paren(result) { return this.visit(result.inner); }
+  fn(result) { return result.args.flatMap((arg) => this.visit(arg)); }
+  number() { return []; }
+}
+
+const roll = new Roll('(2d6+3)*2');
+
+console.log(roll.present(new DiceListPresenter()));
+// e.g. ['d6: 4', 'd6: 2']
+```
+
+Here, `roll()` starts with `visit(roll.result)`. Each call to `visit()` selects the method for that result: `binary()` visits both sides of an operation, and `paren()` visits the expression inside the parentheses. When it reaches a pool, `pool()` formats its dice using `die()`.
+
+Every method returns an array of labels. `number()` returns an empty array because this presenter only lists dice. It includes all dice, including any dropped by modifiers; it does not calculate a new total.
