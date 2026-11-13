@@ -10,6 +10,9 @@ hero:
     - theme: brand
       text: Get Started →
       link: /guide/
+    - theme: alt
+      text: Explore dice notation →
+      link: /guide/notation/
 features:
 - title: Familiar dice notation
   icon:

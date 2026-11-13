@@ -97,7 +97,6 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/guide/' },
             { text: 'Get Started', link: '/guide/getting-started' },
-            { text: 'CLI', link: '/guide/cli' },
             { text: 'Usage', link: '/guide/usage' },
             { text: 'Customisation', link: '/guide/customisation' },
           ],
@@ -109,11 +108,15 @@ export default defineConfig({
             { text: 'What are notations?', link: '/guide/notation/' },
             { text: 'Dice', link: '/guide/notation/dice' },
             { text: 'Modifiers', link: '/guide/notation/modifiers' },
-            { text: 'Group Rolls', link: '/guide/notation/group-rolls' },
+            { text: 'Roll Groups', link: '/guide/notation/roll-groups' },
             { text: 'Roll Descriptions', link: '/guide/notation/roll-descriptions' },
             { text: 'Maths', link: '/guide/notation/maths' },
           ],
         },
+        {
+          text: 'CLI',
+          link: '/guide/cli',
+        }
       ],
       '/api/': [{
         text: 'API',
