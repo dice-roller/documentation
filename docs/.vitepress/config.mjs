@@ -68,6 +68,7 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: '/hero.svg',
+    docsBranch,
     footer: {
       message: `MIT Licensed · <a href="${base}credits.html">Credits</a>`,
       copyright: 'Copyright © GreenImp Media ltd.',

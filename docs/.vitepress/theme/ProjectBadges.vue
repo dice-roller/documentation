@@ -1,19 +1,56 @@
 <script setup>
-const badges = [
+import { computed } from 'vue';
+
+const props = defineProps({
+  branch: {
+    type: String,
+    default: 'main',
+  },
+});
+
+const mappedBranch = computed(() => {
+  if (props.branch.startsWith('versions/')) {
+    return props.branch.replace('versions/', 'releases/');
+  }
+
+  if (props.branch.startsWith('feature/next/')) {
+    return 'next';
+  }
+
+  if (!['main', 'next'].includes(props.branch)) {
+    return 'main';
+  }
+
+  return props.branch;
+});
+
+const tag = computed(() => {
+  if (mappedBranch.value === 'next') {
+    return mappedBranch.value;
+  }
+
+  if (mappedBranch.value.startsWith('releases/v')) {
+    return mappedBranch.value.replace('releases/', 'releases-');
+  }
+
+  return 'latest';
+});
+
+const badges = computed(() => [
   {
     alt: 'npm version',
-    src: 'https://img.shields.io/npm/v/@dice-roller/rpg-dice-roller?label=version',
-    href: 'https://www.npmjs.com/package/@dice-roller/rpg-dice-roller',
+    src: `https://img.shields.io/npm/v/@dice-roller/rpg-dice-roller${tag.value !== 'latest' ? `/${tag.value}` : ''}`,
+    href: `https://www.npmjs.com/package/@dice-roller/rpg-dice-roller/v/${tag.value}`,
   },
   {
     alt: 'Build status',
-    src: 'https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml/badge.svg',
-    href: 'https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml',
+    src: `https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml/badge.svg?branch=${encodeURIComponent(mappedBranch.value)}`,
+    href: `https://github.com/dice-roller/rpg-dice-roller/actions/workflows/build.yml?query=${encodeURIComponent(`branch:${mappedBranch.value}`)}`,
   },
   {
     alt: 'Coverage status',
-    src: 'https://coveralls.io/repos/github/dice-roller/rpg-dice-roller/badge.svg?branch=main',
-    href: 'https://coveralls.io/github/dice-roller/rpg-dice-roller?branch=main',
+    src: `https://coveralls.io/repos/github/dice-roller/rpg-dice-roller/badge.svg?branch=${encodeURIComponent(mappedBranch.value)}`,
+    href: `https://coveralls.io/github/dice-roller/rpg-dice-roller?branch=${encodeURIComponent(mappedBranch.value)}`,
   },
   {
     alt: 'npm type definitions',
@@ -22,14 +59,14 @@ const badges = [
   {
     alt: 'Licence',
     src: 'https://img.shields.io/npm/l/@dice-roller/rpg-dice-roller',
-    href: 'https://github.com/dice-roller/rpg-dice-roller/blob/develop/licence.txt',
+    href: `https://github.com/dice-roller/rpg-dice-roller/blob/${mappedBranch.value}/licence.txt`,
   },
   {
     alt: 'npm downloads',
     src: 'https://img.shields.io/npm/dm/@dice-roller/rpg-dice-roller',
     href: 'https://www.npmjs.com/package/@dice-roller/rpg-dice-roller',
   },
-];
+]);
 </script>
 
 <template>
