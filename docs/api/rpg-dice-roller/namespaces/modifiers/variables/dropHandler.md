@@ -4,7 +4,7 @@
 
 > `const` **dropHandler**: [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`DropNode`](../../ast/interfaces/DropNode.md)\>
 
-Defined in: [src/modifiers/handlers/drop.ts:15](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/handlers/drop.ts#L15)
+Defined in: [src/modifiers/handlers/drop.ts:15](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/drop.ts#L15)
 
 `d`, `dl`, `dh`: drops the lowest / highest `qty` items (flag `drop`).
 `d` defaults to lowest.

@@ -4,7 +4,7 @@
 
 > **faceDie**(`faces`, `options?`): [`FacesDieDefinition`](../interfaces/FacesDieDefinition.md)
 
-Defined in: [src/dice/presets.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/presets.ts#L47)
+Defined in: [src/dice/presets.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/dice/presets.ts#L47)
 
 A die with a list of faces, e.g. `faceDie([1, 1, 2, 3, 5, 8])`.
 

@@ -4,7 +4,7 @@
 
 > `const` **reRollHandler**: [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`ReRollNode`](../../ast/interfaces/ReRollNode.md)\>
 
-Defined in: [src/modifiers/handlers/re-roll.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/handlers/re-roll.ts#L22)
+Defined in: [src/modifiers/handlers/re-roll.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/re-roll.ts#L22)
 
 `r`, `ro` and numeric limits: re-roll rolls that match the compare point (the die's min by
 default), replacing the value (the initial value is kept).

@@ -2,7 +2,7 @@
 
 # Class: ValidationError
 
-Defined in: [src/errors/ValidationError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/ValidationError.ts#L6)
+Defined in: [src/errors/ValidationError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/errors/ValidationError.ts#L6)
 
 Thrown when an argument or value is invalid (e.g. an empty notation, or a qty out of range).
 
@@ -16,7 +16,7 @@ Thrown when an argument or value is invalid (e.g. an empty notation, or a qty ou
 
 > **new ValidationError**(`message`, `options?`): `ValidationError`
 
-Defined in: [src/errors/DiceRollerError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/DiceRollerError.ts#L6)
+Defined in: [src/errors/DiceRollerError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/errors/DiceRollerError.ts#L6)
 
 #### Parameters
 

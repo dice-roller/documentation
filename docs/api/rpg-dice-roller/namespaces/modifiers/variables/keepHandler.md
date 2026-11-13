@@ -4,7 +4,7 @@
 
 > `const` **keepHandler**: [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`KeepNode`](../../ast/interfaces/KeepNode.md)\>
 
-Defined in: [src/modifiers/handlers/keep.ts:16](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/handlers/keep.ts#L16)
+Defined in: [src/modifiers/handlers/keep.ts:16](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/keep.ts#L16)
 
 `k`, `kh`, `kl`: keeps the highest / lowest `qty` items, and drops the rest (flag `drop`).
 `k` defaults to highest.

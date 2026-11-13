@@ -4,7 +4,7 @@
 
 > **rangeDie**(`min`, `max`, `options?`): [`RangeDieDefinition`](../interfaces/RangeDieDefinition.md)
 
-Defined in: [src/dice/presets.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/presets.ts#L18)
+Defined in: [src/dice/presets.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/dice/presets.ts#L18)
 
 A die with every integer from `min` to `max`, e.g. `rangeDie(-2, 3)`.
 

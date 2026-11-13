@@ -2,7 +2,7 @@
 
 # Class: DiceRollerError
 
-Defined in: [src/errors/DiceRollerError.ts:5](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/DiceRollerError.ts#L5)
+Defined in: [src/errors/DiceRollerError.ts:5](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/errors/DiceRollerError.ts#L5)
 
 Base class for the library's custom errors. Native errors and errors from user-supplied code may
 also propagate. The name is set from the concrete constructor; `options.cause` is passed to Error.
@@ -24,7 +24,7 @@ also propagate. The name is set from the concrete constructor; `options.cause` i
 
 > **new DiceRollerError**(`message`, `options?`): `DiceRollerError`
 
-Defined in: [src/errors/DiceRollerError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/DiceRollerError.ts#L6)
+Defined in: [src/errors/DiceRollerError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/errors/DiceRollerError.ts#L6)
 
 #### Parameters
 

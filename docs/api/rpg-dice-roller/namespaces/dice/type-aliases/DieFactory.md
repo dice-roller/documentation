@@ -4,7 +4,7 @@
 
 > **DieFactory** = (...`args`) => [`DieLike`](../../../../type-aliases/DieLike.md)
 
-Defined in: [src/dice/types.ts:77](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/types.ts#L77)
+Defined in: [src/dice/types.ts:77](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/dice/types.ts#L77)
 
 Creates a die from the evaluated arguments of a `DieNode`, e.g. `standard(6)` for `d6`.
 

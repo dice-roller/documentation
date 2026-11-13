@@ -2,7 +2,7 @@
 
 # Class: Parser
 
-Defined in: [src/parser/Parser.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/parser/Parser.ts#L18)
+Defined in: [src/parser/Parser.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/parser/Parser.ts#L18)
 
 Parses dice notation into the AST.
 
@@ -16,7 +16,7 @@ https://dice-roller.github.io/documentation/guide/notation/
 
 > **new Parser**(`options?`): `Parser`
 
-Defined in: [src/parser/Parser.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/parser/Parser.ts#L23)
+Defined in: [src/parser/Parser.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/parser/Parser.ts#L23)
 
 Creates a parser with the supplied literal quantity limit.
 
@@ -36,7 +36,7 @@ Creates a parser with the supplied literal quantity limit.
 
 > `readonly` **maxQty**: `number`
 
-Defined in: [src/parser/Parser.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/parser/Parser.ts#L20)
+Defined in: [src/parser/Parser.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/parser/Parser.ts#L20)
 
 Maximum literal pool quantity accepted by the grammar.
 
@@ -46,7 +46,7 @@ Maximum literal pool quantity accepted by the grammar.
 
 > **parse**(`notation`): [`ExpressionNode`](../type-aliases/ExpressionNode.md)
 
-Defined in: [src/parser/Parser.ts:36](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/parser/Parser.ts#L36)
+Defined in: [src/parser/Parser.ts:36](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/parser/Parser.ts#L36)
 
 Parses a notation string into an expression tree without rolling any dice.
 

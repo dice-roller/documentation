@@ -4,7 +4,7 @@
 
 > **nodeToNotation**(`node`): `string`
 
-Defined in: [src/ast/notation.ts:34](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/notation.ts#L34)
+Defined in: [src/ast/notation.ts:34](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/notation.ts#L34)
 
 Converts an expression to canonical notation, e.g. a pool to `4d6kh3`.
 

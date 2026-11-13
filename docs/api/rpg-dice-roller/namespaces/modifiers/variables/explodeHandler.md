@@ -4,7 +4,7 @@
 
 > `const` **explodeHandler**: [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`ExplodeNode`](../../ast/interfaces/ExplodeNode.md)\>
 
-Defined in: [src/modifiers/handlers/explode.ts:26](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/handlers/explode.ts#L26)
+Defined in: [src/modifiers/handlers/explode.ts:26](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/explode.ts#L26)
 
 `!`, `!!`, `!p`, `!!p`: rolls another die whenever a roll matches the compare point (the die's max
 by default), up to the modifier limit or `ctx.limits.maxIterations` times per initial die (default

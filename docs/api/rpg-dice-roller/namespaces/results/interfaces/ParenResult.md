@@ -2,7 +2,7 @@
 
 # Interface: ParenResult
 
-Defined in: [src/results/types.ts:107](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L107)
+Defined in: [src/results/types.ts:107](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L107)
 
 A parenthesised expression and its evaluated inner result.
 
@@ -12,7 +12,7 @@ A parenthesised expression and its evaluated inner result.
 
 > `readonly` **inner**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:111](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L111)
+Defined in: [src/results/types.ts:111](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L111)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:111](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **node**: [`ParenNode`](../../ast/interfaces/ParenNode.md)
 
-Defined in: [src/results/types.ts:109](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L109)
+Defined in: [src/results/types.ts:109](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L109)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/results/types.ts:109](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **type**: `"paren"`
 
-Defined in: [src/results/types.ts:108](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L108)
+Defined in: [src/results/types.ts:108](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L108)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/results/types.ts:108](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:110](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/types.ts#L110)
+Defined in: [src/results/types.ts:110](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L110)

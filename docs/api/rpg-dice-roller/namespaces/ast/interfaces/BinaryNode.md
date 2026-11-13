@@ -2,7 +2,7 @@
 
 # Interface: BinaryNode
 
-Defined in: [src/ast/nodes.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L90)
+Defined in: [src/ast/nodes.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L90)
 
 A binary maths operation, e.g. `2d6 + 3`.
 
@@ -12,7 +12,7 @@ A binary maths operation, e.g. `2d6 + 3`.
 
 > `readonly` **left**: [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)
 
-Defined in: [src/ast/nodes.ts:93](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L93)
+Defined in: [src/ast/nodes.ts:93](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L93)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:93](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **op**: `"+"` \| `"-"` \| `"*"` \| `"/"` \| `"%"` \| `"^"`
 
-Defined in: [src/ast/nodes.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L92)
+Defined in: [src/ast/nodes.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L92)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/ast/nodes.ts:92](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **right**: [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)
 
-Defined in: [src/ast/nodes.ts:94](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L94)
+Defined in: [src/ast/nodes.ts:94](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L94)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/ast/nodes.ts:94](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **type**: `"binary"`
 
-Defined in: [src/ast/nodes.ts:91](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/ast/nodes.ts#L91)
+Defined in: [src/ast/nodes.ts:91](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L91)

@@ -2,7 +2,7 @@
 
 # Class: EvaluationError
 
-Defined in: [src/errors/EvaluationError.ts:7](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/EvaluationError.ts#L7)
+Defined in: [src/errors/EvaluationError.ts:7](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/errors/EvaluationError.ts#L7)
 
 Thrown when an expression cannot be evaluated (e.g. a maths operation without a real result).
 For example, `sqrt(-1)` fails, while `1/0` produces `Infinity` rather than this error.
@@ -17,7 +17,7 @@ For example, `sqrt(-1)` fails, while `1/0` produces `Infinity` rather than this 
 
 > **new EvaluationError**(`message`, `options?`): `EvaluationError`
 
-Defined in: [src/errors/DiceRollerError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/errors/DiceRollerError.ts#L6)
+Defined in: [src/errors/DiceRollerError.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/errors/DiceRollerError.ts#L6)
 
 #### Parameters
 

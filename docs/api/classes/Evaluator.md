@@ -2,7 +2,7 @@
 
 # Class: Evaluator
 
-Defined in: [src/evaluator/Evaluator.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L90)
+Defined in: [src/evaluator/Evaluator.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L90)
 
 Walks the AST and builds the result tree.
 
@@ -15,7 +15,7 @@ evaluated in `random` mode for a roll and in `min` / `max` mode for its correspo
 
 > **new Evaluator**(`registries`): `Evaluator`
 
-Defined in: [src/evaluator/Evaluator.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L92)
+Defined in: [src/evaluator/Evaluator.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L92)
 
 Creates an evaluator using the given die and modifier registries.
 
@@ -35,7 +35,7 @@ Creates an evaluator using the given die and modifier registries.
 
 > `readonly` **registries**: [`EvaluatorRegistries`](../interfaces/EvaluatorRegistries.md)
 
-Defined in: [src/evaluator/Evaluator.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L92)
+Defined in: [src/evaluator/Evaluator.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L92)
 
 ## Methods
 
@@ -43,7 +43,7 @@ Defined in: [src/evaluator/Evaluator.ts:92](https://github.com/dice-roller/rpg-d
 
 > `protected` **applyModifiers**\<`T`\>(`items`, `modifiers`, `target`, `input`): `T`[]
 
-Defined in: [src/evaluator/Evaluator.ts:436](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L436)
+Defined in: [src/evaluator/Evaluator.ts:436](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L436)
 
 Applies the modifiers in execution order (`ModifierRegistry.inExecutionOrder()`).
 
@@ -85,7 +85,7 @@ a handler doesn't apply to the target (e.g. `explode` on a group)
 
 > `protected` **applyToFlattenedDice**(`result`, `apply`): [`ExpressionResult`](../type-aliases/ExpressionResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:265](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L265)
+Defined in: [src/evaluator/Evaluator.ts:265](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L265)
 
 Applies `apply` to the flattened dice of every pool in the result, then writes the dice back
 into their own pools, in the order `apply` returned them, and recalculates the result.
@@ -116,7 +116,7 @@ the handler returned a die that didn't come from a pool
 
 > `protected` **createDie**(`node`, `args`): [`ResolvedDie`](../rpg-dice-roller/namespaces/dice/interfaces/ResolvedDie.md)
 
-Defined in: [src/evaluator/Evaluator.ts:180](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L180)
+Defined in: [src/evaluator/Evaluator.ts:180](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L180)
 
 Creates and resolves the die of a pool node, with already evaluated arguments.
 
@@ -140,7 +140,7 @@ readonly `number`[]
 
 > **evaluate**(`node`, `ctx`): [`ExpressionResult`](../type-aliases/ExpressionResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:99](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L99)
+Defined in: [src/evaluator/Evaluator.ts:99](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L99)
 
 Evaluates an expression tree into a result tree, rolling dice according to the context.
 
@@ -168,7 +168,7 @@ if a node, quantity, operation or modifier result is invalid
 
 > `protected` **evaluateBinary**(`node`, `ctx`): [`BinaryResult`](../rpg-dice-roller/namespaces/results/interfaces/BinaryResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:376](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L376)
+Defined in: [src/evaluator/Evaluator.ts:376](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L376)
 
 Uses `operators` from `math.ts`.
 
@@ -192,7 +192,7 @@ Uses `operators` from `math.ts`.
 
 > `protected` **evaluateFunction**(`node`, `ctx`): [`FunctionResult`](../rpg-dice-roller/namespaces/results/interfaces/FunctionResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:407](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L407)
+Defined in: [src/evaluator/Evaluator.ts:407](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L407)
 
 Uses `functions` from `math.ts`.
 
@@ -216,7 +216,7 @@ Uses `functions` from `math.ts`.
 
 > `protected` **evaluateGroup**(`node`, `ctx`): [`GroupResult`](../rpg-dice-roller/namespaces/results/interfaces/GroupResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:194](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L194)
+Defined in: [src/evaluator/Evaluator.ts:194](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L194)
 
 Evaluates each expression, then applies the modifiers in execution order.
 
@@ -247,7 +247,7 @@ Each handler gets the members, unless its `groupHandling` says otherwise:
 
 > `protected` **evaluateNumber**(`node`, `_ctx`): [`NumberResult`](../rpg-dice-roller/namespaces/results/interfaces/NumberResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:123](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L123)
+Defined in: [src/evaluator/Evaluator.ts:123](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L123)
 
 #### Parameters
 
@@ -269,7 +269,7 @@ Defined in: [src/evaluator/Evaluator.ts:123](https://github.com/dice-roller/rpg-
 
 > `protected` **evaluateParen**(`node`, `ctx`): [`ParenResult`](../rpg-dice-roller/namespaces/results/interfaces/ParenResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:400](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L400)
+Defined in: [src/evaluator/Evaluator.ts:400](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L400)
 
 #### Parameters
 
@@ -291,7 +291,7 @@ Defined in: [src/evaluator/Evaluator.ts:400](https://github.com/dice-roller/rpg-
 
 > `protected` **evaluatePool**(`node`, `ctx`): [`PoolResult`](../rpg-dice-roller/namespaces/results/interfaces/PoolResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:138](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L138)
+Defined in: [src/evaluator/Evaluator.ts:138](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L138)
 
 Evaluates `qty` and the die's `args`, validates qty against `ctx.limits.maxQty`, creates the
 die with `registries.dice.create(node.die.name, ...args)`, resolves it with `resolveDie()`,
@@ -317,7 +317,7 @@ rolls it `qty` times with `rollDie()`, then applies the modifiers.
 
 > `protected` **evaluateUnary**(`node`, `ctx`): [`UnaryResult`](../rpg-dice-roller/namespaces/results/interfaces/UnaryResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:394](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L394)
+Defined in: [src/evaluator/Evaluator.ts:394](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L394)
 
 Uses `negate` from `math.ts`.
 
@@ -341,7 +341,7 @@ Uses `negate` from `math.ts`.
 
 > `protected` **handlerFor**(`modifier`, `target`): [`ModifierHandler`](../rpg-dice-roller/namespaces/modifiers/interfaces/ModifierHandler.md)
 
-Defined in: [src/evaluator/Evaluator.ts:482](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L482)
+Defined in: [src/evaluator/Evaluator.ts:482](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L482)
 
 The handler of the modifier.
 
@@ -369,7 +369,7 @@ no handler is registered, or it doesn't apply to the target
 
 > `protected` **rebuildPools**(`result`, `replace`, `transformMembers?`): [`ExpressionResult`](../type-aliases/ExpressionResult.md)
 
-Defined in: [src/evaluator/Evaluator.ts:311](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L311)
+Defined in: [src/evaluator/Evaluator.ts:311](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L311)
 
 Walks the result tree, replacing each pool with `replace(pool, index)` and recalculating the
 values above it. Pools are visited in notation order.
@@ -401,7 +401,7 @@ are pools in nested groups unless `transformMembers` is supplied.
 
 > `protected` **runHandler**\<`T`\>(`handler`, `items`, `input`): `T`[]
 
-Defined in: [src/evaluator/Evaluator.ts:502](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/evaluator/Evaluator.ts#L502)
+Defined in: [src/evaluator/Evaluator.ts:502](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L502)
 
 #### Type Parameters
 

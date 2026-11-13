@@ -4,7 +4,7 @@
 
 > **fudgeDie**(`nonBlanks?`): [`FacesDieDefinition`](../interfaces/FacesDieDefinition.md)
 
-Defined in: [src/dice/presets.ts:109](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/dice/presets.ts#L109)
+Defined in: [src/dice/presets.ts:109](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/dice/presets.ts#L109)
 
 A fudge / fate die. Registered in the `DieRegistry` as `fudge`.
 

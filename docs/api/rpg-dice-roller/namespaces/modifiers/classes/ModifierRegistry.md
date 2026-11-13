@@ -2,7 +2,7 @@
 
 # Class: ModifierRegistry
 
-Defined in: [src/modifiers/ModifierRegistry.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L20)
+Defined in: [src/modifiers/ModifierRegistry.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L20)
 
 Modifier handlers by name.
 
@@ -26,7 +26,7 @@ const roller = new Roller({ modifiers });
 
 > **new ModifierRegistry**(): `ModifierRegistry`
 
-Defined in: [src/modifiers/ModifierRegistry.ts:24](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L24)
+Defined in: [src/modifiers/ModifierRegistry.ts:24](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L24)
 
 A registry with the 11 built-in handlers registered.
 
@@ -42,7 +42,7 @@ A registry with the 11 built-in handlers registered.
 
 > **get** **handlers**(): readonly [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`ModifierNode`](../../ast/type-aliases/ModifierNode.md)\>[]
 
-Defined in: [src/modifiers/ModifierRegistry.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L78)
+Defined in: [src/modifiers/ModifierRegistry.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L78)
 
 The registered handlers, in execution order.
 
@@ -56,7 +56,7 @@ readonly [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`ModifierNode`]
 
 > **get**\<`K`\>(`name`): [`ModifierHandlerOf`](../type-aliases/ModifierHandlerOf.md)\<`K`\> \| `undefined`
 
-Defined in: [src/modifiers/ModifierRegistry.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L47)
+Defined in: [src/modifiers/ModifierRegistry.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L47)
 
 Returns the handler for the name, or `undefined` if none is registered.
 
@@ -82,7 +82,7 @@ Returns the handler for the name, or `undefined` if none is registered.
 
 > **getOrThrow**\<`K`\>(`name`): [`ModifierHandlerOf`](../type-aliases/ModifierHandlerOf.md)\<`K`\>
 
-Defined in: [src/modifiers/ModifierRegistry.ts:52](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L52)
+Defined in: [src/modifiers/ModifierRegistry.ts:52](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L52)
 
 #### Type Parameters
 
@@ -110,7 +110,7 @@ no handler is registered with the name
 
 > **has**(`name`): `boolean`
 
-Defined in: [src/modifiers/ModifierRegistry.ts:63](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L63)
+Defined in: [src/modifiers/ModifierRegistry.ts:63](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L63)
 
 Whether a handler is registered under the name.
 
@@ -130,7 +130,7 @@ Whether a handler is registered under the name.
 
 > **inExecutionOrder**\<`N`\>(`modifiers`): `N`[]
 
-Defined in: [src/modifiers/ModifierRegistry.ts:89](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L89)
+Defined in: [src/modifiers/ModifierRegistry.ts:89](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L89)
 
 Returns a sorted copy of modifier nodes by their handler's `order`. Equal orders retain their
 input order. This method does not validate every node: sorting zero or one node does not look
@@ -162,7 +162,7 @@ a node compared during sorting has no registered handler
 
 > **register**(...`handlers`): `this`
 
-Defined in: [src/modifiers/ModifierRegistry.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L38)
+Defined in: [src/modifiers/ModifierRegistry.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L38)
 
 Registers handlers, replacing any already registered with the same name.
 
@@ -182,7 +182,7 @@ Registers handlers, replacing any already registered with the same name.
 
 > **remove**(`name`): `boolean`
 
-Defined in: [src/modifiers/ModifierRegistry.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L73)
+Defined in: [src/modifiers/ModifierRegistry.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L73)
 
 Removes the handler registered with the name. Notation that uses the modifier then throws when
 it's rolled.
@@ -205,7 +205,7 @@ whether a handler was registered with the name
 
 > `static` **empty**(): `ModifierRegistry`
 
-Defined in: [src/modifiers/ModifierRegistry.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/modifiers/ModifierRegistry.ts#L29)
+Defined in: [src/modifiers/ModifierRegistry.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L29)
 
 A registry with no handlers, not even the built-ins.
 

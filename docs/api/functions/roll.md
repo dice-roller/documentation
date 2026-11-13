@@ -4,7 +4,7 @@
 
 > **roll**\<`T`\>(`input`, `options?`): [`Roll`](../classes/Roll.md)\<`T`\>
 
-Defined in: [src/index.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/index.ts#L22)
+Defined in: [src/index.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/index.ts#L22)
 
 Shorthand for `new Roll(input, options)`: rolls notation (or an AST) once, without a history.
 

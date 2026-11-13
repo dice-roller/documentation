@@ -2,7 +2,7 @@
 
 # Interface: RollData
 
-Defined in: [src/serialization/formats.ts:21](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L21)
+Defined in: [src/serialization/formats.ts:21](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L21)
 
 A roll, with its result tree and totals.
 
@@ -15,7 +15,7 @@ Numbers can be non-finite (`1/0` is `Infinity`); `EncodedRollData` is the JSON-s
 
 > `readonly` **averageTotal**: `number`
 
-Defined in: [src/serialization/formats.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L29)
+Defined in: [src/serialization/formats.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L29)
 
 ***
 
@@ -23,7 +23,7 @@ Defined in: [src/serialization/formats.ts:29](https://github.com/dice-roller/rpg
 
 > `readonly` **maxTotal**: `number`
 
-Defined in: [src/serialization/formats.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L28)
+Defined in: [src/serialization/formats.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L28)
 
 ***
 
@@ -31,7 +31,7 @@ Defined in: [src/serialization/formats.ts:28](https://github.com/dice-roller/rpg
 
 > `readonly` **minTotal**: `number`
 
-Defined in: [src/serialization/formats.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L27)
+Defined in: [src/serialization/formats.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L27)
 
 ***
 
@@ -39,7 +39,7 @@ Defined in: [src/serialization/formats.ts:27](https://github.com/dice-roller/rpg
 
 > `readonly` **notation**: `string`
 
-Defined in: [src/serialization/formats.ts:24](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L24)
+Defined in: [src/serialization/formats.ts:24](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L24)
 
 ***
 
@@ -47,7 +47,7 @@ Defined in: [src/serialization/formats.ts:24](https://github.com/dice-roller/rpg
 
 > `readonly` **result**: [`ExpressionResult`](../type-aliases/ExpressionResult.md)
 
-Defined in: [src/serialization/formats.ts:25](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L25)
+Defined in: [src/serialization/formats.ts:25](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L25)
 
 ***
 
@@ -55,7 +55,7 @@ Defined in: [src/serialization/formats.ts:25](https://github.com/dice-roller/rpg
 
 > `readonly` **total**: `number`
 
-Defined in: [src/serialization/formats.ts:26](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L26)
+Defined in: [src/serialization/formats.ts:26](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L26)
 
 ***
 
@@ -63,7 +63,7 @@ Defined in: [src/serialization/formats.ts:26](https://github.com/dice-roller/rpg
 
 > `readonly` **type**: `"roll"`
 
-Defined in: [src/serialization/formats.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L22)
+Defined in: [src/serialization/formats.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L22)
 
 ***
 
@@ -71,4 +71,4 @@ Defined in: [src/serialization/formats.ts:22](https://github.com/dice-roller/rpg
 
 > `readonly` **version**: `1`
 
-Defined in: [src/serialization/formats.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/serialization/formats.ts#L23)
+Defined in: [src/serialization/formats.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L23)

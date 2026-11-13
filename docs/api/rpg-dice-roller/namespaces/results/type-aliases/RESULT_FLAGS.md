@@ -4,7 +4,7 @@
 
 > **RESULT\_FLAGS** = readonly \[`"explode"`, `"compound"`, `"penetrate"`, `"re-roll"`, `"re-roll-once"`, `"drop"`, `"max"`, `"min"`, `"target-success"`, `"target-failure"`, `"critical-success"`, `"critical-failure"`, `"unique"`, `"unique-once"`\]
 
-Defined in: [src/results/flags.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/4b6c846f31da769d86e89e9b9109f7e33185c28e/src/results/flags.ts#L6)
+Defined in: [src/results/flags.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/flags.ts#L6)
 
 Semantic flags recording what happened to a die or group member.
 
