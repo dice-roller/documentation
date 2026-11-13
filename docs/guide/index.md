@@ -78,7 +78,7 @@ See the [API reference](../api/index.md) for the available extension points.
 
 By default, rolls use JavaScript’s `Math.random()` through the library’s random engine.
 
-You can [supply a different engine](customisation.md#random-number-generator) when you need another source of randomness, or use a seeded engine to reproduce the same sequence of rolls. This can be useful for testing, debugging and repeatable game scenarios.
+You can [supply a different engine](customisation/index.md#random-number-generator) when you need another source of randomness, or use a seeded engine to reproduce the same sequence of rolls. This can be useful for testing, debugging and repeatable game scenarios.
 
 
 ## Environment support

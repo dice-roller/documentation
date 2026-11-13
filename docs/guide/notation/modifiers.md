@@ -30,7 +30,7 @@ For example, [Explode](#explode) has an order of `3`, while [Drop](#drop) has an
 4d6d1!
 ```
 
-Changing their position in the notation does not change their execution order. You can [customise the modifier execution order](../customisation.md#modifier-execution-order) if your game requires different behaviour.
+Changing their position in the notation does not change their execution order. You can [customise the modifier execution order](../customisation/index.md#modifier-execution-order) if your game requires different behaviour.
 :::
 
 ::: tip Missing a modifier?
