@@ -4,9 +4,7 @@ outline: 2
 
 # Presenters
 
-Presenters control how rolls are displayed. They turn an existing roll, roll history or evaluated expression into output such as plain text, SVG or a format of your own.
-
-The default is the built-in text presenter, which is used on the dice rollers throughout this documentation:
+A presenter formats your rolls for display. The library uses the text presenter automatically, so you can call `present()` without any extra setup:
 
 ```javascript
 const roll = new Roll('2d6+3');
@@ -15,15 +13,17 @@ console.log(roll.present());
 // e.g. 2d6+3: [4, 2]+3 = 9
 ```
 
+This is the same text output used by the dice rollers throughout this documentation:
+
 ::: roller 2d6+3 :::
 
-Presenting a roll reads its existing results. You can display the same roll in several ways without rolling the dice again or changing its total.
+**You only need to choose a presenter if you want to change the output.** For example, you might want different labels for dropped dice, a graphical display, or a format designed for your application.
 
-## Using a presenter
+Presenters use the results you have already rolled. Changing how a roll is displayed does not roll the dice again or change its total.
 
-## @todo this needs to be more obvious that it's optional customisation and only necessary if you want to change how the default text presenter outputs the results
+## Changing the output
 
-Import the `presenters` namespace alongside the classes you need:
+To customise the text output, load `presenters` alongside the classes you use:
 
 :::tabs key:module-type variant:code
 
@@ -47,19 +47,18 @@ const { Roll, Roller, presenters } = rpgDiceRoller;
 
 :::
 
-Optional presenters supplied by separate packages have their own imports. See [First-party presenters](#first-party-presenters) below.
+### Change one display
 
-### For a single call
-
-Pass a presenter to `present()`:
+Create a presenter with the options you want, then pass it to `present()`. This example replaces the `d` marker on dropped dice with a label:
 
 ```javascript
-const roll = new Roll('4d6kh3');
 const presenter = new presenters.TextPresenter({
   flagSymbols: {
     drop: ' (dropped)',
   },
 });
+
+const roll = new Roll('4d6kh3');
 
 console.log(roll.present(presenter));
 // e.g. 4d6kh3: [1 (dropped), 4, 5, 6] = 15
@@ -68,19 +67,14 @@ console.log(roll.present());
 // e.g. 4d6kh3: [1d, 4, 5, 6] = 15
 ```
 
-This uses the supplied presenter for that call only. Later calls without an argument use the roll's configured presenter.
+Passing a presenter changes that call only. Here, calling `present()` again without an argument gives the usual text output.
 
-### As the configured presenter
+### Reuse your choice
 
-Set the `presenter` option when creating a `Roll`:
+If you want a roll to use your presenter whenever you call `present()`, pass it in the roll options:
 
 ```javascript
-const presenter = new presenters.TextPresenter({
-  flagSymbols: {
-    drop: ' (dropped)',
-  },
-});
-
+// Use the presenter created above.
 const roll = new Roll('4d6kh3', { presenter });
 
 console.log(roll.present());
@@ -89,7 +83,7 @@ console.log(roll.present());
 
 The same option works with the [`roll()` shorthand](../usage/index.md#the-roll-shorthand).
 
-For a `Roller`, the configured presenter is used by both the roller and the rolls it creates:
+For a history of rolls, pass your presenter to `Roller`. This example puts each roll on a separate line:
 
 ```javascript
 const presenter = new presenters.TextPresenter({
@@ -109,57 +103,58 @@ console.log(roller.present());
 //      2d6+3: [4, 2]+3 = 9
 ```
 
-`roller.present()` displays the entire history. Pass a presenter to override it for one call, just as with a single roll.
+The roller and the rolls it creates share your choice of presenter. You can still pass a different presenter to any `present()` call.
 
 ::: tip String conversion
-`toString()`, `String(roll)` and template literals always use the default text presenter, even when you configure another presenter.
-
-Use `present()` to get your chosen output.
+Use `present()` for your chosen output. `toString()`, `String(roll)` and template literals always use the default text presenter.
 :::
 
-### Presenting results directly
+## First-party presenters
 
-A presenter's own `present()` method accepts a roll, a `RollHistory`, or an evaluated expression result:
+### Text presenter
 
-```javascript
-const presenter = new presenters.TextPresenter();
-const roll = new Roll('2d6+3');
+The text presenter is included with the library and used automatically. You do not need to import or create a `TextPresenter` unless you want to customise it.
 
-console.log(presenter.present(roll));
-// e.g. 2d6+3: [4, 2]+3 = 9
+It displays the notation, individual dice values, modifier markers and total:
 
-console.log(presenter.present(roll.result));
-// e.g. [4, 2]+3
+```text
+4d6kh3: [1d, 4, 5, 6] = 15
 ```
 
-For the text presenter, an expression result is displayed without the notation prefix or total.
+When creating your own instance, you can change these options:
 
-You can also use `roller.history.present(presenter)`. Calling `roller.history.present()` without an argument uses the default text presenter; use `roller.present()` to use the roller's configured presenter.
+| Option | Default | What it changes |
+| --- | --- | --- |
+| `flagSymbols` | Built-in modifier markers, such as `d` for dropped dice. | Replace individual markers, or use `''` to hide one. |
+| `separator` | `'; '` | The text between rolls when displaying a history. |
+
+Markers you do not override keep their defaults. The full set is available as `presenters.DEFAULT_FLAG_SYMBOLS`.
+
+See [Changing the output](#changing-the-output) for examples, or the [TextPresenter API](../../api/rpg-dice-roller/namespaces/presenters/classes/TextPresenter.md) for more detail.
+
+### SVG presenter
+
+The SVG presenter will display rolls as scalable dice graphics. It is being developed in the separate [Dice Roller Presenters](https://github.com/dice-roller/presenters) project.
+
+It uses the same roll results as the text presenter, so you can show a roll as text or graphics without rolling again.
+
+::: info In development
+The SVG presenter is not yet published. Installation instructions and usage examples will be added here when it is available.
+:::
 
 ## Writing your own presenter
 
-A presenter can be a plain object or a class instance. It needs one method:
+If the available presenters do not give you the output you need, you can write your own.
 
-```typescript
-interface Presenter<T = string> {
-  present(target: Presentable): T;
-}
-```
+A presenter can be a plain object or a class. It just needs a `present(target)` method that returns the output you want.
 
-`Presentable` is a roll, a roll history or an evaluated expression result. An individual die result is not a `Presentable`.
+### Start with a simple format
 
-Your output can be any type: a string, a DOM element, an object, or whatever your application needs. TypeScript's `Presenter<T>` interface describes that output type.
+This presenter displays only the total:
 
-### A simple presenter
-
-This presenter displays only the total. It handles all three kinds of input:
-
-```typescript
-import { Roll, Roller, presenters } from '@dice-roller/rpg-dice-roller';
-import type { Presentable, Presenter } from '@dice-roller/rpg-dice-roller';
-
-const totalPresenter: Presenter<string> = {
-  present(target: Presentable): string {
+```javascript
+const totalPresenter = {
+  present(target) {
     if (presenters.isRollHistory(target)) {
       return `Combined total: ${target.total}`;
     }
@@ -172,30 +167,31 @@ const totalPresenter: Presenter<string> = {
   },
 };
 
-const roll = new Roll('2d6+3', { presenter: totalPresenter });
+const roll = new Roll('2d6+3');
 
-console.log(roll.present());
+console.log(roll.present(totalPresenter));
 // e.g. Total: 9
-
-const roller = new Roller({ presenter: totalPresenter });
-roller.roll('d6');
-roller.roll('d8');
-
-console.log(roller.present());
-// e.g. Combined total: 10
 ```
 
-For JavaScript, omit the type-only import and type annotations.
+The method can receive three kinds of input:
 
-The `isRoll()`, `isRollHistory()` and `isExpressionResult()` helpers distinguish presenter inputs. They are intended for these library objects, rather than validating arbitrary external data.
+| Input | When it is used |
+| --- | --- |
+| A `Roll` | When you call `roll.present(presenter)`. |
+| A `RollHistory` | When you call `roller.present(presenter)`. |
+| An evaluated expression result | When you pass a result directly to `presenter.present(result)`. |
 
-Treat the supplied results as read-only. A presenter should format the values already calculated by the roller.
+The `isRollHistory()` and `isRoll()` helpers let the example handle each kind. After those checks, the remaining input is an expression result, whose calculated value is `value`.
 
-### Adapting the text presenter
+You can use your presenter in the [roll options](#reuse-your-choice) too. Its output can be a string, a DOM element or another type that suits your application.
 
-For changes to plain text output, first check the [text presenter options](#text-presenter). You can also extend `TextPresenter` to change a particular part of its output while retaining the rest.
+For TypeScript, the library exports `Presenter<T>` and `Presentable` types. Use `Presenter<string>` for a presenter that returns text; `Presentable` covers the three inputs above.
 
-For example, this adds the die notation before each value:
+### Change part of the text output
+
+For small changes, check the [text presenter options](#text-presenter) first. To change more of the format, extend `TextPresenter` and replace the method for the part you want to display differently.
+
+This TypeScript example adds the die notation before each value:
 
 ```typescript
 import { Roll, presenters } from '@dice-roller/rpg-dice-roller';
@@ -216,76 +212,29 @@ console.log(roll.present(new LabelledTextPresenter()));
 // e.g. 2d6+3: [d6: 4, d6: 2]+3 = 9
 ```
 
-### Formatting the result tree
+Calling `super.die()` keeps the usual value and modifier markers, then the new method adds a label.
 
-For a presenter that needs to display individual dice, groups and maths in a different format, extend `presenters.TreePresenter<T>`.
+### Build a different format
 
-It dispatches each input to a method that you implement:
+For a format that lays out individual dice, groups and maths differently, use `presenters.TreePresenter<T>` as a starting point.
 
-| Method | Handles |
+It provides `present()` and selects the method for each kind of result. Your subclass implements these methods:
+
+| Method | What to display |
 | --- | --- |
-| `history(history)` | A roll history. |
-| `roll(roll)` | A complete roll. |
-| `number(result)` | A numeric literal. |
-| `pool(result)` | A pool of dice, such as `2d6`. |
-| `die(result, pool)` | An individual die and its containing pool. |
+| `history(history)` | The rolls in a history. |
+| `roll(roll)` | A complete roll, including its notation and total. |
+| `number(result)` | A number in the notation. |
+| `pool(result)` | A set of dice, such as `2d6`. |
+| `die(result, pool)` | One die in that set. |
 | `group(result)` | A roll group. |
 | `binary(result)` | An operation such as addition or multiplication. |
-| `unary(result)` | A unary operation such as negation. |
+| `unary(result)` | An operation such as negation. |
 | `paren(result)` | A parenthesised expression. |
 | `fn(result)` | A maths function. |
 
-Your methods control how the tree is traversed. Call `this.visit(childResult)` to format a nested expression. In `pool()`, call `this.die(dieResult, poolResult)` for each die you want to display; individual dice are not dispatched automatically.
+Call `this.visit(childResult)` to format a nested expression. For example, `roll()` would usually include `this.visit(roll.result)` alongside the notation and total. In `pool()`, call `this.die(dieResult, poolResult)` for each die; this step is not automatic.
 
-For example, a `roll()` implementation would usually combine `roll.notation`, `this.visit(roll.result)` and `roll.total`.
+Use the stored results and totals when formatting output. Modifier flags describe effects such as exploding or dropping, and scoring can differ from the value shown on a die. A dropped group member also excludes its nested dice from the final total.
 
-When displaying modifier effects, use the result data:
-
-* `value` is the value after modifiers.
-* `initialValue` on an individual die is its original rolled value.
-* `calculationValue` is its score before exclusion, which can differ from the displayed value for target successes or failures.
-* `useInTotal` indicates whether the die or group member contributes to its containing total.
-* `flags` identify effects such as exploding, dropping or a target success.
-
-Group members have their own scoring and inclusion state. If a whole group member is dropped, its nested dice may still have `useInTotal: true`; account for the enclosing member when showing whether those dice contribute to the final total.
-
-Use the calculated totals rather than adding displayed dice values yourself.
-
-See the [TreePresenter API](../../api/rpg-dice-roller/namespaces/presenters/classes/TreePresenter.md) and [result types](../../api/rpg-dice-roller/namespaces/results/index.md) for the available methods and properties.
-
-## First-party presenters
-
-### Text presenter
-
-`presenters.TextPresenter` is included in `@dice-roller/rpg-dice-roller` and used by default. It displays the notation, dice values, modifier symbols and total as plain text.
-
-You can customise its modifier symbols and the separator between rolls in a history:
-
-```javascript
-const presenter = new presenters.TextPresenter({
-  flagSymbols: {
-    drop: ' (dropped)',
-    explode: ' (exploded)',
-  },
-  separator: '\n',
-});
-```
-
-| Option | Default | Purpose |
-| --- | --- | --- |
-| `flagSymbols` | Built-in modifier symbols. | Override individual symbols. Set a symbol to `''` to hide it. |
-| `separator` | `'; '` | Separate rolls when presenting a history. |
-
-Unspecified symbols retain their defaults. The defaults are also available as `presenters.DEFAULT_FLAG_SYMBOLS`.
-
-See the [TextPresenter API](../../api/rpg-dice-roller/namespaces/presenters/classes/TextPresenter.md) for more detail.
-
-### SVG presenter
-
-An SVG presenter is being developed to display rolls as scalable dice graphics.
-
-It lives in the separate [Dice Roller Presenters](https://github.com/dice-roller/presenters) project and reads the same evaluated results as the text presenter.
-
-::: info In development
-The SVG presenter is not yet published. Installation instructions and usage examples will be added here when it is available.
-:::
+See the [TreePresenter API](../../api/rpg-dice-roller/namespaces/presenters/classes/TreePresenter.md) and [result types](../../api/rpg-dice-roller/namespaces/results/index.md) when building a presenter that needs this detail.
