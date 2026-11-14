@@ -2,7 +2,7 @@
 
 Add descriptions to your [dice](dice.md) and [roll groups](roll-groups.md) to identify what they represent, such as an attack, a damage type or a skill check.
 
-Descriptions are labels only. They do not affect the results, and any dice notation inside them is treated as text.
+Descriptions are labels only. They do not affect the results, and any dice notation inside them is treated as text. If you want to change how descriptions are displayed, see [Presenters](../customisation/presenters.md).
 
 You can use either inline or block descriptions.
 

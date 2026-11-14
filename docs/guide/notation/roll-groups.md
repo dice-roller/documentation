@@ -77,7 +77,7 @@ Here, [Keep](modifiers.md#keep) first selects the highest three results from `4d
 ::: warning Modifier order
 Each sub-roll is evaluated, including its own modifiers, before the group modifiers are applied.
 
-Group modifiers follow the same [execution-order rules](modifiers.md) as dice modifiers. By default, [Keep](#keep) runs before [Drop](#drop), followed by [Target Success and Target Failure](#target-success-dice-pool), then [Sort](#sort).
+Group modifiers follow the same [execution-order rules](../customisation/modifiers.md#modifier-execution-order) as dice modifiers. By default, [Keep](#keep) runs before [Drop](#drop), followed by [Target Success and Target Failure](#target-success-dice-pool), then [Sort](#sort).
 
 Their position in the notation does not change this order.
 :::

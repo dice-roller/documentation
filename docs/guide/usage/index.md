@@ -54,7 +54,7 @@ console.log(roll.present());
 
 Creating a `Roll` parses the notation, rolls the dice and applies any modifiers immediately.
 
-The resulting object contains the total and individual results. Calling `present()` formats the roll for display; it does not roll the dice again.
+The resulting object contains the total and individual results. Calling [`present()`](../customisation/presenters.md) formats the roll for display; it does not roll the dice again.
 
 See [Getting started](../getting-started.md) for installation and browser setup. The Browser (UMD) examples assume the bundle has already been loaded. Browser applications using ES modules can follow the ESM examples with the appropriate import path.
 
@@ -229,13 +229,13 @@ All options are optional:
 
 | Option | Purpose |
 | --- | --- |
-| `engine` | Choose the source of randomness. |
-| `dice` | Supply a registry of dice definitions. |
-| `modifiers` | Supply a registry of modifier handlers. |
-| `presenter` | Choose how `present()` formats results. |
-| `limits` | Set limits on dice quantities and repeating modifiers. |
+| `engine` | [Choose the source of randomness](../customisation/random-number-generator.md). |
+| `dice` | [Supply a registry of dice definitions](../customisation/dice.md). |
+| `modifiers` | [Supply a registry of modifier handlers](../customisation/modifiers.md). |
+| `presenter` | [Choose how `present()` formats results](../customisation/presenters.md). |
+| `limits` | [Set limits](#roll-limits) on dice quantities and repeating modifiers. |
 
-The built-in dice, modifiers and text presenter are used unless you supply alternatives. See [Customisation](../customisation/index.md) for details.
+The built-in dice, modifiers and text presenter are used unless you supply alternatives. Follow the links above to learn how to customise each option.
 
 ### Roll limits
 

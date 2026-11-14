@@ -34,7 +34,8 @@ features:
     alt: Scroll and quill
     width: 48
     height: 48
-  details: Use the roll total or inspect the individual dice. Build a presenter plugin to format the results for your app, chat bot or virtual tabletop.
+  details: Use the roll total or inspect the individual dice. Create a presenter to format the results for your app, chat bot or virtual tabletop.
+  link: /guide/customisation/presenters
 ---
 
 ## Try me
