@@ -32,7 +32,7 @@ jobs:
                 github.event.pull_request.number && format('/pr-{0}', github.event.pull_request.number) || '') }}
       DOCS_PREVIEW: >-
         ${{ (github.event_name != 'push' || (github.ref != 'refs/heads/main' && github.ref != 'refs/heads/next' && !startsWith(github.ref, 'refs/heads/versions/')))
-            && (github.event.pull_request.number && format('PR #{0} preview', github.event.pull_request.number) || 'Staging')
+            && (github.event.pull_request.number && format('PR #{0}', github.event.pull_request.number) || 'Staging')
             || '' }}
       DOCS_BRANCH: ${{ github.head_ref || github.ref_name }}
       DOCS_REPO: ${{ github.repository }}
