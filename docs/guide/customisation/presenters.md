@@ -246,14 +246,17 @@ import { Roll, presenters } from '@dice-roller/rpg-dice-roller';
 
 class DiceListPresenter extends presenters.TreePresenter {
   history(history) {
+    // Call roll() directly for each roll in the history.
     return history.rolls.flatMap((roll) => this.roll(roll));
   }
 
   roll(roll) {
+    // Visit the top-level expression: binary() for the multiplication in '(2d6+3)*2'.
     return this.visit(roll.result);
   }
 
   pool(result) {
+    // Call die() directly for each die; visit() does not dispatch individual dice.
     return result.rolls.flatMap((die) => this.die(die, result));
   }
 
@@ -262,16 +265,32 @@ class DiceListPresenter extends presenters.TreePresenter {
   }
 
   binary(result) {
+    // Visit both operands, selecting a method from each operand's result type.
+    // For '(2d6+3)*2': paren() on the left, number() on the right.
+    // For '2d6+3': pool() on the left, number() on the right.
     return [...this.visit(result.left), ...this.visit(result.right)];
   }
 
   group(result) {
+    // Visit each member's expression: e.g. pool() for a member containing '2d6'.
     return result.members.flatMap((member) => this.visit(member.result));
   }
 
-  unary(result) { return this.visit(result.operand); }
-  paren(result) { return this.visit(result.inner); }
-  fn(result) { return result.args.flatMap((arg) => this.visit(arg)); }
+  unary(result) {
+    // Visit the operand: e.g. pool() for the dice in '-2d6'.
+    return this.visit(result.operand);
+  }
+
+  paren(result) {
+    // Visit the expression inside parentheses: binary() for '2d6+3' in this example.
+    return this.visit(result.inner);
+  }
+
+  fn(result) {
+    // Visit each function argument: e.g. pool() then number() for 'max(2d6, 3)'.
+    return result.args.flatMap((arg) => this.visit(arg));
+  }
+
   number() { return []; }
 }
 
