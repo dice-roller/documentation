@@ -15,6 +15,12 @@ Install the library using your preferred package manager:
 npm install @dice-roller/rpg-dice-roller
 ```
 
+== pnpm
+
+```bash
+pnpm add @dice-roller/rpg-dice-roller
+```
+
 == Yarn
 
 ```bash
