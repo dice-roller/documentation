@@ -39,10 +39,8 @@ You’ll need Node.js and npm. Use the latest Node.js LTS release, which is also
 
 Fork the [library repository](https://github.com/dice-roller/rpg-dice-roller) and create a branch for your changes.
 
-Choose the base branch that matches your contribution:
-
-* `develop` — fixes and improvements for the current released major version.
-* `next` — development of the next major version.
+* `main` is the default branch. Create feature branches from `main` using the format `feature/name`, for example `feature/fix-exploding-dice`.
+* `next` is for changes that are not ready for release, typically work on the next major version. If your contribution is for this work, branch from `next` instead.
 
 Open your pull request against the branch you started from. If you’re unsure which branch to use, ask in the related issue or discussion.
 
