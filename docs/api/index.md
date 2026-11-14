@@ -27,6 +27,7 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 
 | Class | Description |
 | ------ | ------ |
+| [EngineRegistry](classes/EngineRegistry.md) | Factories for built-in and custom random engines. |
 | [Evaluator](classes/Evaluator.md) | Walks the AST and builds the result tree. |
 | [Parser](classes/Parser.md) | Parses dice notation into the AST. |
 | [Roll](classes/Roll.md) | One evaluated notation: the result tree and its totals. |
@@ -38,12 +39,13 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 
 | Interface | Description |
 | ------ | ------ |
+| [EngineDefinition](interfaces/EngineDefinition.md) | A named engine, optionally initialized with a signed 32-bit seed. |
 | [EvaluatorRegistries](interfaces/EvaluatorRegistries.md) | Registries used to resolve dice and modifier handlers during evaluation. |
 | [HistoryData](interfaces/HistoryData.md) | A roll history. |
 | [NumberGenerator](interfaces/NumberGenerator.md) | Generates numbers in a range from a `RandomEngine`. |
 | [ParserOptions](interfaces/ParserOptions.md) | Options for parsing notation. |
 | [Presenter](interfaces/Presenter.md) | Turns a roll, a roll history, or a result node into any output, e.g. text, HTML or Markdown. |
-| [RandomEngine](interfaces/RandomEngine.md) | A source of randomness. |
+| [RandomEngine](interfaces/RandomEngine.md) | A source of uniformly distributed signed 32-bit integers. |
 | [RollContext](interfaces/RollContext.md) | Everything that changes per roll but isn't part of the notation. |
 | [RollData](interfaces/RollData.md) | A roll, with its result tree and totals. |
 | [RollLimits](interfaces/RollLimits.md) | Safety limits for a single roll. |
@@ -59,6 +61,8 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 | [EncodedHistoryData](type-aliases/EncodedHistoryData.md) | An exported roll history: JSON-safe, with non-finite numbers tagged. |
 | [EncodedNumber](type-aliases/EncodedNumber.md) | A number in exported data: a finite number as it is, otherwise a tag, e.g. `{ "$number": "Infinity" }`, so it survives JSON (which would turn it into `null`). |
 | [EncodedRollData](type-aliases/EncodedRollData.md) | An exported roll: JSON-safe, with non-finite numbers tagged. |
+| [EngineFactory](type-aliases/EngineFactory.md) | Creates a fresh engine, optionally initialized with a signed 32-bit seed. |
+| [EngineOption](type-aliases/EngineOption.md) | An engine selected by name, supplied as an instance, or defined with an optional seed. |
 | [ExportFormat](type-aliases/ExportFormat.md) | A supported export format. |
 | [ExpressionNode](type-aliases/ExpressionNode.md) | Any node that evaluates to a number. |
 | [ExpressionResult](type-aliases/ExpressionResult.md) | A result for an expression node; individual dice and group members are nested within it. |

@@ -2,13 +2,9 @@
 
 # Interface: RandomEngine
 
-Defined in: [src/random/RandomEngine.ts:8](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/random/RandomEngine.ts#L8)
+Defined in: [src/random/RandomEngine.ts:2](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/random/RandomEngine.ts#L2)
 
-A source of randomness.
-
-The same shape as random-js's `Engine`, so `nativeMath`, `nodeCrypto`, `browserCrypto` and
-`MersenneTwister19937.seed(n)` can be used directly as the `engine` option of a `Roll` or
-`Roller`. Use separately seeded engine instances for reproducible independent sequences.
+A source of uniformly distributed signed 32-bit integers.
 
 ## Methods
 
@@ -16,9 +12,9 @@ The same shape as random-js's `Engine`, so `nativeMath`, `nodeCrypto`, `browserC
 
 > **next**(): `number`
 
-Defined in: [src/random/RandomEngine.ts:10](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/random/RandomEngine.ts#L10)
+Defined in: [src/random/RandomEngine.ts:4](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/random/RandomEngine.ts#L4)
 
-Returns a 32-bit integer.
+Returns a uniformly distributed signed 32-bit integer.
 
 #### Returns
 

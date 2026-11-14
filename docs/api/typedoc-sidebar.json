@@ -472,35 +472,13 @@
         "collapsible": true,
         "children": [
           {
-            "text": "Classes",
-            "link": null,
-            "collapsible": true,
-            "children": [
-              {
-                "text": "MersenneTwister19937",
-                "link": "/api/rpg-dice-roller/namespaces/engines/classes/MersenneTwister19937.md",
-                "collapsible": true
-              }
-            ]
-          },
-          {
             "text": "Variables",
             "link": null,
             "collapsible": true,
             "children": [
               {
-                "text": "browserCrypto",
-                "link": "/api/rpg-dice-roller/namespaces/engines/variables/browserCrypto.md",
-                "collapsible": true
-              },
-              {
                 "text": "nativeMath",
                 "link": "/api/rpg-dice-roller/namespaces/engines/variables/nativeMath.md",
-                "collapsible": true
-              },
-              {
-                "text": "nodeCrypto",
-                "link": "/api/rpg-dice-roller/namespaces/engines/variables/nodeCrypto.md",
                 "collapsible": true
               }
             ]
@@ -891,6 +869,11 @@
     "collapsible": true,
     "children": [
       {
+        "text": "EngineRegistry",
+        "link": "/api/classes/EngineRegistry.md",
+        "collapsible": true
+      },
+      {
         "text": "Evaluator",
         "link": "/api/classes/Evaluator.md",
         "collapsible": true
@@ -927,6 +910,11 @@
     "link": null,
     "collapsible": true,
     "children": [
+      {
+        "text": "EngineDefinition",
+        "link": "/api/interfaces/EngineDefinition.md",
+        "collapsible": true
+      },
       {
         "text": "EvaluatorRegistries",
         "link": "/api/interfaces/EvaluatorRegistries.md",
@@ -1012,6 +1000,16 @@
       {
         "text": "EncodedRollData",
         "link": "/api/type-aliases/EncodedRollData.md",
+        "collapsible": true
+      },
+      {
+        "text": "EngineFactory",
+        "link": "/api/type-aliases/EngineFactory.md",
+        "collapsible": true
+      },
+      {
+        "text": "EngineOption",
+        "link": "/api/type-aliases/EngineOption.md",
         "collapsible": true
       },
       {

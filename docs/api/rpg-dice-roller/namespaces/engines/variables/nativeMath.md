@@ -2,8 +2,6 @@
 
 # Variable: nativeMath
 
-> `const` **nativeMath**: `Engine`
+> `const` **nativeMath**: [`RandomEngine`](../../../../interfaces/RandomEngine.md)
 
-Defined in: node\_modules/random-js/dist/engine/nativeMath.d.ts:5
-
-An int32-producing Engine that uses `Math.random()`
+Defined in: [src/random/builtInEngines.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/random/builtInEngines.ts#L71)
