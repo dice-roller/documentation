@@ -105,15 +105,12 @@ unknowingly working on the same thing.
 The code is stored in a Git repository. To get started
 either [clone or fork the repository](https://github.com/dice-roller/rpg-dice-roller).
 
-Make sure that you check out the `develop` branch, or create a `feature` / `hotfix` branch for the task you're working
-on, and _not_ the `main` branch.
+Create a branch from `main` for your changes using the format `feature/name`, for example
+`feature/fix-exploding-dice`.
 
-::: warning
-You should **never** work directly on the `main` branch. You should work on either the `develop` branch or a `feature`
-branch.
+For changes that are not ready for release, typically work on the next major version, branch from `next` instead.
 
 See the [Branching model](#branching-model) section for more information.
-:::
 
 #### File structure
 
@@ -193,12 +190,8 @@ request explaining why you believe the failure is unrelated. A maintainer can re
 it's a false positive, or otherwise unrelated to your changes.
 :::
 
-::: warning
-You should **never** work directly on the `main` branch. Any pull requests on to `main` will, unfortunately, have to be
-rejected, and you'll have to re-create it on `develop`.
-
-See the [Branching model](#branching-model) section for more information.
-:::
+Open your pull request against the branch you started from: `main` for normal contributions, or `next` for work that
+is not ready for release. If you're unsure which branch to use, ask in the related issue or discussion.
 
 ## Styles and standards
 
@@ -206,13 +199,11 @@ See the [Branching model](#branching-model) section for more information.
 
 #### Branching model
 
-We use the [git-flow branching model](https://nvie.com/posts/a-successful-git-branching-model/).
-This means that there is always a `main` branch and a `develop` branch, and there may be other branches that follow the
-git-flow naming conventions.
+* `main` is the default branch. Create feature branches from `main` using the format `feature/name`.
+* `next` is for changes that are not ready for release, typically work on the next major version. If your contribution
+  is for this work, branch from `next` instead.
 
-* The `main` branch is the current latest release, and should _only be modified when making a release_.
-* The `develop` branch is where all the fun happens, and where we can work and make our changes (Although these should
-  generally be done on a feature branch).
+Make your changes on a feature branch and open a pull request against the branch you started from.
 
 #### Commit messages
 
