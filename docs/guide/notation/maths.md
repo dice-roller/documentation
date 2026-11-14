@@ -75,6 +75,19 @@ Expressions can also include dice rolls and mathematical functions. <Badge text=
 (max(d4,2))d6 // Roll a d4 and use its result as the quantity, with a minimum of two
 ```
 
+You can use [roll groups](roll-groups.md) too, including groups with modifiers:
+
+```javascript
+({d4+1, d6}kh1)d8 // Keep the higher sub-roll total and roll that many eight-sided dice
+2d({d6, d8}kh1+2) // Keep the higher sub-roll total, add 2, and use that number of sides for two dice
+```
+
+For example, in `({d4+1, d6}kh1)d8`, if the d4 rolls `2` and the d6 rolls `5`, the sub-roll totals are `3` and `5`. The group keeps `5`, so you then roll `5d8`.
+
+The expression for each quantity or number of sides is evaluated once. In `2d({d6, d8}kh1+2)`, if the group keeps `6`, you roll `2d8`; both dice use the same calculated number of sides.
+
+The calculated quantity and number of sides must be positive whole numbers. If an expression can produce a fraction, use a [rounding function](#rounding), for example `(floor(d6/2)+1)d8`.
+
 ::: roller 3d(2*6) :::
 
 ## Functions
