@@ -4,6 +4,6 @@
 
 > `const` **DEFAULT\_FLAG\_SYMBOLS**: `Readonly`\<`Record`\<[`ResultFlag`](../../results/type-aliases/ResultFlag.md), `string`\>\>
 
-Defined in: [src/presenters/TextPresenter.ts:24](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L24)
+Defined in: [src/presenters/TextPresenter.ts:43](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L43)
 
 Default flag symbols, e.g. `[6!, 2, 1d].
