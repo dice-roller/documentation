@@ -4,14 +4,20 @@
 
 > **reRoll**(`options?`): [`ReRollNode`](../interfaces/ReRollNode.md)
 
-Defined in: [src/ast/builders.ts:291](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L291)
+Defined in: [src/ast/builders.ts:296](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L296)
 
 Re-roll matching dice. `once` is the `ro` alias; numeric `limit: 1` has the same budget but
-retains `r1` notation. Limits count additional rolls per die and cannot exceed the context cap.
+retains `r1` notation. Limits count generations per die and cannot exceed the context cap;
+`amount` is the positive safe-integer number of replacement dice generated per match and defaults
+to 1.
 
 ## Parameters
 
 ### options?
+
+#### amount?
+
+`number`
 
 #### comparePoint?
 

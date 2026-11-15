@@ -4,7 +4,7 @@
 
 > `const` **uniqueHandler**: [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`UniqueNode`](../../ast/interfaces/UniqueNode.md)\>
 
-Defined in: [src/modifiers/handlers/unique.ts:21](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/unique.ts#L21)
+Defined in: [src/modifiers/handlers/unique.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/unique.ts#L22)
 
 `u`, `uo` and numeric limits: re-roll rolls whose value an earlier roll already has (optionally
 only those matching the compare point), replacing the value (the initial value is kept). The first
@@ -12,8 +12,9 @@ roll is never re-rolled.
 
 `u` repeats while the current value is a matching duplicate (up to its optional limit or
 `ctx.limits.maxIterations` per roll, default 1000, flag `unique`); `uo` re-rolls once (flag
-`unique-once`). Both can leave duplicates: the limit can be reached, or a replacement can fall
-outside the compare point.
+`unique-once`). Both can leave duplicates: a per-die limit can be reached, a replacement can fall
+outside the compare point, or the per-pool generated-roll budget can be spent. At the pool budget,
+the current value is kept and later items pass through unchanged.
 
 ## Throws
 

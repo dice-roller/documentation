@@ -52,7 +52,7 @@ Engine factories used to resolve names (default: the built-in engines).
 
 Defined in: [src/RollSettings.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L38)
 
-Safety limits: default `maxQty` 999 and `maxIterations` 1000; each must be a positive safe integer.
+Safety limits: `maxQty` 999, `maxIterations` 1000 and `maxGeneratedRolls` 1,000,000 generated rolls per pool/evaluation; each must be a positive safe integer. The generated-roll limit excludes initial dice and truncates repeating modifiers without throwing.
 
 ***
 

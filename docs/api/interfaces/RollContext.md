@@ -2,7 +2,7 @@
 
 # Interface: RollContext
 
-Defined in: [src/evaluator/RollContext.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L47)
+Defined in: [src/evaluator/RollContext.ts:54](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L54)
 
 Everything that changes per roll but isn't part of the notation.
 
@@ -12,7 +12,7 @@ Everything that changes per roll but isn't part of the notation.
 
 > `readonly` **generator**: [`NumberGenerator`](NumberGenerator.md)
 
-Defined in: [src/evaluator/RollContext.ts:48](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L48)
+Defined in: [src/evaluator/RollContext.ts:55](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L55)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/evaluator/RollContext.ts:48](https://github.com/dice-roller/rpg
 
 > `readonly` **limits**: [`RollLimits`](RollLimits.md)
 
-Defined in: [src/evaluator/RollContext.ts:50](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L50)
+Defined in: [src/evaluator/RollContext.ts:57](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L57)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/evaluator/RollContext.ts:50](https://github.com/dice-roller/rpg
 
 > `readonly` **mode**: [`RollMode`](../type-aliases/RollMode.md)
 
-Defined in: [src/evaluator/RollContext.ts:49](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L49)
+Defined in: [src/evaluator/RollContext.ts:56](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L56)

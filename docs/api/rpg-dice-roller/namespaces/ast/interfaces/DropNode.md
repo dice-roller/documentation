@@ -2,7 +2,7 @@
 
 # Interface: DropNode
 
-Defined in: [src/ast/nodes.ts:235](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L235)
+Defined in: [src/ast/nodes.ts:237](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L237)
 
 `d`, `dh`, `dl`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:235](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **end**: [`PoolEnd`](../type-aliases/PoolEnd.md)
 
-Defined in: [src/ast/nodes.ts:238](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L238)
+Defined in: [src/ast/nodes.ts:240](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L240)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:238](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"drop"`
 
-Defined in: [src/ast/nodes.ts:237](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L237)
+Defined in: [src/ast/nodes.ts:239](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L239)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/ast/nodes.ts:237](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **qty**: `number`
 
-Defined in: [src/ast/nodes.ts:239](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L239)
+Defined in: [src/ast/nodes.ts:241](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L241)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/ast/nodes.ts:239](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:236](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L236)
+Defined in: [src/ast/nodes.ts:238](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L238)

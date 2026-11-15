@@ -110,7 +110,7 @@ Defined in: [src/RollSettings.ts:58](https://github.com/dice-roller/rpg-dice-rol
 
 Defined in: [src/RollSettings.ts:120](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L120)
 
-Evaluates the AST in the given mode (default `random`); `min` and `max` select each die's extreme.
+Evaluates the AST in the given mode (default `random`); `min` and `max` select each die's extreme. Every evaluation starts a fresh generated-roll budget per pool; exhausting it returns the dice rolled so far.
 
 #### Parameters
 

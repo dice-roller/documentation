@@ -4,14 +4,19 @@
 
 > **explode**(`options?`): [`ExplodeNode`](../interfaces/ExplodeNode.md)
 
-Defined in: [src/ast/builders.ts:208](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L208)
+Defined in: [src/ast/builders.ts:209](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L209)
 
-Explode matching rolls. An optional positive safe-integer `limit` bounds additional rolls per
-initial die and is capped by the roll context's `maxIterations`.
+Explode matching rolls. An optional positive safe-integer `limit` bounds generations per
+initial die and is capped by the roll context's `maxIterations`; `amount` is the positive
+safe-integer number of child dice generated per match and defaults to 1.
 
 ## Parameters
 
 ### options?
+
+#### amount?
+
+`number`
 
 #### comparePoint?
 

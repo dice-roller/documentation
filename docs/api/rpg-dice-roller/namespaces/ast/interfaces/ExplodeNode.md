@@ -8,6 +8,16 @@ Defined in: [src/ast/nodes.ts:210](https://github.com/dice-roller/rpg-dice-rolle
 
 ## Properties
 
+### amount?
+
+> `readonly` `optional` **amount?**: `number`
+
+Defined in: [src/ast/nodes.ts:219](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L219)
+
+Number of child dice generated for each matching roll; omitted amounts use 1.
+
+***
+
 ### comparePoint?
 
 > `readonly` `optional` **comparePoint?**: [`ComparePoint`](ComparePoint.md)

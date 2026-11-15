@@ -4,7 +4,7 @@
 
 > **unique**(`options?`): [`UniqueNode`](../interfaces/UniqueNode.md)
 
-Defined in: [src/ast/builders.ts:309](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L309)
+Defined in: [src/ast/builders.ts:316](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L316)
 
 Re-roll duplicate dice. `once` is the `uo` alias; numeric `limit: 1` has the same budget but
 retains `u1` notation. Limits count additional rolls per die and cannot exceed the context cap.

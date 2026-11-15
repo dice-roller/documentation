@@ -146,6 +146,32 @@ not capture any frames.
 
 ## Methods
 
+### format()
+
+> **format**(): `string`
+
+Defined in: [src/errors/NotationError.ts:50](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/errors/NotationError.ts#L50)
+
+Formats a parser error with its source line and a caret pointing to the problem.
+The normal `message` is unchanged; use this method for a CLI or text interface.
+Manually constructed errors without a Peggy cause return their message unchanged.
+
+#### Returns
+
+`string`
+
+#### Example
+
+```ts
+try {
+  roller.parse("4de");
+} catch (error) {
+  if (error instanceof NotationError) console.error(error.format());
+}
+```
+
+***
+
 ### captureStackTrace()
 
 > `static` **captureStackTrace**(`targetObject`, `constructorOpt?`): `void`

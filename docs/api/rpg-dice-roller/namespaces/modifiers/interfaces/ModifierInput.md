@@ -46,12 +46,12 @@ The modifier node from the AST.
 
 ### rollDie?
 
-> `readonly` `optional` **rollDie?**: () => [`DieResult`](../../results/interfaces/DieResult.md)
+> `readonly` `optional` **rollDie?**: () => [`DieResult`](../../results/interfaces/DieResult.md) \| `undefined`
 
 Defined in: [src/modifiers/types.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L18)
 
-Rolls one more die of the pool (pools only), e.g. for explode and re-roll.
+Rolls one more die of the pool, or returns `undefined` when its per-pool budget is spent. Initial dice are excluded; repeating handlers must handle exhaustion and keep the results rolled so far.
 
 #### Returns
 
-[`DieResult`](../../results/interfaces/DieResult.md)
+[`DieResult`](../../results/interfaces/DieResult.md) \| `undefined`
