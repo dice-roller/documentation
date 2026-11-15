@@ -60,7 +60,7 @@ Powers are evaluated from right to left: `2^3^2` means `2^(3^2)`, giving `512`.
 
 ## Calculating quantities and sides
 
-You can use an expression to determine how many dice to roll or how many sides they have. Enclose the expression in parentheses:
+Use a parenthesised expression to determine how many dice to roll or how many sides they have. It can contain arithmetic, functions, dice, roll groups and nested inline rolls:
 
 ```javascript
 (4-2)d10 // Roll two ten-sided dice
@@ -70,9 +70,10 @@ You can use an expression to determine how many dice to roll or how many sides t
 Expressions can also include dice rolls and mathematical functions. <Badge text="New in v6" vertical="middle"/>
 
 ```javascript
-(d4+1)d6       // Roll a d4, add 1, then roll that many six-sided dice
+(d4+1)d6      // Roll a d4, add 1, then roll that many six-sided dice
 2d(d6+4)      // Roll a d6, add 4, then use that number of sides for two dice
 (max(d4,2))d6 // Roll a d4 and use its result as the quantity, with a minimum of two
+((d4)d6)d10   // Roll a d4 and use its result as the quantity of d6s, then use their total as the quantity of d10s
 ```
 
 You can use [roll groups](roll-groups.md) too, including groups with modifiers:
@@ -84,9 +85,13 @@ You can use [roll groups](roll-groups.md) too, including groups with modifiers:
 
 For example, in `({d4+1, d6}kh1)d8`, if the d4 rolls `2` and the d6 rolls `5`, the sub-roll totals are `3` and `5`. The group keeps `5`, so you then roll `5d8`.
 
-The expression for each quantity or number of sides is evaluated once. In `2d({d6, d8}kh1+2)`, if the group keeps `6`, you roll `2d8`; both dice use the same calculated number of sides.
+Each quantity and sides expression is evaluated once, before the outer pool is rolled. In `2d({d6, d8}kh1+2)`, if the group keeps `6`, you roll `2d8`; both dice use the same calculated number of sides. The dice used to calculate a parameter are not added again to the outer pool's total.
 
-The calculated quantity and number of sides must be positive whole numbers. If an expression can produce a fraction, use a [rounding function](#rounding), for example `(floor(d6/2)+1)d8`.
+The calculated quantity must be a whole number within the configured dice limit. A calculated quantity of `0` produces an empty pool with a total of `0`, as in `(1-1)d10`. The literal notation `0d10` is still invalid. Negative, fractional, non-finite, unsafe or over-limit quantities are rejected. If an expression can produce a fraction, use a [rounding function](#rounding), for example `(floor(d6/2)+1)d8`.
+
+The calculated number of sides must be a positive whole number; zero or negative sides are invalid.
+
+The minimum and maximum roll totals evaluate the notation in minimum or maximum mode; they do not enumerate every possible parameter combination and may fail if a parameter is invalid in that mode. Where possible, `averageTotal` uses the resolved quantity and die from the stored roll; otherwise it falls back to the midpoint of the mode-based minimum and maximum. With random parameters or non-linear maths, it is not necessarily a statistical mean across all possible rolls.
 
 ::: roller 3d(2*6) :::
 
