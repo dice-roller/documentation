@@ -4,7 +4,7 @@
 
 > **max**(`value`): [`MaxNode`](../interfaces/MaxNode.md)
 
-Defined in: [src/ast/builders.ts:350](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L350)
+Defined in: [src/ast/builders.ts:372](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L372)
 
 Cap die values at `value` with the built-in handler.
 

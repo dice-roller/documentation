@@ -4,7 +4,7 @@
 
 > **ModifierNodeOf**\<`N`\> = `Extract`\<[`ModifierNode`](ModifierNode.md), \{ `name`: `N`; \}\>
 
-Defined in: [src/ast/nodes.ts:198](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L198)
+Defined in: [src/ast/nodes.ts:213](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L213)
 
 The modifier node with the given name.
 

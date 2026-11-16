@@ -2,7 +2,7 @@
 
 # Interface: ComparePoint
 
-Defined in: [src/ast/nodes.ts:156](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L156)
+Defined in: [src/ast/nodes.ts:171](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L171)
 
 A comparison against a value, e.g. the `>=8` in `8d10>=8`.
 
@@ -12,7 +12,7 @@ A comparison against a value, e.g. the `>=8` in `8d10>=8`.
 
 > `readonly` **operator**: `"="` \| `"!="` \| `"<>"` \| `"<"` \| `">"` \| `"<="` \| `">="`
 
-Defined in: [src/ast/nodes.ts:157](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L157)
+Defined in: [src/ast/nodes.ts:172](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L172)
 
 ***
 
@@ -20,4 +20,4 @@ Defined in: [src/ast/nodes.ts:157](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **value**: `number`
 
-Defined in: [src/ast/nodes.ts:158](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L158)
+Defined in: [src/ast/nodes.ts:173](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L173)

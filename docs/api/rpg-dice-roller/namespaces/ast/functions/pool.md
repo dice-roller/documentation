@@ -4,7 +4,7 @@
 
 > **pool**(`qty`, `die`, `options?`): [`PoolNode`](../interfaces/PoolNode.md)
 
-Defined in: [src/ast/builders.ts:118](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L118)
+Defined in: [src/ast/builders.ts:122](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L122)
 
 A pool of dice, e.g. `pool(4, 6)` for `4d6`, or `pool(2, die("fib"))`.
 

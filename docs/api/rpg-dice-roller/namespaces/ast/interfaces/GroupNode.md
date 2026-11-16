@@ -2,7 +2,7 @@
 
 # Interface: GroupNode
 
-Defined in: [src/ast/nodes.ts:77](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L77)
+Defined in: [src/ast/nodes.ts:79](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L79)
 
 A roll group, e.g. `{4d6+2d8, 3d20}k1`.
 
@@ -12,7 +12,7 @@ A roll group, e.g. `{4d6+2d8, 3d20}k1`.
 
 > `readonly` `optional` **description?**: [`DescriptionNode`](DescriptionNode.md)
 
-Defined in: [src/ast/nodes.ts:81](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L81)
+Defined in: [src/ast/nodes.ts:83](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L83)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:81](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **expressions**: readonly [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)[]
 
-Defined in: [src/ast/nodes.ts:79](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L79)
+Defined in: [src/ast/nodes.ts:81](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L81)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/ast/nodes.ts:79](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **modifiers**: readonly [`ModifierNode`](../type-aliases/ModifierNode.md)[]
 
-Defined in: [src/ast/nodes.ts:80](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L80)
+Defined in: [src/ast/nodes.ts:82](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L82)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/ast/nodes.ts:80](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **type**: `"group"`
 
-Defined in: [src/ast/nodes.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L78)
+Defined in: [src/ast/nodes.ts:80](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L80)

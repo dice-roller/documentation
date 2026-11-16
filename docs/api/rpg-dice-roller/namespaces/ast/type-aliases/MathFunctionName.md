@@ -4,6 +4,6 @@
 
 > **MathFunctionName** = *typeof* [`MATH_FUNCTION_NAMES`](../variables/MATH_FUNCTION_NAMES.md)\[`number`\]
 
-Defined in: [src/ast/nodes.ts:129](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L129)
+Defined in: [src/ast/nodes.ts:131](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L131)
 
 A supported maths function name.

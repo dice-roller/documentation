@@ -13,6 +13,8 @@ Result types and helpers for inspecting evaluated expressions.
 | Interface | Description |
 | ------ | ------ |
 | [BinaryResult](interfaces/BinaryResult.md) | A binary operation and its evaluated operands. |
+| [ConditionalResult](interfaces/ConditionalResult.md) | A check and its one evaluated branch. |
+| [ConditionReferenceResult](interfaces/ConditionReferenceResult.md) | A resolved reference to the current branch's check. |
 | [DieResult](interfaces/DieResult.md) | A single die roll in a pool. |
 | [FunctionResult](interfaces/FunctionResult.md) | A maths function and its evaluated arguments. |
 | [GroupMemberResult](interfaces/GroupMemberResult.md) | One expression of a roll group, with scoring separate from its nested expression result. |

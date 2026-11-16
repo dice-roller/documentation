@@ -4,6 +4,6 @@
 
 > **BuiltInDieName** = *typeof* [`BUILT_IN_DIE_NAMES`](../variables/BUILT_IN_DIE_NAMES.md)\[`number`\]
 
-Defined in: [src/ast/nodes.ts:52](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L52)
+Defined in: [src/ast/nodes.ts:54](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L54)
 
 A built-in die factory name; registries can also contain custom names.

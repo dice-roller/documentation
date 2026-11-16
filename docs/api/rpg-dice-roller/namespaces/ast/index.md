@@ -14,6 +14,8 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | ------ | ------ |
 | [BinaryNode](interfaces/BinaryNode.md) | A binary maths operation, e.g. `2d6 + 3`. |
 | [ComparePoint](interfaces/ComparePoint.md) | A comparison against a value, e.g. the `>=8` in `8d10>=8`. |
+| [ConditionalNode](interfaces/ConditionalNode.md) | A conditional expression; `null` preserves the omitted true-branch shorthand. |
+| [ConditionReferenceNode](interfaces/ConditionReferenceNode.md) | A read-only reference to the current conditional's evaluated check. |
 | [CriticalFailureNode](interfaces/CriticalFailureNode.md) | `cf`. |
 | [CriticalSuccessNode](interfaces/CriticalSuccessNode.md) | `cs`. |
 | [DescriptionNode](interfaces/DescriptionNode.md) | A roll description. |
@@ -69,6 +71,8 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | ------ | ------ |
 | [binary](functions/binary.md) | A binary operation, e.g. `binary("+", pool(2, 6), 3)` for `2d6+3`. |
 | [compare](functions/compare.md) | A compare point, e.g. `compare(">=", 8)`. |
+| [conditional](functions/conditional.md) | A conditional expression, using `null` for the shorthand's omitted true branch. |
+| [conditionReference](functions/conditionReference.md) | A read-only reference to the evaluated check in the current conditional branch. |
 | [criticalFailure](functions/criticalFailure.md) | Flag critical failures using the supplied compare point or the handler default. |
 | [criticalSuccess](functions/criticalSuccess.md) | Flag critical successes using the supplied compare point or the handler default. |
 | [die](functions/die.md) | A reference to a die factory, e.g. `die("percentile")` for `d%`, or `die("range", -2, 3)`. Register custom names in the die registry used by the evaluator before rolling. Registration is not checked here; valid literal `range` and `face` dice use brace notation, while custom names and unsupported arguments have display-only notation. |

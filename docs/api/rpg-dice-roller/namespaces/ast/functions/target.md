@@ -6,7 +6,7 @@
 
 > **target**(`rules`): [`TargetNode`](../interfaces/TargetNode.md)
 
-Defined in: [src/ast/builders.ts:228](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L228)
+Defined in: [src/ast/builders.ts:250](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L250)
 
 A target block starts with a success and can contain further success or failure rules. Amounts are 1–10 and default to 1; the last matching rule wins.
 
@@ -24,7 +24,7 @@ readonly [`TargetRule`](../interfaces/TargetRule.md)[]
 
 > **target**(`success`, `failure?`): [`TargetNode`](../interfaces/TargetNode.md)
 
-Defined in: [src/ast/builders.ts:230](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L230)
+Defined in: [src/ast/builders.ts:252](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L252)
 
 Count successes and optional failures using unweighted compare points.
 

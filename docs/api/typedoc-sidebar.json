@@ -25,6 +25,16 @@
                 "collapsible": true
               },
               {
+                "text": "ConditionalNode",
+                "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ConditionalNode.md",
+                "collapsible": true
+              },
+              {
+                "text": "ConditionReferenceNode",
+                "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ConditionReferenceNode.md",
+                "collapsible": true
+              },
+              {
                 "text": "CriticalFailureNode",
                 "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/CriticalFailureNode.md",
                 "collapsible": true
@@ -243,6 +253,16 @@
               {
                 "text": "compare",
                 "link": "/api/rpg-dice-roller/namespaces/ast/functions/compare.md",
+                "collapsible": true
+              },
+              {
+                "text": "conditional",
+                "link": "/api/rpg-dice-roller/namespaces/ast/functions/conditional.md",
+                "collapsible": true
+              },
+              {
+                "text": "conditionReference",
+                "link": "/api/rpg-dice-roller/namespaces/ast/functions/conditionReference.md",
                 "collapsible": true
               },
               {
@@ -756,6 +776,16 @@
               {
                 "text": "BinaryResult",
                 "link": "/api/rpg-dice-roller/namespaces/results/interfaces/BinaryResult.md",
+                "collapsible": true
+              },
+              {
+                "text": "ConditionalResult",
+                "link": "/api/rpg-dice-roller/namespaces/results/interfaces/ConditionalResult.md",
+                "collapsible": true
+              },
+              {
+                "text": "ConditionReferenceResult",
+                "link": "/api/rpg-dice-roller/namespaces/results/interfaces/ConditionReferenceResult.md",
                 "collapsible": true
               },
               {

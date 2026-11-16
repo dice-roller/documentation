@@ -2,7 +2,7 @@
 
 # Interface: BinaryResult
 
-Defined in: [src/results/types.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L90)
+Defined in: [src/results/types.ts:94](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L94)
 
 A binary operation and its evaluated operands.
 
@@ -12,7 +12,7 @@ A binary operation and its evaluated operands.
 
 > `readonly` **left**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:94](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L94)
+Defined in: [src/results/types.ts:98](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L98)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:94](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **node**: [`BinaryNode`](../../ast/interfaces/BinaryNode.md)
 
-Defined in: [src/results/types.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L92)
+Defined in: [src/results/types.ts:96](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L96)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/results/types.ts:92](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **right**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:95](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L95)
+Defined in: [src/results/types.ts:99](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L99)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [src/results/types.ts:95](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **type**: `"binary"`
 
-Defined in: [src/results/types.ts:91](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L91)
+Defined in: [src/results/types.ts:95](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L95)
 
 ***
 
@@ -44,4 +44,4 @@ Defined in: [src/results/types.ts:91](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:93](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L93)
+Defined in: [src/results/types.ts:97](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L97)

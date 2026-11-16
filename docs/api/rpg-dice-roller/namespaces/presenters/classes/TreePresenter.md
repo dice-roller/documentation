@@ -2,7 +2,7 @@
 
 # Abstract Class: TreePresenter\<T\>
 
-Defined in: [src/presenters/TreePresenter.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L28)
+Defined in: [src/presenters/TreePresenter.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L33)
 
 A presenter with a hook per result type.
 
@@ -10,6 +10,9 @@ A presenter with a hook per result type.
 hook (via `visit()`). Subclasses implement the hooks and control traversal: call `visit()` for
 child results and `die()` from `pool()` for individual dice as needed. `die()` is not dispatched
 by `present()` or `visit()`; an individual die is not an `ExpressionResult`.
+For conditionals, visit `condition` and `selectedResult`; the unselected branch has no result.
+Direct subclasses must implement `conditional()` and `conditionReference()` as well as the
+other hooks. Subclasses of `TextPresenter` inherit implementations and can override them.
 
 ## Extended by
 
@@ -43,7 +46,7 @@ the output type
 
 > `abstract` `protected` **binary**(`result`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L69)
+Defined in: [src/presenters/TreePresenter.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L78)
 
 #### Parameters
 
@@ -57,11 +60,47 @@ Defined in: [src/presenters/TreePresenter.ts:69](https://github.com/dice-roller/
 
 ***
 
+### conditional()
+
+> `abstract` `protected` **conditional**(`result`): `T`
+
+Defined in: [src/presenters/TreePresenter.ts:82](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L82)
+
+#### Parameters
+
+##### result
+
+[`ConditionalResult`](../../results/interfaces/ConditionalResult.md)
+
+#### Returns
+
+`T`
+
+***
+
+### conditionReference()
+
+> `abstract` `protected` **conditionReference**(`result`): `T`
+
+Defined in: [src/presenters/TreePresenter.ts:83](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L83)
+
+#### Parameters
+
+##### result
+
+[`ConditionReferenceResult`](../../results/interfaces/ConditionReferenceResult.md)
+
+#### Returns
+
+`T`
+
+***
+
 ### die()
 
 > `abstract` `protected` **die**(`result`, `pool`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:67](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L67)
+Defined in: [src/presenters/TreePresenter.ts:76](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L76)
 
 #### Parameters
 
@@ -83,7 +122,7 @@ Defined in: [src/presenters/TreePresenter.ts:67](https://github.com/dice-roller/
 
 > `abstract` `protected` **fn**(`result`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:72](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L72)
+Defined in: [src/presenters/TreePresenter.ts:81](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L81)
 
 #### Parameters
 
@@ -101,7 +140,7 @@ Defined in: [src/presenters/TreePresenter.ts:72](https://github.com/dice-roller/
 
 > `abstract` `protected` **group**(`result`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:68](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L68)
+Defined in: [src/presenters/TreePresenter.ts:77](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L77)
 
 #### Parameters
 
@@ -119,7 +158,7 @@ Defined in: [src/presenters/TreePresenter.ts:68](https://github.com/dice-roller/
 
 > `abstract` `protected` **history**(`history`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:62](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L62)
+Defined in: [src/presenters/TreePresenter.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L71)
 
 #### Parameters
 
@@ -137,7 +176,7 @@ Defined in: [src/presenters/TreePresenter.ts:62](https://github.com/dice-roller/
 
 > `abstract` `protected` **number**(`result`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:65](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L65)
+Defined in: [src/presenters/TreePresenter.ts:74](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L74)
 
 #### Parameters
 
@@ -155,7 +194,7 @@ Defined in: [src/presenters/TreePresenter.ts:65](https://github.com/dice-roller/
 
 > `abstract` `protected` **paren**(`result`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L71)
+Defined in: [src/presenters/TreePresenter.ts:80](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L80)
 
 #### Parameters
 
@@ -173,7 +212,7 @@ Defined in: [src/presenters/TreePresenter.ts:71](https://github.com/dice-roller/
 
 > `abstract` `protected` **pool**(`result`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:66](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L66)
+Defined in: [src/presenters/TreePresenter.ts:75](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L75)
 
 #### Parameters
 
@@ -191,7 +230,7 @@ Defined in: [src/presenters/TreePresenter.ts:66](https://github.com/dice-roller/
 
 > **present**(`target`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:30](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L30)
+Defined in: [src/presenters/TreePresenter.ts:35](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L35)
 
 Dispatches a history, roll, or expression result to the corresponding hook.
 
@@ -215,7 +254,7 @@ Dispatches a history, roll, or expression result to the corresponding hook.
 
 > `abstract` `protected` **roll**(`roll`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:64](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L64)
+Defined in: [src/presenters/TreePresenter.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L73)
 
 Usually wraps `this.visit(roll.result)`.
 
@@ -235,7 +274,7 @@ Usually wraps `this.visit(roll.result)`.
 
 > `abstract` `protected` **unary**(`result`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:70](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L70)
+Defined in: [src/presenters/TreePresenter.ts:79](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L79)
 
 #### Parameters
 
@@ -253,7 +292,7 @@ Defined in: [src/presenters/TreePresenter.ts:70](https://github.com/dice-roller/
 
 > `protected` **visit**(`result`): `T`
 
-Defined in: [src/presenters/TreePresenter.ts:43](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L43)
+Defined in: [src/presenters/TreePresenter.ts:48](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L48)
 
 Presents a result node with the hook for its type.
 

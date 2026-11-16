@@ -8,6 +8,16 @@ Everything that changes per roll but isn't part of the notation.
 
 ## Properties
 
+### condition?
+
+> `readonly` `optional` **condition?**: `number`
+
+Defined in: [src/evaluator/RollContext.ts:59](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L59)
+
+The current branch's check, absent outside a conditional.
+
+***
+
 ### generator
 
 > `readonly` **generator**: [`NumberGenerator`](NumberGenerator.md)

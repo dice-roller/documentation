@@ -2,7 +2,7 @@
 
 # Interface: ScoredItem
 
-Defined in: [src/results/types.ts:21](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L21)
+Defined in: [src/results/types.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L23)
 
 A die roll or group member that modifier handlers can transform using the result helpers.
 
@@ -17,7 +17,7 @@ A die roll or group member that modifier handlers can transform using the result
 
 > `readonly` **calculationValue**: `number`
 
-Defined in: [src/results/types.ts:25](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L25)
+Defined in: [src/results/types.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L27)
 
 The value used in totals (e.g. `1` / `-1` / `0` for target successes / failures).
 
@@ -27,7 +27,7 @@ The value used in totals (e.g. `1` / `-1` / `0` for target successes / failures)
 
 > `readonly` **flags**: readonly (`"max"` \| `"min"` \| `"explode"` \| `"drop"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"compound"` \| `"penetrate"` \| `"re-roll-once"` \| `"target-success"` \| `"target-failure"` \| `"unique-once"`)[]
 
-Defined in: [src/results/types.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L29)
+Defined in: [src/results/types.ts:31](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L31)
 
 Semantic markers for presenters; setting a flag alone does not change the total.
 
@@ -37,7 +37,7 @@ Semantic markers for presenters; setting a flag alone does not change the total.
 
 > `readonly` **useInTotal**: `boolean`
 
-Defined in: [src/results/types.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L27)
+Defined in: [src/results/types.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L29)
 
 `false` when dropped (or otherwise excluded from the total).
 
@@ -47,6 +47,6 @@ Defined in: [src/results/types.ts:27](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L23)
+Defined in: [src/results/types.ts:25](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L25)
 
 The value after modifiers (e.g. after re-rolls, or `max` / `min`).

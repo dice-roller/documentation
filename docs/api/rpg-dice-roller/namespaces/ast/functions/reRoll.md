@@ -4,7 +4,7 @@
 
 > **reRoll**(`options?`): [`ReRollNode`](../interfaces/ReRollNode.md)
 
-Defined in: [src/ast/builders.ts:296](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L296)
+Defined in: [src/ast/builders.ts:318](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L318)
 
 Re-roll matching dice. `once` is the `ro` alias; numeric `limit: 1` has the same budget but
 retains `r1` notation. Limits count generations per die and cannot exceed the context cap;

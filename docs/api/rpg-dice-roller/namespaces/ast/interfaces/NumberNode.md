@@ -2,7 +2,7 @@
 
 # Interface: NumberNode
 
-Defined in: [src/ast/nodes.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L27)
+Defined in: [src/ast/nodes.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L29)
 
 A literal number, e.g. `4` or `-2.5`.
 
@@ -12,7 +12,7 @@ A literal number, e.g. `4` or `-2.5`.
 
 > `readonly` **type**: `"number"`
 
-Defined in: [src/ast/nodes.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L28)
+Defined in: [src/ast/nodes.ts:30](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L30)
 
 ***
 
@@ -20,4 +20,4 @@ Defined in: [src/ast/nodes.ts:28](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **value**: `number`
 
-Defined in: [src/ast/nodes.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L29)
+Defined in: [src/ast/nodes.ts:31](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L31)

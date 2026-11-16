@@ -4,7 +4,7 @@
 
 > **paren**(`expressionInput`): [`ParenNode`](../interfaces/ParenNode.md)
 
-Defined in: [src/ast/builders.ts:170](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L170)
+Defined in: [src/ast/builders.ts:174](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L174)
 
 A parenthesised expression.
 

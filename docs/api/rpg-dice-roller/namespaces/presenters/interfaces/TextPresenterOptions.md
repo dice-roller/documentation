@@ -2,7 +2,7 @@
 
 # Interface: TextPresenterOptions
 
-Defined in: [src/presenters/TextPresenter.ts:62](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L62)
+Defined in: [src/presenters/TextPresenter.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L69)
 
 Options for formatting flags and roll histories.
 
@@ -12,7 +12,7 @@ Options for formatting flags and roll histories.
 
 > `optional` **expandInlineRolls?**: `boolean`
 
-Defined in: [src/presenters/TextPresenter.ts:68](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L68)
+Defined in: [src/presenters/TextPresenter.ts:75](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L75)
 
 Shows stored dice results used to calculate pool quantities or sides (default `false`).
 
@@ -22,7 +22,7 @@ Shows stored dice results used to calculate pool quantities or sides (default `f
 
 > `optional` **flagSymbols?**: `Partial`\<`Record`\<`"max"` \| `"min"` \| `"explode"` \| `"drop"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"compound"` \| `"penetrate"` \| `"re-roll-once"` \| `"target-success"` \| `"target-failure"` \| `"unique-once"`, `string`\>\>
 
-Defined in: [src/presenters/TextPresenter.ts:64](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L64)
+Defined in: [src/presenters/TextPresenter.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L71)
 
 Overrides individual default flag symbols; an empty string suppresses a symbol.
 
@@ -32,6 +32,6 @@ Overrides individual default flag symbols; an empty string suppresses a symbol.
 
 > `optional` **separator?**: `string`
 
-Defined in: [src/presenters/TextPresenter.ts:66](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L66)
+Defined in: [src/presenters/TextPresenter.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L73)
 
 Joins the rolls of a history (default `"; "`; an empty string is allowed).
