@@ -113,7 +113,13 @@ Use `present()` for your chosen output. `toString()`, `String(roll)` and templat
 
 We provide our own presenters for displaying your rolls as text or graphics:
 
+### Built-in presenters
 - [Text presenter](presenters/text.md)
+
+### Available presenters
+
+These are available from the [@dice-roller/presenters](https://github.com/dice-roller/presenters) package.
+
 - [SVG presenter](presenters/svg.md)
 
 ## Writing your own presenter
