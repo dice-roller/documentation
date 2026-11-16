@@ -282,7 +282,7 @@ As with [Target Success](#target-success-dice-pool), sub-rolls excluded by [Keep
 
 ::: roller {4d6+2d8, 3d20+3, 5d10+1}>40f<30 :::
 
-### Weighted targets
+### Weighted targets <Badge text="New in v6" vertical="middle"/>
 
 Groups support the same [weighted successes](modifiers.md#weighted-successes) and [weighted failures](modifiers.md#weighted-failures) as individual dice. Add `:amount` after a condition to choose its contribution. The amount must be a whole number from `1` to `10`, and defaults to `1`.
 
