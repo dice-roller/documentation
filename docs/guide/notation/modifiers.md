@@ -419,7 +419,7 @@ Results excluded by [Keep](#keep) or [Drop](#drop) do not contribute to the succ
 
 ::: roller 6d10<=4 :::
 
-### Weighted successes
+### Weighted successes <Badge text="New in v6" vertical="middle"/>
 
 Add `:amount` after a condition to make each matching result worth more than one success. The amount must be a whole number from `1` to `10`; leaving it out means `1`.
 
@@ -520,7 +520,7 @@ Here, two successes and one failure give a total of `1`.
 
 The total can be negative if failures outweigh successes. If a result matches more than one condition, the last matching condition wins, including between successes and failures.
 
-### Weighted failures
+### Weighted failures <Badge text="New in v6" vertical="middle"/>
 
 Add `:amount` to a failure condition to subtract more than one success. As with [weighted successes](#weighted-successes), the amount must be a whole number from `1` to `10`, and defaults to `1`.
 
