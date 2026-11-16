@@ -16,7 +16,7 @@ This example combines [Explode](#explode) with [Keep](#keep).
 
 Some modifiers also work with [roll groups](roll-groups.md), where their behaviour can differ. This page describes how they work with individual sets of dice.
 
-Throughout this page, `{n}` represents a number and `{cp}` represents a [compare point](#compare-point). These are placeholders; do not include the braces in your notation.
+Throughout this page, `{n}` represents a number and `{cp}` represents a [compare point](#compare-point). These are placeholders; do not include the braces in your notation. In repeating modifiers, `{limit}`, `:{amount}` and `{cp}` are optional; omit the colon too when leaving out the amount.
 
 ::: warning Modifier order
 Modifiers run in a specific execution order, regardless of where you place them in the notation.
@@ -97,7 +97,7 @@ With `d6max3`, an original roll of `3`, `4`, `5` or `6` produces a result of `3`
 
 ## Explode
 
-**Notation:** `!` / `!{cp}`
+**Notation:** `!` / `!{limit}:{amount}{cp}`
 
 **Order:** 3
 
@@ -142,20 +142,57 @@ Following `!` with `!=` produces `!!=`, which is interpreted as [Compound](#comp
 See [Not equal to](#not-equal-to) for more examples.
 :::
 
-::: tip Iteration limit
-By default, each original die can generate up to `1,000` extra rolls. This prevents conditions such as `d10!>0` from continuing indefinitely.
+### Limiting explosions <Badge text="New in v6" vertical="middle"/>
 
-* `1d10!>0` produces `1,001` results: one original roll and `1,000` extra rolls.
-* `2d10!>0` produces `2,002` results: two original rolls and `1,000` extra rolls for each.
+Put a number immediately after the modifier to limit how many times it can repeat for each original die. The initial roll does not count towards the limit:
 
-The last result is retained even if it still matches the explosion condition.
+```javascript
+d6!1    // Explode at most once
+d6!3>=5 // Explode on 5 or 6, at most three times per original die
+```
 
-The same limit applies to [Compound](#compound) and [Penetrate](#penetrate).
-:::
+Rolling stops earlier if a result no longer matches the condition. At the limit, the last result is kept even if it still matches:
+
+```javascript
+d6!2: [6!, 6!, 6] = 18
+```
+
+Here, the original `6` generates another `6`, which generates a final `6`. The limit prevents that final result from exploding again.
+
+The same syntax works for all variants: `d6!!2`, `d6!p2` and `d6!!p2`. Each original die has its own limit, so `2d6!2` can produce up to six results when rolling one extra die per explosion.
+
+Limits must be positive safe integers, written without leading zeros. [Safety limits](#repeating-modifier-limits) still apply, including when you omit a numeric limit.
+
+::: roller 2d6!2 :::
+
+### Multiple dice per explosion <Badge text="New in v6" vertical="middle"/>
+
+Add `:amount` to roll several extra dice whenever a result explodes. The amount defaults to `1` and must be a positive safe integer, written without leading zeros.
+
+| Notation | Behaviour |
+| --- | --- |
+| `d6!2` | Roll one extra die per explosion, for up to two generations. |
+| `d6!:2` | Roll two extra dice per explosion, using the default generation limit. |
+| `d6!2:3` | Roll three extra dice per explosion, for up to two generations. |
+| `d6!2:3>=5` | The same, exploding on 5 or 6. |
+
+The order is **modifier, limit, amount, compare point**. For example, a single generation of two extra dice could produce:
+
+```javascript
+d6!1:2: [6!, 2, 5] = 13
+```
+
+Each extra die can also explode, but inherits the remaining generation limit. With `d6!2:3`, the original die can generate three children, and each child can generate three more. This permits up to `13` results per original die, rather than only two extra rolls.
+
+All initial dice are rolled first. The extra dice are then generated one branch at a time: each child's descendants are rolled before moving on to its next sibling, in original-die order.
+
+Use the same amount syntax with `!!`, `!p` and `!!p`. Compounding combines the original die and all its descendants into one result. Penetrating subtracts `1` from every extra die and checks its raw value for further explosions.
+
+::: roller 2d6!2:2 :::
 
 ### Compound
 
-**Notation:** `!!` / `!!{cp}`
+**Notation:** `!!` / `!!{limit}:{amount}{cp}`
 
 **Order:** 3
 
@@ -187,7 +224,7 @@ Use a [compare point](#compare-point) to change which values trigger another rol
 
 ### Penetrate
 
-**Notation:** `!p` / `!!p` / `!p{cp}` / `!!p{cp}`
+**Notation:** `!p` / `!!p` / `!p{limit}:{amount}{cp}` / `!!p{limit}:{amount}{cp}`
 
 **Order:** 3
 
@@ -228,7 +265,7 @@ Use a [compare point](#compare-point) to change which values trigger another rol
 
 ## Re-roll
 
-**Notation:** `r` / `ro` / `r{cp}` / `ro{cp}`
+**Notation:** `r` / `ro` / `r{limit}:{amount}{cp}` / `ro:{amount}{cp}`
 
 **Order:** 4
 
@@ -258,17 +295,49 @@ Use a [compare point](#compare-point) to change which values are re-rolled:
 
 ::: roller 4d10r<=3 :::
 
-::: tip Iteration limit
-By default, each die can be re-rolled up to `1,000` times.
+### Limiting re-rolls <Badge text="New in v6" vertical="middle"/>
 
-If the limit is reached, the final result is kept even if it still matches the condition.
+Put the limit after `r` and before any compare point:
 
-For example, `2d10r>0` reaches this limit for both dice because every possible result is greater than `0`.
-:::
+```javascript
+d6r3<=2 // Re-roll a 1 or 2, up to three times per original die
+```
+
+The initial roll does not count towards the limit. Re-rolling stops when the result no longer matches or the limit is reached. The final replacement is kept even if it still matches:
+
+```javascript
+d6r2: [1r] = 1
+```
+
+This could start with a `1`, replace it with another `1`, and then replace that with a final `1`.
+
+`r1` behaves like `ro`, but keeps the `r` output marker rather than `ro`. Use either the once alias or a numeric limit, not both: `ro1` is invalid. Limits must be positive safe integers without leading zeros, and [safety limits](#repeating-modifier-limits) still apply.
+
+::: roller 4d6r3<=2 :::
+
+### Multiple replacements <Badge text="New in v6" vertical="middle"/>
+
+Add `:amount` to replace a matching result with several new dice. Replaced results do not remain as active dice or contribute to the total:
+
+```javascript
+d8ro:2=8: [6ro, 3ro] = 9
+```
+
+Here, an initial `8` is replaced by `6` and `3`. The pool grows from one active result to two. Because `ro` allows only one replacement generation, neither replacement is re-rolled again.
+
+The amount defaults to `1` and must be a positive safe integer without leading zeros. Combine it with a numeric limit using **modifier, limit, amount, compare point**:
+
+```javascript
+d6r2:3<=2 // Replace each 1 or 2 with three dice, for up to two generations
+```
+
+Each replacement inherits the remaining generation limit. All initial dice are rolled first, then replacements are generated one branch at a time, in the same order as [multiple dice per explosion](#multiple-dice-per-explosion).
+
+::: roller 2d8ro:2=8 :::
 
 ## Unique
 
-**Notation:** `u` / `uo` / `u{cp}` / `uo{cp}`
+**Notation:** `u` / `uo` / `u{limit}{cp}` / `uo{cp}`
 
 **Order:** 5
 
@@ -298,12 +367,25 @@ Only duplicates matching the condition are re-rolled. Other duplicates can remai
 
 ::: roller 5d6u :::
 
-::: tip Iteration limit
-By default, each die after the first can be re-rolled up to `1,000` times. If the limit is reached, the final result is kept even if it is still a duplicate.
+### Limiting unique retries <Badge text="New in v6" vertical="middle"/>
 
-Some expressions cannot produce entirely unique results. For example, `5d3u` requests five unique results from only three possible values.
+Put a limit after `u` and before any compare point:
 
-For five dice, the maximum is `4,000` re-rolls: up to `1,000` for each die after the first.
+```javascript
+4d6u3   // Retry each duplicate up to three times
+4d6u3=5 // Retry only duplicate 5s, up to three times each
+```
+
+The first result is kept. Each later result has its own retry limit, excluding its initial roll. Retrying stops earlier when the value is no longer a matching duplicate. At the limit, the last value is kept even if it is still a duplicate.
+
+`u1` behaves like `uo`, but keeps the `u` output marker rather than `uo`. Use either the once alias or a numeric limit: `uo1` is invalid. Unlike Explode and Re-roll, Unique does not accept `:amount`.
+
+Limits must be positive safe integers without leading zeros, and [safety limits](#repeating-modifier-limits) still apply.
+
+::: roller 5d6u3 :::
+
+::: tip Unique results are not guaranteed
+Some expressions cannot produce entirely unique results. For example, `5d3u` requests five unique results from only three possible values. A retry limit or the shared generated-roll limit can also leave duplicates in the results.
 :::
 
 ## Keep
@@ -615,6 +697,34 @@ Use `sa` for ascending order or `sd` for descending order. The shorthand `s` def
 Sorting does not change the total. It runs after the other modifiers by default, and includes results excluded by [Keep](#keep) or [Drop](#drop) in the sorted output.
 
 ::: roller 4d6sd :::
+
+## Repeating modifier limits
+
+[Explode](#explode), [Re-roll](#re-roll) and [Unique](#unique) have safety limits as well as their optional notation limits:
+
+| Setting | Default | Applies to |
+| --- | --- | --- |
+| `maxIterations` | `1,000` | Generations per original die and modifier for Explode and Re-roll; retries per result for Unique. |
+| `maxGeneratedRolls` | `1,000,000` | All additional dice rolled by repeating modifiers within one dice pool. |
+
+An explicit notation limit cannot exceed `maxIterations`: the lower value is used. Without a notation limit, `maxIterations` applies. The initial rolls do not count towards either repeating limit.
+
+With the default one-die amount, `d10!>0` produces one initial result and `1,000` extra results. An amount greater than one can generate many more dice within the same number of generations, so `maxGeneratedRolls` also caps the total work.
+
+The generated-roll allowance is shared by Explode, Re-roll and Unique in the same pool, including discarded re-rolls. Each pool has a separate allowance. When it runs out, modifiers stop drawing dice and keep the results reached so far, even if a condition still matches or a duplicate remains. A multiple-die trigger can produce fewer than its requested amount if the allowance runs out part-way through.
+
+You can [configure these limits](../usage/index.md#roll-limits) when creating a roll or roller. For example:
+
+```javascript
+const result = new Roll('4d6!2:3', {
+  limits: {
+    maxIterations: 10,
+    maxGeneratedRolls: 5000,
+  },
+});
+```
+
+The notation still limits each explosion branch to two generations; `maxIterations: 10` does not increase it.
 
 ## Compare point
 
