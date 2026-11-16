@@ -21,6 +21,7 @@ features:
     width: 48
     height: 48
   details: Roll d20 + 5, 2d% or 4dF. Combine different dice, group rolls and use maths in the same expression.
+  link: /guide/notation/
 - title: Roll by your game’s rules
   icon:
     src: /icons/rule-book.svg
@@ -28,6 +29,7 @@ features:
     width: 48
     height: 48
   details: Keep the highest dice, reroll ones, explode on a maximum roll or count successes. Combine modifiers to express the mechanics your game uses.
+  link: /guide/notation/modifiers
 - title: Make the results your own
   icon:
     src: /icons/scroll-quill.svg
@@ -35,7 +37,7 @@ features:
     width: 48
     height: 48
   details: Use the roll total or inspect the individual dice. Create a presenter to format the results for your app, chat bot or virtual tabletop.
-  link: /guide/customisation/presenters
+  link: /guide/customisation/presenters/
 ---
 
 ## Try me
