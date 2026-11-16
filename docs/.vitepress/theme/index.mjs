@@ -5,6 +5,7 @@ import { enhanceAppWithDiceRoller } from '@dice-roller/vitepress-plugin-dice-rol
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client';
 import SponsorButton from './SponsorButton.vue';
 import ProjectBadges from './ProjectBadges.vue';
+import SvgExample from '../../../src/components/SvgExample.vue';
 import '@dice-roller/vitepress-plugin-dice-roller/style.css';
 import './custom.css';
 
@@ -23,5 +24,6 @@ export default {
   enhanceApp({ app }) {
     enhanceAppWithDiceRoller(app);
     enhanceAppWithTabs(app);
+    app.component('SvgExample', SvgExample);
   },
 };

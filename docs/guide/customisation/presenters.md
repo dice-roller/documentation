@@ -111,57 +111,10 @@ Use `present()` for your chosen output. `toString()`, `String(roll)` and templat
 
 ## First-party presenters
 
-### Text presenter
+We provide our own presenters for displaying your rolls as text or graphics:
 
-The text presenter is included with the library and used automatically. You do not need to import or create a `TextPresenter` unless you want to customise it.
-
-It displays the notation, individual dice values, modifier markers and total:
-
-```text
-4d6kh3: [1d, 4, 5, 6] = 15
-```
-
-When creating your own instance, you can change these options:
-
-| Option | Default | What it changes |
-| --- | --- | --- |
-| `flagSymbols` | Built-in modifier markers, such as `d` for dropped dice. | Replace individual markers, or use `''` to hide one. |
-| `separator` | `'; '` | The text between rolls when displaying a history. |
-| `expandInlineRolls` | `false` | Show stored dice results used to calculate quantities or sides. |
-
-Markers you do not override keep their defaults. The full set is available as `presenters.DEFAULT_FLAG_SYMBOLS`.
-
-Set `expandInlineRolls: true` to show the intermediate rolls and calculated values for quantity or sides expressions that contain dice. It also finds dice inside functions, groups and nested expressions; numeric-only expressions keep their usual output.
-
-```javascript
-const presenter = new presenters.TextPresenter({
-  expandInlineRolls: true,
-});
-
-const roll = new Roll('(d4)d(d6)');
-console.log(roll.present(presenter));
-// e.g. (d4)d(d6): (qty: ([2]) = 2, sides: ([4]) = 4) -> [3, 1] = 4
-```
-
-The `qty:` and `sides:` labels distinguish the two parameters. Nested pools keep their own boundaries, for example:
-
-```text
-((d4)d6)d10: (qty: ((qty: ([2]) = 2) -> [3, 4]) = 7) -> [1, 1, 1, 1, 1, 1, 1] = 7
-```
-
-Expansion only formats the stored result tree: it does not evaluate expressions, roll again or add intermediate dice separately to the total. The displayed total is unchanged.
-
-See [Changing the output](#changing-the-output) for examples, or the [TextPresenter API](../../api/rpg-dice-roller/namespaces/presenters/classes/TextPresenter.md) for more detail.
-
-### SVG presenter
-
-The SVG presenter will display rolls as scalable dice graphics. It is being developed in the separate [Dice Roller Presenters](https://github.com/dice-roller/presenters) project.
-
-It uses the same roll results as the text presenter, so you can show a roll as text or graphics without rolling again.
-
-::: info In development
-The SVG presenter is not yet published. Installation instructions and usage examples will be added here when it is available.
-:::
+- [Text presenter](presenters/text.md)
+- [SVG presenter](presenters/svg.md)
 
 ## Writing your own presenter
 
@@ -210,7 +163,7 @@ For TypeScript, the library exports `Presenter<T>` and `Presentable` types. Use 
 
 ### Change part of the text output
 
-For small changes, check the [text presenter options](#text-presenter) first. To change more of the format, extend `TextPresenter` and replace the method for the part you want to display differently.
+For small changes, check the [text presenter options](presenters/text.md#options) first. To change more of the format, extend `TextPresenter` and replace the method for the part you want to display differently.
 
 This TypeScript example adds the die notation before each value:
 
