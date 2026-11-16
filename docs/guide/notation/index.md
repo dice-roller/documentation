@@ -36,7 +36,7 @@ Try rolling it below. You can also edit the notation to experiment with differen
 
 The following pages explain the different parts of the notation and how to combine them:
 
-* [Dice](dice.md) — Choose which dice to roll, such as standard, percentile or Fudge dice.
+* [Dice](dice.md) — Choose which dice to roll, including standard, percentile, Fudge, range and face dice.
 * [Modifiers](modifiers.md) — Change how rolls behave, with rules such as exploding, re-rolling, and keeping or dropping results.
 * [Roll groups](roll-groups.md) — Combine roll expressions into a group and apply modifiers to the group.
 * [Roll descriptions](roll-descriptions.md) — Add labels or descriptions to identify your rolls.
