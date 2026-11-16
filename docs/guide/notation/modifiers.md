@@ -391,7 +391,7 @@ Both modifiers consider the entire set of results, including results already dro
 
 ## Target success / Dice pool
 
-**Notation:** `{cp}`
+**Notation:** `{cp}` / `{cp}:{amount}`
 
 **Order:** 8
 
@@ -418,6 +418,49 @@ Successful results are marked with `*`:
 Results excluded by [Keep](#keep) or [Drop](#drop) do not contribute to the success count.
 
 ::: roller 6d10<=4 :::
+
+### Weighted successes
+
+Add `:amount` after a condition to make each matching result worth more than one success. The amount must be a whole number from `1` to `10`; leaving it out means `1`.
+
+For example, count `8` or higher as a success, with each `10` worth two successes:
+
+```javascript
+6d10>=8=10:2: [7, 10**, 8*, 3, 10**, 9*] = 6
+```
+
+| Result | Contribution |
+| --- | --- |
+| `7` or `3` | `0` |
+| `8` or `9` | `1` |
+| `10` | `2` |
+
+Each `*` represents one success. The die still shows its rolled value: `10**` contributes `2`, rather than doubling the die's value to `20`.
+
+You can weight every success, or add more conditions:
+
+```javascript
+5d6>=4:2     // Each result of 4 or higher contributes 2
+6d10>=8>=9:2 // 8 contributes 1; 9 and 10 each contribute 2
+4d6>=3>=5:3  // 3 and 4 each contribute 1; 5 and 6 each contribute 3
+```
+
+**The last matching condition in written order wins.** Contributions are not added together. In `6d10>=8=10:2`, a `10` matches both conditions but contributes `2`, not `3`. Reversing them to `6d10=10:2>=8` makes a `10` worth only `1`.
+
+Results matching no condition contribute `0`. The same rules apply when combining successes with [failures](#target-failure-dice-pool).
+
+::: roller 6d10>=8=10:2 :::
+
+::: tip Keep target conditions together
+Write all success and failure conditions together, without other modifiers between them:
+
+```javascript
+4d6<=5=3:2k1 // Valid: keep the highest die, then score it
+4d6<=5k1=3:2 // Invalid: keep separates the target conditions
+```
+
+Other modifiers can appear before or after the complete target block, subject to the compare-point ambiguity below. Their execution order stays the same.
+:::
 
 ::: warning Counting “not equal to”
 Use `<>` to count results that are not equal to a number.
@@ -453,13 +496,13 @@ This changes how the notation is interpreted, not the execution order. Explode s
 
 ## Target failure / Dice pool
 
-**Notation:** `f{cp}`
+**Notation:** `f{cp}` / `f{cp}:{amount}`
 
 **Order:** 8
 
 Subtract failures when counting successes.
 
-A failure condition must appear immediately after a [target success condition](#target-success-dice-pool). Use `f` followed by a [compare point](#compare-point):
+Start with a [target success condition](#target-success-dice-pool), then add `f` followed by a [compare point](#compare-point). Keep all target conditions together:
 
 ```javascript
 4d6>4f<3 // Results greater than 4 are successes; results less than 3 are failures
@@ -475,7 +518,26 @@ Failures are marked with `_`:
 
 Here, two successes and one failure give a total of `1`.
 
-The total can be negative if failures outnumber successes. If a result matches both conditions, it counts as a success.
+The total can be negative if failures outweigh successes. If a result matches more than one condition, the last matching condition wins, including between successes and failures.
+
+### Weighted failures
+
+Add `:amount` to a failure condition to subtract more than one success. As with [weighted successes](#weighted-successes), the amount must be a whole number from `1` to `10`, and defaults to `1`.
+
+```javascript
+4d10>=8=10:2f=1:3: [10**, 8*, 1___, 4] = 0
+```
+
+Here, `10` contributes `2`, `8` contributes `1`, `1` contributes `-3`, and `4` contributes `0`. Each `_` represents one point subtracted from the total.
+
+You can combine several success and failure conditions. Written order decides the outcome when they overlap:
+
+```javascript
+4d6>=4f=6:2     // 4 and 5 contribute 1; 6 contributes -2
+4d6>=4f=6:2=6:3 // The final condition makes 6 contribute 3 instead
+```
+
+The `**` and `__` markers mean two target successes or failures. [Critical Success](#critical-success) and [Critical Failure](#critical-failure) are separate display flags, shown as `cs` and `cf`; they do not change the score.
 
 ::: roller 4d6>4f<3 :::
 
@@ -488,10 +550,10 @@ The total can be negative if failures outnumber successes. If a result matches b
 Mark results as critical successes. By default, this marks rolls equal to the die's highest possible value:
 
 ```javascript
-2d20cs: [4, 20**] = 24
+2d20cs: [4, 20cs] = 24
 ```
 
-Critical successes are marked with `**`.
+Critical successes are marked with `cs`.
 
 Use a [compare point](#compare-point) to choose a different value or range:
 
@@ -515,10 +577,10 @@ Critical Success does not change result values or how they contribute to the tot
 Mark results as critical failures. By default, this marks rolls equal to the die's lowest possible value:
 
 ```javascript
-2d20cf: [4, 1__] = 5
+2d20cf: [4, 1cf] = 5
 ```
 
-Critical failures are marked with `__`.
+Critical failures are marked with `cf`.
 
 Use a [compare point](#compare-point) to choose a different value or range:
 
