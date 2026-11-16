@@ -186,7 +186,7 @@ The calculation includes any maths within each sub-roll:
 
 ### Target success / Dice pool
 
-**Notation:** `{cp}`
+**Notation:** `{cp}` / `{cp}:{amount}`
 
 **Order:** 8
 
@@ -231,13 +231,13 @@ Sub-rolls excluded by [Keep](#keep) or [Drop](#drop) do not contribute to the su
 
 ### Target failure / Dice pool
 
-**Notation:** `f{cp}`
+**Notation:** `f{cp}` / `f{cp}:{amount}`
 
 **Order:** 8
 
 Subtract failures when counting successful sub-rolls.
 
-A failure condition must appear immediately after a [target success condition](#target-success-dice-pool). Use `f` followed by a [compare point](modifiers.md#compare-point):
+Start with a [target success condition](#target-success-dice-pool), then add `f` followed by a [compare point](modifiers.md#compare-point). Keep all target conditions together:
 
 ```javascript
 {3d10+5}>30f<15
@@ -249,7 +249,7 @@ Each sub-roll contributes:
 * `-1` if its total matches the failure condition.
 * `0` if its total matches neither condition.
 
-If a total matches both conditions, it counts as a success. The final count can be negative.
+If a total matches both conditions, the last matching condition wins. The final count can be negative.
 
 #### Single sub-roll
 
@@ -281,6 +281,34 @@ Two successes minus one failure give a final count of `1`.
 As with [Target Success](#target-success-dice-pool), sub-rolls excluded by [Keep](#keep) or [Drop](#drop) do not contribute to the count.
 
 ::: roller {4d6+2d8, 3d20+3, 5d10+1}>40f<30 :::
+
+### Weighted targets
+
+Groups support the same [weighted successes](modifiers.md#weighted-successes) and [weighted failures](modifiers.md#weighted-failures) as individual dice. Add `:amount` after a condition to choose its contribution. The amount must be a whole number from `1` to `10`, and defaults to `1`.
+
+Each condition checks a complete sub-roll total, even for a group containing only one sub-roll:
+
+```javascript
+{3d20+5}>40:2: {([11, 7, 19]+5)**} = 2
+```
+
+With multiple sub-rolls, each contributes its own score:
+
+```javascript
+{2d6, 2d6, 2d6}>=8>=10:2f<=3:3: {([5, 5])**, ([4, 4])*, ([1, 2])___} = 0
+```
+
+| Sub-roll total | Contribution |
+| --- | --- |
+| `10` | `2` |
+| `8` | `1` |
+| `3` | `-3` |
+
+The last matching condition in written order wins; scores from overlapping conditions are not added together. Here, the first sub-roll matches both `>=8` and `>=10:2`, so it contributes `2`.
+
+Write all target conditions together, without other modifiers between them. Sub-rolls excluded by Keep or Drop still do not contribute to the total.
+
+::: roller {2d6, 2d6, 2d6}>=8>=10:2f<=3:3 :::
 
 ### Sort
 
