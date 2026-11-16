@@ -4,6 +4,6 @@
 
 > **SortDirection** = `"a"` \| `"d"`
 
-Defined in: [src/ast/nodes.ts:222](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L222)
+Defined in: [src/ast/nodes.ts:231](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L231)
 
 `a`scending or `d`escending.

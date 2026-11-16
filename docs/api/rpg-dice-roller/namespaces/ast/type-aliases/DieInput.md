@@ -4,7 +4,7 @@
 
 > **DieInput** = [`ExpressionInput`](ExpressionInput.md) \| [`DieNode`](../interfaces/DieNode.md)
 
-Defined in: [src/ast/builders.ts:88](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L88)
+Defined in: [src/ast/builders.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L90)
 
 The die of a pool: a number of sides or an expression (a `standard` die, e.g. `6` or
 `paren(binary("+", 2, 3))`), or a `DieNode` from `die()`.

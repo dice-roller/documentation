@@ -2,7 +2,7 @@
 
 # Interface: SortNode
 
-Defined in: [src/ast/nodes.ts:304](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L304)
+Defined in: [src/ast/nodes.ts:313](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L313)
 
 `s`, `sa`, `sd`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:304](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **direction**: [`SortDirection`](../type-aliases/SortDirection.md)
 
-Defined in: [src/ast/nodes.ts:307](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L307)
+Defined in: [src/ast/nodes.ts:316](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L316)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:307](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"sort"`
 
-Defined in: [src/ast/nodes.ts:306](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L306)
+Defined in: [src/ast/nodes.ts:315](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L315)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:306](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:305](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L305)
+Defined in: [src/ast/nodes.ts:314](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L314)

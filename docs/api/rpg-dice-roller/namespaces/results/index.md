@@ -45,6 +45,12 @@ Result types and helpers for inspecting evaluated expressions.
 
 ## References
 
+### ComparisonResult
+
+Re-exports [ComparisonResult](../../../interfaces/ComparisonResult.md)
+
+***
+
 ### ExpressionResult
 
 Re-exports [ExpressionResult](../../../type-aliases/ExpressionResult.md)

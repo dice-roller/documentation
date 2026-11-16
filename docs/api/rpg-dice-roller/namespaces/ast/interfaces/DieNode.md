@@ -2,7 +2,7 @@
 
 # Interface: DieNode
 
-Defined in: [src/ast/nodes.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L71)
+Defined in: [src/ast/nodes.ts:72](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L72)
 
 The die of a pool: a reference to a die factory in the `DieRegistry`, and its arguments.
 
@@ -24,7 +24,7 @@ their displayed notation is not necessarily parseable.
 
 > `readonly` **args**: readonly [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)[]
 
-Defined in: [src/ast/nodes.ts:75](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L75)
+Defined in: [src/ast/nodes.ts:76](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L76)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [src/ast/nodes.ts:75](https://github.com/dice-roller/rpg-dice-roller
 
 > `readonly` **name**: `string`
 
-Defined in: [src/ast/nodes.ts:74](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L74)
+Defined in: [src/ast/nodes.ts:75](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L75)
 
 The registered name: a `BuiltInDieName`, or the name of a user-registered die.
 
@@ -42,4 +42,4 @@ The registered name: a `BuiltInDieName`, or the name of a user-registered die.
 
 > `readonly` **type**: `"die"`
 
-Defined in: [src/ast/nodes.ts:72](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L72)
+Defined in: [src/ast/nodes.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L73)

@@ -2,7 +2,7 @@
 
 # Interface: ConditionReferenceResult
 
-Defined in: [src/results/types.ts:137](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L137)
+Defined in: [src/results/types.ts:148](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L148)
 
 A resolved reference to the current branch's check.
 
@@ -12,7 +12,7 @@ A resolved reference to the current branch's check.
 
 > `readonly` **node**: [`ConditionReferenceNode`](../../ast/interfaces/ConditionReferenceNode.md)
 
-Defined in: [src/results/types.ts:139](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L139)
+Defined in: [src/results/types.ts:150](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L150)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:139](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **type**: `"condition-reference"`
 
-Defined in: [src/results/types.ts:138](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L138)
+Defined in: [src/results/types.ts:149](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L149)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/results/types.ts:138](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:140](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L140)
+Defined in: [src/results/types.ts:151](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L151)

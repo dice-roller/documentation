@@ -2,7 +2,7 @@
 
 # Interface: GroupMemberResult
 
-Defined in: [src/results/types.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L78)
+Defined in: [src/results/types.ts:80](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L80)
 
 One expression of a roll group, with scoring separate from its nested expression result.
 
@@ -16,7 +16,7 @@ One expression of a roll group, with scoring separate from its nested expression
 
 > `readonly` **calculationValue**: `number`
 
-Defined in: [src/results/types.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L27)
+Defined in: [src/results/types.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L28)
 
 The value used in totals (e.g. `1` / `-1` / `0` for target successes / failures).
 
@@ -30,7 +30,7 @@ The value used in totals (e.g. `1` / `-1` / `0` for target successes / failures)
 
 > `readonly` **flags**: readonly (`"max"` \| `"min"` \| `"explode"` \| `"drop"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"compound"` \| `"penetrate"` \| `"re-roll-once"` \| `"target-success"` \| `"target-failure"` \| `"unique-once"`)[]
 
-Defined in: [src/results/types.ts:31](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L31)
+Defined in: [src/results/types.ts:32](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L32)
 
 Semantic markers for presenters; setting a flag alone does not change the total.
 
@@ -44,7 +44,7 @@ Semantic markers for presenters; setting a flag alone does not change the total.
 
 > `readonly` **result**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:81](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L81)
+Defined in: [src/results/types.ts:83](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L83)
 
 The evaluated expression; scoring changes to the member need not change this result.
 
@@ -54,7 +54,7 @@ The evaluated expression; scoring changes to the member need not change this res
 
 > `readonly` **type**: `"group-member"`
 
-Defined in: [src/results/types.ts:79](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L79)
+Defined in: [src/results/types.ts:81](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L81)
 
 ***
 
@@ -62,7 +62,7 @@ Defined in: [src/results/types.ts:79](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **useInTotal**: `boolean`
 
-Defined in: [src/results/types.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L29)
+Defined in: [src/results/types.ts:30](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L30)
 
 `false` when dropped (or otherwise excluded from the total).
 
@@ -76,7 +76,7 @@ Defined in: [src/results/types.ts:29](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:25](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L25)
+Defined in: [src/results/types.ts:26](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L26)
 
 The value after modifiers (e.g. after re-rolls, or `max` / `min`).
 

@@ -2,8 +2,8 @@
 
 # Type Alias: ExpressionResult
 
-> **ExpressionResult** = [`NumberResult`](../rpg-dice-roller/namespaces/results/interfaces/NumberResult.md) \| [`PoolResult`](../rpg-dice-roller/namespaces/results/interfaces/PoolResult.md) \| [`GroupResult`](../rpg-dice-roller/namespaces/results/interfaces/GroupResult.md) \| [`BinaryResult`](../rpg-dice-roller/namespaces/results/interfaces/BinaryResult.md) \| [`UnaryResult`](../rpg-dice-roller/namespaces/results/interfaces/UnaryResult.md) \| [`ParenResult`](../rpg-dice-roller/namespaces/results/interfaces/ParenResult.md) \| [`FunctionResult`](../rpg-dice-roller/namespaces/results/interfaces/FunctionResult.md) \| [`ConditionalResult`](../rpg-dice-roller/namespaces/results/interfaces/ConditionalResult.md) \| [`ConditionReferenceResult`](../rpg-dice-roller/namespaces/results/interfaces/ConditionReferenceResult.md)
+> **ExpressionResult** = [`NumberResult`](../rpg-dice-roller/namespaces/results/interfaces/NumberResult.md) \| [`PoolResult`](../rpg-dice-roller/namespaces/results/interfaces/PoolResult.md) \| [`GroupResult`](../rpg-dice-roller/namespaces/results/interfaces/GroupResult.md) \| [`BinaryResult`](../rpg-dice-roller/namespaces/results/interfaces/BinaryResult.md) \| [`ComparisonResult`](../interfaces/ComparisonResult.md) \| [`UnaryResult`](../rpg-dice-roller/namespaces/results/interfaces/UnaryResult.md) \| [`ParenResult`](../rpg-dice-roller/namespaces/results/interfaces/ParenResult.md) \| [`FunctionResult`](../rpg-dice-roller/namespaces/results/interfaces/FunctionResult.md) \| [`ConditionalResult`](../rpg-dice-roller/namespaces/results/interfaces/ConditionalResult.md) \| [`ConditionReferenceResult`](../rpg-dice-roller/namespaces/results/interfaces/ConditionReferenceResult.md)
 
-Defined in: [src/results/types.ts:35](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L35)
+Defined in: [src/results/types.ts:36](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L36)
 
 A result for an expression node; individual dice and group members are nested within it.

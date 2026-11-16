@@ -2,7 +2,7 @@
 
 # Interface: FunctionNode
 
-Defined in: [src/ast/nodes.ts:134](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L134)
+Defined in: [src/ast/nodes.ts:143](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L143)
 
 A maths function call, e.g. `floor(2d6 / 2)`.
 
@@ -12,7 +12,7 @@ A maths function call, e.g. `floor(2d6 / 2)`.
 
 > `readonly` **args**: readonly [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)[]
 
-Defined in: [src/ast/nodes.ts:137](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L137)
+Defined in: [src/ast/nodes.ts:146](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L146)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:137](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"abs"` \| `"ceil"` \| `"cos"` \| `"exp"` \| `"floor"` \| `"log"` \| `"round"` \| `"sign"` \| `"sin"` \| `"sqrt"` \| `"tan"` \| `"pow"` \| `"max"` \| `"min"` \| `"trunc"`
 
-Defined in: [src/ast/nodes.ts:136](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L136)
+Defined in: [src/ast/nodes.ts:145](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L145)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:136](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"function"`
 
-Defined in: [src/ast/nodes.ts:135](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L135)
+Defined in: [src/ast/nodes.ts:144](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L144)

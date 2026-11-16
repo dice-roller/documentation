@@ -2,7 +2,7 @@
 
 # Interface: FunctionResult
 
-Defined in: [src/results/types.ts:119](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L119)
+Defined in: [src/results/types.ts:130](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L130)
 
 A maths function and its evaluated arguments.
 
@@ -12,7 +12,7 @@ A maths function and its evaluated arguments.
 
 > `readonly` **args**: readonly [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)[]
 
-Defined in: [src/results/types.ts:123](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L123)
+Defined in: [src/results/types.ts:134](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L134)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:123](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **node**: [`FunctionNode`](../../ast/interfaces/FunctionNode.md)
 
-Defined in: [src/results/types.ts:121](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L121)
+Defined in: [src/results/types.ts:132](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L132)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/results/types.ts:121](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **type**: `"function"`
 
-Defined in: [src/results/types.ts:120](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L120)
+Defined in: [src/results/types.ts:131](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L131)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/results/types.ts:120](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:122](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L122)
+Defined in: [src/results/types.ts:133](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L133)

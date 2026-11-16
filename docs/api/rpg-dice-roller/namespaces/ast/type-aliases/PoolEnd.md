@@ -4,6 +4,6 @@
 
 > **PoolEnd** = `"h"` \| `"l"`
 
-Defined in: [src/ast/nodes.ts:219](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L219)
+Defined in: [src/ast/nodes.ts:228](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L228)
 
 Which end of the sorted rolls to keep / drop: `h`ighest or `l`owest.

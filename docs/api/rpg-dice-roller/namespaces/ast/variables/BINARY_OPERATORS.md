@@ -4,6 +4,6 @@
 
 > `const` **BINARY\_OPERATORS**: readonly \[`"+"`, `"-"`, `"*"`, `"/"`, `"%"`, `"^"`\]
 
-Defined in: [src/ast/nodes.ts:87](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L87)
+Defined in: [src/ast/nodes.ts:88](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L88)
 
 The binary maths operators. `**` is parsed as `^`.

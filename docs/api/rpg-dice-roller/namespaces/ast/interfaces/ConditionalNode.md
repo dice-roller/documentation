@@ -2,7 +2,7 @@
 
 # Interface: ConditionalNode
 
-Defined in: [src/ast/nodes.ts:141](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L141)
+Defined in: [src/ast/nodes.ts:150](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L150)
 
 A conditional expression; `null` preserves the omitted true-branch shorthand.
 
@@ -12,7 +12,7 @@ A conditional expression; `null` preserves the omitted true-branch shorthand.
 
 > `readonly` **condition**: [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)
 
-Defined in: [src/ast/nodes.ts:143](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L143)
+Defined in: [src/ast/nodes.ts:152](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L152)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:143](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **falseBranch**: [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)
 
-Defined in: [src/ast/nodes.ts:145](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L145)
+Defined in: [src/ast/nodes.ts:154](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L154)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/ast/nodes.ts:145](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **trueBranch**: [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md) \| `null`
 
-Defined in: [src/ast/nodes.ts:144](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L144)
+Defined in: [src/ast/nodes.ts:153](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L153)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/ast/nodes.ts:144](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"conditional"`
 
-Defined in: [src/ast/nodes.ts:142](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L142)
+Defined in: [src/ast/nodes.ts:151](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L151)

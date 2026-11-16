@@ -44,7 +44,6 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | ------ | ------ |
 | [BinaryOperator](type-aliases/BinaryOperator.md) | A supported binary operator. |
 | [BuiltInDieName](type-aliases/BuiltInDieName.md) | A built-in die factory name; registries can also contain custom names. |
-| [CompareOperator](type-aliases/CompareOperator.md) | An operator accepted by a compare point. |
 | [DescriptionStyle](type-aliases/DescriptionStyle.md) | - `inline`: `// text` or `# text` - `block`: `/* text */` or `[text]` |
 | [DieInput](type-aliases/DieInput.md) | The die of a pool: a number of sides or an expression (a `standard` die, e.g. `6` or `paren(binary("+", 2, 3))`), or a `DieNode` from `die()`. |
 | [ExpressionInput](type-aliases/ExpressionInput.md) | A number or an expression node. |
@@ -71,6 +70,7 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | ------ | ------ |
 | [binary](functions/binary.md) | A binary operation, e.g. `binary("+", pool(2, 6), 3)` for `2d6+3`. |
 | [compare](functions/compare.md) | A compare point, e.g. `compare(">=", 8)`. |
+| [comparison](functions/comparison.md) | A numeric comparison, e.g. `comparison(">=", pool(2, 6), 8)`. |
 | [conditional](functions/conditional.md) | A conditional expression, using `null` for the shorthand's omitted true branch. |
 | [conditionReference](functions/conditionReference.md) | A read-only reference to the evaluated check in the current conditional branch. |
 | [criticalFailure](functions/criticalFailure.md) | Flag critical failures using the supplied compare point or the handler default. |
@@ -94,6 +94,18 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [unique](functions/unique.md) | Re-roll duplicate dice. `once` is the `uo` alias; numeric `limit: 1` has the same budget but retains `u1` notation. Limits count additional rolls per die and cannot exceed the context cap. |
 
 ## References
+
+### CompareOperator
+
+Re-exports [CompareOperator](../../../type-aliases/CompareOperator.md)
+
+***
+
+### ComparisonNode
+
+Re-exports [ComparisonNode](../../../interfaces/ComparisonNode.md)
+
+***
 
 ### ExpressionNode
 

@@ -4,7 +4,7 @@
 
 > **conditionReference**(): [`ConditionReferenceNode`](../interfaces/ConditionReferenceNode.md)
 
-Defined in: [src/ast/builders.ts:203](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L203)
+Defined in: [src/ast/builders.ts:218](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L218)
 
 A read-only reference to the evaluated check in the current conditional branch.
 

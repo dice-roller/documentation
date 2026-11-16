@@ -157,11 +157,6 @@
                 "collapsible": true
               },
               {
-                "text": "CompareOperator",
-                "link": "/api/rpg-dice-roller/namespaces/ast/type-aliases/CompareOperator.md",
-                "collapsible": true
-              },
-              {
                 "text": "DescriptionStyle",
                 "link": "/api/rpg-dice-roller/namespaces/ast/type-aliases/DescriptionStyle.md",
                 "collapsible": true
@@ -253,6 +248,11 @@
               {
                 "text": "compare",
                 "link": "/api/rpg-dice-roller/namespaces/ast/functions/compare.md",
+                "collapsible": true
+              },
+              {
+                "text": "comparison",
+                "link": "/api/rpg-dice-roller/namespaces/ast/functions/comparison.md",
                 "collapsible": true
               },
               {
@@ -941,6 +941,16 @@
     "collapsible": true,
     "children": [
       {
+        "text": "ComparisonNode",
+        "link": "/api/interfaces/ComparisonNode.md",
+        "collapsible": true
+      },
+      {
+        "text": "ComparisonResult",
+        "link": "/api/interfaces/ComparisonResult.md",
+        "collapsible": true
+      },
+      {
         "text": "EngineDefinition",
         "link": "/api/interfaces/EngineDefinition.md",
         "collapsible": true
@@ -1002,6 +1012,11 @@
     "link": null,
     "collapsible": true,
     "children": [
+      {
+        "text": "CompareOperator",
+        "link": "/api/type-aliases/CompareOperator.md",
+        "collapsible": true
+      },
       {
         "text": "DieLike",
         "link": "/api/type-aliases/DieLike.md",

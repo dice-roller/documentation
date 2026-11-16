@@ -2,7 +2,7 @@
 
 # Interface: PoolResult
 
-Defined in: [src/results/types.ts:64](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L64)
+Defined in: [src/results/types.ts:66](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L66)
 
 A pool's evaluated quantity, die arguments, die snapshot and modified rolls.
 
@@ -12,7 +12,7 @@ A pool's evaluated quantity, die arguments, die snapshot and modified rolls.
 
 > `readonly` **die**: [`DieSnapshot`](../../dice/interfaces/DieSnapshot.md)
 
-Defined in: [src/results/types.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L73)
+Defined in: [src/results/types.ts:75](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L75)
 
 The values of the die the factory created, for presenters.
 
@@ -22,7 +22,7 @@ The values of the die the factory created, for presenters.
 
 > `readonly` **dieArgs**: readonly [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)[]
 
-Defined in: [src/results/types.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L71)
+Defined in: [src/results/types.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L73)
 
 The evaluated `node.die.args`, e.g. the `6` in `d6` or the `(2+3)` in `d(2+3)`.
 
@@ -32,7 +32,7 @@ The evaluated `node.die.args`, e.g. the `6` in `d6` or the `(2+3)` in `d(2+3)`.
 
 > `readonly` **node**: [`PoolNode`](../../ast/interfaces/PoolNode.md)
 
-Defined in: [src/results/types.ts:66](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L66)
+Defined in: [src/results/types.ts:68](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L68)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [src/results/types.ts:66](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **qty**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L69)
+Defined in: [src/results/types.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L71)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [src/results/types.ts:69](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **rolls**: readonly [`DieResult`](DieResult.md)[]
 
-Defined in: [src/results/types.ts:74](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L74)
+Defined in: [src/results/types.ts:76](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L76)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: [src/results/types.ts:74](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **type**: `"pool"`
 
-Defined in: [src/results/types.ts:65](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L65)
+Defined in: [src/results/types.ts:67](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L67)
 
 ***
 
@@ -64,6 +64,6 @@ Defined in: [src/results/types.ts:65](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:68](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L68)
+Defined in: [src/results/types.ts:70](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L70)
 
 The sum of `calculationValue` for the rolls that are `useInTotal`.

@@ -4,6 +4,6 @@
 
 > `const` **MATH\_FUNCTION\_NAMES**: readonly \[`"abs"`, `"ceil"`, `"cos"`, `"exp"`, `"floor"`, `"log"`, `"round"`, `"sign"`, `"sin"`, `"sqrt"`, `"tan"`, `"pow"`, `"max"`, `"min"`, `"trunc"`\]
 
-Defined in: [src/ast/nodes.ts:113](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L113)
+Defined in: [src/ast/nodes.ts:122](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L122)
 
 The supported maths functions.
