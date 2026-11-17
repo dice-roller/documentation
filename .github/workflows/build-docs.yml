@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  pages: read
 
 concurrency:
   group: docs-build-${{ github.event_name }}-${{ github.ref }}
@@ -40,6 +41,24 @@ jobs:
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
+
+      - name: Configure base path
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { data: pages } = await github.rest.repos.getPages(context.repo);
+
+            const repoName = context.repo.repo;
+            let basePath = process.env.BASE_PATH;
+
+            if (pages.cname) {
+              // Custom domains don't include the repository name in the URL
+              basePath = basePath.replace(new RegExp(`^${repoName}(?:/|$)`), '');
+            }
+
+            core.exportVariable('BASE_PATH', basePath);
+            
+            core.info(`Base path: /${basePath}`);
 
       - uses: actions/setup-node@v6
         with:
