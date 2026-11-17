@@ -2,7 +2,7 @@
 
 # Interface: ExplodeNode
 
-Defined in: [src/ast/nodes.ts:234](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L234)
+Defined in: [src/ast/nodes.ts:240](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L240)
 
 `!`, `!!` (compound), `!p` (penetrate), `!!p`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:234](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **amount?**: `number`
 
-Defined in: [src/ast/nodes.ts:243](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L243)
+Defined in: [src/ast/nodes.ts:249](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L249)
 
 Number of child dice generated for each matching roll; omitted amounts use 1.
 
@@ -22,7 +22,7 @@ Number of child dice generated for each matching roll; omitted amounts use 1.
 
 > `readonly` `optional` **comparePoint?**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:239](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L239)
+Defined in: [src/ast/nodes.ts:245](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L245)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [src/ast/nodes.ts:239](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **compound**: `boolean`
 
-Defined in: [src/ast/nodes.ts:237](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L237)
+Defined in: [src/ast/nodes.ts:243](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L243)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [src/ast/nodes.ts:237](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **limit?**: `number`
 
-Defined in: [src/ast/nodes.ts:241](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L241)
+Defined in: [src/ast/nodes.ts:247](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L247)
 
 Maximum additional explosions per initial die; omitted limits use the context cap.
 
@@ -48,7 +48,7 @@ Maximum additional explosions per initial die; omitted limits use the context ca
 
 > `readonly` **name**: `"explode"`
 
-Defined in: [src/ast/nodes.ts:236](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L236)
+Defined in: [src/ast/nodes.ts:242](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L242)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: [src/ast/nodes.ts:236](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **penetrate**: `boolean`
 
-Defined in: [src/ast/nodes.ts:238](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L238)
+Defined in: [src/ast/nodes.ts:244](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L244)
 
 ***
 
@@ -64,4 +64,4 @@ Defined in: [src/ast/nodes.ts:238](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:235](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L235)
+Defined in: [src/ast/nodes.ts:241](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L241)

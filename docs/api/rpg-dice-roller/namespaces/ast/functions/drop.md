@@ -4,7 +4,7 @@
 
 > **drop**(`end`, `qty?`): [`DropNode`](../interfaces/DropNode.md)
 
-Defined in: [src/ast/builders.ts:318](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L318)
+Defined in: [src/ast/builders.ts:342](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L342)
 
 Drop `qty` highest (`h`) or lowest (`l`) items; quantity defaults to 1.
 

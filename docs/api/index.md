@@ -50,6 +50,7 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 | [RandomEngine](interfaces/RandomEngine.md) | A source of uniformly distributed signed 32-bit integers. |
 | [RollContext](interfaces/RollContext.md) | Everything that changes per roll but isn't part of the notation. |
 | [RollData](interfaces/RollData.md) | A roll, with its result tree and totals. |
+| [RollInputData](interfaces/RollInputData.md) | Caller-provided nested data accepted by a roll. |
 | [RollLimits](interfaces/RollLimits.md) | Safety limits for a single roll. |
 | [RollOptions](interfaces/RollOptions.md) | How notation is parsed, rolled and presented. Every option is optional. |
 

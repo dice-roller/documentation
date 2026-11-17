@@ -4,7 +4,7 @@
 
 > **group**(`expressions`, `options?`): [`GroupNode`](../interfaces/GroupNode.md)
 
-Defined in: [src/ast/builders.ts:142](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L142)
+Defined in: [src/ast/builders.ts:143](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L143)
 
 A roll group, e.g. `group([pool(4, 6), pool(2, 8)])` for `{4d6, 2d8}`.
 

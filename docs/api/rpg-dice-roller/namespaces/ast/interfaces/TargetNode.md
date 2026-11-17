@@ -2,7 +2,7 @@
 
 # Interface: TargetNode
 
-Defined in: [src/ast/nodes.ts:254](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L254)
+Defined in: [src/ast/nodes.ts:260](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L260)
 
 Success / failure counting, e.g. `>=8:2f<=2`. The last matching rule in the block wins.
 
@@ -12,7 +12,7 @@ Success / failure counting, e.g. `>=8:2f<=2`. The last matching rule in the bloc
 
 > `readonly` **name**: `"target"`
 
-Defined in: [src/ast/nodes.ts:256](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L256)
+Defined in: [src/ast/nodes.ts:262](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L262)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:256](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **rules**: readonly [`TargetRule`](TargetRule.md)[]
 
-Defined in: [src/ast/nodes.ts:257](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L257)
+Defined in: [src/ast/nodes.ts:263](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L263)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:257](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:255](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L255)
+Defined in: [src/ast/nodes.ts:261](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L261)

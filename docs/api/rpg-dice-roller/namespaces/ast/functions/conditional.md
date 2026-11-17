@@ -4,7 +4,7 @@
 
 > **conditional**(`condition`, `trueBranch`, `falseBranch`): [`ConditionalNode`](../interfaces/ConditionalNode.md)
 
-Defined in: [src/ast/builders.ts:205](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L205)
+Defined in: [src/ast/builders.ts:206](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L206)
 
 A conditional expression, using `null` for the shorthand's omitted true branch.
 

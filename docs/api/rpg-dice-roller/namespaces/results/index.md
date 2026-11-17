@@ -14,7 +14,6 @@ Result types and helpers for inspecting evaluated expressions.
 | ------ | ------ |
 | [BinaryResult](interfaces/BinaryResult.md) | A binary operation and its evaluated operands. |
 | [ConditionalResult](interfaces/ConditionalResult.md) | A check and its one evaluated branch. |
-| [ConditionReferenceResult](interfaces/ConditionReferenceResult.md) | A resolved reference to the current branch's check. |
 | [DieResult](interfaces/DieResult.md) | A single die roll in a pool. |
 | [FunctionResult](interfaces/FunctionResult.md) | A maths function and its evaluated arguments. |
 | [GroupMemberResult](interfaces/GroupMemberResult.md) | One expression of a roll group, with scoring separate from its nested expression result. |
@@ -22,6 +21,7 @@ Result types and helpers for inspecting evaluated expressions.
 | [NumberResult](interfaces/NumberResult.md) | The result of a numeric literal. |
 | [ParenResult](interfaces/ParenResult.md) | A parenthesised expression and its evaluated inner result. |
 | [PoolResult](interfaces/PoolResult.md) | A pool's evaluated quantity, die arguments, die snapshot and modified rolls. |
+| [ReferenceResult](interfaces/ReferenceResult.md) | A system or caller-data reference resolved to a numeric value. |
 | [ScoredItem](interfaces/ScoredItem.md) | A die roll or group member that modifier handlers can transform using the result helpers. |
 | [UnaryResult](interfaces/UnaryResult.md) | A unary operation and its evaluated operand. |
 

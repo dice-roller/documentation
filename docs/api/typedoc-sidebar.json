@@ -30,11 +30,6 @@
                 "collapsible": true
               },
               {
-                "text": "ConditionReferenceNode",
-                "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ConditionReferenceNode.md",
-                "collapsible": true
-              },
-              {
                 "text": "CriticalFailureNode",
                 "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/CriticalFailureNode.md",
                 "collapsible": true
@@ -107,6 +102,11 @@
               {
                 "text": "PoolNode",
                 "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/PoolNode.md",
+                "collapsible": true
+              },
+              {
+                "text": "ReferenceNode",
+                "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ReferenceNode.md",
                 "collapsible": true
               },
               {
@@ -199,6 +199,11 @@
               {
                 "text": "PoolEnd",
                 "link": "/api/rpg-dice-roller/namespaces/ast/type-aliases/PoolEnd.md",
+                "collapsible": true
+              },
+              {
+                "text": "ReferenceNamespace",
+                "link": "/api/rpg-dice-roller/namespaces/ast/type-aliases/ReferenceNamespace.md",
                 "collapsible": true
               },
               {
@@ -338,6 +343,11 @@
               {
                 "text": "pool",
                 "link": "/api/rpg-dice-roller/namespaces/ast/functions/pool.md",
+                "collapsible": true
+              },
+              {
+                "text": "reference",
+                "link": "/api/rpg-dice-roller/namespaces/ast/functions/reference.md",
                 "collapsible": true
               },
               {
@@ -784,11 +794,6 @@
                 "collapsible": true
               },
               {
-                "text": "ConditionReferenceResult",
-                "link": "/api/rpg-dice-roller/namespaces/results/interfaces/ConditionReferenceResult.md",
-                "collapsible": true
-              },
-              {
                 "text": "DieResult",
                 "link": "/api/rpg-dice-roller/namespaces/results/interfaces/DieResult.md",
                 "collapsible": true
@@ -821,6 +826,11 @@
               {
                 "text": "PoolResult",
                 "link": "/api/rpg-dice-roller/namespaces/results/interfaces/PoolResult.md",
+                "collapsible": true
+              },
+              {
+                "text": "ReferenceResult",
+                "link": "/api/rpg-dice-roller/namespaces/results/interfaces/ReferenceResult.md",
                 "collapsible": true
               },
               {
@@ -993,6 +1003,11 @@
       {
         "text": "RollData",
         "link": "/api/interfaces/RollData.md",
+        "collapsible": true
+      },
+      {
+        "text": "RollInputData",
+        "link": "/api/interfaces/RollInputData.md",
         "collapsible": true
       },
       {

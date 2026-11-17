@@ -4,7 +4,7 @@
 
 > **RollMode** = `"random"` \| `"min"` \| `"max"`
 
-Defined in: [src/evaluator/RollContext.ts:10](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L10)
+Defined in: [src/evaluator/RollContext.ts:12](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L12)
 
 How dice are rolled.
 

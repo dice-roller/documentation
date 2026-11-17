@@ -2,7 +2,7 @@
 
 # Class: Roller\<T\>
 
-Defined in: [src/Roller.ts:41](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L41)
+Defined in: [src/Roller.ts:42](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L42)
 
 Rolls notation and keeps a history of the rolls.
 
@@ -32,7 +32,7 @@ the output type of the configured presenter
 
 > **new Roller**\<`T`\>(`options?`): `Roller`\<`T`\>
 
-Defined in: [src/Roller.ts:47](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L47)
+Defined in: [src/Roller.ts:48](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L48)
 
 #### Parameters
 
@@ -50,7 +50,7 @@ Defined in: [src/Roller.ts:47](https://github.com/dice-roller/rpg-dice-roller/bl
 
 > `readonly` **history**: [`RollHistory`](RollHistory.md)
 
-Defined in: [src/Roller.ts:43](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L43)
+Defined in: [src/Roller.ts:44](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L44)
 
 Mutable history of rolls made or imported by this roller.
 
@@ -60,7 +60,7 @@ Mutable history of rolls made or imported by this roller.
 
 > `readonly` **settings**: [`RollSettings`](RollSettings.md)\<`T`\>
 
-Defined in: [src/Roller.ts:45](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L45)
+Defined in: [src/Roller.ts:46](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L46)
 
 Shared by every roll of this roller (and their re-rolls).
 
@@ -72,7 +72,7 @@ Shared by every roll of this roller (and their re-rolls).
 
 > **get** **dice**(): [`DieRegistry`](../rpg-dice-roller/namespaces/dice/classes/DieRegistry.md)
 
-Defined in: [src/Roller.ts:59](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L59)
+Defined in: [src/Roller.ts:60](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L60)
 
 ##### Returns
 
@@ -86,7 +86,7 @@ Defined in: [src/Roller.ts:59](https://github.com/dice-roller/rpg-dice-roller/bl
 
 > **get** **generator**(): [`NumberGenerator`](../interfaces/NumberGenerator.md)
 
-Defined in: [src/Roller.ts:55](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L55)
+Defined in: [src/Roller.ts:56](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L56)
 
 ##### Returns
 
@@ -100,7 +100,7 @@ Defined in: [src/Roller.ts:55](https://github.com/dice-roller/rpg-dice-roller/bl
 
 > **get** **limits**(): [`RollLimits`](../interfaces/RollLimits.md)
 
-Defined in: [src/Roller.ts:67](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L67)
+Defined in: [src/Roller.ts:68](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L68)
 
 ##### Returns
 
@@ -114,7 +114,7 @@ Defined in: [src/Roller.ts:67](https://github.com/dice-roller/rpg-dice-roller/bl
 
 > **get** **modifiers**(): [`ModifierRegistry`](../rpg-dice-roller/namespaces/modifiers/classes/ModifierRegistry.md)
 
-Defined in: [src/Roller.ts:63](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L63)
+Defined in: [src/Roller.ts:64](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L64)
 
 ##### Returns
 
@@ -128,7 +128,7 @@ Defined in: [src/Roller.ts:63](https://github.com/dice-roller/rpg-dice-roller/bl
 
 > **get** **presenter**(): [`Presenter`](../interfaces/Presenter.md)\<`T`\>
 
-Defined in: [src/Roller.ts:51](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L51)
+Defined in: [src/Roller.ts:52](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L52)
 
 ##### Returns
 
@@ -142,7 +142,7 @@ Defined in: [src/Roller.ts:51](https://github.com/dice-roller/rpg-dice-roller/bl
 
 > **export**(`format`): `object`
 
-Defined in: [src/Roller.ts:101](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L101)
+Defined in: [src/Roller.ts:107](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L107)
 
 Exports the history as JSON (default), a JSON-safe object, or UTF-8 base64 JSON. May evaluate uncached min/max totals.
 
@@ -176,7 +176,7 @@ Can be `NaN`, e.g. for a history of `1/0` and `-1/0`.
 
 > **export**(`format?`): `string`
 
-Defined in: [src/Roller.ts:102](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L102)
+Defined in: [src/Roller.ts:108](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L108)
 
 Exports the history as JSON (default), a JSON-safe object, or UTF-8 base64 JSON. May evaluate uncached min/max totals.
 
@@ -194,7 +194,7 @@ Exports the history as JSON (default), a JSON-safe object, or UTF-8 base64 JSON.
 
 > **export**(`format`): `string` \| \{ `rolls`: readonly `object`[]; `total`: [`EncodedNumber`](../type-aliases/EncodedNumber.md); `type`: `"history"`; `version`: `1`; \}
 
-Defined in: [src/Roller.ts:103](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L103)
+Defined in: [src/Roller.ts:109](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L109)
 
 Exports the history as JSON (default), a JSON-safe object, or UTF-8 base64 JSON. May evaluate uncached min/max totals.
 
@@ -238,7 +238,7 @@ Can be `NaN`, e.g. for a history of `1/0` and `-1/0`.
 
 > **import**(`data`): [`Roll`](Roll.md)\<`T`\>[]
 
-Defined in: [src/Roller.ts:118](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L118)
+Defined in: [src/Roller.ts:124](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L124)
 
 Imports exported rolls (a roll or a whole history, as an object, JSON or base64), and adds them
 to the history, without rolling.
@@ -268,7 +268,7 @@ the data is invalid
 
 > **parse**(`notation`): [`ExpressionNode`](../type-aliases/ExpressionNode.md)
 
-Defined in: [src/Roller.ts:72](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L72)
+Defined in: [src/Roller.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L73)
 
 Parses notation into the AST, without rolling.
 
@@ -290,7 +290,7 @@ Parses notation into the AST, without rolling.
 
 > **present**(): `T`
 
-Defined in: [src/Roller.ts:94](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L94)
+Defined in: [src/Roller.ts:100](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L100)
 
 Presents the history with the presenter, or the one from the options (default `TextPresenter`).
 
@@ -302,7 +302,7 @@ Presents the history with the presenter, or the one from the options (default `T
 
 > **present**\<`U`\>(`presenter`): `U`
 
-Defined in: [src/Roller.ts:95](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L95)
+Defined in: [src/Roller.ts:101](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L101)
 
 Presents the history with the presenter, or the one from the options (default `TextPresenter`).
 
@@ -328,9 +328,9 @@ Presents the history with the presenter, or the one from the options (default `T
 
 > **roll**(`input`, `options?`): [`Roll`](Roll.md)\<`T`\>
 
-Defined in: [src/Roller.ts:77](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L77)
+Defined in: [src/Roller.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L78)
 
-Rolls notation (or an AST), and adds the roll to the history only if it succeeds.
+Rolls notation (or an AST), and adds the roll to the history only if it succeeds. Per-roll data replaces the roller's defaults and is snapshotted for the roll.
 
 #### Parameters
 
@@ -339,6 +339,10 @@ Rolls notation (or an AST), and adds the roll to the history only if it succeeds
 `string` \| [`ExpressionNode`](../type-aliases/ExpressionNode.md)
 
 ##### options?
+
+###### data?
+
+[`RollInputData`](../interfaces/RollInputData.md)
 
 ###### engine?
 
@@ -354,7 +358,7 @@ Rolls notation (or an AST), and adds the roll to the history only if it succeeds
 
 > **toString**(): `string`
 
-Defined in: [src/Roller.ts:130](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L130)
+Defined in: [src/Roller.ts:136](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L136)
 
 Always the default `TextPresenter` output of the history.
 

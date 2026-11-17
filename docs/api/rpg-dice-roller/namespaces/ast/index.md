@@ -15,7 +15,6 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [BinaryNode](interfaces/BinaryNode.md) | A binary maths operation, e.g. `2d6 + 3`. |
 | [ComparePoint](interfaces/ComparePoint.md) | A comparison against a value, e.g. the `>=8` in `8d10>=8`. |
 | [ConditionalNode](interfaces/ConditionalNode.md) | A conditional expression; `null` preserves the omitted true-branch shorthand. |
-| [ConditionReferenceNode](interfaces/ConditionReferenceNode.md) | A read-only reference to the current conditional's evaluated check. |
 | [CriticalFailureNode](interfaces/CriticalFailureNode.md) | `cf`. |
 | [CriticalSuccessNode](interfaces/CriticalSuccessNode.md) | `cs`. |
 | [DescriptionNode](interfaces/DescriptionNode.md) | A roll description. |
@@ -31,6 +30,7 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [NumberNode](interfaces/NumberNode.md) | A literal number, e.g. `4` or `-2.5`. |
 | [ParenNode](interfaces/ParenNode.md) | A parenthesised expression, e.g. `(2+3)`. Kept so the notation round-trips. |
 | [PoolNode](interfaces/PoolNode.md) | A pool of dice, e.g. `4d6kh3`. |
+| [ReferenceNode](interfaces/ReferenceNode.md) | A reference to a caller data path or an externally supplied system binding. |
 | [ReRollNode](interfaces/ReRollNode.md) | `r`, `ro` and numeric re-roll limits. |
 | [SortNode](interfaces/SortNode.md) | `s`, `sa`, `sd`. |
 | [TargetNode](interfaces/TargetNode.md) | Success / failure counting, e.g. `>=8:2f<=2`. The last matching rule in the block wins. |
@@ -53,6 +53,7 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [ModifierNode](type-aliases/ModifierNode.md) | A modifier selected by `name`; an omitted compare point uses the registered handler's default. |
 | [ModifierNodeOf](type-aliases/ModifierNodeOf.md) | The modifier node with the given name. |
 | [PoolEnd](type-aliases/PoolEnd.md) | Which end of the sorted rolls to keep / drop: `h`ighest or `l`owest. |
+| [ReferenceNamespace](type-aliases/ReferenceNamespace.md) | The namespace used to resolve a reference. |
 | [SortDirection](type-aliases/SortDirection.md) | `a`scending or `d`escending. |
 
 ## Variables
@@ -72,7 +73,7 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [compare](functions/compare.md) | A compare point, e.g. `compare(">=", 8)`. |
 | [comparison](functions/comparison.md) | A numeric comparison, e.g. `comparison(">=", pool(2, 6), 8)`. |
 | [conditional](functions/conditional.md) | A conditional expression, using `null` for the shorthand's omitted true branch. |
-| [conditionReference](functions/conditionReference.md) | A read-only reference to the evaluated check in the current conditional branch. |
+| [conditionReference](functions/conditionReference.md) | A convenience builder for the system binding `condition`. |
 | [criticalFailure](functions/criticalFailure.md) | Flag critical failures using the supplied compare point or the handler default. |
 | [criticalSuccess](functions/criticalSuccess.md) | Flag critical successes using the supplied compare point or the handler default. |
 | [die](functions/die.md) | A reference to a die factory, e.g. `die("percentile")` for `d%`, or `die("range", -2, 3)`. Register custom names in the die registry used by the evaluator before rolling. Registration is not checked here; valid literal `range` and `face` dice use brace notation, while custom names and unsupported arguments have display-only notation. |
@@ -88,6 +89,7 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [num](functions/num.md) | A literal number. |
 | [paren](functions/paren.md) | A parenthesised expression. |
 | [pool](functions/pool.md) | A pool of dice, e.g. `pool(4, 6)` for `4d6`, or `pool(2, die("fib"))`. |
+| [reference](functions/reference.md) | A caller-data or system reference, e.g. `reference("data", "character", "level")`. |
 | [reRoll](functions/reRoll.md) | Re-roll matching dice. `once` is the `ro` alias; numeric `limit: 1` has the same budget but retains `r1` notation. Limits count generations per die and cannot exceed the context cap; `amount` is the positive safe-integer number of replacement dice generated per match and defaults to 1. |
 | [sort](functions/sort.md) | Sort ascending (`a`, the default) or descending (`d`). |
 | [target](functions/target.md) | A target block starts with a success and can contain further success or failure rules. Amounts are 1–10 and default to 1; the last matching rule wins. |

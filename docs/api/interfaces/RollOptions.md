@@ -2,7 +2,7 @@
 
 # Interface: RollOptions\<T\>
 
-Defined in: [src/RollSettings.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L28)
+Defined in: [src/RollSettings.ts:30](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L30)
 
 How notation is parsed, rolled and presented. Every option is optional.
 
@@ -16,11 +16,21 @@ the output type of the presenter
 
 ## Properties
 
+### data?
+
+> `optional` **data?**: [`RollInputData`](RollInputData.md)
+
+Defined in: [src/RollSettings.ts:34](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L34)
+
+Default nested values available through `$path`; each roll snapshots these unless replaced by per-roll data.
+
+***
+
 ### dice?
 
 > `optional` **dice?**: [`DieRegistry`](../rpg-dice-roller/namespaces/dice/classes/DieRegistry.md)
 
-Defined in: [src/RollSettings.ts:34](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L34)
+Defined in: [src/RollSettings.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L38)
 
 Default: `new DieRegistry()` (the built-in dice).
 
@@ -30,7 +40,7 @@ Default: `new DieRegistry()` (the built-in dice).
 
 > `optional` **engine?**: [`EngineOption`](../type-aliases/EngineOption.md)
 
-Defined in: [src/RollSettings.ts:30](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L30)
+Defined in: [src/RollSettings.ts:32](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L32)
 
 The source of randomness (default `nativeMath`); may be a name, engine instance, or definition.
 
@@ -40,7 +50,7 @@ The source of randomness (default `nativeMath`); may be a name, engine instance,
 
 > `optional` **engines?**: [`EngineRegistry`](../classes/EngineRegistry.md)
 
-Defined in: [src/RollSettings.ts:32](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L32)
+Defined in: [src/RollSettings.ts:36](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L36)
 
 Engine factories used to resolve names (default: the built-in engines).
 
@@ -50,7 +60,7 @@ Engine factories used to resolve names (default: the built-in engines).
 
 > `optional` **limits?**: `Partial`\<[`RollLimits`](RollLimits.md)\>
 
-Defined in: [src/RollSettings.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L38)
+Defined in: [src/RollSettings.ts:42](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L42)
 
 Safety limits: `maxQty` 999, `maxIterations` 1000 and `maxGeneratedRolls` 1,000,000 generated rolls per pool/evaluation; each must be a positive safe integer. The generated-roll limit excludes initial dice and truncates repeating modifiers without throwing.
 
@@ -60,7 +70,7 @@ Safety limits: `maxQty` 999, `maxIterations` 1000 and `maxGeneratedRolls` 1,000,
 
 > `optional` **modifiers?**: [`ModifierRegistry`](../rpg-dice-roller/namespaces/modifiers/classes/ModifierRegistry.md)
 
-Defined in: [src/RollSettings.ts:36](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L36)
+Defined in: [src/RollSettings.ts:40](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L40)
 
 Default: `new ModifierRegistry()` (the built-in modifiers).
 
@@ -70,6 +80,6 @@ Default: `new ModifierRegistry()` (the built-in modifiers).
 
 > `optional` **presenter?**: [`Presenter`](Presenter.md)\<`T`\>
 
-Defined in: [src/RollSettings.ts:40](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L40)
+Defined in: [src/RollSettings.ts:44](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L44)
 
 Used by `Roll.present()` and `Roller.present()` (default: the default `TextPresenter`).

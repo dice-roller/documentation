@@ -2,7 +2,7 @@
 
 # Type Alias: ExpressionNode
 
-> **ExpressionNode** = [`NumberNode`](../rpg-dice-roller/namespaces/ast/interfaces/NumberNode.md) \| [`PoolNode`](../rpg-dice-roller/namespaces/ast/interfaces/PoolNode.md) \| [`GroupNode`](../rpg-dice-roller/namespaces/ast/interfaces/GroupNode.md) \| [`BinaryNode`](../rpg-dice-roller/namespaces/ast/interfaces/BinaryNode.md) \| [`ComparisonNode`](../interfaces/ComparisonNode.md) \| [`UnaryNode`](../rpg-dice-roller/namespaces/ast/interfaces/UnaryNode.md) \| [`ParenNode`](../rpg-dice-roller/namespaces/ast/interfaces/ParenNode.md) \| [`FunctionNode`](../rpg-dice-roller/namespaces/ast/interfaces/FunctionNode.md) \| [`ConditionalNode`](../rpg-dice-roller/namespaces/ast/interfaces/ConditionalNode.md) \| [`ConditionReferenceNode`](../rpg-dice-roller/namespaces/ast/interfaces/ConditionReferenceNode.md)
+> **ExpressionNode** = [`NumberNode`](../rpg-dice-roller/namespaces/ast/interfaces/NumberNode.md) \| [`PoolNode`](../rpg-dice-roller/namespaces/ast/interfaces/PoolNode.md) \| [`GroupNode`](../rpg-dice-roller/namespaces/ast/interfaces/GroupNode.md) \| [`BinaryNode`](../rpg-dice-roller/namespaces/ast/interfaces/BinaryNode.md) \| [`ComparisonNode`](../interfaces/ComparisonNode.md) \| [`UnaryNode`](../rpg-dice-roller/namespaces/ast/interfaces/UnaryNode.md) \| [`ParenNode`](../rpg-dice-roller/namespaces/ast/interfaces/ParenNode.md) \| [`FunctionNode`](../rpg-dice-roller/namespaces/ast/interfaces/FunctionNode.md) \| [`ConditionalNode`](../rpg-dice-roller/namespaces/ast/interfaces/ConditionalNode.md) \| [`ReferenceNode`](../rpg-dice-roller/namespaces/ast/interfaces/ReferenceNode.md)
 
 Defined in: [src/ast/nodes.ts:14](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L14)
 

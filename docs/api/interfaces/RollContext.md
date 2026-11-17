@@ -2,19 +2,19 @@
 
 # Interface: RollContext
 
-Defined in: [src/evaluator/RollContext.ts:54](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L54)
+Defined in: [src/evaluator/RollContext.ts:56](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L56)
 
 Everything that changes per roll but isn't part of the notation.
 
 ## Properties
 
-### condition?
+### data
 
-> `readonly` `optional` **condition?**: `number`
+> `readonly` **data**: [`RollInputData`](RollInputData.md)
 
-Defined in: [src/evaluator/RollContext.ts:59](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L59)
+Defined in: [src/evaluator/RollContext.ts:63](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L63)
 
-The current branch's check, absent outside a conditional.
+A validated snapshot of caller-provided values.
 
 ***
 
@@ -22,7 +22,7 @@ The current branch's check, absent outside a conditional.
 
 > `readonly` **generator**: [`NumberGenerator`](NumberGenerator.md)
 
-Defined in: [src/evaluator/RollContext.ts:55](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L55)
+Defined in: [src/evaluator/RollContext.ts:57](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L57)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [src/evaluator/RollContext.ts:55](https://github.com/dice-roller/rpg
 
 > `readonly` **limits**: [`RollLimits`](RollLimits.md)
 
-Defined in: [src/evaluator/RollContext.ts:57](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L57)
+Defined in: [src/evaluator/RollContext.ts:59](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L59)
 
 ***
 
@@ -38,4 +38,14 @@ Defined in: [src/evaluator/RollContext.ts:57](https://github.com/dice-roller/rpg
 
 > `readonly` **mode**: [`RollMode`](../type-aliases/RollMode.md)
 
-Defined in: [src/evaluator/RollContext.ts:56](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L56)
+Defined in: [src/evaluator/RollContext.ts:58](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L58)
+
+***
+
+### system
+
+> `readonly` **system**: `Readonly`\<`Record`\<`string`, `unknown`\>\>
+
+Defined in: [src/evaluator/RollContext.ts:61](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L61)
+
+Bindings reserved for built-ins and evaluator-defined values.

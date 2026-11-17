@@ -2,7 +2,7 @@
 
 # Interface: RollLimits
 
-Defined in: [src/evaluator/RollContext.ts:13](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L13)
+Defined in: [src/evaluator/RollContext.ts:15](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L15)
 
 Safety limits for a single roll.
 
@@ -12,7 +12,7 @@ Safety limits for a single roll.
 
 > `readonly` **maxGeneratedRolls**: `number`
 
-Defined in: [src/evaluator/RollContext.ts:19](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L19)
+Defined in: [src/evaluator/RollContext.ts:21](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L21)
 
 Additional rolls allowed per pool/evaluation across modifiers, including discarded rolls (default 1,000,000); initial dice are excluded and exhaustion truncates repeating results.
 
@@ -22,7 +22,7 @@ Additional rolls allowed per pool/evaluation across modifiers, including discard
 
 > `readonly` **maxIterations**: `number`
 
-Defined in: [src/evaluator/RollContext.ts:17](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L17)
+Defined in: [src/evaluator/RollContext.ts:19](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L19)
 
 The maximum number of generations for explode and re-roll, or retries for unique, per die.
 
@@ -32,6 +32,6 @@ The maximum number of generations for explode and re-roll, or retries for unique
 
 > `readonly` **maxQty**: `number`
 
-Defined in: [src/evaluator/RollContext.ts:15](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L15)
+Defined in: [src/evaluator/RollContext.ts:17](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/RollContext.ts#L17)
 
 The maximum number of dice in a pool.

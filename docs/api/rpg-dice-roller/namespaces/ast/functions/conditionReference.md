@@ -2,12 +2,12 @@
 
 # Function: conditionReference()
 
-> **conditionReference**(): [`ConditionReferenceNode`](../interfaces/ConditionReferenceNode.md)
+> **conditionReference**(): [`ReferenceNode`](../interfaces/ReferenceNode.md)
 
-Defined in: [src/ast/builders.ts:218](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L218)
+Defined in: [src/ast/builders.ts:219](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L219)
 
-A read-only reference to the evaluated check in the current conditional branch.
+A convenience builder for the system binding `condition`.
 
 ## Returns
 
-[`ConditionReferenceNode`](../interfaces/ConditionReferenceNode.md)
+[`ReferenceNode`](../interfaces/ReferenceNode.md)

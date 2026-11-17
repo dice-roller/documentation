@@ -13,8 +13,8 @@ Maths is written without spaces (`[4, 2]+3`), function arguments are joined with
 (e.g. dropped, or a target success) is wrapped in parentheses: `([6, 3])d`.
 An expression result is presented without notation or a total; an empty history produces `""`.
 Conditionals show the evaluated condition and selected result, e.g.
-`(condition: [2, 5*] = 1, true: [3, 10, 2, 3]+$condition)`. References are rendered as `$condition`;
-their numeric value is shown once beside the conditional's check.
+`(condition: [2, 5*] = 1, true: [3, 10, 2, 3]+$$condition)`. Caller-data references use `$` and
+system references use `$$`; their numeric value is shown once beside the conditional's check.
 
 ## Extends
 
@@ -135,28 +135,6 @@ Defined in: [src/presenters/TextPresenter.ts:236](https://github.com/dice-roller
 #### Overrides
 
 [`TreePresenter`](TreePresenter.md).[`conditional`](TreePresenter.md#conditional)
-
-***
-
-### conditionReference()
-
-> `protected` **conditionReference**(`_result`): `string`
-
-Defined in: [src/presenters/TextPresenter.ts:240](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L240)
-
-#### Parameters
-
-##### \_result
-
-[`ConditionReferenceResult`](../../results/interfaces/ConditionReferenceResult.md)
-
-#### Returns
-
-`string`
-
-#### Overrides
-
-[`TreePresenter`](TreePresenter.md).[`conditionReference`](TreePresenter.md#conditionreference)
 
 ***
 
@@ -420,7 +398,7 @@ Defined in: [src/presenters/TextPresenter.ts:144](https://github.com/dice-roller
 
 > **present**(`target`): `string`
 
-Defined in: [src/presenters/TreePresenter.ts:37](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L37)
+Defined in: [src/presenters/TreePresenter.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L38)
 
 Dispatches a history, roll, or expression result to the corresponding hook.
 
@@ -437,6 +415,30 @@ Dispatches a history, roll, or expression result to the corresponding hook.
 #### Inherited from
 
 [`TreePresenter`](TreePresenter.md).[`present`](TreePresenter.md#present)
+
+***
+
+### reference()
+
+> `protected` **reference**(`result`): `string`
+
+Defined in: [src/presenters/TextPresenter.ts:240](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L240)
+
+Presents a resolved reference as its numeric value unless a presenter overrides it.
+
+#### Parameters
+
+##### result
+
+[`ReferenceResult`](../../results/interfaces/ReferenceResult.md)
+
+#### Returns
+
+`string`
+
+#### Overrides
+
+[`TreePresenter`](TreePresenter.md).[`reference`](TreePresenter.md#reference)
 
 ***
 
@@ -492,7 +494,7 @@ Defined in: [src/presenters/TextPresenter.ts:216](https://github.com/dice-roller
 
 > `protected` **visit**(`result`): `string`
 
-Defined in: [src/presenters/TreePresenter.ts:50](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L50)
+Defined in: [src/presenters/TreePresenter.ts:51](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L51)
 
 Presents a result node with the hook for its type.
 

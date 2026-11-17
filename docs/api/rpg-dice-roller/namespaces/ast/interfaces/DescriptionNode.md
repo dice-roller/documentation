@@ -2,7 +2,7 @@
 
 # Interface: DescriptionNode
 
-Defined in: [src/ast/nodes.ts:192](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L192)
+Defined in: [src/ast/nodes.ts:198](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L198)
 
 A roll description.
 
@@ -12,7 +12,7 @@ A roll description.
 
 > `readonly` **style**: [`DescriptionStyle`](../type-aliases/DescriptionStyle.md)
 
-Defined in: [src/ast/nodes.ts:194](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L194)
+Defined in: [src/ast/nodes.ts:200](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L200)
 
 ***
 
@@ -20,4 +20,4 @@ Defined in: [src/ast/nodes.ts:194](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **text**: `string`
 
-Defined in: [src/ast/nodes.ts:193](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L193)
+Defined in: [src/ast/nodes.ts:199](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L199)
