@@ -7,7 +7,8 @@ import apiConfig from '../api/typedoc-sidebar.json' with { type: 'json' };
 
 const isDev = process.env.NODE_ENV === 'development';
 const preview = process.env.DOCS_PREVIEW || '';
-const base = `/${process.env.BASE_PATH || 'documentation'}/`;
+const basePath = process.env.BASE_PATH || '';
+const base = `/${basePath ? `${basePath}/` : ''}`;
 const docsVersion = base.match(/\/versions\/([^/]+)\/$/)?.[1] || 'main';
 const docsRepo = process.env.DOCS_REPO || 'dice-roller/documentation';
 const docsBranch = process.env.DOCS_BRANCH || 'main';
