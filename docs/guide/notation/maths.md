@@ -58,6 +58,51 @@ Powers are evaluated from right to left: `2^3^2` means `2^(3^2)`, giving `512`.
 
 ::: roller (d6+2)*3 :::
 
+## Comparing expressions <Badge text="New in v6" vertical="middle"/>
+
+Compare two numeric expressions with `=`, `!=`, `<>`, `<`, `>`, `<=` or `>=`. Both `!=` and `<>` mean “not equal to”. A comparison returns `1` when true and `0` when false, so its result can be used in calculations, functions and other expressions.
+
+```javascript
+1+2*3>=7   // 1: arithmetic is evaluated before the comparison
+1<2+3      // 1: compares 1 with 5
+(1<2)+(3>2) // 2: add the two comparison results
+```
+
+Comparisons have lower precedence than arithmetic. Parenthesise a comparison when using its result in arithmetic, or when nesting one comparison inside another:
+
+```javascript
+(1<2)=1 // 1: compare the result of 1<2 with 1
+1<(2<3) // 0: compare 1 with the result of 2<3
+1<2<3   // Invalid: comparisons cannot be chained
+```
+
+A compare point immediately after dice notation normally applies a [target success modifier](modifiers.md#target-success-dice-pool) to individual results, rather than comparing the pool total. Parenthesise the pool to compare its total:
+
+```javascript
+2d6>=5   // Count dice rolling 5 or higher
+(2d6)>=5 // Compare the sum of the dice with 5
+2d6!=4   // Explode on rolls equal to 4, not a comparison
+(2d6)!=4 // Compare the sum of the dice with 4
+```
+
+For example, rolls of `3` and `4` give `0` successes in `2d6>=5`, but `(2d6)>=5` returns `1` because their sum is `7`. See [compare points](modifiers.md#compare-point) for modifier conditions and their ambiguities.
+
+### Conditional expressions <Badge text="New in v6" vertical="middle"/>
+
+Use `(check) ? (true expression) : (false expression)` to choose a result. The check and both branches must be parenthesised. The check is evaluated once: `0` selects the false branch and any other valid number selects the true branch. Only the selected branch is evaluated.
+
+```javascript
+((2d6)>=5) ? (10) : (0) // 10 if the pool total is at least 5, otherwise 0
+(2d6>=5) ? (10) : (0)   // 10 if at least one die is a success, otherwise 0
+((d6)>3) ? ($condition+5) : (0) // $condition is the already evaluated check (1 or 0)
+```
+
+The shorthand `(check) ?: (false expression)` returns the check itself when it is nonzero, or evaluates the false expression otherwise. The `?:` token must be contiguous:
+
+```javascript
+((d6)>3) ?: (10) // 1 if the die total exceeds 3, otherwise 10
+```
+
 ## Calculating quantities and sides
 
 Use a parenthesised expression to determine how many dice to roll or how many sides they have. It can contain arithmetic, functions, dice, roll groups and nested inline rolls:

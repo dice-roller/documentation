@@ -7,10 +7,12 @@ import apiConfig from '../api/typedoc-sidebar.json' with { type: 'json' };
 
 const isDev = process.env.NODE_ENV === 'development';
 const preview = process.env.DOCS_PREVIEW || '';
-const base = `/${process.env.BASE_PATH || 'documentation'}/`;
+let base = `/${process.env.BASE_PATH || 'documentation'}/`;
 const docsVersion = base.match(/\/versions\/([^/]+)\/$/)?.[1] || 'main';
 const docsRepo = process.env.DOCS_REPO || 'dice-roller/documentation';
 const docsBranch = process.env.DOCS_BRANCH || 'main';
+
+base = base.replace(/^\/documentation\/?/, '/');
 
 // Keep consuming the existing VuePress-shaped TypeDoc sidebar until its
 // generator is migrated in the library repository.

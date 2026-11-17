@@ -481,6 +481,8 @@ Count results that meet a condition instead of adding their values together.
 
 Add a [compare point](#compare-point) after the dice notation. Each matching result counts as `1` success; other results count as `0`.
 
+To compare the pool's total instead of counting individual results, parenthesise the pool: `(2d6)>=5` is an [expression comparison](maths.md#comparing-expressions), while `2d6>=5` is a target condition. With rolls of `3` and `4`, the first returns `1` because the total is `7`, while the second returns `0` successes.
+
 For example, this rolls five ten-sided dice and counts results of `8` or higher:
 
 ```javascript
@@ -728,7 +730,7 @@ The notation still limits each explosion branch to two generations; `maxIteratio
 
 ## Compare point
 
-A compare point defines a condition using a comparison operator followed by a number.
+A compare point defines a modifier condition using a comparison operator followed by a literal number, not an expression.
 
 For example, `>=5` means “greater than or equal to 5”.
 
@@ -755,6 +757,8 @@ These examples use [Explode](#explode), [Compound](#compound) and [Re-roll](#re-
 
 Compare points are also used directly for [target success](#target-success-dice-pool) and [target failure](#target-failure-dice-pool) conditions.
 
+For comparisons between expressions, including a comparison of a pool's total, see [Comparing expressions](maths.md#comparing-expressions). A compare point directly following a pool or a modifier can be interpreted as a modifier condition instead.
+
 ::: roller d4r<3 :::
 
 ### Not equal to
@@ -770,7 +774,7 @@ Immediately after dice notation, `!=` is interpreted as Explode followed by an e
 2d6<>4 // Count results not equal to 4 as successes
 ```
 
-The second expression uses [Target Success](#target-success-dice-pool).
+The second expression uses [Target Success](#target-success-dice-pool). To compare the pool total instead, use `(2d6)!=4` or `(2d6)<>4`; both return `1` or `0` as an [expression comparison](maths.md#comparing-expressions).
 
 Similarly, adding `!=` after Explode produces `!!=`, which is interpreted as [Compound](#compound) followed by an equality condition:
 
