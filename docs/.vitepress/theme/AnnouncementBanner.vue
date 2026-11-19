@@ -93,6 +93,10 @@ watch(banner, (element, _, onCleanup) => {
 
   onCleanup(() => observer.disconnect());
 }, { flush: 'post', immediate: true });
+
+onUnmounted(() => {
+  document.documentElement.style.removeProperty('--vp-layout-top-height');
+});
 </script>
 
 <template>
@@ -102,7 +106,7 @@ watch(banner, (element, _, onCleanup) => {
       🚧 You're viewing the development documentation.
       </template>
 
-      <template v-if="branchType === 'staging'">
+      <template v-else-if="branchType === 'staging'">
       🚧 You're viewing the staging documentation{{ displayVersion !== 'staging' ? ` for ${displayVersion.toLocaleUpperCase()}` : ''}}.
       </template>
 
