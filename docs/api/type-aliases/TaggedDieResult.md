@@ -4,7 +4,7 @@
 
 > **TaggedDieResult** = [`DieResult`](../rpg-dice-roller/namespaces/results/interfaces/DieResult.md) & `object`
 
-Defined in: [src/evaluator/Evaluator.ts:654](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L654)
+Defined in: [src/evaluator/Evaluator.ts:673](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L673)
 
 A die result carrying an internal pool tag during flattened group modifier handling.
 

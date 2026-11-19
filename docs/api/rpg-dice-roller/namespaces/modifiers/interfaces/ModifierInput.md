@@ -44,6 +44,26 @@ The modifier node from the AST.
 
 ***
 
+### rollBatch?
+
+> `readonly` `optional` **rollBatch?**: (`count`) => readonly [`DieResult`](../../results/interfaces/DieResult.md)[] \| `undefined`
+
+Defined in: [src/modifiers/types.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L20)
+
+Rolls a complete batch atomically, or returns `undefined` without drawing if the remaining per-pool budget is insufficient.
+
+#### Parameters
+
+##### count
+
+`number`
+
+#### Returns
+
+readonly [`DieResult`](../../results/interfaces/DieResult.md)[] \| `undefined`
+
+***
+
 ### rollDie?
 
 > `readonly` `optional` **rollDie?**: () => [`DieResult`](../../results/interfaces/DieResult.md) \| `undefined`

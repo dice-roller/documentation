@@ -4,7 +4,7 @@
 
 > **conditionReference**(): [`ReferenceNode`](../interfaces/ReferenceNode.md)
 
-Defined in: [src/ast/builders.ts:219](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L219)
+Defined in: [src/ast/builders.ts:221](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L221)
 
 A convenience builder for the system binding `condition`.
 

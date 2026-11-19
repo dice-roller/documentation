@@ -4,7 +4,7 @@
 
 > **ModifierHandlerOf**\<`K`\> = [`ModifierHandler`](../interfaces/ModifierHandler.md)\<`Extract`\<[`ModifierNode`](../../ast/type-aliases/ModifierNode.md), \{ `name`: `K`; \}\>\>
 
-Defined in: [src/modifiers/types.ts:65](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L65)
+Defined in: [src/modifiers/types.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L69)
 
 The handler for the modifier with the given name.
 

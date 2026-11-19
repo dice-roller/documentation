@@ -2,7 +2,7 @@
 
 # Interface: MinNode
 
-Defined in: [src/ast/nodes.ts:333](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L333)
+Defined in: [src/ast/nodes.ts:344](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L344)
 
 `min2`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:333](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"min"`
 
-Defined in: [src/ast/nodes.ts:335](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L335)
+Defined in: [src/ast/nodes.ts:346](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L346)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:335](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:334](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L334)
+Defined in: [src/ast/nodes.ts:345](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L345)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:334](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **value**: `number`
 
-Defined in: [src/ast/nodes.ts:336](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L336)
+Defined in: [src/ast/nodes.ts:347](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L347)

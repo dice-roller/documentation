@@ -2,7 +2,7 @@
 
 # Interface: ModifiableOptions
 
-Defined in: [src/ast/builders.ts:94](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L94)
+Defined in: [src/ast/builders.ts:96](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L96)
 
 Options shared by pools and groups.
 
@@ -12,7 +12,7 @@ Options shared by pools and groups.
 
 > `optional` **description?**: `string` \| [`DescriptionNode`](DescriptionNode.md)
 
-Defined in: [src/ast/builders.ts:98](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L98)
+Defined in: [src/ast/builders.ts:100](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L100)
 
 Text is trimmed and must be nonempty; a string is stored as an `inline` description.
 
@@ -22,6 +22,6 @@ Text is trimmed and must be nonempty; a string is stored as an `inline` descript
 
 > `optional` **modifiers?**: readonly [`ModifierNode`](../type-aliases/ModifierNode.md)[]
 
-Defined in: [src/ast/builders.ts:96](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L96)
+Defined in: [src/ast/builders.ts:98](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L98)
 
 Repeated names use the last node at the first position; keep and drop are keyed by end.

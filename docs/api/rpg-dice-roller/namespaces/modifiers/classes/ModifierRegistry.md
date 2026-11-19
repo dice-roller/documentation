@@ -28,7 +28,7 @@ const roller = new Roller({ modifiers });
 
 Defined in: [src/modifiers/ModifierRegistry.ts:24](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/ModifierRegistry.ts#L24)
 
-A registry with the 11 built-in handlers registered.
+A registry with the built-in handlers registered.
 
 #### Returns
 
@@ -64,7 +64,7 @@ Returns the handler for the name, or `undefined` if none is registered.
 
 ##### K
 
-`K` *extends* `"max"` \| `"min"` \| `"explode"` \| `"target"` \| `"drop"` \| `"keep"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"sort"`
+`K` *extends* `"max"` \| `"min"` \| `"explode-matching-batch"` \| `"explode"` \| `"target"` \| `"drop"` \| `"keep"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"sort"`
 
 #### Parameters
 
@@ -88,7 +88,7 @@ Defined in: [src/modifiers/ModifierRegistry.ts:52](https://github.com/dice-rolle
 
 ##### K
 
-`K` *extends* `"max"` \| `"min"` \| `"explode"` \| `"target"` \| `"drop"` \| `"keep"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"sort"`
+`K` *extends* `"max"` \| `"min"` \| `"explode-matching-batch"` \| `"explode"` \| `"target"` \| `"drop"` \| `"keep"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"sort"`
 
 #### Parameters
 
@@ -118,7 +118,7 @@ Whether a handler is registered under the name.
 
 ##### name
 
-`"max"` \| `"min"` \| `"explode"` \| `"target"` \| `"drop"` \| `"keep"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"sort"`
+`"max"` \| `"min"` \| `"explode-matching-batch"` \| `"explode"` \| `"target"` \| `"drop"` \| `"keep"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"sort"`
 
 #### Returns
 
@@ -191,7 +191,7 @@ it's rolled.
 
 ##### name
 
-`"max"` \| `"min"` \| `"explode"` \| `"target"` \| `"drop"` \| `"keep"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"sort"`
+`"max"` \| `"min"` \| `"explode-matching-batch"` \| `"explode"` \| `"target"` \| `"drop"` \| `"keep"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"sort"`
 
 #### Returns
 

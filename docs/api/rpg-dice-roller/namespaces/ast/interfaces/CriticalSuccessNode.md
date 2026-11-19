@@ -2,7 +2,7 @@
 
 # Interface: CriticalSuccessNode
 
-Defined in: [src/ast/nodes.ts:305](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L305)
+Defined in: [src/ast/nodes.ts:316](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L316)
 
 `cs`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:305](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **comparePoint?**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:308](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L308)
+Defined in: [src/ast/nodes.ts:319](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L319)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:308](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"critical-success"`
 
-Defined in: [src/ast/nodes.ts:307](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L307)
+Defined in: [src/ast/nodes.ts:318](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L318)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:307](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:306](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L306)
+Defined in: [src/ast/nodes.ts:317](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L317)

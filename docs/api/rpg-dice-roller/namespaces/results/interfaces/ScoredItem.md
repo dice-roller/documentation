@@ -25,7 +25,7 @@ The value used in totals (e.g. `1` / `-1` / `0` for target successes / failures)
 
 ### flags
 
-> `readonly` **flags**: readonly (`"max"` \| `"min"` \| `"explode"` \| `"drop"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"compound"` \| `"penetrate"` \| `"re-roll-once"` \| `"target-success"` \| `"target-failure"` \| `"unique-once"`)[]
+> `readonly` **flags**: readonly (`"max"` \| `"min"` \| `"explode-matching-batch"` \| `"explode"` \| `"drop"` \| `"re-roll"` \| `"unique"` \| `"critical-success"` \| `"critical-failure"` \| `"compound"` \| `"penetrate"` \| `"explode-matching-batch-failure"` \| `"re-roll-once"` \| `"target-success"` \| `"target-failure"` \| `"unique-once"`)[]
 
 Defined in: [src/results/types.ts:32](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L32)
 

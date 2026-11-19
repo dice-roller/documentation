@@ -55,6 +55,11 @@
                 "collapsible": true
               },
               {
+                "text": "ExplodeMatchingBatchNode",
+                "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ExplodeMatchingBatchNode.md",
+                "collapsible": true
+              },
+              {
                 "text": "ExplodeNode",
                 "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ExplodeNode.md",
                 "collapsible": true
@@ -293,6 +298,11 @@
               {
                 "text": "explode",
                 "link": "/api/rpg-dice-roller/namespaces/ast/functions/explode.md",
+                "collapsible": true
+              },
+              {
+                "text": "explodeMatchingBatch",
+                "link": "/api/rpg-dice-roller/namespaces/ast/functions/explodeMatchingBatch.md",
                 "collapsible": true
               },
               {
@@ -645,6 +655,11 @@
               {
                 "text": "explodeHandler",
                 "link": "/api/rpg-dice-roller/namespaces/modifiers/variables/explodeHandler.md",
+                "collapsible": true
+              },
+              {
+                "text": "explodeMatchingBatchHandler",
+                "link": "/api/rpg-dice-roller/namespaces/modifiers/variables/explodeMatchingBatchHandler.md",
                 "collapsible": true
               },
               {

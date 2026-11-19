@@ -4,6 +4,6 @@
 
 > **ModifierName** = [`ModifierNode`](ModifierNode.md)\[`"name"`\]
 
-Defined in: [src/ast/nodes.ts:225](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L225)
+Defined in: [src/ast/nodes.ts:226](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L226)
 
 The `name` of every modifier node.

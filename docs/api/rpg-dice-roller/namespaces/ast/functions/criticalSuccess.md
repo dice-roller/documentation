@@ -4,7 +4,7 @@
 
 > **criticalSuccess**(`comparePoint?`): [`CriticalSuccessNode`](../interfaces/CriticalSuccessNode.md)
 
-Defined in: [src/ast/builders.ts:392](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L392)
+Defined in: [src/ast/builders.ts:409](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L409)
 
 Flag critical successes using the supplied compare point or the handler default.
 

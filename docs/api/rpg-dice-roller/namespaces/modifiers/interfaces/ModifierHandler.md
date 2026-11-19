@@ -2,7 +2,7 @@
 
 # Interface: ModifierHandler\<N\>
 
-Defined in: [src/modifiers/types.ts:29](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L29)
+Defined in: [src/modifiers/types.ts:31](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L31)
 
 The behaviour of a modifier.
 
@@ -23,7 +23,7 @@ items may be reused.
 
 > `readonly` **appliesTo**: readonly [`ModifierTarget`](../type-aliases/ModifierTarget.md)[]
 
-Defined in: [src/modifiers/types.ts:35](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L35)
+Defined in: [src/modifiers/types.ts:37](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L37)
 
 Targets on which the evaluator permits this handler.
 
@@ -33,7 +33,7 @@ Targets on which the evaluator permits this handler.
 
 > `readonly` `optional` **groupHandling?**: `"flatten"` \| `"each-pool"`
 
-Defined in: [src/modifiers/types.ts:49](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L49)
+Defined in: [src/modifiers/types.ts:53](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L53)
 
 How the handler treats the dice inside a roll group. By default it only gets the members.
 
@@ -46,6 +46,8 @@ Pools in a pool's quantity or die arguments aren't included. Flattening stops at
 with multiple expressions it operates on members instead. Flattened dice are written back to
 their original pools, so returned dice must retain their pool association (e.g. by copying an
 input item with object spread). New, unassociated dice cause an `EvaluationError`.
+The matching-batch modifier treats every item supplied to it as its initial batch, so earlier
+modifiers can change its batch size.
 
 ***
 
@@ -53,7 +55,7 @@ input item with object spread). New, unassociated dice cause an `EvaluationError
 
 > `readonly` **name**: `N`\[`"name"`\]
 
-Defined in: [src/modifiers/types.ts:31](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L31)
+Defined in: [src/modifiers/types.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L33)
 
 The existing AST modifier name this handler implements.
 
@@ -63,7 +65,7 @@ The existing AST modifier name this handler implements.
 
 > `readonly` **order**: `number`
 
-Defined in: [src/modifiers/types.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L33)
+Defined in: [src/modifiers/types.ts:35](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L35)
 
 Execution order; lower runs first.
 
@@ -73,13 +75,13 @@ Execution order; lower runs first.
 
 > **apply**\<`T`\>(`items`, `input`): `T`[]
 
-Defined in: [src/modifiers/types.ts:58](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L58)
+Defined in: [src/modifiers/types.ts:62](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L62)
 
 Applies the modifier.
 
 `items` are die results for a pool, or group members for a group (or die results, as set by
-`groupHandling`). Group calls, including calls for their pool dice, do not supply `die` or
-`rollDie`. The evaluator requires an array result.
+`groupHandling`). Group calls, including calls for their pool dice, do not supply `die`,
+`rollDie` or `rollBatch`. The evaluator requires an array result.
 
 #### Type Parameters
 

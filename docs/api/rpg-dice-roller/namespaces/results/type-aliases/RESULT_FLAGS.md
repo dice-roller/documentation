@@ -2,7 +2,7 @@
 
 # Type Alias: RESULT\_FLAGS
 
-> **RESULT\_FLAGS** = readonly \[`"explode"`, `"compound"`, `"penetrate"`, `"re-roll"`, `"re-roll-once"`, `"drop"`, `"max"`, `"min"`, `"target-success"`, `"target-failure"`, `"critical-success"`, `"critical-failure"`, `"unique"`, `"unique-once"`\]
+> **RESULT\_FLAGS** = readonly \[`"explode"`, `"explode-matching-batch"`, `"explode-matching-batch-failure"`, `"compound"`, `"penetrate"`, `"re-roll"`, `"re-roll-once"`, `"drop"`, `"max"`, `"min"`, `"target-success"`, `"target-failure"`, `"critical-success"`, `"critical-failure"`, `"unique"`, `"unique-once"`\]
 
 Defined in: [src/results/flags.ts:6](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/flags.ts#L6)
 

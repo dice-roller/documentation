@@ -2,7 +2,7 @@
 
 # Interface: TargetRule
 
-Defined in: [src/ast/nodes.ts:253](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L253)
+Defined in: [src/ast/nodes.ts:264](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L264)
 
 A target comparison; amount is a whole number from 1 to 10 and defaults to 1.
 
@@ -12,7 +12,7 @@ A target comparison; amount is a whole number from 1 to 10 and defaults to 1.
 
 > `readonly` `optional` **amount?**: `number`
 
-Defined in: [src/ast/nodes.ts:256](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L256)
+Defined in: [src/ast/nodes.ts:267](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L267)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:256](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **comparePoint**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:255](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L255)
+Defined in: [src/ast/nodes.ts:266](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L266)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:255](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **kind**: `"success"` \| `"failure"`
 
-Defined in: [src/ast/nodes.ts:254](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L254)
+Defined in: [src/ast/nodes.ts:265](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L265)

@@ -20,6 +20,7 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [DescriptionNode](interfaces/DescriptionNode.md) | A roll description. |
 | [DieNode](interfaces/DieNode.md) | The die of a pool: a reference to a die factory in the `DieRegistry`, and its arguments. |
 | [DropNode](interfaces/DropNode.md) | `d`, `dh`, `dl`. |
+| [ExplodeMatchingBatchNode](interfaces/ExplodeMatchingBatchNode.md) | `!m[limit][comparePoint][f failureComparePoint]` |
 | [ExplodeNode](interfaces/ExplodeNode.md) | `!`, `!!` (compound), `!p` (penetrate), `!!p`. |
 | [FunctionNode](interfaces/FunctionNode.md) | A maths function call, e.g. `floor(2d6 / 2)`. |
 | [GroupNode](interfaces/GroupNode.md) | A roll group, e.g. `{4d6+2d8, 3d20}k1`. |
@@ -79,6 +80,7 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | [die](functions/die.md) | A reference to a die factory, e.g. `die("percentile")` for `d%`, or `die("range", -2, 3)`. Register custom names in the die registry used by the evaluator before rolling. Registration is not checked here; valid literal `range` and `face` dice use brace notation, while custom names and unsupported arguments have display-only notation. |
 | [drop](functions/drop.md) | Drop `qty` highest (`h`) or lowest (`l`) items; quantity defaults to 1. |
 | [explode](functions/explode.md) | Explode matching rolls. An optional positive safe-integer `limit` bounds generations per initial die and is capped by the roll context's `maxIterations`; `amount` is the positive safe-integer number of child dice generated per match and defaults to 1. |
+| [explodeMatchingBatch](functions/explodeMatchingBatch.md) | Explodes complete pool batches whose dice all match; an optional failure comparison stops `!m`. |
 | [fn](functions/fn.md) | A maths function call, e.g. `fn("floor", binary("/", pool(2, 6), 2))`. Arity is checked at evaluation. |
 | [group](functions/group.md) | A roll group, e.g. `group([pool(4, 6), pool(2, 8)])` for `{4d6, 2d8}`. |
 | [keep](functions/keep.md) | Keep `qty` highest (`h`) or lowest (`l`) items; quantity defaults to 1. |
