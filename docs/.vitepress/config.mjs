@@ -70,6 +70,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/hero.svg',
     docsBranch,
+    docsVersion,
     footer: {
       message: `MIT Licensed · <a href="${base}credits.html">Credits</a>`,
       copyright: 'Copyright © GreenImp Media ltd.',
@@ -82,6 +83,12 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
       { text: 'API', link: '/api/' },
+      {
+        text: 'v6.x',
+        items: [
+          { text: 'Version 5.x', link: '/versions/v5/' },
+        ],
+      },
       {
         text: 'Contribute',
         items: [
