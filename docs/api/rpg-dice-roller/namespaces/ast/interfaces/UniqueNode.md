@@ -2,7 +2,7 @@
 
 # Interface: UniqueNode
 
-Defined in: [src/ast/nodes.ts:306](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L306)
+Defined in: [src/ast/nodes.ts:324](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L324)
 
 `u`, `uo` and numeric uniqueness limits.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:306](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **comparePoint?**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:310](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L310)
+Defined in: [src/ast/nodes.ts:328](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L328)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:310](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **limit?**: `number`
 
-Defined in: [src/ast/nodes.ts:312](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L312)
+Defined in: [src/ast/nodes.ts:330](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L330)
 
 Maximum additional re-rolls per duplicate die; omitted limits use the context cap.
 
@@ -30,7 +30,7 @@ Maximum additional re-rolls per duplicate die; omitted limits use the context ca
 
 > `readonly` **name**: `"unique"`
 
-Defined in: [src/ast/nodes.ts:308](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L308)
+Defined in: [src/ast/nodes.ts:326](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L326)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [src/ast/nodes.ts:308](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **once**: `boolean`
 
-Defined in: [src/ast/nodes.ts:309](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L309)
+Defined in: [src/ast/nodes.ts:327](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L327)
 
 ***
 
@@ -46,4 +46,4 @@ Defined in: [src/ast/nodes.ts:309](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:307](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L307)
+Defined in: [src/ast/nodes.ts:325](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L325)

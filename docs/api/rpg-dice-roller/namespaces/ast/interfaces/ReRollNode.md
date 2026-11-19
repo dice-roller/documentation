@@ -2,7 +2,7 @@
 
 # Interface: ReRollNode
 
-Defined in: [src/ast/nodes.ts:294](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L294)
+Defined in: [src/ast/nodes.ts:312](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L312)
 
 `r`, `ro` and numeric re-roll limits.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:294](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **amount?**: `number`
 
-Defined in: [src/ast/nodes.ts:302](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L302)
+Defined in: [src/ast/nodes.ts:320](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L320)
 
 Number of replacement dice generated for each matching roll; omitted amounts use 1.
 
@@ -22,7 +22,7 @@ Number of replacement dice generated for each matching roll; omitted amounts use
 
 > `readonly` `optional` **comparePoint?**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:298](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L298)
+Defined in: [src/ast/nodes.ts:316](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L316)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [src/ast/nodes.ts:298](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **limit?**: `number`
 
-Defined in: [src/ast/nodes.ts:300](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L300)
+Defined in: [src/ast/nodes.ts:318](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L318)
 
 Maximum additional re-rolls per die; omitted limits use the context cap.
 
@@ -40,7 +40,7 @@ Maximum additional re-rolls per die; omitted limits use the context cap.
 
 > `readonly` **name**: `"re-roll"`
 
-Defined in: [src/ast/nodes.ts:296](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L296)
+Defined in: [src/ast/nodes.ts:314](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L314)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [src/ast/nodes.ts:296](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **once**: `boolean`
 
-Defined in: [src/ast/nodes.ts:297](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L297)
+Defined in: [src/ast/nodes.ts:315](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L315)
 
 ***
 
@@ -56,4 +56,4 @@ Defined in: [src/ast/nodes.ts:297](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:295](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L295)
+Defined in: [src/ast/nodes.ts:313](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L313)

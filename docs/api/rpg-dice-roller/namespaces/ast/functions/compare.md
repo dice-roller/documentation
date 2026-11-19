@@ -4,7 +4,7 @@
 
 > **compare**(`operator`, `value`): [`ComparePoint`](../interfaces/ComparePoint.md)
 
-Defined in: [src/ast/builders.ts:253](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L253)
+Defined in: [src/ast/builders.ts:257](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L257)
 
 A compare point, e.g. `compare(">=", 8)`.
 

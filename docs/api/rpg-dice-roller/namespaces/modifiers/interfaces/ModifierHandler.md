@@ -2,7 +2,7 @@
 
 # Interface: ModifierHandler\<N\>
 
-Defined in: [src/modifiers/types.ts:31](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L31)
+Defined in: [src/modifiers/types.ts:39](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L39)
 
 The behaviour of a modifier.
 
@@ -23,7 +23,7 @@ items may be reused.
 
 > `readonly` **appliesTo**: readonly [`ModifierTarget`](../type-aliases/ModifierTarget.md)[]
 
-Defined in: [src/modifiers/types.ts:37](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L37)
+Defined in: [src/modifiers/types.ts:45](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L45)
 
 Targets on which the evaluator permits this handler.
 
@@ -33,7 +33,7 @@ Targets on which the evaluator permits this handler.
 
 > `readonly` `optional` **groupHandling?**: `"flatten"` \| `"each-pool"`
 
-Defined in: [src/modifiers/types.ts:53](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L53)
+Defined in: [src/modifiers/types.ts:61](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L61)
 
 How the handler treats the dice inside a roll group. By default it only gets the members.
 
@@ -55,7 +55,7 @@ modifiers can change its batch size.
 
 > `readonly` **name**: `N`\[`"name"`\]
 
-Defined in: [src/modifiers/types.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L33)
+Defined in: [src/modifiers/types.ts:41](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L41)
 
 The existing AST modifier name this handler implements.
 
@@ -65,7 +65,7 @@ The existing AST modifier name this handler implements.
 
 > `readonly` **order**: `number`
 
-Defined in: [src/modifiers/types.ts:35](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L35)
+Defined in: [src/modifiers/types.ts:43](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L43)
 
 Execution order; lower runs first.
 
@@ -75,7 +75,7 @@ Execution order; lower runs first.
 
 > **apply**\<`T`\>(`items`, `input`): `T`[]
 
-Defined in: [src/modifiers/types.ts:62](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L62)
+Defined in: [src/modifiers/types.ts:70](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L70)
 
 Applies the modifier.
 

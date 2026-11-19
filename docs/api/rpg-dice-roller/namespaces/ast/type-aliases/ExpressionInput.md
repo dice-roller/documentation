@@ -4,6 +4,6 @@
 
 > **ExpressionInput** = `number` \| [`ExpressionNode`](../../../../type-aliases/ExpressionNode.md)
 
-Defined in: [src/ast/builders.ts:87](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L87)
+Defined in: [src/ast/builders.ts:91](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L91)
 
 A number or an expression node.

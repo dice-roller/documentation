@@ -2,7 +2,7 @@
 
 # Interface: CriticalFailureNode
 
-Defined in: [src/ast/nodes.ts:323](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L323)
+Defined in: [src/ast/nodes.ts:341](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L341)
 
 `cf`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:323](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **comparePoint?**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:326](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L326)
+Defined in: [src/ast/nodes.ts:344](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L344)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:326](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"critical-failure"`
 
-Defined in: [src/ast/nodes.ts:325](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L325)
+Defined in: [src/ast/nodes.ts:343](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L343)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/ast/nodes.ts:325](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:324](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L324)
+Defined in: [src/ast/nodes.ts:342](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L342)

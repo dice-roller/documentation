@@ -2,7 +2,7 @@
 
 # Interface: KeepNode
 
-Defined in: [src/ast/nodes.ts:286](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L286)
+Defined in: [src/ast/nodes.ts:296](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L296)
 
 `k`, `kh`, `kl`.
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:286](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **end**: [`PoolEnd`](../type-aliases/PoolEnd.md)
 
-Defined in: [src/ast/nodes.ts:289](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L289)
+Defined in: [src/ast/nodes.ts:299](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L299)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:289](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **name**: `"keep"`
 
-Defined in: [src/ast/nodes.ts:288](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L288)
+Defined in: [src/ast/nodes.ts:298](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L298)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/ast/nodes.ts:288](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **qty**: `number`
 
-Defined in: [src/ast/nodes.ts:290](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L290)
+Defined in: [src/ast/nodes.ts:300](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L300)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/ast/nodes.ts:290](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:287](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L287)
+Defined in: [src/ast/nodes.ts:297](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L297)

@@ -4,7 +4,7 @@
 
 > **negate**(`operand`): [`UnaryNode`](../interfaces/UnaryNode.md)
 
-Defined in: [src/ast/builders.ts:187](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L187)
+Defined in: [src/ast/builders.ts:191](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L191)
 
 A unary minus.
 

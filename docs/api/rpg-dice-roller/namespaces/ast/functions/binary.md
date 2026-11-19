@@ -4,7 +4,7 @@
 
 > **binary**(`op`, `left`, `right`): [`BinaryNode`](../interfaces/BinaryNode.md)
 
-Defined in: [src/ast/builders.ts:161](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L161)
+Defined in: [src/ast/builders.ts:165](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L165)
 
 A binary operation, e.g. `binary("+", pool(2, 6), 3)` for `2d6+3`.
 

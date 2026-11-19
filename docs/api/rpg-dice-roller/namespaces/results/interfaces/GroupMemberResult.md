@@ -2,7 +2,7 @@
 
 # Interface: GroupMemberResult
 
-Defined in: [src/results/types.ts:80](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L80)
+Defined in: [src/results/types.ts:89](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L89)
 
 One expression of a roll group, with scoring separate from its nested expression result.
 
@@ -44,7 +44,7 @@ Semantic markers for presenters; setting a flag alone does not change the total.
 
 > `readonly` **result**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:83](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L83)
+Defined in: [src/results/types.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L92)
 
 The evaluated expression; scoring changes to the member need not change this result.
 
@@ -54,7 +54,7 @@ The evaluated expression; scoring changes to the member need not change this res
 
 > `readonly` **type**: `"group-member"`
 
-Defined in: [src/results/types.ts:81](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L81)
+Defined in: [src/results/types.ts:90](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L90)
 
 ***
 

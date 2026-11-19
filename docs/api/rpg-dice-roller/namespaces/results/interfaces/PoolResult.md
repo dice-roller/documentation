@@ -28,6 +28,16 @@ The evaluated `node.die.args`, e.g. the `6` in `d6` or the `(2+3)` in `d(2+3)`.
 
 ***
 
+### modifierArguments?
+
+> `readonly` `optional` **modifierArguments?**: readonly [`ModifierArgumentResult`](ModifierArgumentResult.md)[]
+
+Defined in: [src/results/types.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L78)
+
+Evaluated Keep/Drop expressions, in modifier execution order; omitted for numeric modifiers.
+
+***
+
 ### node
 
 > `readonly` **node**: [`PoolNode`](../../ast/interfaces/PoolNode.md)

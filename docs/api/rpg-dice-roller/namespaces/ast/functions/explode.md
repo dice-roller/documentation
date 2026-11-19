@@ -4,7 +4,7 @@
 
 > **explode**(`options?`): [`ExplodeNode`](../interfaces/ExplodeNode.md)
 
-Defined in: [src/ast/builders.ts:272](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L272)
+Defined in: [src/ast/builders.ts:276](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L276)
 
 Explode matching rolls. An optional positive safe-integer `limit` bounds generations per
 initial die and is capped by the roll context's `maxIterations`; `amount` is the positive

@@ -4,7 +4,7 @@
 
 > **sort**(`direction?`): [`SortNode`](../interfaces/SortNode.md)
 
-Defined in: [src/ast/builders.ts:423](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L423)
+Defined in: [src/ast/builders.ts:445](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L445)
 
 Sort ascending (`a`, the default) or descending (`d`).
 

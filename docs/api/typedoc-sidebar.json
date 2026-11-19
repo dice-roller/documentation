@@ -25,6 +25,16 @@
                 "collapsible": true
               },
               {
+                "text": "ComputedDropNode",
+                "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ComputedDropNode.md",
+                "collapsible": true
+              },
+              {
+                "text": "ComputedKeepNode",
+                "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ComputedKeepNode.md",
+                "collapsible": true
+              },
+              {
                 "text": "ConditionalNode",
                 "link": "/api/rpg-dice-roller/namespaces/ast/interfaces/ConditionalNode.md",
                 "collapsible": true
@@ -826,6 +836,11 @@
               {
                 "text": "GroupResult",
                 "link": "/api/rpg-dice-roller/namespaces/results/interfaces/GroupResult.md",
+                "collapsible": true
+              },
+              {
+                "text": "ModifierArgumentResult",
+                "link": "/api/rpg-dice-roller/namespaces/results/interfaces/ModifierArgumentResult.md",
                 "collapsible": true
               },
               {

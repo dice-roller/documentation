@@ -14,6 +14,8 @@ Expression tree nodes and notation helpers for inspecting or constructing rolls.
 | ------ | ------ |
 | [BinaryNode](interfaces/BinaryNode.md) | A binary maths operation, e.g. `2d6 + 3`. |
 | [ComparePoint](interfaces/ComparePoint.md) | A comparison against a value, e.g. the `>=8` in `8d10>=8`. |
+| [ComputedDropNode](interfaces/ComputedDropNode.md) | A drop quantity preserved as an unevaluated parenthesised expression. |
+| [ComputedKeepNode](interfaces/ComputedKeepNode.md) | A keep quantity preserved as an unevaluated parenthesised expression. |
 | [ConditionalNode](interfaces/ConditionalNode.md) | A conditional expression; `null` preserves the omitted true-branch shorthand. |
 | [CriticalFailureNode](interfaces/CriticalFailureNode.md) | `cf`. |
 | [CriticalSuccessNode](interfaces/CriticalSuccessNode.md) | `cs`. |

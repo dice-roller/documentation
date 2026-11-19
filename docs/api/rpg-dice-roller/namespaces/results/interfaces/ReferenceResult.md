@@ -2,7 +2,7 @@
 
 # Interface: ReferenceResult
 
-Defined in: [src/results/types.ts:148](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L148)
+Defined in: [src/results/types.ts:159](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L159)
 
 A system or caller-data reference resolved to a numeric value.
 
@@ -12,7 +12,7 @@ A system or caller-data reference resolved to a numeric value.
 
 > `readonly` **node**: [`ReferenceNode`](../../ast/interfaces/ReferenceNode.md)
 
-Defined in: [src/results/types.ts:150](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L150)
+Defined in: [src/results/types.ts:161](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L161)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:150](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **type**: `"reference"`
 
-Defined in: [src/results/types.ts:149](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L149)
+Defined in: [src/results/types.ts:160](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L160)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/results/types.ts:149](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:151](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L151)
+Defined in: [src/results/types.ts:162](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L162)

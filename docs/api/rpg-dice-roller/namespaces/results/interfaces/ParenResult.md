@@ -2,7 +2,7 @@
 
 # Interface: ParenResult
 
-Defined in: [src/results/types.ts:122](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L122)
+Defined in: [src/results/types.ts:133](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L133)
 
 A parenthesised expression and its evaluated inner result.
 
@@ -12,7 +12,7 @@ A parenthesised expression and its evaluated inner result.
 
 > `readonly` **inner**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:126](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L126)
+Defined in: [src/results/types.ts:137](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L137)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:126](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **node**: [`ParenNode`](../../ast/interfaces/ParenNode.md)
 
-Defined in: [src/results/types.ts:124](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L124)
+Defined in: [src/results/types.ts:135](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L135)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/results/types.ts:124](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **type**: `"paren"`
 
-Defined in: [src/results/types.ts:123](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L123)
+Defined in: [src/results/types.ts:134](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L134)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/results/types.ts:123](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:125](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L125)
+Defined in: [src/results/types.ts:136](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L136)

@@ -4,7 +4,7 @@
 
 > **num**(`value`): [`NumberNode`](../interfaces/NumberNode.md)
 
-Defined in: [src/ast/builders.ts:108](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L108)
+Defined in: [src/ast/builders.ts:112](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L112)
 
 A literal number.
 

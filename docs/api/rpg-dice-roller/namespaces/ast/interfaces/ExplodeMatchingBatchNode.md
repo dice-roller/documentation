@@ -2,7 +2,7 @@
 
 # Interface: ExplodeMatchingBatchNode
 
-Defined in: [src/ast/nodes.ts:254](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L254)
+Defined in: [src/ast/nodes.ts:256](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L256)
 
 `!m[limit][comparePoint][f failureComparePoint]`
 
@@ -12,7 +12,7 @@ Defined in: [src/ast/nodes.ts:254](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **comparePoint?**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:257](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L257)
+Defined in: [src/ast/nodes.ts:259](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L259)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/ast/nodes.ts:257](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **failureComparePoint?**: [`ComparePoint`](ComparePoint.md)
 
-Defined in: [src/ast/nodes.ts:258](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L258)
+Defined in: [src/ast/nodes.ts:260](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L260)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/ast/nodes.ts:258](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` `optional` **limit?**: `number`
 
-Defined in: [src/ast/nodes.ts:260](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L260)
+Defined in: [src/ast/nodes.ts:262](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L262)
 
 Maximum additional explosions per initial batch; omitted limits use the context cap.
 
@@ -38,7 +38,7 @@ Maximum additional explosions per initial batch; omitted limits use the context 
 
 > `readonly` **name**: `"explode-matching-batch"`
 
-Defined in: [src/ast/nodes.ts:256](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L256)
+Defined in: [src/ast/nodes.ts:258](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L258)
 
 ***
 
@@ -46,4 +46,4 @@ Defined in: [src/ast/nodes.ts:256](https://github.com/dice-roller/rpg-dice-rolle
 
 > `readonly` **type**: `"modifier"`
 
-Defined in: [src/ast/nodes.ts:255](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L255)
+Defined in: [src/ast/nodes.ts:257](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/nodes.ts#L257)

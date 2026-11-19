@@ -2,7 +2,7 @@
 
 # Interface: ConditionalResult
 
-Defined in: [src/results/types.ts:138](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L138)
+Defined in: [src/results/types.ts:149](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L149)
 
 A check and its one evaluated branch.
 
@@ -12,7 +12,7 @@ A check and its one evaluated branch.
 
 > `readonly` **condition**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:142](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L142)
+Defined in: [src/results/types.ts:153](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L153)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:142](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **node**: [`ConditionalNode`](../../ast/interfaces/ConditionalNode.md)
 
-Defined in: [src/results/types.ts:140](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L140)
+Defined in: [src/results/types.ts:151](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L151)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/results/types.ts:140](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **selectedBranch**: `"true"` \| `"false"`
 
-Defined in: [src/results/types.ts:143](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L143)
+Defined in: [src/results/types.ts:154](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L154)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [src/results/types.ts:143](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **selectedResult**: [`ExpressionResult`](../../../../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:144](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L144)
+Defined in: [src/results/types.ts:155](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L155)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [src/results/types.ts:144](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **type**: `"conditional"`
 
-Defined in: [src/results/types.ts:139](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L139)
+Defined in: [src/results/types.ts:150](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L150)
 
 ***
 
@@ -52,4 +52,4 @@ Defined in: [src/results/types.ts:139](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:141](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L141)
+Defined in: [src/results/types.ts:152](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L152)

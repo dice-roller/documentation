@@ -4,7 +4,7 @@
 
 > **criticalFailure**(`comparePoint?`): [`CriticalFailureNode`](../interfaces/CriticalFailureNode.md)
 
-Defined in: [src/ast/builders.ts:416](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L416)
+Defined in: [src/ast/builders.ts:438](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L438)
 
 Flag critical failures using the supplied compare point or the handler default.
 

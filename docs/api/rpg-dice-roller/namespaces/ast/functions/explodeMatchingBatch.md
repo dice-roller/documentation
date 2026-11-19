@@ -4,7 +4,7 @@
 
 > **explodeMatchingBatch**(`options?`): [`ExplodeMatchingBatchNode`](../interfaces/ExplodeMatchingBatchNode.md)
 
-Defined in: [src/ast/builders.ts:291](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L291)
+Defined in: [src/ast/builders.ts:295](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L295)
 
 Explodes complete pool batches whose dice all match; an optional failure comparison stops `!m`.
 

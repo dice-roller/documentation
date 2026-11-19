@@ -18,6 +18,7 @@ Result types and helpers for inspecting evaluated expressions.
 | [FunctionResult](interfaces/FunctionResult.md) | A maths function and its evaluated arguments. |
 | [GroupMemberResult](interfaces/GroupMemberResult.md) | One expression of a roll group, with scoring separate from its nested expression result. |
 | [GroupResult](interfaces/GroupResult.md) | A group of evaluated members after its modifiers have been applied. |
+| [ModifierArgumentResult](interfaces/ModifierArgumentResult.md) | An evaluated expression used as a computed Keep/Drop quantity. |
 | [NumberResult](interfaces/NumberResult.md) | The result of a numeric literal. |
 | [ParenResult](interfaces/ParenResult.md) | A parenthesised expression and its evaluated inner result. |
 | [PoolResult](interfaces/PoolResult.md) | A pool's evaluated quantity, die arguments, die snapshot and modified rolls. |

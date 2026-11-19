@@ -4,7 +4,7 @@
 
 > **reference**(`namespace`, ...`path`): [`ReferenceNode`](../interfaces/ReferenceNode.md)
 
-Defined in: [src/ast/builders.ts:226](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L226)
+Defined in: [src/ast/builders.ts:230](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/builders.ts#L230)
 
 A caller-data or system reference, e.g. `reference("data", "character", "level")`.
 

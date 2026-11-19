@@ -2,7 +2,7 @@
 
 # Interface: ComparisonResult
 
-Defined in: [src/results/types.ts:105](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L105)
+Defined in: [src/results/types.ts:116](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L116)
 
 A numeric comparison and its evaluated operands.
 
@@ -12,7 +12,7 @@ A numeric comparison and its evaluated operands.
 
 > `readonly` **left**: [`ExpressionResult`](../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:109](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L109)
+Defined in: [src/results/types.ts:120](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L120)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/results/types.ts:109](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **node**: [`ComparisonNode`](ComparisonNode.md)
 
-Defined in: [src/results/types.ts:107](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L107)
+Defined in: [src/results/types.ts:118](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L118)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/results/types.ts:107](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **right**: [`ExpressionResult`](../type-aliases/ExpressionResult.md)
 
-Defined in: [src/results/types.ts:110](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L110)
+Defined in: [src/results/types.ts:121](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L121)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [src/results/types.ts:110](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **type**: `"comparison"`
 
-Defined in: [src/results/types.ts:106](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L106)
+Defined in: [src/results/types.ts:117](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L117)
 
 ***
 
@@ -44,4 +44,4 @@ Defined in: [src/results/types.ts:106](https://github.com/dice-roller/rpg-dice-r
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:108](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L108)
+Defined in: [src/results/types.ts:119](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L119)

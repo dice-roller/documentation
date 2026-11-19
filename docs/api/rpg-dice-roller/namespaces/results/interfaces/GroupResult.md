@@ -2,7 +2,7 @@
 
 # Interface: GroupResult
 
-Defined in: [src/results/types.ts:87](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L87)
+Defined in: [src/results/types.ts:96](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L96)
 
 A group of evaluated members after its modifiers have been applied.
 
@@ -12,7 +12,17 @@ A group of evaluated members after its modifiers have been applied.
 
 > `readonly` **members**: readonly [`GroupMemberResult`](GroupMemberResult.md)[]
 
-Defined in: [src/results/types.ts:92](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L92)
+Defined in: [src/results/types.ts:101](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L101)
+
+***
+
+### modifierArguments?
+
+> `readonly` `optional` **modifierArguments?**: readonly [`ModifierArgumentResult`](ModifierArgumentResult.md)[]
+
+Defined in: [src/results/types.ts:103](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L103)
+
+Evaluated Keep/Drop expressions, in modifier execution order; omitted for numeric modifiers.
 
 ***
 
@@ -20,7 +30,7 @@ Defined in: [src/results/types.ts:92](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **node**: [`GroupNode`](../../ast/interfaces/GroupNode.md)
 
-Defined in: [src/results/types.ts:89](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L89)
+Defined in: [src/results/types.ts:98](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L98)
 
 ***
 
@@ -28,7 +38,7 @@ Defined in: [src/results/types.ts:89](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **type**: `"group"`
 
-Defined in: [src/results/types.ts:88](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L88)
+Defined in: [src/results/types.ts:97](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L97)
 
 ***
 
@@ -36,6 +46,6 @@ Defined in: [src/results/types.ts:88](https://github.com/dice-roller/rpg-dice-ro
 
 > `readonly` **value**: `number`
 
-Defined in: [src/results/types.ts:91](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L91)
+Defined in: [src/results/types.ts:100](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/results/types.ts#L100)
 
 The sum of `calculationValue` for members included in the total.
