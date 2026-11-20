@@ -138,6 +138,7 @@ export default defineConfig({
             { text: 'Roll Groups', link: '/guide/notation/roll-groups' },
             { text: 'Roll Descriptions', link: '/guide/notation/roll-descriptions' },
             { text: 'Maths', link: '/guide/notation/maths' },
+            { text: 'Variables', link: '/guide/notation/variables' },
           ],
         },
         {
