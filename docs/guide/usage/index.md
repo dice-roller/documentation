@@ -112,6 +112,18 @@ console.log(attack.total);
 
 This creates and returns a `Roll` object, just like `new Roll()`.
 
+### Built-in variables
+
+Inside the selected branch of a ternary, `$$condition` holds the numeric result of the condition. You can reuse that result without rolling the condition's dice again.
+
+```javascript
+(d6 - 1) ? ($$condition + 2) : (0)
+```
+
+If the die rolls `4`, the condition evaluates to `3` and the first branch gives `5`. If the die rolls `1`, the condition evaluates to `0` and the second branch gives `0`. A comparison used as the condition gives `1` for true or `0` for false.
+
+See [built-in variable syntax](../notation/variables.md#built-in-variables) in the notation guide.
+
 ## Re-rolling
 
 Call `reroll()` to roll the same notation again:
@@ -234,6 +246,7 @@ All options are optional:
 | `modifiers` | [Supply a registry of modifier handlers](../customisation/modifiers.md). |
 | `presenter` | [Choose how `present()` formats results](../customisation/presenters.md). |
 | `limits` | [Set limits](#roll-limits) on dice quantities and repeating modifiers. |
+| `data` | [Supply values](#variable-data) for variables in the notation. |
 
 The built-in dice, modifiers and text presenter are used unless you supply alternatives. Follow the links above to learn how to customise each option.
 
@@ -300,6 +313,44 @@ All limit values must be positive safe integers.
 `maxGeneratedRolls` counts all additional dice rolled by repeating modifiers in one pool, including discarded re-rolls but excluding initial dice. When it is reached, modifiers stop drawing and retain the results reached so far. It applies separately to each pool, and also bounds branching rolls such as `d6!2:3`.
 
 See [Repeating modifier limits](../notation/modifiers.md#repeating-modifier-limits) for how generation limits and multiple-die amounts work together.
+
+### Variable data
+
+Pass an object in the `data` option. You can include nested objects to group related values.
+
+```javascript
+const data = {
+  bonus: 3,
+  character: { attackBonus: 2, isPoisoned: false },
+};
+```
+
+In this example, `$bonus` is `3` and `$character.attackBonus` is `2`. See [variable syntax](../notation/variables.md#variables-you-supply) for naming rules and dotted references.
+
+Pass `data` to `new Roll()` or the `roll()` shorthand to supply values for a single roll.
+
+```javascript
+const attack = new Roll('d20 + $bonus', { data });
+const otherAttack = roll('d20 + $bonus', { data });
+```
+
+Pass `data` to `new Roller()` to set defaults for its rolls. You can also pass `data` to `roller.roll()` for a single roll. This replaces the entire default data object for that roll.
+
+```javascript
+const roller = new Roller({ data });
+roller.roll('d20 + $bonus'); // Adds 3
+roller.roll('d20 + $bonus', { data: { bonus: 5 } }); // Adds 5
+```
+
+Call `reroll()` with `data` to replace the original values. Calling it without `data` uses the same values again.
+
+```javascript
+const strongerAttack = attack.reroll({ data: { bonus: 5 } });
+```
+
+A variable name must start with an upper- or lowercase letter or an underscore. After that, you can use letters, numbers or underscores. The same rules apply to each name in a dotted reference. Capitalisation matters.
+
+A variable’s value must be a finite number or a boolean (`true` or `false`). In expressions, `true` becomes `1` and `false` becomes `0`.
 
 ## Handling errors
 

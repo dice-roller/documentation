@@ -8,6 +8,8 @@ Combine dice rolls with mathematical operators and functions to calculate damage
 
 When a dice roll appears in a calculation, its total is used.
 
+Use [variables](variables.md) to include values supplied by your application, such as a character's bonus or the number of dice to roll.
+
 ## Operators
 
 The following operators are supported:

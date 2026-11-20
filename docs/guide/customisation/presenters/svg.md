@@ -320,7 +320,7 @@ You can also present an evaluated expression directly with `presenter.present(ro
 
 Comparisons show the evaluated operands and a numeric outcome beneath them. For example, `(2d6 + 4) > 10` shows **true · 1** when the left-hand side exceeds 10, or **false · 0** otherwise.
 
-Ternaries show the evaluated condition in an **IF** card and the selected branch in a **THEN** or **ELSE** card. The cards stack when the available width is too narrow. A `$$condition` reference displays the stored numeric value of the condition.
+Ternaries show the evaluated condition in an **IF** card and the selected branch in a **THEN** or **ELSE** card. The cards stack when the available width is too narrow. A [`$$condition` reference](../../notation/variables.md#built-in-variables) displays the stored numeric value of the condition.
 
 ```javascript
 const roll = new Roll('((d20) >= 10) ? (2d8 + $$condition) : (d4)');
