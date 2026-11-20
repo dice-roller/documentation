@@ -58,7 +58,26 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
-      md.use(diceRollerPlugin);
+      md.use(diceRollerPlugin, {
+        rollOptions: {
+          data: {
+            bonus: 3,
+            character: {
+              attackBonus: 2,
+              isPoisoned: true,
+            },
+          },
+        },
+        rollerOptions: {
+          data: {
+            bonus: 3,
+            character: {
+              attackBonus: 2,
+              isPoisoned: true,
+            },
+          },
+        },
+      });
       md.use(tabsMarkdownPlugin);
     },
   },
