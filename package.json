@@ -40,8 +40,8 @@
     "vitepress-plugin-tabs": "^0.9.1"
   },
   "dependencies": {
-    "@dice-roller/rpg-dice-roller": "^6.0.0-beta.5",
-    "@dice-roller/svg-presenter": "^1.0.0-beta.3",
+    "@dice-roller/rpg-dice-roller": "^6.0.0-beta.7",
+    "@dice-roller/svg-presenter": "^1.0.0-beta.5",
     "@dice-roller/vue": "^2.0.0-beta.0"
   }
 }

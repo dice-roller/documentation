@@ -9,8 +9,10 @@ const basic = roll('2d6 + 3');
 const wide = roll('6d6 + 3');
 const modifiers = roll('2d6!1 + 4d6kh3cs=6cf=2');
 const history = new Roller({ engine: { name: 'xoroshiro128plus', seed: 1234 } });
+
 history.roll('d20 + 5');
 history.roll('2d6 + 3');
+
 // Evaluate the gallery at each die's maximum while retaining normal roll metadata.
 const maximumRoll = (notation) => {
   const rolled = roll(notation);
@@ -18,8 +20,11 @@ const maximumRoll = (notation) => {
   return new Roll({ ...rolled.toJSON(), result, total: result.value });
 };
 const shapes = new RollHistory();
+
 shapes.add(maximumRoll('d2 + d4 + d6 + d8'), maximumRoll('d10 + d12 + d20 + d3'));
+
 const hover = roll('{2d6 + d8, (d10 + 2) * 2} + max(d4, d6)');
+
 export const svgExamples = Object.fromEntries([
   ['shapes', shapes, { size: 90, noWrap: true, showNotation: false, showTotals: false }],
   ['hover', hover, { size: 65, width: 760 }],

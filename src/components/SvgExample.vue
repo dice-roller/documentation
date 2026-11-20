@@ -1,7 +1,6 @@
 <script setup>
 import { computed, useId } from 'vue';
-import { Roll } from '@dice-roller/rpg-dice-roller';
-import { SvgPresenter } from '@dice-roller/svg-presenter';
+import { SvgPresenter, modifierIconStyles, renderModifierIcon } from '@dice-roller/svg-presenter';
 import { svgExamples } from '../examples/svg-presenter.mjs';
 
 const props = defineProps({
@@ -30,6 +29,8 @@ const legendEntries = [
   { flag: 'explode', title: 'Explode', notation: 'd6!1=4', description: 'Triggered an additional roll.' },
   { flag: 'compound', title: 'Compound', notation: 'd6!!1=4', description: 'Explosion results are combined into one value.' },
   { flag: 'penetrate', title: 'Penetrate', notation: 'd6!p1=4', description: 'Explosion rolls have one subtracted.' },
+  { flag: 'explode-matching-batch', title: 'Matching batch explosion', notation: '2d6!m', description: 'The matching dice triggered another batch.' },
+  { flag: 'explode-matching-batch-failure', title: 'Matching batch failure', notation: '2d6!mf=1', description: 'The matching batch reset the pool score to zero.' },
   { flag: 're-roll', title: 'Re-roll', notation: 'd6r1=4', description: 'The original result was replaced.' },
   { flag: 'unique', title: 'Unique', notation: '2d6u1', seed: 1, description: 'A duplicate was re-rolled for uniqueness.' },
   { flag: 'min', title: 'Minimum', notation: 'd6min5', description: 'Raised to the specified minimum.' },
@@ -40,23 +41,74 @@ const legendEntries = [
   { flag: 'critical-failure', title: 'Critical failure', notation: 'd6cf=4', description: 'Matched the critical failure condition.' },
   { flag: 'drop', title: 'Dropped', notation: '2d6kh1', description: 'Faded and crossed out; excluded from the total.' },
 ];
+
 const legendItems = computed(() => {
   if (!props.legend) return [];
+
   return legendEntries.map((entry) => {
-    const roll = new Roll(entry.notation, {
-      engine: { name: 'xoroshiro128plus', seed: entry.seed ?? 1234 },
-    });
-    const source = roll.present(new SvgPresenter({ modifierIconPosition: 'below' }));
-    // Use the public presenter output rather than copying artwork or importing package internals.
-    const styles = source.match(/<style>[\s\S]*?<\/style>/)?.[0];
-    const match = entry.flag === 'drop'
-      ? source.match(/<g class="excluded"[^>]*data-die-type[^>]*>[\s\S]*?(<svg\b[\s\S]*?<\/svg>)/)
-      : source.match(new RegExp(`(<svg class="modifier-icon modifier-${entry.flag}"[\\s\\S]*?<\\/svg>)`));
-    if (!styles || !match) throw new Error(`Missing legend symbol: ${entry.flag}`);
-    const symbol = match[1].replace(/^<svg\b[^>]*>/, (tag) => tag
-      .replace(/ (?:x|y|width|height)="[^"]*"/g, '')
-      .replace(/>$/, ' x="4" y="4" width="40" height="40">'));
-    const markup = `<svg xmlns="http://www.w3.org/2000/svg" class="result-preview" width="48" height="48" viewBox="0 0 48 48" style="color:#7962b5">${styles}<g${entry.flag === 'drop' ? ' class="excluded"' : ''}>${symbol}</g></svg>`;
+    let markup;
+
+    if (entry.flag === 'drop') {
+      const presenter = new SvgPresenter({
+        showDiceLabels: false,
+        showModifierLabels: false,
+        showNotation: false,
+        showTotals: false,
+        size: 40,
+      });
+      const source = presenter.present({
+        type: 'pool',
+        value: 6,
+        qty: 1,
+        die: {
+          notation: '6',
+          min: 1,
+          max: 6,
+          average: 3,
+          faceCount: 6,
+        },
+        node: {
+          type: 'pool',
+          qty: 1,
+          die: {
+            type: 'die',
+            name: 'standard',
+            args: [],
+          },
+          modifiers: [],
+        },
+        rolls: [{
+          type: 'die',
+          initialValue: 6,
+          value: 6,
+          calculationValue: 0,
+          useInTotal: false,
+          flags: ['drop'],
+        }],
+      });
+
+      const match = source.match(/(<g class="excluded"[^>]*data-die-type[^>]*>[\s\S]*?)(<svg\b[\s\S]*?<\/svg>)/);
+
+      match[2] = match[2].replace(/^<svg\b[^>]*>/, (tag) => tag
+          .replace(/ (?:x|y|width|height|opacity)="[^"]*"/g, '')
+          .replace(/>$/, ' x="4" y="4" width="40" height="40" opacity=".4">'));
+
+      markup = match[1] + match[2];
+    } else {
+      markup = renderModifierIcon(
+          {
+            kind: entry.flag,
+            x: 4,
+            y: 4,
+            width: 40,
+            height: 40,
+          },
+          `modifier-flag-${entry.flag}`,
+      );
+    }
+
+    markup = `<svg xmlns="http://www.w3.org/2000/svg" class="result-preview" width="48" height="48" viewBox="0 0 48 48" style="color:#7962b5"><style>${modifierIconStyles}</style>${markup}</svg>`;
+
     return { ...entry, symbol: scopeSvg(markup, `-${entry.flag}`) };
   });
 });
