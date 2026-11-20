@@ -223,7 +223,7 @@ These visibility options all default to `true`:
 | `showValues` | Values on the dice, including Fudge symbols. |
 | `showDescriptions` | Pool and group descriptions alongside their results. |
 | `showDiceLabels` | Die notation beneath each die. |
-| `showModifierLabels` | Modifier labels beneath dice and group members. |
+| `showModifierLabels` | Modifier labels beneath dice and group members, and calculated keep/drop captions beneath pools and groups. |
 | `showModifierIcons` | Symbols for modifier effects. |
 | `showNotation` | The supplied notation above each roll. |
 | `showTotals` | Individual roll totals and the history total. |
@@ -277,6 +277,23 @@ The icon families are `explode`, `compound`, `penetrate`, `re-roll`, `unique`, `
 
 Each supports `--modifier-{name}-color`; compound's rear burst uses the explosion colour.
 
+### Calculated keep and drop counts
+
+When a keep or drop count comes from an expression, the presenter shows the evaluated count in a caption beneath the dice pool or roll group it applies to. For example, with `$keep` set to `2`, this roll shows **Keep highest 3**:
+
+```javascript
+const roll = new Roll('5d6kh($keep + 1)', { data: { keep: 2 } });
+const svg = roll.present(new SvgPresenter());
+```
+
+<SvgExample name="calculated-keep" />
+
+A roll group can use a dice roll for the count, as in `{2d6, 2d8, 2d10}dl(d2)`:
+
+<SvgExample name="calculated-drop" />
+
+Dropped dice or group members are still faded and crossed out. Set `showModifierLabels: false` to hide the caption. The pool or group tooltip still shows the calculation, such as `kh($keep+1) → 3`.
+
 ## Roll histories
 
 Use the same presenter with `Roller` to display a history, with separate rows and a combined total:
@@ -298,6 +315,19 @@ const svg = roller.present();
 <SvgExample name="history" />
 
 You can also present an evaluated expression directly with `presenter.present(roll.result)`.
+
+## Comparisons and ternaries
+
+Comparisons show the evaluated operands and a numeric outcome beneath them. For example, `(2d6 + 4) > 10` shows **true · 1** when the left-hand side exceeds 10, or **false · 0** otherwise.
+
+Ternaries show the evaluated condition in an **IF** card and the selected branch in a **THEN** or **ELSE** card. The cards stack when the available width is too narrow. A `$$condition` reference displays the stored numeric value of the condition.
+
+```javascript
+const roll = new Roll('((d20) >= 10) ? (2d8 + $$condition) : (d4)');
+const svg = roll.present(new SvgPresenter());
+```
+
+<SvgExample name="ternary" />
 
 ## Hover highlights
 

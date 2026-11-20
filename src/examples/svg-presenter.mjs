@@ -2,8 +2,9 @@ import { Roll, Roller, RollHistory, RollSettings } from '@dice-roller/rpg-dice-r
 
 // Shared stored rolls keep appearance comparisons identical.
 // A fixed seed also reproduces these results during SSR and browser hydration.
-const roll = (notation) => new Roll(notation, {
+const roll = (notation, data) => new Roll(notation, {
   engine: { name: 'xoroshiro128plus', seed: 1234 },
+  data,
 });
 const basic = roll('2d6 + 3');
 const wide = roll('6d6 + 3');
@@ -24,6 +25,9 @@ const shapes = new RollHistory();
 shapes.add(maximumRoll('d2 + d4 + d6 + d8'), maximumRoll('d10 + d12 + d20 + d3'));
 
 const hover = roll('{2d6 + d8, (d10 + 2) * 2} + max(d4, d6)');
+const calculatedKeep = roll('5d6kh($keep + 1)', { keep: 2 });
+const calculatedDrop = roll('{2d6, 2d8, 2d10}dl(d2)');
+const ternary = roll('((d20) >= 10) ? (2d8 + $$condition) : (d4)');
 
 export const svgExamples = Object.fromEntries([
   ['shapes', shapes, { size: 90, noWrap: true, showNotation: false, showTotals: false }],
@@ -35,5 +39,8 @@ export const svgExamples = Object.fromEntries([
   ['nowrap', wide, { size: 90, noWrap: true }],
   ['minimal', basic, { size: 100, width: 600, showDiceLabels: false, showModifierLabels: false, showNotation: false, showTotals: false }],
   ['modifiers', modifiers, { size: 90, width: 700, modifierIconPosition: 'below' }],
+  ['calculated-keep', calculatedKeep, { size: 80, width: 600 }],
+  ['calculated-drop', calculatedDrop, { size: 65, width: 760 }],
+  ['ternary', ternary, { size: 65, width: 760 }],
   ['history', history, { size: 80, width: 600 }],
 ].map(([name, target, options]) => [name, { target, options }]));
