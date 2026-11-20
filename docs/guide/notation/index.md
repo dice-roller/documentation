@@ -41,4 +41,5 @@ The following pages explain the different parts of the notation and how to combi
 * [Roll groups](roll-groups.md) — Combine roll expressions into a group and apply modifiers to the group.
 * [Roll descriptions](roll-descriptions.md) — Add labels or descriptions to identify your rolls.
 * [Maths](maths.md) — Combine dice rolls with arithmetic, parentheses and mathematical functions.
+* [Comparisons and ternaries](comparisons-and-ternaries.md) — Compare expression results and use a condition to choose what to roll.
 * [Variables](variables.md) — Use values supplied by your application or by the dice roller in a roll expression.

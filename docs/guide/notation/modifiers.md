@@ -481,6 +481,8 @@ Count results that meet a condition instead of adding their values together.
 
 Add a [compare point](#compare-point) after the dice notation. Each matching result counts as `1` success; other results count as `0`.
 
+To check the combined total of a pool, use an [expression comparison](comparisons-and-ternaries.md#comparing-dice-totals).
+
 For example, this rolls five ten-sided dice and counts results of `8` or higher:
 
 ```javascript
