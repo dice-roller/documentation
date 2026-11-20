@@ -15,7 +15,7 @@ Using this example data:
 ```javascript
 {
   bonus: 3,
-  character: { attackBonus: 2, isPoisoned: false }
+  character: { attackBonus: 2, isPoisoned: true }
 }
 ```
 
@@ -25,11 +25,15 @@ This adds the value of `bonus` to a d20 roll:
 d20+$bonus: [18] + 3 = 21
 ```
 
+::: roller d20+$bonus :::
+
 Use a dot to refer to a value inside a nested object:
 
 ```javascript
 d20+$character.attackBonus: [18] + 2 = 20
 ```
+
+::: roller d20+$character.attackBonus :::
 
 See [Variable data](../usage/index.md#variable-data) for how to pass these values to a roll.
 
@@ -42,6 +46,8 @@ You can use variables in arithmetic, functions, comparisons and ternaries, as we
 ```
 
 Using the data example above, `bonus` set to `3` and `character.attackBonus` set to `2`, it produces `(max(3 + 2, 4))d10`.
+
+::: roller (max($bonus+$character.attackBonus, 4))d10 :::
 
 ## Built-in variables
 
