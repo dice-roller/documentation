@@ -28,6 +28,8 @@ If the two d6s roll `4` and `5` and the d8 rolls `6`, the comparison is `13 > 12
 
 Arithmetic takes precedence over comparisons, so `1+2>2` means `(1+2)>2`.
 
+Each comparison has two operands. A chain such as `1<2<3` is invalid.
+
 To use the result of a comparison in a calculation, group the whole comparison in parentheses. For example, `((2d6+4)>10)*5` gives `5` if the total with the bonus exceeds `10`, or `0` otherwise.
 
 ### Comparing dice totals
@@ -57,11 +59,10 @@ For example, roll two eight-sided dice for damage if `2d6 + 4` beats `10`. Other
 
 ::: roller ((2d6 + 4) > 10) ? (2d8) : (0) :::
 
-Use the [built-in variable `$$condition`](variables.md#ternary-branches) to reuse the evaluated condition inside either branch. In this example it holds `1` or `0`, the result of the comparison.
+Use the [built-in variable `$$condition`](variables.md#ternary-branches) to reuse the numeric value of the condition inside either branch. If `2d6` totals `7` in this example, the condition is `3` and the selected branch doubles it to `6`.
 
 ```javascript
-// If 2d6 - 4 is not 0, use it, otherwise use 0
-(2d6 - 4) ? ($$condition) : (0)
+(2d6 - 4) ? (2 * $$condition) : (0)
 ```
 
 ### Shorthand ternary

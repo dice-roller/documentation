@@ -6,7 +6,7 @@ You can [supply your own values](#variables-you-supply) when you make a roll, or
 
 ## Variables you supply
 
-**Notation:** `${name}`
+**Notation:** `$name`
 
 If you have [supplied your own data](../usage/index.md#variable-data), then you can use it in notation when you roll.
 
@@ -22,7 +22,7 @@ Using this example data:
 This adds the value of `bonus` to a d20 roll:
 
 ```javascript
-d20+$bonus: [18] + 3 = 21
+d20+$bonus: [18]+$bonus = 21
 ```
 
 ::: roller d20+$bonus :::
@@ -30,10 +30,12 @@ d20+$bonus: [18] + 3 = 21
 Use a dot to refer to a value inside a nested object:
 
 ```javascript
-d20+$character.attackBonus: [18] + 2 = 20
+d20+$character.attackBonus: [18]+$character.attackBonus = 20
 ```
 
 ::: roller d20+$character.attackBonus :::
+
+Variables can hold finite numbers or booleans. The dice roller treats `true` as `1` and `false` as `0`, so `$character.isPoisoned` evaluates to `1` with the example data above. A reference such as `$character.defence` gives an error if the roll tries to read it and no value was supplied.
 
 See [Variable data](../usage/index.md#variable-data) for how to pass these values to a roll.
 
@@ -45,15 +47,15 @@ You can use variables in arithmetic, functions, [comparisons and ternaries](comp
 (max($bonus+$character.attackBonus, 4))d10
 ```
 
-Using the data example above, `bonus` set to `3` and `character.attackBonus` set to `2`, it produces `(max(3 + 2, 4))d10`.
+With the example data above, `max(3 + 2, 4)` gives `5`, so the roller rolls five d10s.
 
 ::: roller (max($bonus+$character.attackBonus, 4))d10 :::
 
 ## Built-in variables
 
-**Notation:** `$${name}`
+**Notation:** `$$name`
 
-The dice roller sets built-in variables as it evaluates the notation. These are differentiated from variables you supply by using `$${name}`.
+The dice roller sets built-in variables as it evaluates the notation. Use two dollar signs to refer to a built-in variable and one for a value you supply.
 
 ### Ternary branches
 
@@ -61,12 +63,14 @@ The dice roller sets built-in variables as it evaluates the notation. These are 
 
 Inside the selected branch of a [ternary](comparisons-and-ternaries.md#ternary-operators), `$$condition` holds the numeric result of the condition.
 
-You can use it in either branch.
+You can use it in either branch. If a branch contains another ternary, `$$condition` in the inner ternary’s selected branch refers to the inner condition. Reading `$$condition` outside a ternary branch gives an error.
 
 ```javascript
-(d6>=4) ? ($$condition + 2) : (4 - $$condition)
+((d6) >= 4) ? ($$condition + 2) : (4 - $$condition)
 ```
 
-::: roller (d6>=4) ? ($$condition + 2) : (4 - $$condition) :::
+The comparison gives `1` on a roll of `4` or higher, so the first branch gives `3`. On a lower roll it gives `0`, so the second branch gives `4`.
+
+::: roller ((d6) >= 4) ? ($$condition + 2) : (4 - $$condition) :::
 
 See [Built-in variables in the usage guide](../usage/index.md#built-in-variables) for a worked example.
