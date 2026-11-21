@@ -390,7 +390,7 @@ Some expressions cannot produce entirely unique results. For example, `5d3u` req
 
 ## Keep
 
-**Notation:** `k{n}` / `kh{n}` / `kl{n}`
+**Notation:** `k{n}` / `kh{n}` / `kl{n}` or `k(expression)` / `kh(expression)` / `kl(expression)`
 
 **Order:** 6
 
@@ -434,9 +434,28 @@ In this example, both modifiers exclude the lowest result, so only the highest r
 Keep excludes `6` and `1`. Drop selects `1`, which is already excluded.
 :::
 
+### Calculated keep count <Badge text="New in v6" vertical="middle"/>
+
+Put an expression in parentheses after the Keep modifier to calculate how many results to keep. The expression can include [maths](maths.md), dice rolls, [roll groups](roll-groups.md) and [variables](variables.md).
+
+```javascript
+// Keep the highest four results
+6d10kh(2+2)
+
+// Roll a d4 to decide how many of the highest results to keep
+6d10kh(d4)
+
+// Keep the highest three results if $bonus is 3
+6d10kh($bonus)
+```
+
+The count is evaluated once, when the modifier runs. Dice rolled to work out the count stay outside the selection and do not contribute directly to the total. The count must be a non-negative safe integer. A count of zero is valid, so `kh(0)` keeps no results.
+
+::: roller 6d10kh(2+2) :::
+
 ## Drop
 
-**Notation:** `d{n}` / `dh{n}` / `dl{n}`
+**Notation:** `d{n}` / `dh{n}` / `dl{n}` or `d(expression)` / `dh(expression)` / `dl(expression)`
 
 **Order:** 7
 
@@ -470,6 +489,25 @@ This is the opposite of the [Keep modifier](#keep).
 ::: tip Using Keep and Drop together
 Both modifiers consider the entire set of results, including results already dropped. See the [Keep section](#keep) for examples.
 :::
+
+### Calculated drop count <Badge text="New in v6" vertical="middle"/>
+
+Put an expression in parentheses after the Drop modifier to calculate how many results to drop.
+
+```javascript
+// Roll a d3 to decide how many of the lowest results to drop
+6d6dl(d3)
+
+// Drop the highest two results
+6d6dh(3-1)
+
+// Drop the lowest one or two results, capping the d6 roll at two
+6d6dl(min(d6,2))
+```
+
+If the d3 rolls `2`, the modifier drops the two lowest d6 results. The d3 only determines the count. The [same rules as Keep](#calculated-keep-count) apply to the expression, and `dl(0)` drops no results.
+
+::: roller 6d6dl(d3) :::
 
 ## Target success / Dice pool
 
