@@ -257,7 +257,7 @@ The default limits are:
 | Setting | Default | Purpose |
 | --- | --- | --- |
 | `maxQty` | `999` | Maximum number of dice in each set. |
-| `maxIterations` | `1000` | Maximum generations per original die and modifier for Explode/Re-roll, or retries per result for Unique. |
+| `maxIterations` | `1000` | Maximum extra batches per pool for `!m`, generations per original die and modifier for Explode/Re-roll, or retries per result for Unique. |
 | `maxGeneratedRolls` | `1000000` | Maximum additional rolls shared by repeating modifiers in each dice pool. |
 
 You can override these limits when creating a roll or roller:
@@ -308,7 +308,7 @@ All limit values must be positive safe integers.
 
 `maxQty` applies separately to each set of dice, rather than to the entire expression. For example, a limit of `100` permits `100d6+100d8`.
 
-`maxIterations` limits [Explode](../notation/modifiers.md#explode), [Re-roll](../notation/modifiers.md#re-roll) and [Unique](../notation/modifiers.md#unique). It also applies to [Compound](../notation/modifiers.md#compound) and [Penetrate](../notation/modifiers.md#penetrate). A numeric limit in the notation, such as `d6!3`, uses the lower of that value and `maxIterations`.
+`maxIterations` limits [Matching-batch explode](../notation/modifiers.md#matching-batch-explode), [Explode](../notation/modifiers.md#explode), [Re-roll](../notation/modifiers.md#re-roll) and [Unique](../notation/modifiers.md#unique). It also applies to [Compound](../notation/modifiers.md#compound) and [Penetrate](../notation/modifiers.md#penetrate). A numeric limit in the notation, such as `d6!3`, uses the lower of that value and `maxIterations`.
 
 `maxGeneratedRolls` counts all additional dice rolled by repeating modifiers in one pool, including discarded re-rolls but excluding initial dice. When it is reached, modifiers stop drawing and retain the results reached so far. It applies separately to each pool, and also bounds branching rolls such as `d6!2:3`.
 

@@ -16,14 +16,14 @@ This example combines [Explode](#explode) with [Keep](#keep).
 
 Some modifiers also work with [roll groups](roll-groups.md), where their behaviour can differ. This page describes how they work with individual sets of dice.
 
-Throughout this page, `{n}` represents a number and `{cp}` represents a [compare point](#compare-point). These are placeholders; do not include the braces in your notation. In repeating modifiers, `{limit}`, `:{amount}` and `{cp}` are optional; omit the colon too when leaving out the amount.
+Throughout this page, `{n}` represents a number and `{cp}` represents a [compare point](#compare-point). Replace the placeholders without including the braces. Where shown in repeating modifier syntax, `{limit}`, `:{amount}` and `{cp}` are optional. Omit the colon when leaving out the amount.
 
 ::: warning Modifier order
 Modifiers run in a specific execution order, regardless of where you place them in the notation.
 
 Each modifier has an `order` value. Lower values run first, and the sections below follow the default execution order.
 
-For example, [Explode](#explode) has an order of `3`, while [Drop](#drop) has an order of `7`. Both expressions below therefore apply Explode to matching results first, then Drop to exclude the lowest result:
+For example, [Explode](#explode) has an order of `4`, while [Drop](#drop) has an order of `8`. Both expressions below therefore apply Explode to matching results first, then Drop to exclude the lowest result:
 
 ```javascript
 4d6!d1
@@ -99,11 +99,84 @@ This is the opposite of the [Min modifier](#min).
 With `d6max3`, an original roll of `3`, `4`, `5` or `6` produces a result of `3`, giving it a `4 in 6` chance. Results of `1` and `2` each retain a `1 in 6` chance.
 :::
 
+## Matching-batch explode <Badge text="New in v6" vertical="middle"/>
+
+**Notation:** `!m` / `!m{limit}{cp}f{failure-cp}`
+
+**Order:** 3
+
+Roll another batch of the same size when every die in the current batch has the same value. For example, `2d10!m` rolls another two `d10`s whenever a pair matches. A mixed batch ends the chain. Its dice are still included in the total.
+
+The output marks each die in a batch that triggered another roll with `!m`:
+
+```javascript
+2d10!m: [4!m, 4!m, 6, 2] = 16
+```
+
+`!m` applies to dice pools and runs before ordinary [Explode](#explode). The batch size comes from the number of results the modifier receives.
+
+::: roller 2d10!m :::
+
+### Compare points
+
+By default, any batch where all rolls share the same value, will explode. Use a [compare point](#compare-point) to change which shared values explode.
+
+```javascript
+2d10!m>1  // Explode on shared values greater than 1
+2d10!m=5  // Only explode on shared values of 5
+2d10!m!=8 // Explode on shared values noe exqual to 8
+```
+
+A batch that fails this check, even if their values are shared, stops the chain and keeps its score.
+
+::: roller 2d10!m>1 :::
+
+### Limiting batch explosions
+
+Put a number immediately after the modifier to limit how many times it can repeat for each batch. The initial roll does not count towards the limit:
+
+```javascript
+2d10!m1    // Explode batch at most once
+2d10!m3>=4 // Explode batches where all values are 4 or greater, at most 3 times per batch.
+```
+
+Rolling stops earlier if not all dice in the batch share the same value, or match the condition. At teh limit, the last batch result is kept even if it still matches:
+
+```javascript
+2d10!m2 = [4!m, 4!m, 1!m, 1!m, 7, 7] = 24
+```
+
+Here, the limit prevents the final batch from exploding again.
+
+Limits must be positive safe integers, written without leading zeros. [Safety limits](#repeating-modifier-limits) still apply, including when you omit a numeric limit.
+
+::: roller 2d10!m2 :::
+
+### Batch failure
+
+Add `f` followed by a compare point to set a failure condition, as in `2d10!mf=1`. 
+
+The failure check runs on every matching batch, including the initial batch and the last allowed batch. It takes precedence over the explosion compare point.
+
+A failed batch stops the chain and sets the value of every die rolled by the pool so far to zero. Later modifiers such as [Target Success](#target-success-dice-pool) can still score those dice using their rolled values.
+
+With the same rolls, stopping on double ones and failing on double ones give different totals:
+
+```javascript
+// Stop on double ones and keep the score
+2d10!m>1: [6!m, 6!m, 1, 1] = 14
+
+// Fail on double ones and zero the score
+2d10!m>1f=1: [6!m, 6!m, 1mf, 1mf] = 0
+```
+
+::: roller 2d10!m>1f=1 :::
+
 ## Explode
 
 **Notation:** `!` / `!{limit}:{amount}{cp}`
 
-**Order:** 3
+**Order:** 4
 
 Exploding dice generate an extra roll whenever a result matches a condition. By default, a die explodes when it rolls its highest possible value.
 
@@ -198,7 +271,7 @@ Use the same amount syntax with `!!`, `!p` and `!!p`. Compounding combines the o
 
 **Notation:** `!!` / `!!{limit}:{amount}{cp}`
 
-**Order:** 3
+**Order:** 4
 
 Compounding works like [Explode](#explode), but combines each original roll and its extra rolls into a single result.
 
@@ -230,7 +303,7 @@ Use a [compare point](#compare-point) to change which values trigger another rol
 
 **Notation:** `!p` / `!!p` / `!p{limit}:{amount}{cp}` / `!!p{limit}:{amount}{cp}`
 
-**Order:** 3
+**Order:** 4
 
 Penetrating works like [Explode](#explode), but subtracts `1` from each extra roll. The original rolls are unchanged.
 
@@ -271,7 +344,7 @@ Use a [compare point](#compare-point) to change which values trigger another rol
 
 **Notation:** `r` / `ro` / `r{limit}:{amount}{cp}` / `ro:{amount}{cp}`
 
-**Order:** 4
+**Order:** 5
 
 Replace results that match a condition by rolling those dice again.
 
@@ -343,7 +416,7 @@ Each replacement inherits the remaining generation limit. All initial dice are r
 
 **Notation:** `u` / `uo` / `u{limit}{cp}` / `uo{cp}`
 
-**Order:** 5
+**Order:** 6
 
 Re-roll duplicate results within a set of dice.
 
@@ -396,7 +469,7 @@ Some expressions cannot produce entirely unique results. For example, `5d3u` req
 
 **Notation:** `k{n}` / `kh{n}` / `kl{n}` or `k(expression)` / `kh(expression)` / `kl(expression)`
 
-**Order:** 6
+**Order:** 7
 
 Keep only the specified number of highest or lowest results. All other results are excluded from the total.
 
@@ -461,7 +534,7 @@ The count is evaluated once, when the modifier runs. Dice rolled to work out the
 
 **Notation:** `d{n}` / `dh{n}` / `dl{n}` or `d(expression)` / `dh(expression)` / `dl(expression)`
 
-**Order:** 7
+**Order:** 8
 
 Exclude the specified number of highest or lowest results from the total.
 
@@ -517,7 +590,7 @@ If the d3 rolls `2`, the modifier drops the two lowest d6 results. The d3 only d
 
 **Notation:** `{cp}` / `{cp}:{amount}`
 
-**Order:** 8
+**Order:** 9
 
 Count results that meet a condition instead of adding their values together.
 
@@ -624,7 +697,7 @@ This changes how the notation is interpreted, not the execution order. Explode s
 
 **Notation:** `f{cp}` / `f{cp}:{amount}`
 
-**Order:** 8
+**Order:** 9
 
 Subtract failures when counting successes.
 
@@ -671,7 +744,7 @@ The `**` and `__` markers mean two target successes or failures. [Critical Succe
 
 **Notation:** `cs` / `cs{cp}`
 
-**Order:** 9
+**Order:** 10
 
 Mark results as critical successes. By default, this marks rolls equal to the die's highest possible value:
 
@@ -698,7 +771,7 @@ Critical Success does not change result values or how they contribute to the tot
 
 **Notation:** `cf` / `cf{cp}`
 
-**Order:** 10
+**Order:** 11
 
 Mark results as critical failures. By default, this marks rolls equal to the die's lowest possible value:
 
@@ -725,7 +798,7 @@ Critical Failure does not change result values or how they contribute to the tot
 
 **Notation:** `s` / `sa` / `sd`
 
-**Order:** 11
+**Order:** 12
 
 Display results in numerical order.
 
@@ -744,18 +817,18 @@ Sorting does not change the total. It runs after the other modifiers by default,
 
 ## Repeating modifier limits
 
-[Explode](#explode), [Re-roll](#re-roll) and [Unique](#unique) have safety limits as well as their optional notation limits:
+[Matching-batch explode](#matching-batch-explode), [Explode](#explode), [Re-roll](#re-roll) and [Unique](#unique) have safety limits as well as their optional notation limits:
 
 | Setting | Default | Applies to |
 | --- | --- | --- |
-| `maxIterations` | `1,000` | Generations per original die and modifier for Explode and Re-roll; retries per result for Unique. |
+| `maxIterations` | `1,000` | Extra batches per pool for `!m`. Generations per original die and modifier for Explode and Re-roll. Retries per result for Unique. |
 | `maxGeneratedRolls` | `1,000,000` | All additional dice rolled by repeating modifiers within one dice pool. |
 
 An explicit notation limit cannot exceed `maxIterations`: the lower value is used. Without a notation limit, `maxIterations` applies. The initial rolls do not count towards either repeating limit.
 
 With the default one-die amount, `d10!>0` produces one initial result and `1,000` extra results. An amount greater than one can generate many more dice within the same number of generations, so `maxGeneratedRolls` also caps the total work.
 
-The generated-roll allowance is shared by Explode, Re-roll and Unique in the same pool, including discarded re-rolls. Each pool has a separate allowance. When it runs out, modifiers stop drawing dice and keep the results reached so far, even if a condition still matches or a duplicate remains. A multiple-die trigger can produce fewer than its requested amount if the allowance runs out part-way through.
+Repeating modifiers share the generated-roll allowance within the same pool, including discarded re-rolls. Each pool has a separate allowance. When it runs out, modifiers stop drawing dice and keep the results reached so far, even if a condition still matches or a duplicate remains. Explode and Re-roll with `:amount` can produce fewer dice than requested if the allowance runs out part-way through. Matching-batch explosions require enough allowance for a complete batch.
 
 You can [configure these limits](../usage/index.md#roll-limits) when creating a roll or roller. For example:
 
