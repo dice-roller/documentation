@@ -98,5 +98,5 @@ See [Getting started](getting-started.md) for installation and import options.
 Other projects in the Dice Roller ecosystem include:
 
 * [Vue components](https://github.com/dice-roller/vue) for adding dice rolling to Vue applications.
-* The [VuePress plugin](https://github.com/dice-roller/vuepress-plugin) used for interactive rolls in this documentation.
+* The [VitePress plugin](https://github.com/dice-roller/vitepress-plugin) used for interactive rolls in this documentation.
 * A [command-line interface](https://github.com/dice-roller/cli) for rolling dice in your terminal.
