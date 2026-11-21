@@ -77,8 +77,10 @@ The registry recognises these built-in factory names:
 | `standard` | `d6`, `d20` and other numbered dice |
 | `percentile` | `d%` |
 | `fudge` | `dF`, `dF.1` and `dF.2` |
-| `range` | Range notation such as `d{0...5}` |
-| `face` | Face notation such as `d{1,1,2}` |
+| `range` | Ranges written without a step and with ascending safe-integer bounds, such as `d{0...5}` or `d{0:5}` |
+| `face` | Face lists such as `d{1,1,2}`, ranges with an explicit step such as `d{0:2:6}`, and ranges with fractional bounds such as `d{0.5...3.5}` |
+
+The factory follows the notation. `d{0:1:5}` uses `face` because it includes an explicit step, even though it has the same possible values as `d{0:5}`.
 
 ### Share the registry between rolls
 
