@@ -209,9 +209,13 @@ It provides `present()` and selects the method for each kind of result. Your sub
 | `die(result, pool)` | One die in that set. |
 | `group(result)` | A roll group. |
 | `binary(result)` | An operation such as addition or multiplication. |
+| `comparison(result)` | A comparison with two evaluated operands and a result of `1` or `0`. |
 | `unary(result)` | An operation such as negation. |
 | `paren(result)` | A parenthesised expression. |
 | `fn(result)` | A maths function. |
+| `conditional(result)` | A ternary with an evaluated condition and a selected branch. |
+
+You can also override `reference(result)` to format a variable. By default it passes the resolved value to `number()`.
 
 Call `this.visit(childResult)` to format a nested expression. For example, `roll()` would usually include `this.visit(roll.result)` alongside the notation and total. In `pool()`, call `this.die(dieResult, poolResult)` for each die; this step is not automatic.
 
@@ -251,13 +255,21 @@ class DiceListPresenter extends presenters.TreePresenter {
     return [...this.visit(result.left), ...this.visit(result.right)];
   }
 
+  comparison(result) {
+    return [...this.visit(result.left), ...this.visit(result.right)];
+  }
+
+  conditional(result) {
+    return [...this.visit(result.condition), ...this.visit(result.selectedResult)];
+  }
+
   group(result) {
     // Visit each member's expression: e.g. pool() for a member containing '2d6'.
     return result.members.flatMap((member) => this.visit(member.result));
   }
 
   unary(result) {
-    // Visit the operand: e.g. pool() for the dice in '-2d6'.
+    // Visit the operand: e.g. binary() for the power in '-2^2'.
     return this.visit(result.operand);
   }
 
@@ -274,12 +286,19 @@ class DiceListPresenter extends presenters.TreePresenter {
   number() { return []; }
 }
 
+const presenter = new DiceListPresenter();
 const roll = new Roll('(2d6+3)*2');
 
-console.log(roll.present(new DiceListPresenter()));
+console.log(roll.present(presenter));
 // e.g. ['d6: 4', 'd6: 2']
+
+const conditional = new Roll('((d6) >= 4) ? (d8) : (d10)');
+console.log(conditional.present(presenter));
+// e.g. ['d6: 4', 'd8: 3']
 ```
 
 Here, `roll()` starts with `visit(roll.result)`. Each call to `visit()` selects the method for that result: `binary()` visits both sides of an operation, and `paren()` visits the expression inside the parentheses. When it reaches a pool, `pool()` formats its dice using `die()`.
 
-Every method returns an array of labels. `number()` returns an empty array because this presenter only lists dice. It includes all dice, including any dropped by modifiers; it does not calculate a new total.
+For the ternary, `conditional()` visits the condition and the selected result. `comparison()` visits the condition’s two operands, so the output includes the d6 from the condition and the die from the branch that actually rolled. The unselected branch has no evaluated result.
+
+Every method returns an array of labels. `number()` returns an empty array because this presenter only lists dice. It includes dropped dice in the pools it visits.

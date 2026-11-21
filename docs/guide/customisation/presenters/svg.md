@@ -223,6 +223,7 @@ These visibility options all default to `true`:
 | `showValues` | Values on the dice, including Fudge symbols. |
 | `showDescriptions` | Pool and group descriptions alongside their results. |
 | `showDiceLabels` | Die notation beneath each die. |
+| `showVariableLabels` | Variable names such as `$bonus` and `$$condition` beneath their resolved values. |
 | `showModifierLabels` | Modifier labels beneath dice and group members, and calculated keep/drop captions beneath pools and groups. |
 | `showModifierIcons` | Symbols for modifier effects. |
 | `showNotation` | The supplied notation above each roll. |
@@ -273,7 +274,7 @@ You can change individual icon colours using CSS variables on your output contai
 }
 ```
 
-The icon families are `explode`, `compound`, `penetrate`, `re-roll`, `unique`, `min`, `max`, `target-success`, `target-failure`, `critical-success` and `critical-failure`.
+The icon families are `explode`, `explode-matching-batch`, `explode-matching-batch-failure`, `compound`, `penetrate`, `re-roll`, `unique`, `min`, `max`, `target-success`, `target-failure`, `critical-success` and `critical-failure`.
 
 Each supports `--modifier-{name}-color`; compound's rear burst uses the explosion colour.
 
@@ -328,6 +329,8 @@ const svg = roll.present(new SvgPresenter());
 ```
 
 <SvgExample name="ternary" />
+
+Set `showVariableLabels: false` to hide the name beneath a variable’s resolved value. The value and its tooltip remain visible.
 
 ## Hover highlights
 
@@ -414,6 +417,7 @@ The package also exports `defaultArtwork`, `SvgPresenterOptions` for reusable Ty
 | `showValues` | `true` |
 | `showDescriptions` | `true` |
 | `showDiceLabels` | `true` |
+| `showVariableLabels` | `true` |
 | `showModifierLabels` | `true` |
 | `showModifierIcons` | `true` |
 | `showNotation` | `true` |
