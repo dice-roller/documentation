@@ -57,6 +57,7 @@ jobs:
             }
 
             core.exportVariable('BASE_PATH', basePath);
+            core.exportVariable('DOCS_SITE_URL', pages.html_url);
             
             core.info(`Base path: /${basePath}`);
 
