@@ -143,7 +143,14 @@ See the [Keep and Drop explanation](modifiers.md#keep) for examples of how this 
 Use a parenthesised expression after Keep, just as you would for a [dice pool](modifiers.md#calculated-keep-count). The group’s sub-rolls are evaluated first, then the count is evaluated once when the modifier runs.
 
 ```javascript
-{2d6+2d8}kh(d4) // Roll a d4 for the number of dice to keep across both pools
+// Roll a d4 for the number of dice to keep across both pools
+{2d6+2d8}kh(d4)
+
+// Keep the two sub-rolls with the highest totals
+{2d6,2d8,2d10}kh(1+1)
+
+// Use the higher of two d2 rolls as the count of dice to keep
+{2d6+2d8}kh({d2,d2}kh1)
 ```
 
 If the d4 rolls `2`, Keep selects the two highest individual dice across the d6s and d8s. The d4 only determines the count.
@@ -201,7 +208,14 @@ The calculation includes any maths within each sub-roll:
 Use a parenthesised expression after Drop to decide how many results to exclude. The count follows the same rules as a [calculated drop count on a dice pool](modifiers.md#calculated-drop-count).
 
 ```javascript
-{2d6,2d8,2d10}dl(d2) // Roll a d2 for the number of sub-rolls to drop by total
+// Roll a d2 for the number of sub-rolls to drop by total
+{2d6,2d8,2d10}dl(d2)
+
+// Drop the two highest-scoring sub-rolls if $bonus is 3
+{2d6,2d8,2d10}dh($bonus-1)
+
+// Drop the lowest-scoring sub-roll only if the character is poisoned
+{2d6,2d8,2d10}dl(($character.isPoisoned) ? (1) : (0))
 ```
 
 If the d2 rolls `2`, Drop excludes the two sub-rolls with the lowest totals. The d2 only determines the count.
