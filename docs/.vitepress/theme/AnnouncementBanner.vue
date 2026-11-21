@@ -3,7 +3,7 @@ import { useData } from 'vitepress';
 import { VPButton } from 'vitepress/theme';
 import { computed, ref, watch, onMounted, onUnmounted } from 'vue';
 
-const { site } = useData();
+const { site, theme } = useData();
 const props = defineProps({
   version: {
     type: String,
@@ -19,7 +19,7 @@ onMounted(() => {
 });
 const base = computed(() => site.value.base.replace(/^\/?(documentation\/?)?/, ''));
 const displayVersion = computed(() => {
-  if (props.version === 'staging' || base.value === 'staging') {
+  if (props.version === 'staging' || base.value === 'staging/') {
     return 'staging';
   }
 
@@ -58,16 +58,16 @@ const bannerStyles = {
 const bannerActions = {
   'main': [
     { theme: 'brand', text: "What's new →", link: '/guide/' },
-    { theme: 'alt', text: "v5 documentation →", link: 'https://dice-roller.dev/versions/v5/' },
+    { theme: 'alt', text: "v5 documentation →", link: `${theme.value.versionDocsUrl}v5/`, target: '_self' },
   ],
   'version': [
-    { theme: 'brand', text: "View latest version →", link: '/' },
+    { theme: 'brand', text: "View latest version →", link: theme.value.stableDocsUrl, target: '_self' },
   ],
   'next': [
-    { theme: 'brand', text: "View stable docs →", link: '/' },
+    { theme: 'brand', text: "View stable docs →", link: theme.value.stableDocsUrl, target: '_self' },
   ],
   'staging': [
-    { theme: 'brand', text: "View stable docs →", link: '/' },
+    { theme: 'brand', text: "View stable docs →", link: theme.value.stableDocsUrl, target: '_self' },
   ],
 };
 
@@ -128,6 +128,7 @@ onUnmounted(() => {
           :theme="action.theme"
           :text="action.text"
           :href="action.link"
+          :target="action.target"
       />
     </div>
   </aside>

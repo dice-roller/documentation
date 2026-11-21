@@ -12,6 +12,10 @@ const base = `/${basePath ? `${basePath}/` : ''}`;
 const docsVersion = base.match(/\/versions\/([^/]+)\/$/)?.[1] || 'main';
 const docsRepo = process.env.DOCS_REPO || 'dice-roller/documentation';
 const docsBranch = process.env.DOCS_BRANCH || 'main';
+const [docsOwner, docsRepoName] = docsRepo.split('/');
+// VitePress prefixes internal links with this build's base. Use absolute URLs for other versions.
+const stableDocsUrl = (process.env.DOCS_SITE_URL || `https://${docsOwner}.github.io/${docsRepoName}/`).replace(/\/?$/, '/');
+const versionDocsUrl = new URL('versions/', stableDocsUrl).href;
 
 // Keep consuming the existing VuePress-shaped TypeDoc sidebar until its
 // generator is migrated in the library repository.
@@ -90,6 +94,8 @@ export default defineConfig({
     logo: '/hero.svg',
     docsBranch,
     docsVersion,
+    stableDocsUrl,
+    versionDocsUrl,
     footer: {
       message: `MIT Licensed · <a href="${base}credits.html">Credits</a>`,
       copyright: 'Copyright © GreenImp Media ltd.',
@@ -105,7 +111,7 @@ export default defineConfig({
       {
         text: 'v6.x',
         items: [
-          { text: 'Version 5.x', link: '/versions/v5/' },
+          { text: 'Version 5.x', link: `${versionDocsUrl}v5/`, target: '_self', noIcon: true },
         ],
       },
       {
