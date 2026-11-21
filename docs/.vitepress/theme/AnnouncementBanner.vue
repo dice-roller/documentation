@@ -1,7 +1,7 @@
 <script setup>
 import { useData } from 'vitepress';
 import { VPButton } from 'vitepress/theme';
-import { computed, ref, watch, onUnmounted } from 'vue';
+import { computed, ref, watch, onMounted, onUnmounted } from 'vue';
 
 const { site } = useData();
 const props = defineProps({
@@ -10,10 +10,12 @@ const props = defineProps({
   },
 });
 
-const isProd = computed(() => {
+const isProd = ref(false);
+
+onMounted(() => {
   const host = window.location.host;
 
-  return !host.startsWith('localhost') && !host.includes('github.io');
+  isProd.value = !host.startsWith('localhost') && !host.includes('github.io');
 });
 const base = computed(() => site.value.base.replace(/^\/?(documentation\/?)?/, ''));
 const displayVersion = computed(() => {
@@ -70,7 +72,7 @@ const bannerActions = {
 };
 
 // hide the "main" version banner unless it's gone live for v6+
-const showBanner = computed(() => displayVersion.value !== 'main' || isProd);
+const showBanner = computed(() => displayVersion.value !== 'main' || isProd.value);
 const bannerStyle = computed(() => bannerStyles[branchType.value] || 'info');
 const actions = computed(() => bannerActions[branchType.value] || []);
 
@@ -92,7 +94,7 @@ watch(banner, (element, _, onCleanup) => {
   observer.observe(element);
 
   onCleanup(() => observer.disconnect());
-}, { flush: 'post', immediate: true });
+}, { flush: 'post' });
 
 onUnmounted(() => {
   document.documentElement.style.removeProperty('--vp-layout-top-height');
