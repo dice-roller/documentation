@@ -39,7 +39,7 @@ See [Variable data](../usage/index.md#variable-data) for how to pass these value
 
 ## Using variables in expressions
 
-You can use variables in arithmetic, functions, comparisons and ternaries, as well as in [calculated quantities and sides](maths.md#calculating-quantities-and-sides).
+You can use variables in arithmetic, functions, [comparisons and ternaries](comparisons-and-ternaries.md), as well as in [calculated quantities and sides](maths.md#calculating-quantities-and-sides).
 
 ```javascript
 (max($bonus+$character.attackBonus, 4))d10
@@ -59,7 +59,7 @@ The dice roller sets built-in variables as it evaluates the notation. These are 
 
 **Notation:** `$$condition`
 
-Inside the selected branch of a ternary, `$$condition` holds the numeric result of the condition.
+Inside the selected branch of a [ternary](comparisons-and-ternaries.md#ternary-operators), `$$condition` holds the numeric result of the condition.
 
 You can use it in either branch.
 

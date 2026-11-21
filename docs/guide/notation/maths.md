@@ -60,6 +60,8 @@ Powers are evaluated from right to left: `2^3^2` means `2^(3^2)`, giving `512`.
 
 ::: roller (d6+2)*3 :::
 
+Arithmetic operators are evaluated before [expression comparisons](comparisons-and-ternaries.md#comparing-expressions).
+
 ## Calculating quantities and sides
 
 Use a parenthesised expression to determine how many dice to roll or how many sides they have. It can contain arithmetic, functions, dice, roll groups and nested inline rolls:
