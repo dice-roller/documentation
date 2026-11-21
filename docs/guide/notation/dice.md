@@ -6,7 +6,7 @@ To change how existing dice behave or create your own dice, see [Custom dice](..
 
 ## Number of dice
 
-Put a number before the dice notation to specify how many dice to roll. If you leave it out, the quantity defaults to one.
+Put a positive whole number before the dice notation to specify how many dice to roll. If you leave it out, the quantity defaults to one.
 
 ```javascript
 d6    // Roll one six-sided die
@@ -15,9 +15,9 @@ d6    // Roll one six-sided die
 ```
 
 ::: warning Quantity limits
-Each set of dice must have a quantity between `1` and `999`.
+The [configured `maxQty` limit](../usage/index.md#roll-limits) defaults to `999` dice per set. With the default limit, `999d6` and `20d4 + 999d10` are valid, while `1000d6` exceeds the limit.
 
-For example, `999d6` is valid, but `0d6` and `1000d6` are not. The limit applies separately to each set, so `20d4 + 999d10` is also valid.
+Writing `0d6` directly is invalid. A [calculated quantity](maths.md#calculating-quantities-and-sides) can be zero, as in `(1-1)d6`, which rolls no dice.
 :::
 
 ## Standard

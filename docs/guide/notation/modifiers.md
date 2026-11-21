@@ -57,6 +57,8 @@ For example, `4d6min3` treats any rolls of `1` or `2` as `3`:
 
 Changed results are marked with `^`.
 
+The minimum can be negative or fractional. For example, `dFmin-0.5` raises a roll of `-1` to `-0.5`.
+
 This is the opposite of the [Max modifier](#max).
 
 ::: roller 4d6min3 :::
@@ -86,6 +88,8 @@ For example, `4d6max3` treats any rolls of `4`, `5` or `6` as `3`:
 ```
 
 Changed results are marked with `v`.
+
+The maximum can be negative or fractional. For example, `dFmax-0.5` lowers rolls of `0` and `1` to `-0.5`.
 
 This is the opposite of the [Min modifier](#min).
 
@@ -768,9 +772,9 @@ The notation still limits each explosion branch to two generations; `maxIteratio
 
 ## Compare point
 
-A compare point defines a condition using a comparison operator followed by a number.
+A compare point defines a condition using a comparison operator followed by a number. The number can be negative or fractional.
 
-For example, `>=5` means “greater than or equal to 5”.
+For example, `>=5` means “greater than or equal to 5”. In `dF<=-0.5`, a Fudge result of `-1` counts as a success.
 
 | Operator | Meaning |
 | --- | --- |

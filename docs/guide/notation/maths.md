@@ -35,6 +35,8 @@ d15%2    // Calculate the result modulo 2
 
 ::: roller d6*5 :::
 
+To subtract a dice roll, put a value or expression before the minus sign. `10-2d6` subtracts the total of two d6s from `10`. To get the negative of the roll on its own, use `0-2d6`. The forms `-2d6` and `-(2d6)` are invalid.
+
 ::: tip Modulo and percentile dice
 The `%` after `d` specifies percentile dice, while `%` between expressions is the modulo operator.
 
@@ -91,7 +93,7 @@ For example, in `({d4+1, d6}kh1)d8`, if the d4 rolls `2` and the d6 rolls `5`, t
 
 Each quantity and sides expression is evaluated once, before the outer pool is rolled. In `2d({d6, d8}kh1+2)`, if the group keeps `6`, you roll `2d8`; both dice use the same calculated number of sides. The dice used to calculate a parameter are not added again to the outer pool's total.
 
-The calculated quantity must be a whole number within the configured dice limit. A calculated quantity of `0` produces an empty pool with a total of `0`, as in `(1-1)d10`. The literal notation `0d10` is still invalid. Negative, fractional, non-finite, unsafe or over-limit quantities are rejected. If an expression can produce a fraction, use a [rounding function](#rounding), for example `(floor(d6/2)+1)d8`.
+The calculated quantity must be a safe integer from `0` up to the [configured `maxQty` limit](dice.md#number-of-dice), which defaults to `999` per set. A calculated quantity of `0` produces an empty pool with a total of `0`, as in `(1-1)d10`. The literal notation `0d10` is still invalid. If an expression can produce a fraction, use a [rounding function](#rounding), for example `(floor(d6/2)+1)d8`.
 
 The calculated number of sides must be a positive whole number; zero or negative sides are invalid.
 
