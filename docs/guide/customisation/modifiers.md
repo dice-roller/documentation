@@ -20,15 +20,16 @@ Each modifier has a handler with an `order` property. Handlers run from the lowe
 | --- | ---: |
 | [Min](../notation/modifiers.md#min) | 1 |
 | [Max](../notation/modifiers.md#max) | 2 |
-| [Explode](../notation/modifiers.md#explode) | 3 |
-| [Re-roll](../notation/modifiers.md#re-roll) | 4 |
-| [Unique](../notation/modifiers.md#unique) | 5 |
-| [Keep](../notation/modifiers.md#keep) | 6 |
-| [Drop](../notation/modifiers.md#drop) | 7 |
-| [Target success / failure](../notation/modifiers.md#target-success-dice-pool) | 8 |
-| [Critical success](../notation/modifiers.md#critical-success) | 9 |
-| [Critical failure](../notation/modifiers.md#critical-failure) | 10 |
-| [Sort](../notation/modifiers.md#sort) | 11 |
+| [Matching-batch explosions](../notation/modifiers.md#matching-batch-explosions) | 3 |
+| [Explode](../notation/modifiers.md#explode) | 4 |
+| [Re-roll](../notation/modifiers.md#re-roll) | 5 |
+| [Unique](../notation/modifiers.md#unique) | 6 |
+| [Keep](../notation/modifiers.md#keep) | 7 |
+| [Drop](../notation/modifiers.md#drop) | 8 |
+| [Target success / failure](../notation/modifiers.md#target-success-dice-pool) | 9 |
+| [Critical success](../notation/modifiers.md#critical-success) | 10 |
+| [Critical failure](../notation/modifiers.md#critical-failure) | 11 |
+| [Sort](../notation/modifiers.md#sort) | 12 |
 
 For example, `4d6kh3!` and `4d6!kh3` use the same execution order: Explode runs before Keep.
 
@@ -75,7 +76,7 @@ const roll = new Roll('8d4kh4!', {
 });
 ```
 
-Keep normally has an order of `6`, while Explode has an order of `3`. Changing Keep to `2` makes it run first.
+Keep normally has an order of `7`. Changing it to `2` puts it before Explode, which has an order of `4`.
 
 The spread (`...modifiers.keepHandler`) copies the existing handler's behaviour, so you only need to specify what you want to change.
 
@@ -177,7 +178,7 @@ For example, suppose your game treats **any even result as a critical success**,
 ```javascript
 const customModifiers = new modifiers.ModifierRegistry().register({
   name: 'critical-success',
-  order: 9,
+  order: 10,
   appliesTo: ['pool'],
 
   apply(items) {
