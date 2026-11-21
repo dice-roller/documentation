@@ -412,8 +412,6 @@ Excluded results remain visible and are marked with `d`:
 
 This is the opposite of the [Drop modifier](#drop).
 
-To work out how many results to keep when you roll, use a [calculated count](#calculated-keep-and-drop-counts).
-
 ::: roller 6d8k3 :::
 
 ::: warning Using Keep and Drop together
@@ -435,6 +433,18 @@ In this example, both modifiers exclude the lowest result, so only the highest r
 
 Keep excludes `6` and `1`. Drop selects `1`, which is already excluded.
 :::
+
+### Calculated keep count <Badge text="New in v6" vertical="middle"/>
+
+Put an expression in parentheses after the Keep modifier to calculate how many results to keep. The expression can include [maths](maths.md), dice rolls, [roll groups](roll-groups.md) and [variables](variables.md).
+
+```javascript
+6d10kh(2+2) // Keep the highest four results
+```
+
+The count is evaluated once, when the modifier runs. Dice rolled to work out the count stay outside the selection and do not contribute directly to the total. The count must be a non-negative safe integer. A count of zero is valid, so `kh(0)` keeps no results.
+
+::: roller 6d10kh(2+2) :::
 
 ## Drop
 
@@ -467,30 +477,23 @@ You can combine Drop Highest and Drop Lowest:
 
 This is the opposite of the [Keep modifier](#keep).
 
-You can also use a [calculated count](#calculated-keep-and-drop-counts) to decide how many results to drop.
-
 ::: roller 4d10dh1dl1 :::
 
 ::: tip Using Keep and Drop together
 Both modifiers consider the entire set of results, including results already dropped. See the [Keep section](#keep) for examples.
 :::
 
-## Calculated keep and drop counts <Badge text="New in v6" vertical="middle"/>
+### Calculated drop count <Badge text="New in v6" vertical="middle"/>
 
-Put an expression in parentheses after a Keep or Drop modifier to calculate how many results to select. The expression can include [maths](maths.md), dice rolls, [roll groups](roll-groups.md) and [variables](variables.md).
+Put an expression in parentheses after the Drop modifier to calculate how many results to drop.
 
 ```javascript
-6d10kh(2+2) // Keep the highest four results
-6d6dl(d3)   // Roll a d3 to decide how many of the lowest results to drop
+6d6dl(d3) // Roll a d3 to decide how many of the lowest results to drop
 ```
 
-The count is evaluated once, when the modifier runs. If the d3 in `6d6dl(d3)` rolls `2`, the modifier drops the two lowest d6 results. The d3 is only used for the count. It stays outside the set of results that can be dropped and does not contribute directly to the total.
-
-The count must be a non-negative safe integer. A fractional or negative result causes an error. A calculated count of zero is valid, so `kh(0)` keeps no results and `dl(0)` drops none.
+If the d3 rolls `2`, the modifier drops the two lowest d6 results. The d3 only determines the count. The [same rules as Keep](#calculated-keep-count) apply to the expression, and `dl(0)` drops no results.
 
 ::: roller 6d6dl(d3) :::
-
-You can also use [calculated counts on roll groups](roll-groups.md#calculated-keep-and-drop-counts).
 
 ## Target success / Dice pool
 

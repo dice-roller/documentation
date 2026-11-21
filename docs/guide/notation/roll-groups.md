@@ -92,8 +92,6 @@ Keep the specified number of highest or lowest results, excluding the rest from 
 
 As with the [dice-level Keep modifier](modifiers.md#keep), `kh` keeps the highest values, `kl` keeps the lowest, and `k` defaults to highest.
 
-You can also [calculate the count](#calculated-keep-and-drop-counts).
-
 The results being compared depend on the number of sub-rolls.
 
 #### Single sub-roll
@@ -140,6 +138,18 @@ For a single sub-roll, they both select from the individual dice. For multiple s
 See the [Keep and Drop explanation](modifiers.md#keep) for examples of how this can affect the total.
 :::
 
+#### Calculated keep count <Badge text="New in v6" vertical="middle"/>
+
+Use a parenthesised expression after Keep, just as you would for a [dice pool](modifiers.md#calculated-keep-count). The group’s sub-rolls are evaluated first, then the count is evaluated once when the modifier runs.
+
+```javascript
+{2d6+2d8}kh(d4) // Roll a d4 for the number of dice to keep across both pools
+```
+
+If the d4 rolls `2`, Keep selects the two highest individual dice across the d6s and d8s. The d4 only determines the count.
+
+::: roller {2d6+2d8}kh(d4) :::
+
 ### Drop
 
 **Notation:** `d{n}` / `dh{n}` / `dl{n}`
@@ -149,8 +159,6 @@ See the [Keep and Drop explanation](modifiers.md#keep) for examples of how this 
 Exclude the specified number of highest or lowest results from the total.
 
 As with the [dice-level Drop modifier](modifiers.md#drop), `dh` drops the highest values, `dl` drops the lowest, and `d` defaults to lowest.
-
-You can also [calculate the count](#calculated-keep-and-drop-counts).
 
 This is the opposite of [Keep](#keep).
 
@@ -188,18 +196,15 @@ The calculation includes any maths within each sub-roll:
 
 ::: roller {4d10, 5d6, 2d10}d2 :::
 
-### Calculated keep and drop counts <Badge text="New in v6" vertical="middle"/>
+#### Calculated drop count <Badge text="New in v6" vertical="middle"/>
 
-Use a parenthesised expression after a group’s Keep or Drop modifier, just as you would for a [dice pool](modifiers.md#calculated-keep-and-drop-counts). The group’s sub-rolls are evaluated first, and the count is evaluated once when the group modifier runs.
+Use a parenthesised expression after Drop to decide how many results to exclude. The count follows the same rules as a [calculated drop count on a dice pool](modifiers.md#calculated-drop-count).
 
 ```javascript
-{2d6+2d8}kh(d4)      // Roll a d4 for the number of dice to keep across both pools
 {2d6,2d8,2d10}dl(d2) // Roll a d2 for the number of sub-rolls to drop by total
 ```
 
-In the first example, if the d4 rolls `2`, Keep selects the two highest individual dice across the d6s and d8s. In the second, if the d2 rolls `2`, Drop removes the two sub-rolls with the lowest totals, leaving the highest-scoring sub-roll. The dice used for the count are outside both selections.
-
-::: roller {2d6+2d8}kh(d4) :::
+If the d2 rolls `2`, Drop excludes the two sub-rolls with the lowest totals. The d2 only determines the count.
 
 ::: roller {2d6,2d8,2d10}dl(d2) :::
 
