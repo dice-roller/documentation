@@ -207,7 +207,9 @@ A handler supports these properties:
 | `apply(items, input)` | Receives results and returns the updated array of results. |
 | `groupHandling` | Optional setting for how to handle dice inside roll groups. |
 
-The `input` argument includes the modifier's parsed options (`input.modifier`) and the roll context (`input.ctx`). When handling a dice pool, it can also include the die (`input.die`) and a function to roll another die (`input.rollDie`).
+The `input` argument includes the modifier options (`input.modifier`) and the roll context (`input.ctx`). For a [calculated keep or drop count](../notation/modifiers.md#calculated-keep-count), the evaluator calculates the count before calling the handler. For example, both `4d6kh(1+1)` and `4d6kh2` pass `2` as `input.modifier.qty`. The original expression stays on the AST, and its evaluated result is stored in `modifierArguments` on the pool or group result.
+
+For a dice pool, `input.die` is the pool's die. The handler can use `input.rollDie()` to roll one more die or `input.rollBatch(count)` to roll a complete batch. Both draw from the same [per-pool `maxGeneratedRolls` budget](../usage/index.md#roll-limits). When the remaining budget cannot cover the request, the callback returns `undefined` without rolling any dice. Return the results accumulated so far when the budget stops a repeating modifier.
 
 ::: warning Custom handlers don't add new notation
 You can replace the behaviour of existing modifiers, but registering a handler under a new name **doesn't extend the notation parser**.
@@ -242,7 +244,7 @@ If a handler supports roll groups, the optional `groupHandling` property changes
 
 For example, the built-in Keep handler uses `'flatten'` and the built-in Sort handler uses `'each-pool'`.
 
-Group-level calls do not provide `input.die` or `input.rollDie`, even when processing the dice within a group. If you customise group handling, take care to preserve the association between each die and its original pool.
+For group-level calls, `input.die`, `input.rollDie` and `input.rollBatch` are unavailable. This applies even when the group handler receives individual dice. If you customise group handling, take care to preserve the association between each die and its original pool.
 
 ## More information
 
