@@ -39,6 +39,7 @@ Roll the dice your game needs:
 Apply modifiers individually or combine them to build more complex rolls:
 
 * [Exploding](notation/modifiers.md#explode), [compounding](notation/modifiers.md#compound) and [penetrating](notation/modifiers.md#penetrate) dice.
+* [Matching-batch explode](notation/modifiers.md#matching-batch-explode) rolls another batch when every die in the batch has the same value.
 * [Keep](notation/modifiers.md#keep) or [drop](notation/modifiers.md#drop) results.
 * [Re-roll](notation/modifiers.md#re-roll) dice or require [unique results](notation/modifiers.md#unique).
 * Count [successes](notation/modifiers.md#target-success-dice-pool) and [failures](notation/modifiers.md#target-failure-dice-pool).

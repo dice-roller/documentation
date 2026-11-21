@@ -86,7 +86,7 @@ Their position in the notation does not change this order.
 
 **Notation:** `k{n}` / `kh{n}` / `kl{n}`
 
-**Order:** 6
+**Order:** 7
 
 Keep the specified number of highest or lowest results, excluding the rest from the total.
 
@@ -161,7 +161,7 @@ If the d4 rolls `2`, Keep selects the two highest individual dice across the d6s
 
 **Notation:** `d{n}` / `dh{n}` / `dl{n}`
 
-**Order:** 7
+**Order:** 8
 
 Exclude the specified number of highest or lowest results from the total.
 
@@ -226,7 +226,7 @@ If the d2 rolls `2`, Drop excludes the two sub-rolls with the lowest totals. The
 
 **Notation:** `{cp}` / `{cp}:{amount}`
 
-**Order:** 8
+**Order:** 9
 
 Count sub-rolls whose totals meet a condition, rather than adding their totals together.
 
@@ -271,7 +271,7 @@ Sub-rolls excluded by [Keep](#keep) or [Drop](#drop) do not contribute to the su
 
 **Notation:** `f{cp}` / `f{cp}:{amount}`
 
-**Order:** 8
+**Order:** 9
 
 Subtract failures when counting successful sub-rolls.
 
@@ -352,7 +352,7 @@ Write all target conditions together, without other modifiers between them. Sub-
 
 **Notation:** `s` / `sa` / `sd`
 
-**Order:** 11
+**Order:** 12
 
 Sort sub-rolls by their totals and sort the individual results within each set of dice.
 
