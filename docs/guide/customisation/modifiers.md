@@ -212,9 +212,9 @@ The `input` argument includes the modifier options (`input.modifier`) and the ro
 For a dice pool, `input.die` is the pool's die. The handler can use `input.rollDie()` to roll one more die or `input.rollBatch(count)` to roll a complete batch. Both draw from the same [per-pool `maxGeneratedRolls` budget](../usage/index.md#roll-limits). When the remaining budget cannot cover the request, the callback returns `undefined` without rolling any dice. Return the results accumulated so far when the budget stops a repeating modifier.
 
 ::: warning Custom handlers don't add new notation
-You can replace the behaviour of existing modifiers, but registering a handler under a new name **doesn't extend the notation parser**.
+Register a handler under an existing modifier name to replace its behaviour. The same handler runs whether the modifier comes from notation or from an AST you build directly.
 
-If you need rules that can't be expressed through existing notation, you may need to build an expression programmatically or change the parser itself.
+A new modifier name requires support in the library's AST types and [validation](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/ast/validation.ts), even when you build the AST directly. To use the new modifier in a notation string, the parser also needs to recognise its syntax.
 :::
 
 ### Working with results
