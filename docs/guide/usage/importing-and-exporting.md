@@ -1,5 +1,114 @@
 # Importing and exporting
 
+You can save a completed dice roll or a whole roll history, then restore the same results later without rolling the dice again. Exports retain the notation, evaluated results and totals, including the effects of modifiers.
+
+Use **exporting** to save rolls you've made with RPG Dice Roller. When **importing**, you can restore that full export or supply [concise results](#importing-concise-results) if you only have the finished dice values.
+
+## Exporting
+
+Call `export()` on a `Roll` to save an individual roll, or on a `Roller` to save its entire history.
+
+### Exporting a roll
+
+```javascript
+import { Roll, Roller } from '@dice-roller/rpg-dice-roller';
+
+const roll = new Roll('4d6kh3');
+const savedRoll = roll.export();
+
+console.log(typeof savedRoll); // 'string'
+```
+
+By default, `export()` returns a JSON string, which you can store or send elsewhere. It contains the results already rolled; calling `export()` doesn't roll the notation again.
+
+### Exporting a history
+
+Use `Roller.export()` to save all rolls in its history:
+
+```javascript
+const roller = new Roller();
+roller.roll('d20+5');
+roller.roll('2d8');
+
+const savedHistory = roller.export();
+```
+
+The saved history contains both rolls, in order, and the combined total. You can [import the history](#importing-a-saved-history) into another `Roller` later.
+
+If you only want to save one roll from the history, export the individual `Roll` instead:
+
+```javascript
+const savedFirstRoll = roller.history.rolls[0].export();
+```
+
+### Export formats
+
+Both `Roll.export()` and `Roller.export()` accept the same optional format:
+
+| Format | Return value | When to use it |
+| --- | --- | --- |
+| `'json'` (default) | JSON string | Saving to storage or sending to another application. |
+| `'object'` | JSON-safe JavaScript object | Working with exported data directly in code. |
+| `'base64'` | UTF-8 Base64-encoded JSON string | When you need to pass the export as Base64 text. |
+
+```javascript
+const asJson = roll.export();          // Same as roll.export('json')
+const asObject = roll.export('object');
+const asBase64 = roll.export('base64');
+```
+
+All three formats contain the same information and can be passed directly to the corresponding [import method](#importing). Base64 is an encoding, **not encryption**, and should not be used to conceal sensitive data.
+
+### What gets exported
+
+A roll export includes its notation, the complete evaluated result tree (with the AST in `result.node`), and its `total`, `minTotal`, `maxTotal` and `averageTotal`. A history export contains the individual roll exports and the combined total.
+
+The top-level `type` identifies the kind of export: `'roll'` for an individual roll, or `'history'` for a history. The `version` field identifies the export data format, currently `1`.
+
+```javascript
+const rollData = roll.export('object');
+
+console.log(rollData.type); // 'roll'
+console.log(rollData.version); // 1
+console.log(rollData.notation); // '4d6kh3'
+
+const historyData = roller.export('object');
+
+console.log(historyData.type); // 'history'
+console.log(historyData.rolls.length); // 2
+```
+
+The export preserves the original roll results, including nested dice, modifier effects and stored totals. It doesn't include the random engine, variable input data, custom dice or modifier implementations, or presenter settings. To format a restored roll, call `present()`; to roll it again, supply any [required options](#re-rolling-imported-rolls) when importing.
+
+Exporting may calculate previously uncached minimum, maximum and average totals so they can be saved alongside the results.
+
+#### Using toJSON()
+
+`Roll.toJSON()` returns the same JSON-safe object as `roll.export('object')`. `RollHistory.toJSON()` does the same for a history. JavaScript also calls these methods automatically when you use `JSON.stringify()`:
+
+```javascript
+console.log(JSON.stringify(roll) === roll.export()); // true
+console.log(JSON.stringify(roller.history) === roller.export()); // true
+
+const rollObject = roll.toJSON();
+const historyObject = roller.history.toJSON();
+```
+
+You don't need to call `JSON.stringify()` on `export()`'s default output, as it is already a JSON string.
+
+#### Non-finite numbers
+
+JSON doesn't support `Infinity`, `-Infinity` or `NaN` as numbers. The exporter preserves them using tagged objects, rather than allowing `JSON.stringify()` to turn them into `null`:
+
+```javascript
+const result = new Roll('1/0');
+const exported = result.export('object');
+
+console.log(exported.total); // { $number: 'Infinity' }
+```
+
+These tags are handled automatically when you [import](#importing) the data, restoring the original numeric values.
+
 ## Importing
 
 Use `Roll.import()` to restore a single roll, or `roller.import()` to add saved rolls to a `Roller`'s history. Neither method rolls dice again.
@@ -122,14 +231,7 @@ To build a full-format history manually, use `type: 'history'`, `version: 1`, a 
 Importing checks the structure and data version, but doesn't recalculate the stored results or totals, or run modifiers again. When building the data manually, make sure the AST, results and totals agree. If you only have finished dice outcomes, the [concise format](#importing-concise-results) is simpler.
 :::
 
-::: tip Re-rolling imported data
-Importing restores the existing results without requiring the original random engine, variable values or custom registries. However, calling `reroll()` evaluates the stored AST again using the settings supplied when importing.
-
-If the expression uses [variables](../notation/variables.md), provide the required `data` in the import options. If it uses [custom dice](../customisation/dice.md) or [modifier handlers](../customisation/modifiers.md), provide the corresponding registries. You can then re-roll the imported result normally.
-:::
-
 ### Importing concise results
-
 
 Use `Roll.import()` with your notation and the dice results you want to restore. Put each pool's results in its own array inside `rolls`. A pool is one set of dice from the notation, such as `3d6` or `d8`.
 
@@ -262,3 +364,48 @@ const roll = Roll.import({
 
 console.log(roll.total); // 5
 ```
+
+### Re-rolling imported rolls
+
+Both full-format and concise imports restore the existing results without generating random numbers or applying modifiers again. Re-rolling is different: `reroll()` evaluates the stored AST using the settings supplied when importing.
+
+If the notation uses [variables](../notation/variables.md), pass the required `data` when importing, or supply replacement data when re-rolling:
+
+```javascript
+const original = new Roll('d20 + $bonus', { data: { bonus: 3 } });
+const savedRoll = original.export();
+
+const restored = Roll.import(savedRoll, { data: { bonus: 3 } });
+const nextRoll = restored.reroll({ data: { bonus: 5 } });
+```
+
+If the expression uses [custom dice](../customisation/dice.md) or [custom modifier handlers](../customisation/modifiers.md), provide the corresponding registries when importing. Exported results can be displayed without them, but re-rolling needs the relevant implementations. An imported roll uses its new settings and random engine for future re-rolls; the original engine and variable data aren't saved.
+
+Calling `reroll()` on a roll imported into a `Roller` doesn't automatically add the new roll to its history.
+
+### Handling invalid data
+
+Importing validates the data format and structure. Invalid JSON or Base64, unsupported export versions, incomplete result trees and incorrect concise results can cause an `ImportError`.
+
+```javascript
+import { Roll, errors } from '@dice-roller/rpg-dice-roller';
+
+function restoreRoll(savedData) {
+  try {
+    return Roll.import(savedData);
+  } catch (error) {
+    if (error instanceof errors.ImportError) {
+      console.error('Could not restore roll:', error.message);
+      return null;
+    }
+
+    throw error;
+  }
+}
+```
+
+A history import is checked before any rolls are added. If it contains invalid data, `roller.import()` throws and leaves the existing history unchanged.
+
+::: warning Older exports
+The full-format structure described here is for v6, with export data version `1`. Data saved using v5 has a different structure and may need converting before importing into v6. If you have the notation and finished dice values, you can rebuild the roll using the [concise format](#importing-concise-results) instead.
+:::
