@@ -412,4 +412,4 @@ If `roller.roll()` fails, no roll is added to its history.
 
 * [Working with results](index.md) — inspect dice results, read totals and format output.
 * [Roll history](index.md) — collect and manage rolls.
-* [Importing and exporting](index.md) — save rolls and restore them later.
+* [Importing and exporting](importing-and-exporting.md) — save rolls and restore them later.
