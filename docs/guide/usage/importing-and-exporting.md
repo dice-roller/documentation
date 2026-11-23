@@ -1,6 +1,135 @@
 # Importing and exporting
 
-## Importing finished dice results
+## Importing
+
+Use `Roll.import()` to restore a single roll, or `roller.import()` to add saved rolls to a `Roller`'s history. Neither method rolls dice again.
+
+There are two ways to provide the results. **Full-format data** preserves the evaluated expression tree and totals, making it the best choice when restoring an existing export. **Concise results** are useful when you already know the dice outcomes, such as results recorded by another application, and don't have a full export.
+
+Both methods accept a JavaScript object, a JSON string or a UTF-8 base64-encoded JSON string.
+
+### Importing full-format data
+
+Full-format imports use the same data structure described in [Exporting](#exporting). They contain the original notation, the evaluated expression (AST) and its results, and the roll's totals. This preserves details such as modifiers, nested expressions, and individual dice results without needing to reconstruct them from notation.
+
+#### Importing a saved roll
+
+Pass the result of `export()` directly to `Roll.import()`. The default export is a JSON string:
+
+```javascript
+import { Roll, Roller } from '@dice-roller/rpg-dice-roller';
+
+const original = new Roll('4d6kh3');
+const savedRoll = original.export();
+
+// Later, restore the saved data without rolling again.
+const restored = Roll.import(savedRoll);
+
+console.log(restored.total === original.total); // true
+```
+
+You can also import the other [export formats](#exporting) without converting them first:
+
+```javascript
+const fromObject = Roll.import(original.export('object'));
+const fromBase64 = Roll.import(original.export('base64'));
+```
+
+#### Importing a saved history
+
+Exported histories are restored through `Roller.import()`, rather than `Roll.import()`:
+
+```javascript
+const roller = new Roller();
+roller.roll('d20+5');
+roller.roll('2d8');
+
+const savedHistory = roller.export();
+
+const restoredRoller = new Roller();
+const importedRolls = restoredRoller.import(savedHistory);
+
+console.log(importedRolls.length); // 2
+console.log(restoredRoller.history.length); // 2
+```
+
+`roller.import()` also accepts a single exported roll. It **appends** imported rolls to the existing history and returns an array of the rolls it added. A whole history cannot be passed to `Roll.import()`.
+
+#### Building full-format data manually
+
+You can construct the same data yourself, but you must provide the complete evaluated result structure, not just the notation and the dice values.
+
+A full-format roll has these top-level properties:
+
+| Field | Purpose |
+| --- | --- |
+| `type` | `'roll'` for an individual roll. |
+| `version` | The export data version (currently `1`). |
+| `notation` | The original notation string. |
+| `result` | The evaluated result tree, including its AST in `result.node`. |
+| `total` | The final roll total. |
+| `minTotal`, `maxTotal`, `averageTotal` | The stored minimum, maximum and average totals. |
+
+For example, this builds a complete result for a single d6 that rolled `5`:
+
+```javascript
+const qtyNode = { type: 'number', value: 1 };
+const sidesNode = { type: 'number', value: 6 };
+const poolNode = {
+  type: 'pool',
+  qty: qtyNode,
+  die: { type: 'die', name: 'standard', args: [sidesNode] },
+  modifiers: [],
+};
+
+const data = {
+  type: 'roll',
+  version: 1,
+  notation: 'd6',
+  result: {
+    type: 'pool',
+    node: poolNode,
+    value: 5,
+    qty: { type: 'number', node: qtyNode, value: 1 },
+    dieArgs: [{ type: 'number', node: sidesNode, value: 6 }],
+    die: { notation: '6', min: 1, max: 6, average: 3.5, faceCount: 6 },
+    rolls: [
+      {
+        type: 'die',
+        initialValue: 5,
+        value: 5,
+        calculationValue: 5,
+        useInTotal: true,
+        flags: [],
+      },
+    ],
+  },
+  total: 5,
+  minTotal: 1,
+  maxTotal: 6,
+  averageTotal: 3.5,
+};
+
+const restored = Roll.import(data);
+console.log(restored.total); // 5
+```
+
+In the result tree, each expression result has a `type`, a matching AST `node` and a computed `value`. A dice pool also needs its evaluated quantity (`qty`), die arguments (`dieArgs`), die snapshot (`die`) and finished `rolls`. More complex expressions require corresponding nested results. See the [AST API](../../api/rpg-dice-roller/namespaces/ast/index.md) for the node types.
+
+To build a full-format history manually, use `type: 'history'`, `version: 1`, a `rolls` array containing complete full-format roll objects, and the history `total`. Import it with `roller.import()`.
+
+::: warning Imported totals are trusted
+Importing checks the structure and data version, but doesn't recalculate the stored results or totals, or run modifiers again. When building the data manually, make sure the AST, results and totals agree. If you only have finished dice outcomes, the [concise format](#importing-concise-results) is simpler.
+:::
+
+::: tip Re-rolling imported data
+Importing restores the existing results without requiring the original random engine, variable values or custom registries. However, calling `reroll()` evaluates the stored AST again using the settings supplied when importing.
+
+If the expression uses [variables](../notation/variables.md), provide the required `data` in the import options. If it uses [custom dice](../customisation/dice.md) or [modifier handlers](../customisation/modifiers.md), provide the corresponding registries. You can then re-roll the imported result normally.
+:::
+
+### Importing concise results
+
 
 Use `Roll.import()` with your notation and the dice results you want to restore. Put each pool's results in its own array inside `rolls`. A pool is one set of dice from the notation, such as `3d6` or `d8`.
 
@@ -17,7 +146,7 @@ console.log(roll.total); // 14
 
 The results you supply already include any modifier effects. Importing uses those results to calculate the total without rolling dice or applying the modifiers again.
 
-### Recording modifier effects
+#### Recording modifier effects
 
 Use a number for a die whose original value, final value and contribution to the total are all the same. Use an object when you need to record more detail.
 
@@ -48,7 +177,12 @@ Include any dice already added by an explosion in the same pool array. Here the 
 ```javascript
 const roll = Roll.import({
   notation: 'd6!',
-  rolls: [[{ value: 6, flags: ['explode'] }, 3]],
+  rolls: [
+    [
+      { value: 6, flags: ['explode'] },
+      3,
+    ],
+  ],
 });
 
 console.log(roll.total); // 9
@@ -70,7 +204,7 @@ const roll = Roll.import({
 console.log(roll.total); // 1
 ```
 
-### Sorted groups
+#### Sorted groups
 
 Keep the pool arrays in the order the dice appear in the notation. For `{d6,d8}sa`, `[[5], [2]]` means the **d6 rolled 5** and the **d8 rolled 2**.
 
@@ -87,7 +221,7 @@ console.log(roll.total); // 7
 console.log(roll.present()); // {d6,d8}sa: {[2], [5]} = 7
 ```
 
-### Dice that determine another pool's quantity, sides or keep count
+#### Dice that determine another pool's quantity, sides or keep count
 
 In `(d4)d(d8)kh(d2)`, the `d` between `(d4)` and `(d8)` describes the main pool, the dice you end up rolling and keeping. The three smaller rolls inside parentheses tell you how many of those dice to roll, how many sides they have and how many results to keep.
 
@@ -116,7 +250,7 @@ const roll = Roll.import({
 console.log(roll.total); // 5
 ```
 
-### Conditional rolls
+#### Conditional rolls
 
 Supply the pools in the condition, followed by the pools in the branch it selects. Here the d6 rolled `2`, so the comparison is true and the d8 branch supplies the total. The d10 branch has no entry in `rolls`.
 
