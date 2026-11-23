@@ -4,6 +4,6 @@
 
 > **NonFiniteNumber** = keyof *typeof* [`NON_FINITE_NUMBERS`](../variables/NON_FINITE_NUMBERS.md)
 
-Defined in: [src/serialization/formats.ts:51](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L51)
+Defined in: [src/serialization/formats.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L78)
 
 The tag names used for non-finite numbers.

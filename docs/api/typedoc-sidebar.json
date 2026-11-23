@@ -991,6 +991,16 @@
         "collapsible": true
       },
       {
+        "text": "ConciseGroupResult",
+        "link": "/api/interfaces/ConciseGroupResult.md",
+        "collapsible": true
+      },
+      {
+        "text": "ConciseRollData",
+        "link": "/api/interfaces/ConciseRollData.md",
+        "collapsible": true
+      },
+      {
         "text": "EngineDefinition",
         "link": "/api/interfaces/EngineDefinition.md",
         "collapsible": true
@@ -1060,6 +1070,11 @@
       {
         "text": "CompareOperator",
         "link": "/api/type-aliases/CompareOperator.md",
+        "collapsible": true
+      },
+      {
+        "text": "ConciseDieResult",
+        "link": "/api/type-aliases/ConciseDieResult.md",
         "collapsible": true
       },
       {

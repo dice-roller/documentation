@@ -2,7 +2,7 @@
 
 # Interface: HistoryData
 
-Defined in: [src/serialization/formats.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L33)
+Defined in: [src/serialization/formats.ts:37](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L37)
 
 A roll history.
 
@@ -12,7 +12,7 @@ A roll history.
 
 > `readonly` **rolls**: readonly [`RollData`](RollData.md)[]
 
-Defined in: [src/serialization/formats.ts:36](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L36)
+Defined in: [src/serialization/formats.ts:40](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L40)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/serialization/formats.ts:36](https://github.com/dice-roller/rpg
 
 > `readonly` **total**: `number`
 
-Defined in: [src/serialization/formats.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L38)
+Defined in: [src/serialization/formats.ts:42](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L42)
 
 Can be `NaN`, e.g. for a history of `1/0` and `-1/0`.
 
@@ -30,7 +30,7 @@ Can be `NaN`, e.g. for a history of `1/0` and `-1/0`.
 
 > `readonly` **type**: `"history"`
 
-Defined in: [src/serialization/formats.ts:34](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L34)
+Defined in: [src/serialization/formats.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L38)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [src/serialization/formats.ts:34](https://github.com/dice-roller/rpg
 
 > `readonly` **version**: `1`
 
-Defined in: [src/serialization/formats.ts:35](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L35)
+Defined in: [src/serialization/formats.ts:39](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L39)

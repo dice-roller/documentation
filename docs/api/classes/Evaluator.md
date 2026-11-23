@@ -485,6 +485,40 @@ are pools in nested groups unless `transformMembers` is supplied.
 
 ***
 
+### resolveModifier()
+
+> `protected` **resolveModifier**(`modifier`, `modifierIndex`, `ctx`): `object`
+
+Defined in: [src/evaluator/Evaluator.ts:627](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L627)
+
+#### Parameters
+
+##### modifier
+
+[`ModifierNode`](../rpg-dice-roller/namespaces/ast/type-aliases/ModifierNode.md)
+
+##### modifierIndex
+
+`number`
+
+##### ctx
+
+[`RollContext`](../interfaces/RollContext.md)
+
+#### Returns
+
+`object`
+
+##### argument?
+
+> `optional` **argument?**: [`ModifierArgumentResult`](../rpg-dice-roller/namespaces/results/interfaces/ModifierArgumentResult.md)
+
+##### modifier
+
+> **modifier**: [`ModifierNode`](../rpg-dice-roller/namespaces/ast/type-aliases/ModifierNode.md)
+
+***
+
 ### runHandler()
 
 > `protected` **runHandler**\<`T`\>(`handler`, `items`, `input`): `T`[]

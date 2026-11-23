@@ -4,6 +4,6 @@
 
 > **EncodedHistoryData** = [`Encoded`](Encoded.md)\<[`HistoryData`](../interfaces/HistoryData.md)\>
 
-Defined in: [src/serialization/formats.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L78)
+Defined in: [src/serialization/formats.ts:105](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L105)
 
 An exported roll history: JSON-safe, with non-finite numbers tagged.

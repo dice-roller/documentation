@@ -4,7 +4,7 @@
 
 > **EncodedRollData** = [`Encoded`](Encoded.md)\<[`RollData`](../interfaces/RollData.md)\>
 
-Defined in: [src/serialization/formats.ts:75](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L75)
+Defined in: [src/serialization/formats.ts:102](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L102)
 
 An exported roll: JSON-safe, with non-finite numbers tagged.
 

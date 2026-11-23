@@ -4,7 +4,7 @@
 
 > `const` **NON\_FINITE\_NUMBERS**: `object`
 
-Defined in: [src/serialization/formats.ts:45](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L45)
+Defined in: [src/serialization/formats.ts:72](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/serialization/formats.ts#L72)
 
 The numbers JSON can't represent, by their tag.
 

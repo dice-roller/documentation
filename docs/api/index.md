@@ -41,6 +41,8 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 | ------ | ------ |
 | [ComparisonNode](interfaces/ComparisonNode.md) | A numeric comparison, e.g. `2d6 >= 8`; its result is `1` or `0`. |
 | [ComparisonResult](interfaces/ComparisonResult.md) | A numeric comparison and its evaluated operands. |
+| [ConciseGroupResult](interfaces/ConciseGroupResult.md) | Overrides for a group's finished members, indexed by their position in the notation. |
+| [ConciseRollData](interfaces/ConciseRollData.md) | Hand-written, evaluated results that can be expanded into a roll snapshot. |
 | [EngineDefinition](interfaces/EngineDefinition.md) | A named engine, optionally initialized with a signed 32-bit seed. |
 | [EvaluatorRegistries](interfaces/EvaluatorRegistries.md) | Registries used to resolve dice and modifier handlers during evaluation. |
 | [HistoryData](interfaces/HistoryData.md) | A roll history. |
@@ -59,6 +61,7 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 | Type Alias | Description |
 | ------ | ------ |
 | [CompareOperator](type-aliases/CompareOperator.md) | An operator accepted by a compare point. |
+| [ConciseDieResult](type-aliases/ConciseDieResult.md) | A finished die result. A number sets all three values and includes the die in the total. |
 | [DieLike](type-aliases/DieLike.md) | A range or faces definition with optional behaviour overrides. |
 | [Encoded](type-aliases/Encoded.md) | The data with every number (except literal ones, like `version`) as an `EncodedNumber`. |
 | [EncodedExportData](type-aliases/EncodedExportData.md) | Anything that has been exported. |
