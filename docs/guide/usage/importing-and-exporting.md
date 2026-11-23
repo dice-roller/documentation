@@ -11,7 +11,7 @@ Call `export()` on a `Roll` to save an individual roll, or on a `Roller` to save
 ### Exporting a roll
 
 ```javascript
-import { Roll, Roller } from '@dice-roller/rpg-dice-roller';
+import { Roll } from '@dice-roller/rpg-dice-roller';
 
 const roll = new Roll('4d6kh3');
 const savedRoll = roll.export();
@@ -26,6 +26,8 @@ By default, `export()` returns a JSON string, which you can store or send elsewh
 Use `Roller.export()` to save all rolls in its history:
 
 ```javascript
+import { Roller } from '@dice-roller/rpg-dice-roller';
+
 const roller = new Roller();
 roller.roll('d20+5');
 roller.roll('2d8');
@@ -92,6 +94,9 @@ console.log(JSON.stringify(roller.history) === roller.export()); // true
 
 const rollObject = roll.toJSON();
 const historyObject = roller.history.toJSON();
+
+console.log(rollObject.type); // 'roll'
+console.log(historyObject.type); // 'history'
 ```
 
 You don't need to call `JSON.stringify()` on `export()`'s default output, as it is already a JSON string.
@@ -126,7 +131,7 @@ Full-format imports use the same data structure described in [Exporting](#export
 Pass the result of `export()` directly to `Roll.import()`. The default export is a JSON string:
 
 ```javascript
-import { Roll, Roller } from '@dice-roller/rpg-dice-roller';
+import { Roll } from '@dice-roller/rpg-dice-roller';
 
 const original = new Roll('4d6kh3');
 const savedRoll = original.export();
@@ -149,6 +154,8 @@ const fromBase64 = Roll.import(original.export('base64'));
 Exported histories are restored through `Roller.import()`, rather than `Roll.import()`:
 
 ```javascript
+import { Roller } from '@dice-roller/rpg-dice-roller';
+
 const roller = new Roller();
 roller.roll('d20+5');
 roller.roll('2d8');
