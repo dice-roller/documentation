@@ -4,7 +4,7 @@
 
 > **RollerOptions**\<`T`\> = [`RollOptions`](../interfaces/RollOptions.md)\<`T`\>
 
-Defined in: [src/Roller.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L27)
+Defined in: [src/Roller.ts:34](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/Roller.ts#L34)
 
 Options shared by all rolls made or imported by a roller.
 

@@ -4,6 +4,6 @@
 
 > `const` **defaultTextPresenter**: `Readonly`\<[`TextPresenter`](../classes/TextPresenter.md)\>
 
-Defined in: [src/presenters/TextPresenter.ts:296](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L296)
+Defined in: [src/presenters/TextPresenter.ts:297](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L297)
 
 The frozen shared instance used by roll, history, and roller `toString()` methods.

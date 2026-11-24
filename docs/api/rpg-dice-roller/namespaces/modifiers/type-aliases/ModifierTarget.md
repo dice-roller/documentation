@@ -4,6 +4,6 @@
 
 > **ModifierTarget** = `"pool"` \| `"group"`
 
-Defined in: [src/modifiers/types.ts:12](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L12)
+Defined in: [src/modifiers/types.ts:13](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L13)
 
 What a modifier can be attached to.

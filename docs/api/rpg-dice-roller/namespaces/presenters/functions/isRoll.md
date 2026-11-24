@@ -2,9 +2,9 @@
 
 # Function: isRoll()
 
-> **isRoll**(`target`): `target is Roll<unknown>`
+> **isRoll**(`target`): `target is Roll<unknown, DrawMode>`
 
-Defined in: [src/presenters/Presentable.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/Presentable.ts#L18)
+Defined in: [src/presenters/Presentable.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/Presentable.ts#L20)
 
 Narrows a presentable to a roll by its shape: no `type` property and a `result` property.
 This is not validation of arbitrary input; lookalike objects can match.
@@ -17,4 +17,4 @@ This is not validation of arbitrary input; lookalike objects can match.
 
 ## Returns
 
-`target is Roll<unknown>`
+`target is Roll<unknown, DrawMode>`

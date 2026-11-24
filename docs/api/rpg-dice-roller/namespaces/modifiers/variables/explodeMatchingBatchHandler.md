@@ -4,7 +4,7 @@
 
 > `const` **explodeMatchingBatchHandler**: [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`ExplodeMatchingBatchNode`](../../ast/interfaces/ExplodeMatchingBatchNode.md)\>
 
-Defined in: [src/modifiers/handlers/explode-matching-batch.ts:20](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/explode-matching-batch.ts#L20)
+Defined in: [src/modifiers/handlers/explode-matching-batch.ts:21](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/explode-matching-batch.ts#L21)
 
 `!m`: repeats a complete batch when every die in it has the same value and the optional compare
 point matches. An optional failure compare point is checked first and zeroes accumulated scoring.

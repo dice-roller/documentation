@@ -2,7 +2,7 @@
 
 # Class: TextPresenter
 
-Defined in: [src/presenters/TextPresenter.ts:102](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L102)
+Defined in: [src/presenters/TextPresenter.ts:103](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L103)
 
 Plain text output, matching v5: e.g. `4d6: [3, 5, 2, 6] = 16`, with flag symbols after each die
 value and history rolls joined with `"; "`. It prints the supplied roll's total as-is: newly
@@ -26,7 +26,7 @@ system references use `$$`; their numeric value is shown once beside the conditi
 
 > **new TextPresenter**(`options?`): `TextPresenter`
 
-Defined in: [src/presenters/TextPresenter.ts:107](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L107)
+Defined in: [src/presenters/TextPresenter.ts:108](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L108)
 
 #### Parameters
 
@@ -48,7 +48,7 @@ Defined in: [src/presenters/TextPresenter.ts:107](https://github.com/dice-roller
 
 > `readonly` **expandInlineRolls**: `boolean`
 
-Defined in: [src/presenters/TextPresenter.ts:105](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L105)
+Defined in: [src/presenters/TextPresenter.ts:106](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L106)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: [src/presenters/TextPresenter.ts:105](https://github.com/dice-roller
 
 > `readonly` **flagSymbols**: `Readonly`\<`Record`\<[`ResultFlag`](../../results/type-aliases/ResultFlag.md), `string`\>\>
 
-Defined in: [src/presenters/TextPresenter.ts:103](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L103)
+Defined in: [src/presenters/TextPresenter.ts:104](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L104)
 
 ***
 
@@ -64,7 +64,7 @@ Defined in: [src/presenters/TextPresenter.ts:103](https://github.com/dice-roller
 
 > `readonly` **separator**: `string`
 
-Defined in: [src/presenters/TextPresenter.ts:104](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L104)
+Defined in: [src/presenters/TextPresenter.ts:105](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L105)
 
 ## Methods
 
@@ -72,7 +72,7 @@ Defined in: [src/presenters/TextPresenter.ts:104](https://github.com/dice-roller
 
 > `protected` **binary**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:241](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L241)
+Defined in: [src/presenters/TextPresenter.ts:242](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L242)
 
 `[4, 2]+3`
 
@@ -96,7 +96,7 @@ Defined in: [src/presenters/TextPresenter.ts:241](https://github.com/dice-roller
 
 > `protected` **comparison**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:256](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L256)
+Defined in: [src/presenters/TextPresenter.ts:257](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L257)
 
 `[4, 2]>3`
 
@@ -120,7 +120,7 @@ Defined in: [src/presenters/TextPresenter.ts:256](https://github.com/dice-roller
 
 > `protected` **conditional**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:285](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L285)
+Defined in: [src/presenters/TextPresenter.ts:286](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L286)
 
 #### Parameters
 
@@ -142,7 +142,7 @@ Defined in: [src/presenters/TextPresenter.ts:285](https://github.com/dice-roller
 
 > `protected` **die**(`result`, `_pool`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:188](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L188)
+Defined in: [src/presenters/TextPresenter.ts:189](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L189)
 
 `6!`, `1d`
 
@@ -170,7 +170,7 @@ Defined in: [src/presenters/TextPresenter.ts:188](https://github.com/dice-roller
 
 > `protected` **flags**(`flags`, `calculationValue`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:118](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L118)
+Defined in: [src/presenters/TextPresenter.ts:119](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L119)
 
 The symbols for the flags, e.g. `["explode", "drop"]` -> `!d`.
 
@@ -194,7 +194,7 @@ readonly (`"max"` \| `"min"` \| `"explode-matching-batch"` \| `"explode"` \| `"d
 
 > `protected` **fn**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:281](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L281)
+Defined in: [src/presenters/TextPresenter.ts:282](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L282)
 
 `floor([4, 5]/2)`, `max([5],[2])`
 
@@ -218,7 +218,7 @@ Defined in: [src/presenters/TextPresenter.ts:281](https://github.com/dice-roller
 
 > `protected` **formatNumber**(`value`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:133](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L133)
+Defined in: [src/presenters/TextPresenter.ts:134](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L134)
 
 Formats a number with `String(value)`, including non-finite values.
 
@@ -238,7 +238,7 @@ Formats a number with `String(value)`, including non-finite values.
 
 > `protected` **group**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:193](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L193)
+Defined in: [src/presenters/TextPresenter.ts:194](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L194)
 
 `{[3, 5]+2, ([4])d}`
 
@@ -262,7 +262,7 @@ Defined in: [src/presenters/TextPresenter.ts:193](https://github.com/dice-roller
 
 > `protected` **history**(`history`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:138](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L138)
+Defined in: [src/presenters/TextPresenter.ts:139](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L139)
 
 The rolls joined with `separator`; an empty history is an empty string.
 
@@ -286,7 +286,7 @@ The rolls joined with `separator`; an empty history is an empty string.
 
 > `protected` **member**(`member`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:232](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L232)
+Defined in: [src/presenters/TextPresenter.ts:233](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L233)
 
 A group member: `[3, 5]+2`, or `([3, 5]+2)*` with flags.
 
@@ -306,7 +306,7 @@ A group member: `[3, 5]+2`, or `([3, 5]+2)*` with flags.
 
 > `protected` **number**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:147](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L147)
+Defined in: [src/presenters/TextPresenter.ts:148](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L148)
 
 #### Parameters
 
@@ -328,7 +328,7 @@ Defined in: [src/presenters/TextPresenter.ts:147](https://github.com/dice-roller
 
 > `protected` **operand**(`result`, `minPrecedence`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:269](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L269)
+Defined in: [src/presenters/TextPresenter.ts:270](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L270)
 
 #### Parameters
 
@@ -350,7 +350,7 @@ Defined in: [src/presenters/TextPresenter.ts:269](https://github.com/dice-roller
 
 > `protected` **paren**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:276](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L276)
+Defined in: [src/presenters/TextPresenter.ts:277](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L277)
 
 `([4, 2]*2)`
 
@@ -374,7 +374,7 @@ Defined in: [src/presenters/TextPresenter.ts:276](https://github.com/dice-roller
 
 > `protected` **pool**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:152](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L152)
+Defined in: [src/presenters/TextPresenter.ts:153](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L153)
 
 `[3, 5, 2, 6]`
 
@@ -398,7 +398,7 @@ Defined in: [src/presenters/TextPresenter.ts:152](https://github.com/dice-roller
 
 > **present**(`target`): `string`
 
-Defined in: [src/presenters/TreePresenter.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L38)
+Defined in: [src/presenters/TreePresenter.ts:39](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L39)
 
 Dispatches a history, roll, or expression result to the corresponding hook.
 
@@ -422,7 +422,7 @@ Dispatches a history, roll, or expression result to the corresponding hook.
 
 > `protected` **reference**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:289](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L289)
+Defined in: [src/presenters/TextPresenter.ts:290](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L290)
 
 Presents a resolved reference as its numeric value unless a presenter overrides it.
 
@@ -446,7 +446,7 @@ Presents a resolved reference as its numeric value unless a presenter overrides 
 
 > `protected` **roll**(`roll`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:143](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L143)
+Defined in: [src/presenters/TextPresenter.ts:144](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L144)
 
 `notation: <result> = total`.
 
@@ -454,7 +454,7 @@ Defined in: [src/presenters/TextPresenter.ts:143](https://github.com/dice-roller
 
 ##### roll
 
-[`Roll`](../../../../classes/Roll.md)\<`unknown`\>
+[`Roll`](../../../../classes/Roll.md)\<`unknown`, [`DrawMode`](../../../../type-aliases/DrawMode.md)\>
 
 #### Returns
 
@@ -470,7 +470,7 @@ Defined in: [src/presenters/TextPresenter.ts:143](https://github.com/dice-roller
 
 > `protected` **unary**(`result`): `string`
 
-Defined in: [src/presenters/TextPresenter.ts:265](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L265)
+Defined in: [src/presenters/TextPresenter.ts:266](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TextPresenter.ts#L266)
 
 `-5`
 
@@ -494,7 +494,7 @@ Defined in: [src/presenters/TextPresenter.ts:265](https://github.com/dice-roller
 
 > `protected` **visit**(`result`): `string`
 
-Defined in: [src/presenters/TreePresenter.ts:51](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L51)
+Defined in: [src/presenters/TreePresenter.ts:52](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/presenters/TreePresenter.ts#L52)
 
 Presents a result node with the hook for its type.
 

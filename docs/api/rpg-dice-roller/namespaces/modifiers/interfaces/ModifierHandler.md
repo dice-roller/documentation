@@ -2,7 +2,7 @@
 
 # Interface: ModifierHandler\<N\>
 
-Defined in: [src/modifiers/types.ts:39](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L39)
+Defined in: [src/modifiers/types.ts:50](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L50)
 
 The behaviour of a modifier.
 
@@ -23,7 +23,7 @@ items may be reused.
 
 > `readonly` **appliesTo**: readonly [`ModifierTarget`](../type-aliases/ModifierTarget.md)[]
 
-Defined in: [src/modifiers/types.ts:45](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L45)
+Defined in: [src/modifiers/types.ts:56](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L56)
 
 Targets on which the evaluator permits this handler.
 
@@ -33,7 +33,7 @@ Targets on which the evaluator permits this handler.
 
 > `readonly` `optional` **groupHandling?**: `"flatten"` \| `"each-pool"`
 
-Defined in: [src/modifiers/types.ts:61](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L61)
+Defined in: [src/modifiers/types.ts:72](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L72)
 
 How the handler treats the dice inside a roll group. By default it only gets the members.
 
@@ -55,7 +55,7 @@ modifiers can change its batch size.
 
 > `readonly` **name**: `N`\[`"name"`\]
 
-Defined in: [src/modifiers/types.ts:41](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L41)
+Defined in: [src/modifiers/types.ts:52](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L52)
 
 The existing AST modifier name this handler implements.
 
@@ -65,7 +65,7 @@ The existing AST modifier name this handler implements.
 
 > `readonly` **order**: `number`
 
-Defined in: [src/modifiers/types.ts:43](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L43)
+Defined in: [src/modifiers/types.ts:54](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L54)
 
 Execution order; lower runs first.
 
@@ -73,15 +73,16 @@ Execution order; lower runs first.
 
 ### apply()
 
-> **apply**\<`T`\>(`items`, `input`): `T`[]
+> **apply**\<`T`\>(`items`, `input`): `T`[] \| `Generator`\<`EvaluationDrawRequest`, `T`[], `number`\>
 
-Defined in: [src/modifiers/types.ts:70](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L70)
+Defined in: [src/modifiers/types.ts:82](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/types.ts#L82)
 
 Applies the modifier.
 
 `items` are die results for a pool, or group members for a group (or die results, as set by
 `groupHandling`). Group calls, including calls for their pool dice, do not supply `die`,
-`rollDie` or `rollBatch`. The evaluator requires an array result.
+`rollDie` or `rollBatch`. The evaluator requires an array result. A generator handler may yield
+die requests through those helpers and resumes with the externally supplied face.
 
 #### Type Parameters
 
@@ -101,4 +102,4 @@ readonly `T`[]
 
 #### Returns
 
-`T`[]
+`T`[] \| `Generator`\<`EvaluationDrawRequest`, `T`[], `number`\>

@@ -1001,6 +1001,11 @@
         "collapsible": true
       },
       {
+        "text": "DrawDieRequest",
+        "link": "/api/interfaces/DrawDieRequest.md",
+        "collapsible": true
+      },
+      {
         "text": "EngineDefinition",
         "link": "/api/interfaces/EngineDefinition.md",
         "collapsible": true
@@ -1068,6 +1073,11 @@
     "collapsible": true,
     "children": [
       {
+        "text": "AsyncRollOptions",
+        "link": "/api/type-aliases/AsyncRollOptions.md",
+        "collapsible": true
+      },
+      {
         "text": "CompareOperator",
         "link": "/api/type-aliases/CompareOperator.md",
         "collapsible": true
@@ -1080,6 +1090,31 @@
       {
         "text": "DieLike",
         "link": "/api/type-aliases/DieLike.md",
+        "collapsible": true
+      },
+      {
+        "text": "DrawDieAsyncOptions",
+        "link": "/api/type-aliases/DrawDieAsyncOptions.md",
+        "collapsible": true
+      },
+      {
+        "text": "DrawDieCallback",
+        "link": "/api/type-aliases/DrawDieCallback.md",
+        "collapsible": true
+      },
+      {
+        "text": "DrawDieOptions",
+        "link": "/api/type-aliases/DrawDieOptions.md",
+        "collapsible": true
+      },
+      {
+        "text": "DrawDieSyncOptions",
+        "link": "/api/type-aliases/DrawDieSyncOptions.md",
+        "collapsible": true
+      },
+      {
+        "text": "DrawMode",
+        "link": "/api/type-aliases/DrawMode.md",
         "collapsible": true
       },
       {
@@ -1150,6 +1185,11 @@
       {
         "text": "RollMode",
         "link": "/api/type-aliases/RollMode.md",
+        "collapsible": true
+      },
+      {
+        "text": "SyncRollOptions",
+        "link": "/api/type-aliases/SyncRollOptions.md",
         "collapsible": true
       },
       {

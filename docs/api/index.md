@@ -43,6 +43,7 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 | [ComparisonResult](interfaces/ComparisonResult.md) | A numeric comparison and its evaluated operands. |
 | [ConciseGroupResult](interfaces/ConciseGroupResult.md) | Overrides for a group's finished members, indexed by their position in the notation. |
 | [ConciseRollData](interfaces/ConciseRollData.md) | Hand-written, evaluated results that can be expanded into a roll snapshot. |
+| [DrawDieRequest](interfaces/DrawDieRequest.md) | A description of a die draw requested from an external source. |
 | [EngineDefinition](interfaces/EngineDefinition.md) | A named engine, optionally initialized with a signed 32-bit seed. |
 | [EvaluatorRegistries](interfaces/EvaluatorRegistries.md) | Registries used to resolve dice and modifier handlers during evaluation. |
 | [HistoryData](interfaces/HistoryData.md) | A roll history. |
@@ -60,9 +61,15 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 
 | Type Alias | Description |
 | ------ | ------ |
+| [AsyncRollOptions](type-aliases/AsyncRollOptions.md) | - |
 | [CompareOperator](type-aliases/CompareOperator.md) | An operator accepted by a compare point. |
 | [ConciseDieResult](type-aliases/ConciseDieResult.md) | A finished die result. A number sets all three values and includes the die in the total. |
 | [DieLike](type-aliases/DieLike.md) | A range or faces definition with optional behaviour overrides. |
+| [DrawDieAsyncOptions](type-aliases/DrawDieAsyncOptions.md) | - |
+| [DrawDieCallback](type-aliases/DrawDieCallback.md) | Supplies a face value for a requested die. |
+| [DrawDieOptions](type-aliases/DrawDieOptions.md) | Configuration for using an external source to draw die faces. |
+| [DrawDieSyncOptions](type-aliases/DrawDieSyncOptions.md) | - |
+| [DrawMode](type-aliases/DrawMode.md) | Synchronous or asynchronous external dice-source mode. |
 | [Encoded](type-aliases/Encoded.md) | The data with every number (except literal ones, like `version`) as an `EncodedNumber`. |
 | [EncodedExportData](type-aliases/EncodedExportData.md) | Anything that has been exported. |
 | [EncodedHistoryData](type-aliases/EncodedHistoryData.md) | An exported roll history: JSON-safe, with non-finite numbers tagged. |
@@ -77,6 +84,7 @@ The technical API is for people wanting to delve a bit deeper into the parts tha
 | [Presentable](type-aliases/Presentable.md) | A roll, history, or evaluated expression result; an individual die result is not presentable. |
 | [RollerOptions](type-aliases/RollerOptions.md) | Options shared by all rolls made or imported by a roller. |
 | [RollMode](type-aliases/RollMode.md) | How dice are rolled. |
+| [SyncRollOptions](type-aliases/SyncRollOptions.md) | - |
 | [TaggedDieResult](type-aliases/TaggedDieResult.md) | A die result carrying an internal pool tag during flattened group modifier handling. |
 
 ## Variables

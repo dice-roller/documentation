@@ -4,7 +4,7 @@
 
 > `const` **uniqueHandler**: [`ModifierHandler`](../interfaces/ModifierHandler.md)\<[`UniqueNode`](../../ast/interfaces/UniqueNode.md)\>
 
-Defined in: [src/modifiers/handlers/unique.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/unique.ts#L22)
+Defined in: [src/modifiers/handlers/unique.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/modifiers/handlers/unique.ts#L23)
 
 `u`, `uo` and numeric limits: re-roll rolls whose value an earlier roll already has (optionally
 only those matching the compare point), replacing the value (the initial value is kept). The first

@@ -1,8 +1,8 @@
 [@dice-roller/rpg-dice-roller](../index.md) / RollSettings
 
-# Class: RollSettings\<T\>
+# Class: RollSettings\<T, Mode\>
 
-Defined in: [src/RollSettings.ts:56](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L56)
+Defined in: [src/RollSettings.ts:68](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L68)
 
 Resolved `RollOptions`, with the services built from them.
 
@@ -18,13 +18,17 @@ standalone rolls: `new Roll("4d6", settings)`.
 
 the output type of the presenter
 
+### Mode
+
+`Mode` *extends* [`DrawMode`](../type-aliases/DrawMode.md) = `"sync"`
+
 ## Constructors
 
 ### Constructor
 
-> **new RollSettings**\<`T`\>(`options?`): `RollSettings`\<`T`\>
+> **new RollSettings**\<`T`, `Mode`\>(`options?`): `RollSettings`\<`T`, `Mode`\>
 
-Defined in: [src/RollSettings.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L69)
+Defined in: [src/RollSettings.ts:82](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L82)
 
 Resolves options and validates limits; supplied registries and presenter are shared by reference.
 
@@ -32,11 +36,11 @@ Resolves options and validates limits; supplied registries and presenter are sha
 
 ##### options?
 
-[`RollOptions`](../interfaces/RollOptions.md)\<`T`\> = `{}`
+[`RollOptions`](../interfaces/RollOptions.md)\<`T`, `Mode`\>
 
 #### Returns
 
-`RollSettings`\<`T`\>
+`RollSettings`\<`T`, `Mode`\>
 
 ## Properties
 
@@ -44,7 +48,7 @@ Resolves options and validates limits; supplied registries and presenter are sha
 
 > `readonly` **data**: [`RollInputData`](../interfaces/RollInputData.md)
 
-Defined in: [src/RollSettings.ts:63](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L63)
+Defined in: [src/RollSettings.ts:76](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L76)
 
 A validated, deeply frozen snapshot of the default roll data.
 
@@ -54,7 +58,15 @@ A validated, deeply frozen snapshot of the default roll data.
 
 > `readonly` **dice**: [`DieRegistry`](../rpg-dice-roller/namespaces/dice/classes/DieRegistry.md)
 
-Defined in: [src/RollSettings.ts:59](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L59)
+Defined in: [src/RollSettings.ts:71](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L71)
+
+***
+
+### drawDie?
+
+> `readonly` `optional` **drawDie?**: `DrawDieOptionsForMode`\<`Mode`\>
+
+Defined in: [src/RollSettings.ts:74](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L74)
 
 ***
 
@@ -62,7 +74,7 @@ Defined in: [src/RollSettings.ts:59](https://github.com/dice-roller/rpg-dice-rol
 
 > `readonly` **engines**: [`EngineRegistry`](EngineRegistry.md)
 
-Defined in: [src/RollSettings.ts:58](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L58)
+Defined in: [src/RollSettings.ts:70](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L70)
 
 ***
 
@@ -70,7 +82,7 @@ Defined in: [src/RollSettings.ts:58](https://github.com/dice-roller/rpg-dice-rol
 
 > `readonly` **evaluator**: [`Evaluator`](Evaluator.md)
 
-Defined in: [src/RollSettings.ts:66](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L66)
+Defined in: [src/RollSettings.ts:79](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L79)
 
 ***
 
@@ -78,7 +90,7 @@ Defined in: [src/RollSettings.ts:66](https://github.com/dice-roller/rpg-dice-rol
 
 > `readonly` **generator**: [`NumberGenerator`](../interfaces/NumberGenerator.md)
 
-Defined in: [src/RollSettings.ts:57](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L57)
+Defined in: [src/RollSettings.ts:69](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L69)
 
 ***
 
@@ -86,7 +98,7 @@ Defined in: [src/RollSettings.ts:57](https://github.com/dice-roller/rpg-dice-rol
 
 > `readonly` **limits**: [`RollLimits`](../interfaces/RollLimits.md)
 
-Defined in: [src/RollSettings.ts:61](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L61)
+Defined in: [src/RollSettings.ts:73](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L73)
 
 ***
 
@@ -94,7 +106,7 @@ Defined in: [src/RollSettings.ts:61](https://github.com/dice-roller/rpg-dice-rol
 
 > `readonly` **modifiers**: [`ModifierRegistry`](../rpg-dice-roller/namespaces/modifiers/classes/ModifierRegistry.md)
 
-Defined in: [src/RollSettings.ts:60](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L60)
+Defined in: [src/RollSettings.ts:72](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L72)
 
 ***
 
@@ -102,7 +114,7 @@ Defined in: [src/RollSettings.ts:60](https://github.com/dice-roller/rpg-dice-rol
 
 > `readonly` **parser**: [`Parser`](Parser.md)
 
-Defined in: [src/RollSettings.ts:65](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L65)
+Defined in: [src/RollSettings.ts:78](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L78)
 
 ***
 
@@ -110,7 +122,7 @@ Defined in: [src/RollSettings.ts:65](https://github.com/dice-roller/rpg-dice-rol
 
 > `readonly` **presenter**: [`Presenter`](../interfaces/Presenter.md)\<`T`\>
 
-Defined in: [src/RollSettings.ts:64](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L64)
+Defined in: [src/RollSettings.ts:77](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L77)
 
 ## Methods
 
@@ -118,7 +130,7 @@ Defined in: [src/RollSettings.ts:64](https://github.com/dice-roller/rpg-dice-rol
 
 > **evaluate**(`expression`, `mode?`, `data?`): [`ExpressionResult`](../type-aliases/ExpressionResult.md)
 
-Defined in: [src/RollSettings.ts:144](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L144)
+Defined in: [src/RollSettings.ts:180](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L180)
 
 Evaluates the AST in the given mode (default `random`); `min` and `max` select each die's extreme. Optional data replaces the settings defaults. Every evaluation starts a fresh generated-roll budget per pool; exhausting it returns the dice rolled so far.
 
@@ -142,11 +154,39 @@ Evaluates the AST in the given mode (default `random`); `min` and `max` select e
 
 ***
 
+### evaluateAsync()
+
+> **evaluateAsync**(`expression`, `mode?`, `data?`): `Promise`\<[`ExpressionResult`](../type-aliases/ExpressionResult.md)\>
+
+Defined in: [src/RollSettings.ts:198](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L198)
+
+Evaluates the AST asynchronously using the configured external dice source.
+
+#### Parameters
+
+##### expression
+
+[`ExpressionNode`](../type-aliases/ExpressionNode.md)
+
+##### mode?
+
+[`RollMode`](../type-aliases/RollMode.md) = `"random"`
+
+##### data?
+
+[`RollInputData`](../interfaces/RollInputData.md) = `...`
+
+#### Returns
+
+`Promise`\<[`ExpressionResult`](../type-aliases/ExpressionResult.md)\>
+
+***
+
 ### parse()
 
 > **parse**(`notation`): [`ExpressionNode`](../type-aliases/ExpressionNode.md)
 
-Defined in: [src/RollSettings.ts:139](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L139)
+Defined in: [src/RollSettings.ts:175](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L175)
 
 Parses notation into the AST, without rolling.
 
@@ -164,9 +204,9 @@ Parses notation into the AST, without rolling.
 
 ### from()
 
-> `static` **from**\<`T`\>(`options?`): `RollSettings`\<`T`\>
+> `static` **from**\<`T`, `Mode`\>(`options?`): `RollSettings`\<`T`, `Mode`\>
 
-Defined in: [src/RollSettings.ts:96](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L96)
+Defined in: [src/RollSettings.ts:113](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L113)
 
 Returns settings as they are, or creates settings from options (undefined: fresh defaults).
 
@@ -176,23 +216,27 @@ Returns settings as they are, or creates settings from options (undefined: fresh
 
 `T` = `string`
 
+##### Mode
+
+`Mode` *extends* [`DrawMode`](../type-aliases/DrawMode.md) = `"sync"`
+
 #### Parameters
 
 ##### options?
 
-[`RollOptions`](../interfaces/RollOptions.md)\<`T`\> \| `RollSettings`\<`T`\>
+[`RollOptions`](../interfaces/RollOptions.md)\<`T`, `Mode`\> \| `RollSettings`\<`T`, `Mode`\>
 
 #### Returns
 
-`RollSettings`\<`T`\>
+`RollSettings`\<`T`, `Mode`\>
 
 ***
 
 ### withData()
 
-> `static` **withData**\<`T`\>(`settings`, `data`): `RollSettings`\<`T`\>
+> `static` **withData**\<`T`, `Mode`\>(`settings`, `data`): `RollSettings`\<`T`, `Mode`\>
 
-Defined in: [src/RollSettings.ts:123](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L123)
+Defined in: [src/RollSettings.ts:141](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L141)
 
 Creates settings with replacement data and all other configuration shared with the source.
 
@@ -202,11 +246,15 @@ Creates settings with replacement data and all other configuration shared with t
 
 `T`
 
+##### Mode
+
+`Mode` *extends* [`DrawMode`](../type-aliases/DrawMode.md)
+
 #### Parameters
 
 ##### settings
 
-`RollSettings`\<`T`\>
+`RollSettings`\<`T`, `Mode`\>
 
 ##### data
 
@@ -214,15 +262,49 @@ Creates settings with replacement data and all other configuration shared with t
 
 #### Returns
 
-`RollSettings`\<`T`\>
+`RollSettings`\<`T`, `Mode`\>
+
+***
+
+### withDrawDie()
+
+> `static` **withDrawDie**\<`T`, `Mode`\>(`settings`, `drawDie`): `RollSettings`\<`T`, `Mode`\>
+
+Defined in: [src/RollSettings.ts:158](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L158)
+
+Creates settings with a new external dice source and all other configuration shared.
+
+#### Type Parameters
+
+##### T
+
+`T`
+
+##### Mode
+
+`Mode` *extends* [`DrawMode`](../type-aliases/DrawMode.md)
+
+#### Parameters
+
+##### settings
+
+`RollSettings`\<`T`, [`DrawMode`](../type-aliases/DrawMode.md)\>
+
+##### drawDie
+
+`DrawDieOptionsForMode`\<`Mode`\> \| `undefined`
+
+#### Returns
+
+`RollSettings`\<`T`, `Mode`\>
 
 ***
 
 ### withEngine()
 
-> `static` **withEngine**\<`T`\>(`settings`, `engine`): `RollSettings`\<`T`\>
+> `static` **withEngine**\<`T`, `Mode`\>(`settings`, `engine`): `RollSettings`\<`T`, `Mode`\>
 
-Defined in: [src/RollSettings.ts:107](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L107)
+Defined in: [src/RollSettings.ts:124](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollSettings.ts#L124)
 
 Creates settings with a new engine and all other configuration shared with the source.
 
@@ -232,11 +314,15 @@ Creates settings with a new engine and all other configuration shared with the s
 
 `T`
 
+##### Mode
+
+`Mode` *extends* [`DrawMode`](../type-aliases/DrawMode.md)
+
 #### Parameters
 
 ##### settings
 
-`RollSettings`\<`T`\>
+`RollSettings`\<`T`, `Mode`\>
 
 ##### engine
 
@@ -244,4 +330,4 @@ Creates settings with a new engine and all other configuration shared with the s
 
 #### Returns
 
-`RollSettings`\<`T`\>
+`RollSettings`\<`T`, `Mode`\>

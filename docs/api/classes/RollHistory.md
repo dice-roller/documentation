@@ -2,13 +2,13 @@
 
 # Class: RollHistory
 
-Defined in: [src/RollHistory.ts:8](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L8)
+Defined in: [src/RollHistory.ts:9](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L9)
 
 A log of rolls.
 
 ## Implements
 
-- `Iterable`\<[`Roll`](Roll.md)\<`unknown`\>\>
+- `Iterable`\<[`Roll`](Roll.md)\<`unknown`, [`DrawMode`](../type-aliases/DrawMode.md)\>\>
 
 ## Constructors
 
@@ -28,7 +28,7 @@ A log of rolls.
 
 > **get** **length**(): `number`
 
-Defined in: [src/RollHistory.ts:22](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L22)
+Defined in: [src/RollHistory.ts:23](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L23)
 
 Number of rolls in the history.
 
@@ -42,15 +42,15 @@ Number of rolls in the history.
 
 #### Get Signature
 
-> **get** **rolls**(): readonly [`Roll`](Roll.md)\<`unknown`\>[]
+> **get** **rolls**(): readonly [`Roll`](Roll.md)\<`unknown`, [`DrawMode`](../type-aliases/DrawMode.md)\>[]
 
-Defined in: [src/RollHistory.ts:12](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L12)
+Defined in: [src/RollHistory.ts:13](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L13)
 
 A copy of the rolls, oldest first.
 
 ##### Returns
 
-readonly [`Roll`](Roll.md)\<`unknown`\>[]
+readonly [`Roll`](Roll.md)\<`unknown`, [`DrawMode`](../type-aliases/DrawMode.md)\>[]
 
 ***
 
@@ -60,7 +60,7 @@ readonly [`Roll`](Roll.md)\<`unknown`\>[]
 
 > **get** **total**(): `number`
 
-Defined in: [src/RollHistory.ts:17](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L17)
+Defined in: [src/RollHistory.ts:18](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L18)
 
 The sum of the roll totals, or 0 when empty (`NaN` if they include both `Infinity` and `-Infinity`).
 
@@ -72,15 +72,15 @@ The sum of the roll totals, or 0 when empty (`NaN` if they include both `Infinit
 
 ### \[iterator\]()
 
-> **\[iterator\]**(): `Iterator`\<[`Roll`](Roll.md)\<`unknown`\>\>
+> **\[iterator\]**(): `Iterator`\<[`Roll`](Roll.md)\<`unknown`, [`DrawMode`](../type-aliases/DrawMode.md)\>\>
 
-Defined in: [src/RollHistory.ts:37](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L37)
+Defined in: [src/RollHistory.ts:38](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L38)
 
 Iterates over a snapshot of the rolls, oldest first.
 
 #### Returns
 
-`Iterator`\<[`Roll`](Roll.md)\<`unknown`\>\>
+`Iterator`\<[`Roll`](Roll.md)\<`unknown`, [`DrawMode`](../type-aliases/DrawMode.md)\>\>
 
 #### Implementation of
 
@@ -92,7 +92,7 @@ Iterates over a snapshot of the rolls, oldest first.
 
 > **add**(...`rolls`): `void`
 
-Defined in: [src/RollHistory.ts:27](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L27)
+Defined in: [src/RollHistory.ts:28](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L28)
 
 Appends rolls in order.
 
@@ -100,7 +100,7 @@ Appends rolls in order.
 
 ##### rolls
 
-...[`Roll`](Roll.md)\<`unknown`\>[]
+...[`Roll`](Roll.md)\<`unknown`, [`DrawMode`](../type-aliases/DrawMode.md)\>[]
 
 #### Returns
 
@@ -112,7 +112,7 @@ Appends rolls in order.
 
 > **clear**(): `void`
 
-Defined in: [src/RollHistory.ts:32](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L32)
+Defined in: [src/RollHistory.ts:33](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L33)
 
 Removes all rolls from the history.
 
@@ -126,7 +126,7 @@ Removes all rolls from the history.
 
 > **present**\<`T`\>(`presenter?`): `T`
 
-Defined in: [src/RollHistory.ts:42](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L42)
+Defined in: [src/RollHistory.ts:43](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L43)
 
 Presents the whole history; defaults to the default `TextPresenter`.
 
@@ -152,7 +152,7 @@ Presents the whole history; defaults to the default `TextPresenter`.
 
 > **toJSON**(): `object`
 
-Defined in: [src/RollHistory.ts:54](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L54)
+Defined in: [src/RollHistory.ts:55](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L55)
 
 JSON-safe export data with non-finite numbers tagged; evaluates uncached roll min/max totals.
 
@@ -182,7 +182,7 @@ Can be `NaN`, e.g. for a history of `1/0` and `-1/0`.
 
 > **toString**(): `string`
 
-Defined in: [src/RollHistory.ts:49](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L49)
+Defined in: [src/RollHistory.ts:50](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/RollHistory.ts#L50)
 
 Always the default `TextPresenter` output.
 

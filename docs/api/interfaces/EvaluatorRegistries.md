@@ -2,7 +2,7 @@
 
 # Interface: EvaluatorRegistries
 
-Defined in: [src/evaluator/Evaluator.ts:96](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L96)
+Defined in: [src/evaluator/Evaluator.ts:101](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L101)
 
 Registries used to resolve dice and modifier handlers during evaluation.
 
@@ -12,7 +12,7 @@ Registries used to resolve dice and modifier handlers during evaluation.
 
 > `readonly` **dice**: [`DieRegistry`](../rpg-dice-roller/namespaces/dice/classes/DieRegistry.md)
 
-Defined in: [src/evaluator/Evaluator.ts:98](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L98)
+Defined in: [src/evaluator/Evaluator.ts:103](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L103)
 
 Factories for dice referenced by pool nodes.
 
@@ -22,6 +22,6 @@ Factories for dice referenced by pool nodes.
 
 > `readonly` **modifiers**: [`ModifierRegistry`](../rpg-dice-roller/namespaces/modifiers/classes/ModifierRegistry.md)
 
-Defined in: [src/evaluator/Evaluator.ts:100](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L100)
+Defined in: [src/evaluator/Evaluator.ts:105](https://github.com/dice-roller/rpg-dice-roller/blob/next/src/evaluator/Evaluator.ts#L105)
 
 Handlers for modifiers referenced by pool and group nodes.
