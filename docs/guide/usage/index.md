@@ -1,10 +1,10 @@
----
-sidebarDepth: 1
----
-
 # Rolling dice
 
-Use `Roll` to roll a dice notation and work with its results.
+RPG Dice Roller turns a [dice notation](../notation/index.md) string into a completed `Roll` object, containing the rolled results and their total.
+
+## Make a roll
+
+Create a `Roll` with the notation you want to roll:
 
 :::tabs key:module-type variant:code
 
@@ -13,13 +13,10 @@ Use `Roll` to roll a dice notation and work with its results.
 ```javascript
 import { Roll } from '@dice-roller/rpg-dice-roller';
 
-const roll = new Roll('4d6kh3');
+const result = new Roll('4d6kh3');
 
-console.log(roll.total);
-// e.g. 14
-
-console.log(roll.present());
-// e.g. 4d6kh3: [3d, 5, 6, 3] = 14
+console.log(result.total);     // e.g. 14
+console.log(result.present()); // e.g. 4d6kh3: [3d, 5, 6, 3] = 14
 ```
 
 == CommonJS
@@ -27,40 +24,32 @@ console.log(roll.present());
 ```javascript
 const { Roll } = require('@dice-roller/rpg-dice-roller');
 
-const roll = new Roll('4d6kh3');
+const result = new Roll('4d6kh3');
 
-console.log(roll.total);
-// e.g. 14
-
-console.log(roll.present());
-// e.g. 4d6kh3: [3d, 5, 6, 3] = 14
+console.log(result.total);     // e.g. 14
+console.log(result.present()); // e.g. 4d6kh3: [3d, 5, 6, 3] = 14
 ```
 
-== Browser
+== Browser (UMD)
 
 ```javascript
 const { Roll } = rpgDiceRoller;
 
-const roll = new Roll('4d6kh3');
+const result = new Roll('4d6kh3');
 
-console.log(roll.total);
-// e.g. 14
-
-console.log(roll.present());
-// e.g. 4d6kh3: [3d, 5, 6, 3] = 14
+console.log(result.total);     // e.g. 14
+console.log(result.present()); // e.g. 4d6kh3: [3d, 5, 6, 3] = 14
 ```
 
 :::
 
-Creating a `Roll` parses the notation, rolls the dice and applies any modifiers immediately.
+`new Roll()` parses the notation, rolls the dice and applies modifiers **immediately**. `result.total` is the final numeric total, while `result.present()` formats the result for display without rolling again.
 
-The resulting object contains the total and individual results. Calling [`present()`](../customisation/presenters.md) formats the roll for display; it does not roll the dice again.
-
-See [Getting started](../getting-started.md) for installation and browser setup. The Browser (UMD) examples assume the bundle has already been loaded. Browser applications using ES modules can follow the ESM examples with the appropriate import path.
+The examples assume you've [installed and loaded the library](../getting-started.md). In a browser, the UMD example assumes the bundle has already been loaded; browser projects using ES modules can use the ESM form.
 
 ## Using dice notation
 
-Pass a [dice notation](../notation/index.md) string to describe what you want to roll:
+Pass different notation strings for different kinds of rolls:
 
 ```javascript
 const attack = new Roll('d20+5');
@@ -68,13 +57,13 @@ const damage = new Roll('2d6+3');
 const ability = new Roll('4d6kh3');
 ```
 
-Each `Roll` is independent. Creating another object makes another roll.
+Each constructor call creates an independent roll with new results, even if the notation is the same.
 
-Notation can include different [dice types](../notation/dice.md), [modifiers](../notation/modifiers.md), [roll groups](../notation/roll-groups.md), [descriptions](../notation/roll-descriptions.md) and [maths](../notation/maths.md).
+Notation supports [dice types](../notation/dice.md), [modifiers](../notation/modifiers.md), [roll groups](../notation/roll-groups.md), [maths](../notation/maths.md), [variables](../notation/variables.md) and more. See the [notation guide](../notation/index.md) to learn what you can roll.
 
 ### The roll() shorthand
 
-If you prefer a function call, use `roll()`:
+Use the exported `roll()` function if you prefer a function call:
 
 :::tabs key:module-type variant:code
 
@@ -84,7 +73,6 @@ If you prefer a function call, use `roll()`:
 import { roll } from '@dice-roller/rpg-dice-roller';
 
 const attack = roll('d20+5');
-
 console.log(attack.total);
 ```
 
@@ -94,39 +82,25 @@ console.log(attack.total);
 const { roll } = require('@dice-roller/rpg-dice-roller');
 
 const attack = roll('d20+5');
-
 console.log(attack.total);
 ```
 
-== Browser
+== Browser (UMD)
 
 ```javascript
 const { roll } = rpgDiceRoller;
 
 const attack = roll('d20+5');
-
 console.log(attack.total);
 ```
 
 :::
 
-With the default or a synchronous dice source, this creates and returns a `Roll` object, just like `new Roll()`. With an [asynchronous external dice source](../customisation/external-dice.md#asynchronous-dice-sources), `roll()` returns a `Promise<Roll>`; use `await` to get the result. You can also use `Roll.create()` for either kind of source. `new Roll()` cannot evaluate an asynchronous source.
-
-### Built-in variables
-
-Inside the selected branch of a ternary, `$$condition` holds the numeric result of the condition. You can reuse that result without rolling the condition's dice again.
-
-```javascript
-(d6 - 1) ? ($$condition + 2) : (0)
-```
-
-If the die rolls `4`, the condition evaluates to `3` and the first branch gives `5`. If the die rolls `1`, the condition evaluates to `0` and the second branch gives `0`. A comparison used as the condition gives `1` for true or `0` for false.
-
-See [built-in variable syntax](../notation/variables.md#built-in-variables) in the notation guide.
+With the default random-number generator, `roll()` returns a completed `Roll` just like `new Roll()`. The difference matters when using an [asynchronous external dice source](#synchronous-and-asynchronous-rolls).
 
 ## Re-rolling
 
-Call `reroll()` to roll the same notation again:
+Call `reroll()` on a `Roll` to roll its original notation again:
 
 ```javascript
 const first = new Roll('2d6+3');
@@ -136,39 +110,17 @@ console.log(first.total);
 console.log(second.total);
 ```
 
-This returns a new `Roll` using the same settings. The original roll and its results are unchanged.
+`reroll()` returns a **new** `Roll`; it doesn't replace or change the original. The dice are rolled again, although they may coincidentally produce the same values.
 
-Re-rolling generates fresh results, although the values may happen to be the same.
+The new roll reuses the original roll's settings and variable data by default. You can override the [random engine](../customisation/random-number-generator.md#changing-engines-for-individual-rolls) or [variable data](roll-options.md#variable-data) for that re-roll. With an asynchronous dice source, `reroll()` returns a promise instead.
 
-## Rolling with a history
+## Keeping a roll history
 
-Use `Roller` when you want to keep a history of rolls:
-
-:::tabs key:module-type variant:code
-
-== ESM
+Use a `Roller` when you want to collect rolls and reuse configuration between them:
 
 ```javascript
 import { Roller } from '@dice-roller/rpg-dice-roller';
-```
 
-== CommonJS
-
-```javascript
-const { Roller } = require('@dice-roller/rpg-dice-roller');
-```
-
-== Browser
-
-```javascript
-const { Roller } = rpgDiceRoller;
-```
-
-:::
-
-Create a roller and use its `roll()` method:
-
-```javascript
 const roller = new Roller();
 
 const attack = roller.roll('d20+5');
@@ -176,241 +128,61 @@ const damage = roller.roll('2d6+3');
 
 console.log(attack.total);
 console.log(damage.total);
-
-console.log(roller.history.length);
-// 2
+console.log(roller.history.length); // 2
 ```
 
-Each successful call to `roller.roll()` adds a `Roll` to that roller's history. With an [asynchronous external dice source](../customisation/external-dice.md), the method returns a `Promise<Roll>` and adds the roll only when it completes. Concurrent asynchronous rolls are recorded in completion order.
+`roller.roll()` returns a `Roll` and adds it to the roller's history when it succeeds. A standalone `Roll` or `roll()` call doesn't keep a history.
 
-Use `Roll` or the `roll()` shorthand for independent rolls, and `Roller` when your application needs to collect rolls and share settings between them.
+See [Roll history](roll-history.md) for reading, iterating, adding and clearing previous rolls. Calling `reroll()` on a roll from a history doesn't automatically add the new roll to that history.
 
-See [Roll history](index.md) for retrieving, displaying and managing previous rolls.
+## Synchronous and asynchronous rolls
 
-::: tip Re-rolling and history
-Calling `reroll()` on a `Roll` does not automatically add the new roll to a history, even if the original came from a `Roller`.
-
-To roll the same notation and record it in the roller's history, use:
+Ordinary rolls are synchronous, so there's no need to use `await`:
 
 ```javascript
-const nextAttack = roller.roll(attack.notation);
-```
-:::
-
-## Roll options
-
-Pass an options object as the second argument to `Roll` or the `roll()` shorthand. For `Roller`, pass options to its constructor; they apply to every roll made through that roller:
-
-:::tabs key:roll-options variant:code
-
-== Roll
-
-```javascript
-const result = new Roll('4d6', {
-  limits: {
-    maxQty: 100,
-  },
-});
+const result = new Roll('d6');
+console.log(result.total);
 ```
 
-== roll()
+You can also supply finished die values from an [external dice source](../customisation/external-dice.md). If that source is asynchronous, use `Roll.create()`, `roll()` or `roller.roll()` instead of `new Roll()`:
 
 ```javascript
-const result = roll('4d6', {
-  limits: {
-    maxQty: 100,
-  },
-});
-```
+import { Roll } from '@dice-roller/rpg-dice-roller';
 
-== Roller
-
-```javascript
-const roller = new Roller({
-  limits: {
-    maxQty: 100,
+const result = await Roll.create('d6', {
+  drawDie: {
+    drawMode: 'async',
+    callback: async ({ max }) => max,
   },
 });
 
-const result = roller.roll('4d6');
+console.log(result.total); // 6
 ```
 
-:::
+The callback above simply returns the die's highest face to demonstrate the API; a real callback might wait for an external service or a 3D dice roller.
 
-All options are optional:
+`Roll.create()`, `roll()` and `roller.roll()` return a `Roll` for synchronous sources and a `Promise<Roll>` for asynchronous ones. Even an immediately resolved asynchronous callback still produces a promise. `new Roll()` only supports synchronous sources and throws a `ValidationError` if configured with an asynchronous one.
 
-| Option | Purpose |
-| --- | --- |
-| `engine` | [Choose the source of randomness](../customisation/random-number-generator.md). |
-| `drawDie` | [Supply finished die faces](../customisation/external-dice.md) synchronously or asynchronously instead of using the random engine. |
-| `dice` | [Supply a registry of dice definitions](../customisation/dice.md). |
-| `modifiers` | [Supply a registry of modifier handlers](../customisation/modifiers.md). |
-| `presenter` | [Choose how `present()` formats results](../customisation/presenters.md). |
-| `limits` | [Set limits](#roll-limits) on dice quantities and repeating modifiers. |
-| `data` | [Supply values](#variable-data) for variables in the notation. |
+For callback arguments, validation and overrides, see [External dice sources](../customisation/external-dice.md).
 
-The built-in dice, modifiers and text presenter are used unless you supply alternatives. Follow the links above to learn how to customise each option.
+## Working with the result
 
-### Roll limits
-
-The default limits are:
-
-| Setting | Default | Purpose |
-| --- | --- | --- |
-| `maxQty` | `999` | Maximum number of dice in each set. |
-| `maxIterations` | `1000` | Maximum extra batches per pool for `!m`, generations per original die and modifier for Explode/Re-roll, or retries per result for Unique. |
-| `maxGeneratedRolls` | `1000000` | Maximum additional rolls shared by repeating modifiers in each dice pool. |
-
-You can override these limits when creating a roll or roller:
-
-:::tabs key:roll-options variant:code
-
-== Roll
+Every completed `Roll` provides the original `notation`, the numeric `total`, and an evaluated `result` tree containing the underlying dice results:
 
 ```javascript
-const result = new Roll('4d6', {
-  limits: {
-    maxQty: 100,
-    maxIterations: 200,
-    maxGeneratedRolls: 5000,
-  },
-});
+const result = new Roll('2d6+3');
+
+console.log(result.notation); // '2d6+3'
+console.log(result.total);    // e.g. 11
+console.log(result.present()); // e.g. 2d6+3: [3, 5]+3 = 11
 ```
 
-== roll()
-
-```javascript
-const result = roll('4d6', {
-  limits: {
-    maxQty: 100,
-    maxIterations: 200,
-    maxGeneratedRolls: 5000,
-  },
-});
-```
-
-== Roller
-
-```javascript
-const roller = new Roller({
-  limits: {
-    maxQty: 100,
-    maxIterations: 200,
-    maxGeneratedRolls: 5000,
-  },
-});
-
-const result = roller.roll('4d6');
-```
-
-:::
-
-All limit values must be positive safe integers.
-
-`maxQty` applies separately to each set of dice, rather than to the entire expression. For example, a limit of `100` permits `100d6+100d8`.
-
-`maxIterations` limits [Matching-batch explode](../notation/modifiers.md#matching-batch-explode), [Explode](../notation/modifiers.md#explode), [Re-roll](../notation/modifiers.md#re-roll) and [Unique](../notation/modifiers.md#unique). It also applies to [Compound](../notation/modifiers.md#compound) and [Penetrate](../notation/modifiers.md#penetrate). A numeric limit in the notation, such as `d6!3`, uses the lower of that value and `maxIterations`.
-
-`maxGeneratedRolls` counts all additional dice rolled by repeating modifiers in one pool, including discarded re-rolls but excluding initial dice. When it is reached, modifiers stop drawing and retain the results reached so far. It applies separately to each pool, and also bounds branching rolls such as `d6!2:3`.
-
-See [Repeating modifier limits](../notation/modifiers.md#repeating-modifier-limits) for how generation limits and multiple-die amounts work together.
-
-### Variable data
-
-Pass an object in the `data` option. You can include nested objects to group related values.
-
-```javascript
-const data = {
-  bonus: 3,
-  character: { attackBonus: 2, isPoisoned: false },
-};
-```
-
-In this example, `$bonus` is `3` and `$character.attackBonus` is `2`. See [variable syntax](../notation/variables.md#variables-you-supply) for naming rules and dotted references.
-
-Pass `data` to `new Roll()` or the `roll()` shorthand to supply values for a single roll.
-
-```javascript
-const attack = new Roll('d20 + $bonus', { data });
-const otherAttack = roll('d20 + $bonus', { data });
-```
-
-Pass `data` to `new Roller()` to set defaults for its rolls. You can also pass `data` to `roller.roll()` for a single roll. This replaces the entire default data object for that roll.
-
-```javascript
-const roller = new Roller({ data });
-roller.roll('d20 + $bonus'); // Adds 3
-roller.roll('d20 + $bonus', { data: { bonus: 5 } }); // Adds 5
-```
-
-Call `reroll()` with `data` to replace the original values. Calling it without `data` uses the same values again.
-
-```javascript
-const strongerAttack = attack.reroll({ data: { bonus: 5 } });
-```
-
-A variable name must start with an upper- or lowercase letter or an underscore. After that, you can use letters, numbers or underscores. The same rules apply to each name in a dotted reference. Capitalisation matters.
-
-A variable’s value must be a finite number or a boolean (`true` or `false`). In expressions, `true` becomes `1` and `false` becomes `0`.
-
-## Handling errors
-
-Invalid notation, invalid options or expressions that cannot be evaluated throw an error.
-
-If your application accepts notation from users, handle these errors so you can explain the problem.
-
-Load `Roll` and the `errors` namespace:
-
-:::tabs key:module-type variant:code
-
-== ESM
-
-```javascript
-import { Roll, errors } from '@dice-roller/rpg-dice-roller';
-```
-
-== CommonJS
-
-```javascript
-const { Roll, errors } = require('@dice-roller/rpg-dice-roller');
-```
-
-== Browser
-
-```javascript
-const { Roll, errors } = rpgDiceRoller;
-```
-
-:::
-
-Then catch errors when rolling:
-
-```javascript
-try {
-  const roll = new Roll('2d6 +');
-
-  console.log(roll.present());
-} catch (error) {
-  if (error instanceof errors.DiceRollerError) {
-    console.error(error.message);
-  } else {
-    throw error;
-  }
-}
-```
-
-Errors raised by the library inherit from `DiceRollerError`. For rolling, the main error types are:
-
-| Error | Meaning |
-| --- | --- |
-| `ValidationError` | An input or option is invalid, such as an empty notation or an invalid limit. |
-| `NotationError` | The notation cannot be parsed. |
-| `EvaluationError` | The parsed expression cannot be evaluated. |
-
-If `roller.roll()` fails, no roll is added to its history. For asynchronous dice sources, handle rejected promises with `await` and `try`/`catch`. See [External dice sources](../customisation/external-dice.md#validating-values).
+See [Working with results](working-with-results.md) to inspect the evaluated expression and its dice, or [Presenters](../customisation/presenters.md) to control the displayed format.
 
 ## Next steps
 
-* [Working with results](index.md) — inspect dice results, read totals and format output.
-* [Roll history](index.md) — collect and manage rolls.
+* [Working with results](working-with-results.md) — inspect results and display rolls.
+* [Roll history](roll-history.md) — keep and manage previous rolls.
+* [Configuring rolls](roll-options.md) — choose engines, custom dice, modifiers, limits and variable data.
+* [Handling errors](handling-errors.md) — catch invalid notation and evaluation failures.
 * [Importing and exporting](importing-and-exporting.md) — save rolls and restore them later.

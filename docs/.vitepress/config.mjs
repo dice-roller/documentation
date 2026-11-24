@@ -138,6 +138,8 @@ export default defineConfig({
                 { text: 'Rolling dice', link: '/guide/usage/' },
                 { text: 'Working with results', link: '/guide/usage/working-with-results' },
                 { text: 'Roll history', link: '/guide/usage/roll-history' },
+                { text: 'Configuring rolls', link: '/guide/usage/roll-options' },
+                { text: 'Handling errors', link: '/guide/usage/handling-errors' },
                 { text: 'Importing and exporting', link: '/guide/usage/importing-and-exporting' },
               ],
             },
