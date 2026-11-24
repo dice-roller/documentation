@@ -181,6 +181,7 @@ See [Working with results](working-with-results.md) to inspect the evaluated exp
 
 ## Next steps
 
+* [Parsing and building expressions](parsing-and-building-expressions.md) — parse notation without rolling or construct expressions programmatically.
 * [Working with results](working-with-results.md) — inspect results and display rolls.
 * [Roll history](roll-history.md) — keep and manage previous rolls.
 * [Configuring rolls](roll-options.md) — choose engines, custom dice, modifiers, limits and variable data.

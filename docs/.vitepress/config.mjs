@@ -136,6 +136,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: 'Rolling dice', link: '/guide/usage/' },
+                { text: 'Parsing and building expressions', link: '/guide/usage/parsing-and-building-expressions' },
                 { text: 'Working with results', link: '/guide/usage/working-with-results' },
                 { text: 'Roll history', link: '/guide/usage/roll-history' },
                 { text: 'Configuring rolls', link: '/guide/usage/roll-options' },
