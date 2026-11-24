@@ -150,12 +150,18 @@ const customModifiers = new modifiers.ModifierRegistry().register(
   {
     ...modifiers.explodeHandler,
 
-    apply(items, input) {
-      return items.flatMap((item) =>
-        item.useInTotal
-          ? modifiers.explodeHandler.apply([item], input)
-          : [item],
-      );
+    *apply(items, input) {
+      const output = [];
+
+      for (const item of items) {
+        if (item.useInTotal) {
+          output.push(...(yield* modifiers.explodeHandler.apply([item], input)));
+        } else {
+          output.push(item);
+        }
+      }
+
+      return output;
     },
   },
 );
@@ -167,7 +173,7 @@ const roll = new Roll('8d4kh4!', {
 
 Keep runs first, marking the dice it drops as excluded from the total. The custom Explode handler then applies the built-in explosion logic only to the remaining dice.
 
-This is different from changing the order alone: dropped dice cannot produce extra rolls.
+This is different from changing the order alone: dropped dice cannot produce extra rolls. Because the built-in Explode handler is a generator, this wrapper also uses `*apply` and `yield*` to forward any requests for additional dice.
 
 ## Writing your own handler
 
@@ -204,12 +210,14 @@ A handler supports these properties:
 | `name` | The existing modifier that this handler replaces. |
 | `order` | When it runs relative to other modifiers. |
 | `appliesTo` | Whether it can be used with a dice `'pool'`, a roll `'group'`, or both. |
-| `apply(items, input)` | Receives results and returns the updated array of results. |
+| `apply(items, input)` | Receives results and returns an updated array, or is a generator that returns an array after requesting extra dice. |
 | `groupHandling` | Optional setting for how to handle dice inside roll groups. |
 
 The `input` argument includes the modifier options (`input.modifier`) and the roll context (`input.ctx`). For a [calculated keep or drop count](../notation/modifiers.md#calculated-keep-count), the evaluator calculates the count before calling the handler. For example, both `4d6kh(1+1)` and `4d6kh2` pass `2` as `input.modifier.qty`. The original expression stays on the AST, and its evaluated result is stored in `modifierArguments` on the pool or group result.
 
-For a dice pool, `input.die` is the pool's die. The handler can use `input.rollDie()` to roll one more die or `input.rollBatch(count)` to roll a complete batch. Both draw from the same [per-pool `maxGeneratedRolls` budget](../usage/index.md#roll-limits). When the remaining budget cannot cover the request, the callback returns `undefined` without rolling any dice. Return the results accumulated so far when the budget stops a repeating modifier.
+For a dice pool, `input.die` is the pool's die. To request additional dice, implement `*apply(items, input)` as a generator and use `yield* input.rollDie()` for one die or `yield* input.rollBatch(count)` for an entire batch. Both work with synchronous and asynchronous [external dice sources](external-dice.md#custom-modifier-handlers) and draw from the same [per-pool `maxGeneratedRolls` budget](../usage/index.md#roll-limits). When the remaining budget cannot cover a request, the helper returns `undefined` without rolling (or, for batches, without rolling any of the batch). Return the results accumulated so far when the budget stops a repeating modifier.
+
+**Handlers that don't need additional dice can continue returning arrays directly.** Handlers that do request extra dice must yield through the helpers; simply calling them does not roll a die.
 
 ::: warning Custom handlers don't add new notation
 Register a handler under an existing modifier name to replace its behaviour. The same handler runs whether the modifier comes from notation or from an AST you build directly.
@@ -219,7 +227,7 @@ A new modifier name requires support in the library's AST types and [validation]
 
 ### Working with results
 
-Handlers must return an array; they should not modify the original items. You can reuse unchanged items and return copies of any items you update.
+Handlers must ultimately return an array (either directly or from a generator); they should not modify the original items. You can reuse unchanged items and return copies of any items you update.
 
 The `results` namespace includes helpers for common changes:
 
