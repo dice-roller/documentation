@@ -11,6 +11,7 @@ If your game or application needs something different, you can customise how dic
 ## What can you customise?
 
 - [Random number generator](random-number-generator.md) — choose a different source of randomness, including seeded or custom engines.
+- [External dice sources](external-dice.md) — supply finished results from physical dice, graphical dice rollers or asynchronous services.
 - [Presenters](presenters.md) — change how rolls are displayed, or create your own output format.
 - [Custom dice](dice.md) — change existing dice or define dice with their own faces and rolling behaviour.
 - [Modifiers](modifiers.md) — change the order in which modifiers run or customise how they handle results.

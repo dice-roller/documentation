@@ -130,7 +130,20 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/guide/' },
             { text: 'Get Started', link: '/guide/getting-started' },
-            { text: 'Usage', link: '/guide/usage' },
+            {
+              text: 'Usage',
+              link: '/guide/usage/',
+              collapsed: true,
+              items: [
+                { text: 'Rolling dice', link: '/guide/usage/' },
+                { text: 'Parsing and building expressions', link: '/guide/usage/parsing-and-building-expressions' },
+                { text: 'Working with results', link: '/guide/usage/working-with-results' },
+                { text: 'Roll history', link: '/guide/usage/roll-history' },
+                { text: 'Configuring rolls', link: '/guide/usage/roll-options' },
+                { text: 'Handling errors', link: '/guide/usage/handling-errors' },
+                { text: 'Importing and exporting', link: '/guide/usage/importing-and-exporting' },
+              ],
+            },
             {
               text: 'Customisation',
               link: '/guide/customisation/',
@@ -138,6 +151,7 @@ export default defineConfig({
               items: [
                 { text: 'Introduction', link: '/guide/customisation/' },
                 { text: 'Random Number Generator', link: '/guide/customisation/random-number-generator' },
+                { text: 'External dice sources', link: '/guide/customisation/external-dice' },
                 {
                   text: 'Presenters',
                   link: '/guide/customisation/presenters',

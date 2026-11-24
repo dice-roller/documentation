@@ -14,6 +14,8 @@ const roll = new Roll('4d6');
 
 An *engine* generates the random numbers used by the library. The same engine is used for the dice and any additional rolls triggered by modifiers, such as [Explode](../notation/modifiers.md#explode) and [Re-roll](../notation/modifiers.md#re-roll).
 
+If you already have the **finished face values** from physical dice, a graphical roller or a remote service, use an [external dice source](external-dice.md) instead. The `drawDie` option accepts synchronous or asynchronous callbacks, without requiring your source to implement a random-number engine.
+
 ## Choosing an engine
 
 There are four built-in engines:
@@ -249,4 +251,4 @@ These calls use the same engine as the roller's dice rolls, so they also advance
 
 ## More information
 
-See the [EngineRegistry API](../../api/classes/EngineRegistry.md), [RandomEngine interface](../../api/interfaces/RandomEngine.md) and [NumberGenerator API](../../api/interfaces/NumberGenerator.md) for the available types and methods.
+See the [EngineRegistry API](../../api/classes/EngineRegistry.md), [RandomEngine interface](../../api/interfaces/RandomEngine.md) and [NumberGenerator API](../../api/interfaces/NumberGenerator.md) for the available types and methods. For asynchronous or externally supplied die faces, see [External dice sources](external-dice.md).

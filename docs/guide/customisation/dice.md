@@ -103,7 +103,7 @@ You can also define a die as a plain JavaScript object or a class. A die needs e
 ::: warning Custom dice don't add new notation
 The notation parser only recognises the built-in dice syntax. Registering a die under a new name, such as `advantage`, **doesn't make `dadvantage` valid notation**.
 
-**If you want to roll using notation strings**, register your die under an [existing factory name](#replace-a-built-in-die), such as `standard` for `d6`. To use a new factory name, you must construct the roll using the [AST builders](../../api/rpg-dice-roller/namespaces/ast/index.md) instead.
+**If you want to roll using notation strings**, register your die under an [existing factory name](#replace-a-built-in-die), such as `standard` for `d6`. To use a new factory name, you must construct the roll using the [AST builders](../usage/parsing-and-building-expressions.md#building-expressions) instead.
 
 The die's `notation` property changes its display label; it doesn't add syntax to the parser.
 :::

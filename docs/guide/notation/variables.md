@@ -8,7 +8,7 @@ You can [supply your own values](#variables-you-supply) when you make a roll, or
 
 **Notation:** `$name`
 
-If you have [supplied your own data](../usage/index.md#variable-data), then you can use it in notation when you roll.
+If you have [supplied your own data](../usage/roll-options.md#variable-data), then you can use it in notation when you roll.
 
 Using this example data:
 
@@ -37,7 +37,7 @@ d20+$character.attackBonus: [18]+$character.attackBonus = 20
 
 Variables can hold finite numbers or booleans. The dice roller treats `true` as `1` and `false` as `0`, so `$character.isPoisoned` evaluates to `1` with the example data above. A reference such as `$character.defence` gives an error if the roll tries to read it and no value was supplied.
 
-See [Variable data](../usage/index.md#variable-data) for how to pass these values to a roll.
+See [Variable data](../usage/roll-options.md#variable-data) for how to pass these values to a roll.
 
 ## Using variables in expressions
 
@@ -73,4 +73,10 @@ The comparison gives `1` on a roll of `4` or higher, so the first branch gives `
 
 ::: roller ((d6) >= 4) ? ($$condition + 2) : (4 - $$condition) :::
 
-See [Built-in variables in the usage guide](../usage/index.md#built-in-variables) for a worked example.
+An arithmetic condition can also be reused without rolling its dice again:
+
+```javascript
+(d6 - 1) ? ($condition + 2) : (0)
+```
+
+If the die rolls `4`, the condition evaluates to `3` and the first branch gives `5`. If the die rolls `1`, the condition is `0` and the second branch gives `0`.
