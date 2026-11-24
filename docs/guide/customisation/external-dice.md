@@ -199,7 +199,7 @@ Other per-roll options, such as `data` or `engine`, do not replace the configure
 
 A `Roller` adds a roll to its history **after** evaluation succeeds. An asynchronous roll is not added while its callback is still pending, and a failed roll is not added at all.
 
-If several asynchronous rolls run concurrently, they enter history in **completion order**, which may differ from the order their calls started. For more about history, see [Roll history](../usage/index.md#rolling-with-a-history).
+If several asynchronous rolls run concurrently, they enter history in **completion order**, which may differ from the order their calls started. For more about history, see [Roll history](../usage/roll-history.md#asynchronous-rolls).
 
 ### Re-rolling and importing
 
@@ -259,7 +259,7 @@ const result = await Roll.create('d6!', {
 console.log(result.total); // 3
 ```
 
-Use `yield* input.rollDie()` to request one additional die. Both helpers return `undefined` when the remaining [generated-roll budget](../usage/index.md#roll-limits) cannot cover the request; `rollBatch(count)` reserves a complete batch or draws nothing. These helpers work with synchronous drivers too.
+Use `yield* input.rollDie()` to request one additional die. Both helpers return `undefined` when the remaining [generated-roll budget](../usage/roll-options.md#roll-limits) cannot cover the request; `rollBatch(count)` reserves a complete batch or draws nothing. These helpers work with synchronous drivers too.
 
 **Handlers that don't draw additional dice can continue returning an array directly.** Only handlers that need to request faces must use generators. See [Modifiers](modifiers.md#writing-your-own-handler) for the rest of the handler interface.
 
