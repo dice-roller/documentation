@@ -60,7 +60,7 @@ Work with the results beyond their final totals:
 
 * Inspect individual dice and evaluated expressions.
 * Keep a history of rolls.
-* [Export](usage/index.md) and [import](usage/index.md) rolls.
+* [Export](usage/importing-and-exporting.md#exporting) and [import](usage/importing-and-exporting.md#importing) rolls.
 * [Format results for display](customisation/presenters.md) using presenters.
 
 ### Customisation
