@@ -5,7 +5,7 @@ Version 6 is a substantial rewrite of RPG Dice Roller. It's written in TypeScrip
 Many familiar dice notations still work as before, but there are breaking changes to the JavaScript API and some notation and evaluation behaviour.
 
 ::: warning Upgrading from v5?
-Version 6 is not a drop-in replacement for v5. In particular, saved rolls and histories exported by v5 cannot be imported directly into v6. Review the breaking changes below before upgrading.
+Version 6 is not a drop-in replacement for v5. In particular, saved rolls and histories exported by v5 cannot be imported directly into v6. See [Migrating from v5 to v6](migration.md) for practical upgrade instructions.
 :::
 
 ## Breaking changes
@@ -172,6 +172,7 @@ See [Roll limits](usage/roll-options.md#roll-limits).
 
 ## Further reading
 
+* [Migrating from v5 to v6](migration.md) — update an existing application.
 * [Get started](getting-started.md) — install and load v6.
 * [Usage](usage/index.md) — learn the new API.
 * [Notation](notation/index.md) — explore dice types, modifiers and expressions.

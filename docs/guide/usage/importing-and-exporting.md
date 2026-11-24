@@ -416,5 +416,5 @@ function restoreRoll(savedData) {
 A history import is checked before any rolls are added. If it contains invalid data, `roller.import()` throws and leaves the existing history unchanged.
 
 ::: warning Older exports
-The full-format structure described here is for v6, with export data version `1`. Data saved using v5 has a different structure and may need converting before importing into v6. If you have the notation and finished dice values, you can rebuild the roll using the [concise format](#importing-concise-results) instead.
+The full-format structure described here is for v6, with export data version `1`. Data saved using v5 has a different structure and cannot be imported directly into v6. See [Migrating saved data](../migration.md#migrating-saved-data) for upgrade guidance. If you have the notation and finished dice values, you can rebuild the roll using the [concise format](#importing-concise-results) instead.
 :::

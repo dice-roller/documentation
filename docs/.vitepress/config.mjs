@@ -130,6 +130,7 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/guide/' },
             { text: "What's new in v6", link: '/guide/whats-new' },
+            { text: 'Migrating from v5', link: '/guide/migration' },
             { text: 'Get Started', link: '/guide/getting-started' },
             {
               text: 'Usage',
