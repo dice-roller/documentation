@@ -148,6 +148,7 @@ export default defineConfig({
               items: [
                 { text: 'Introduction', link: '/guide/customisation/' },
                 { text: 'Random Number Generator', link: '/guide/customisation/random-number-generator' },
+                { text: 'External dice sources', link: '/guide/customisation/external-dice' },
                 {
                   text: 'Presenters',
                   link: '/guide/customisation/presenters',

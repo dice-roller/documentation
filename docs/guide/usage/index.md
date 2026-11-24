@@ -110,7 +110,7 @@ console.log(attack.total);
 
 :::
 
-This creates and returns a `Roll` object, just like `new Roll()`.
+With the default or a synchronous dice source, this creates and returns a `Roll` object, just like `new Roll()`. With an [asynchronous external dice source](../customisation/external-dice.md#asynchronous-dice-sources), `roll()` returns a `Promise<Roll>`; use `await` to get the result. You can also use `Roll.create()` for either kind of source. `new Roll()` cannot evaluate an asynchronous source.
 
 ### Built-in variables
 
@@ -181,7 +181,7 @@ console.log(roller.history.length);
 // 2
 ```
 
-Each call to `roller.roll()` returns a `Roll` and adds it to that roller's history.
+Each successful call to `roller.roll()` adds a `Roll` to that roller's history. With an [asynchronous external dice source](../customisation/external-dice.md), the method returns a `Promise<Roll>` and adds the roll only when it completes. Concurrent asynchronous rolls are recorded in completion order.
 
 Use `Roll` or the `roll()` shorthand for independent rolls, and `Roller` when your application needs to collect rolls and share settings between them.
 
@@ -242,6 +242,7 @@ All options are optional:
 | Option | Purpose |
 | --- | --- |
 | `engine` | [Choose the source of randomness](../customisation/random-number-generator.md). |
+| `drawDie` | [Supply finished die faces](../customisation/external-dice.md) synchronously or asynchronously instead of using the random engine. |
 | `dice` | [Supply a registry of dice definitions](../customisation/dice.md). |
 | `modifiers` | [Supply a registry of modifier handlers](../customisation/modifiers.md). |
 | `presenter` | [Choose how `present()` formats results](../customisation/presenters.md). |
@@ -406,7 +407,7 @@ Errors raised by the library inherit from `DiceRollerError`. For rolling, the ma
 | `NotationError` | The notation cannot be parsed. |
 | `EvaluationError` | The parsed expression cannot be evaluated. |
 
-If `roller.roll()` fails, no roll is added to its history.
+If `roller.roll()` fails, no roll is added to its history. For asynchronous dice sources, handle rejected promises with `await` and `try`/`catch`. See [External dice sources](../customisation/external-dice.md#validating-values).
 
 ## Next steps
 

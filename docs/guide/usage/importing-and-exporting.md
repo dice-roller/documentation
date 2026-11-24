@@ -388,6 +388,8 @@ const nextRoll = restored.reroll({ data: { bonus: 5 } });
 
 If the expression uses [custom dice](../customisation/dice.md) or [custom modifier handlers](../customisation/modifiers.md), provide the corresponding registries when importing. Exported results can be displayed without them, but re-rolling needs the relevant implementations. An imported roll uses its new settings and random engine for future re-rolls; the original engine and variable data aren't saved.
 
+You can also import with an [asynchronous external dice source](../customisation/external-dice.md#re-rolling-and-importing). Importing itself stays synchronous and never calls the source; `reroll()` then returns a promise and requests fresh results. Exported data doesn't store the original external source.
+
 Calling `reroll()` on a roll imported into a `Roller` doesn't automatically add the new roll to its history.
 
 ### Handling invalid data
