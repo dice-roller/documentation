@@ -129,6 +129,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { text: 'Introduction', link: '/guide/' },
+            { text: "What's new in v6", link: '/guide/whats-new' },
             { text: 'Get Started', link: '/guide/getting-started' },
             {
               text: 'Usage',
