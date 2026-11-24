@@ -16,10 +16,10 @@ import { Roll } from '@dice-roller/rpg-dice-roller';
 const roll = new Roll('4d6kh3');
 const savedRoll = roll.export();
 
-console.log(typeof savedRoll); // 'string'
+console.log(typeof savedRoll); // 'object'
 ```
 
-By default, `export()` returns a JSON string, which you can store or send elsewhere. It contains the results already rolled; calling `export()` doesn't roll the notation again.
+By default, `export()` returns a JSON-safe JavaScript object, which you can work with directly or convert to a JSON string using `JSON.stringify()`. It contains the results already rolled; calling `export()` doesn't roll the notation again.
 
 ### Exporting a history
 
@@ -49,13 +49,13 @@ Both `Roll.export()` and `Roller.export()` accept the same optional format:
 
 | Format | Return value | When to use it |
 | --- | --- | --- |
-| `'json'` (default) | JSON string | Saving to storage or sending to another application. |
-| `'object'` | JSON-safe JavaScript object | Working with exported data directly in code. |
+| `'object'` (default) | JSON-safe JavaScript object | Working with exported data directly in code. |
+| `'json'` | JSON string | Saving to storage or sending to another application. |
 | `'base64'` | UTF-8 Base64-encoded JSON string | When you need to pass the export as Base64 text. |
 
 ```javascript
-const asJson = roll.export();          // Same as roll.export('json')
-const asObject = roll.export('object');
+const asObject = roll.export();         // Same as roll.export('object')
+const asJson = roll.export('json');
 const asBase64 = roll.export('base64');
 ```
 
@@ -68,13 +68,13 @@ A roll export includes its notation, the complete evaluated result tree (with th
 The top-level `type` identifies the kind of export: `'roll'` for an individual roll, or `'history'` for a history. The `version` field identifies the export data format, currently `1`.
 
 ```javascript
-const rollData = roll.export('object');
+const rollData = roll.export();
 
 console.log(rollData.type); // 'roll'
 console.log(rollData.version); // 1
 console.log(rollData.notation); // '4d6kh3'
 
-const historyData = roller.export('object');
+const historyData = roller.export();
 
 console.log(historyData.type); // 'history'
 console.log(historyData.rolls.length); // 2
@@ -86,11 +86,11 @@ Exporting may calculate previously uncached minimum, maximum and average totals 
 
 #### Using toJSON()
 
-`Roll.toJSON()` returns the same JSON-safe object as `roll.export('object')`. `RollHistory.toJSON()` does the same for a history. JavaScript also calls these methods automatically when you use `JSON.stringify()`:
+`Roll.toJSON()` returns the same JSON-safe object as `roll.export()` (the default `'object'` format). `RollHistory.toJSON()` does the same for a history. JavaScript also calls these methods automatically when you use `JSON.stringify()`:
 
 ```javascript
-console.log(JSON.stringify(roll) === roll.export()); // true
-console.log(JSON.stringify(roller.history) === roller.export()); // true
+console.log(JSON.stringify(roll) === roll.export('json')); // true
+console.log(JSON.stringify(roller.history) === roller.export('json')); // true
 
 const rollObject = roll.toJSON();
 const historyObject = roller.history.toJSON();
@@ -99,7 +99,7 @@ console.log(rollObject.type); // 'roll'
 console.log(historyObject.type); // 'history'
 ```
 
-You don't need to call `JSON.stringify()` on `export()`'s default output, as it is already a JSON string.
+Use `JSON.stringify(roll.export())` if you need a JSON string, or call `roll.export('json')` to get one directly. The same applies to `Roller.export()`.
 
 #### Non-finite numbers
 
@@ -128,7 +128,7 @@ Full-format imports use the same data structure described in [Exporting](#export
 
 #### Importing a saved roll
 
-Pass the result of `export()` directly to `Roll.import()`. The default export is a JSON string:
+Pass the result of `export()` directly to `Roll.import()`. The default export is a JavaScript object:
 
 ```javascript
 import { Roll } from '@dice-roller/rpg-dice-roller';
@@ -145,7 +145,7 @@ console.log(restored.total === original.total); // true
 You can also import the other [export formats](#exporting) without converting them first:
 
 ```javascript
-const fromObject = Roll.import(original.export('object'));
+const fromJson = Roll.import(original.export('json'));
 const fromBase64 = Roll.import(original.export('base64'));
 ```
 
