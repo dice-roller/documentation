@@ -2,6 +2,8 @@
 
 Install RPG Dice Roller and load it using the setup that matches your application.
 
+If you're upgrading an existing application from v5, see [Migrating from v5 to v6](migration.md) first.
+
 
 ## Install
 
