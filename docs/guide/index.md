@@ -39,7 +39,7 @@ Roll the dice your game needs:
 Apply modifiers individually or combine them to build more complex rolls:
 
 * [Exploding](notation/modifiers.md#explode), [compounding](notation/modifiers.md#compound) and [penetrating](notation/modifiers.md#penetrate) dice.
-* [Matching-batch explode](notation/modifiers.md#matching-batch-explode) rolls another batch when every die in the batch has the same value.
+* [Matching-batch explode](notation/modifiers.md#matching-batch-explode) rolls another batch when every die in the batch has the same value. <Badge text="New in v6" vertical="middle"/>
 * [Keep](notation/modifiers.md#keep) or [drop](notation/modifiers.md#drop) results.
 * [Re-roll](notation/modifiers.md#re-roll) dice or require [unique results](notation/modifiers.md#unique).
 * Count [successes](notation/modifiers.md#target-success-dice-pool) and [failures](notation/modifiers.md#target-failure-dice-pool).
@@ -98,5 +98,6 @@ See [Getting started](getting-started.md) for installation and import options.
 Other projects in the Dice Roller ecosystem include:
 
 * [Vue components](https://github.com/dice-roller/vue) for adding dice rolling to Vue applications.
-* The [VitePress plugin](https://github.com/dice-roller/vitepress-plugin) used for interactive rolls in this documentation.
-* A [command-line interface](https://github.com/dice-roller/cli) for rolling dice in your terminal.
+* The [VitePress plugin](https://github.com/dice-roller/vitepress-plugin) used for interactive rolls in this documentation. <Badge text="New in v6" vertical="middle"/>
+* A [command-line interface](packages/cli.md) for rolling dice in your terminal.
+* A [data converter](packages/converter.md) for converting saved roll data between export schema versions. <Badge text="New in v6" vertical="middle"/>

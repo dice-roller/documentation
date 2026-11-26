@@ -343,26 +343,31 @@ Decide whether historical results must be preserved:
 
 * If they aren't needed, retain the notation and generate new rolls in v6 when appropriate. These are new outcomes, not the original results.
 * If you only need to display historical records, retain them separately in their old format, or store the notation, total and display text independently.
-* If historical rolls need to become v6 `Roll` objects, write a conversion for the data your application stores. Read the v5 exports before removing your v5 integration, and convert the finished results to the v6 full or concise format.
+* If historical rolls need to become v6 `Roll` objects or histories, use the [data converter](packages/converter.md) to migrate your saved v5 exports without rolling the dice again.
 
-For example, suppose a saved v5 roll of `2d6+3` contains the finished die values 4 and 5. You can reconstruct that simple roll using the v6 concise format:
+You can convert individual exports using the online converter, or install the converter package to migrate data programmatically:
 
 ```javascript
-const restored = Roll.import({
-  notation: '2d6+3',
-  rolls: [[4, 5]],
-});
+import { convert } from '@dice-roller/convertor';
+import { Roll, Roller } from '@dice-roller/rpg-dice-roller';
 
-console.log(restored.total); // 12
+// savedData is an existing v5 export.
+const converted = convert(savedData, 1);
+
+if (converted.type === 'roll') {
+  const restored = Roll.import(converted);
+  console.log(restored.total);
+} else {
+  const roller = new Roller();
+  roller.import(converted);
+}
 ```
 
-For modified rolls, also map the original and modified values, scoring, inclusion flags and modifier effects. Concise import does not apply modifiers again. Roll groups and nested expressions need additional care to preserve their structure and order.
+Use the full format to preserve the original results and historical statistics. Back up the original data and test representative saved rolls, including modified and grouped results, before replacing them.
 
-There is no built-in general-purpose v5 converter. Don't pass the old result arrays directly to `Roll.import()`, and don't assume that matching totals alone proves a successful conversion. Back up the original data and test representative saved rolls, including modified and grouped results.
+The converter rejects inconsistent or ambiguous results by default. See [Best-effort conversion](packages/converter.md#best-effort-conversion) if you need to handle recoverable issues.
 
-When migrating a history, import the converted rolls in their original order. Save the resulting v6 history using `roller.export()`.
-
-See [Importing concise results](usage/importing-and-exporting.md#importing-concise-results) for the required structure.
+If you don't have a complete export, but know the notation and finished dice values, you can also reconstruct individual rolls using the [concise import format](usage/importing-and-exporting.md#importing-concise-results). Don't pass v5 result arrays directly to `Roll.import()`.
 
 ### Parsing and expressions
 

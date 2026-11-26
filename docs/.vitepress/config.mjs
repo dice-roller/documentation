@@ -184,8 +184,12 @@ export default defineConfig({
           ],
         },
         {
-          text: 'CLI',
-          link: '/guide/cli',
+          text: 'Related packages',
+          collapsed: true,
+          items: [
+            { text: 'Data converter', link: '/guide/packages/converter' },
+            { text: 'CLI', link: '/guide/packages/cli' },
+          ],
         }
       ],
       '/api/': [{

@@ -22,7 +22,7 @@ See [Rolling dice](usage/index.md), [Working with results](usage/working-with-re
 
 ### Importing and exporting
 
-The import and export data structure has changed to support the expression and result trees. Version 5 exports are not compatible with v6.
+The import and export data structure has changed to support the expression and result trees. Version 5 exports are not directly compatible with v6. Use the [data converter](packages/converter.md) to migrate saved rolls and histories without rolling again.
 
 Export formats are now specified using `'object'`, `'json'` or `'base64'`, and `export()` returns an object by default rather than a JSON string.
 

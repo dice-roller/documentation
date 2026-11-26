@@ -16,7 +16,7 @@ This makes the `roller` command available in your terminal.
 
 ## Roll dice
 
-Pass a [dice notation](./notation/index.md) to `roller`:
+Pass a [dice notation](../notation/index.md) to `roller`:
 
 ```bash
 roller '4d6'
@@ -58,7 +58,7 @@ Text rolls use colour when the output terminal supports it. Piped or redirected 
 
 ### Examples
 
-Use the Mersenne Twister engine with a seed for repeatable rolls. See [random number generators](./customisation/random-number-generator.md#use-a-seed-for-repeatable-rolls) for details.
+Use the Mersenne Twister engine with a seed for repeatable rolls. See [random number generators](../customisation/random-number-generator.md#use-a-seed-for-repeatable-rolls) for details.
 
 ```bash
 roller '4d6' --engine=mersenne --seed=415
