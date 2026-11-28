@@ -32,6 +32,8 @@ Try rolling it below. You can also edit the notation to experiment with differen
 
 ::: roller 4d6d1 + 5 :::
 
+For more room to experiment, open the [dice playground](tools:playground) to try your own notation, combine modifiers and explore the results.
+
 ## Notation reference
 
 The following pages explain the different parts of the notation and how to combine them:

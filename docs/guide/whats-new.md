@@ -63,6 +63,8 @@ Comparisons and ternary conditionals allow notation to make decisions based on e
 
 ::: roller (d4)d6 :::
 
+Try these expressions and experiment with your own combinations in the [dice playground](tools:playground).
+
 See [Maths](notation/maths.md), [Comparisons and ternaries](notation/comparisons-and-ternaries.md) and [Variables](notation/variables.md).
 
 ### Custom dice

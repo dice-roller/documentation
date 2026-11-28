@@ -9,7 +9,7 @@ The converter is a separate package from RPG Dice Roller. You don't need to inst
 
 ## Convert data online
 
-Use the [online data converter](https://dice-roller.github.io/tools-website/converter/) to convert data without writing any code.
+Use the [online data converter](tools:converter) to convert data without writing any code.
 
 * Paste a JSON or Base64 export, or upload a file.
 * Leave the source version and input encoding on automatic detection, or choose them explicitly.

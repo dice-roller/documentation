@@ -16,6 +16,8 @@ const [docsOwner, docsRepoName] = docsRepo.split('/');
 // VitePress prefixes internal links with this build's base. Use absolute URLs for other versions.
 const stableDocsUrl = (process.env.DOCS_SITE_URL || `https://${docsOwner}.github.io/${docsRepoName}/`).replace(/\/?$/, '/');
 const versionDocsUrl = new URL('versions/', stableDocsUrl).href;
+const toolsSiteUrl = (process.env.TOOLS_SITE_URL || 'https://tools.dice-roller.dev/').replace(/\/?$/, '/');
+const toolsUrl = (path) => new URL(path, toolsSiteUrl).href;
 
 // Keep consuming the existing VuePress-shaped TypeDoc sidebar until its
 // generator is migrated in the library repository.
@@ -83,6 +85,19 @@ export default defineConfig({
         },
       });
       md.use(tabsMarkdownPlugin);
+
+      // Resolve tools: links before VitePress renders and checks Markdown links.
+      md.core.ruler.after('inline', 'tools-links', (state) => {
+        for (const token of state.tokens) {
+          for (const child of token.children || []) {
+            if (child.type !== 'link_open') continue;
+            const href = child.attrGet('href');
+            if (href?.startsWith('tools:')) {
+              child.attrSet('href', toolsUrl(href.slice('tools:'.length)));
+            }
+          }
+        }
+      });
     },
   },
   head: [
@@ -111,9 +126,9 @@ export default defineConfig({
       {
         text: 'Tools',
         items: [
-          { text: 'Playground', link: 'https://tools.dice-roller.dev/playground'},
-          { text: 'Converter', link: 'https://tools.dice-roller.dev/converter' },
-          { text: 'AST Explorer', link: 'https://tools.dice-roller.dev/ast' },
+          { text: 'Playground', link: toolsUrl('playground') },
+          { text: 'Converter', link: toolsUrl('converter') },
+          { text: 'AST Explorer', link: toolsUrl('ast') },
         ],
       },
       {

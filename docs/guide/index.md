@@ -20,6 +20,8 @@ The library interprets the notation, rolls the dice and applies the modifiers. Y
 
 Start with [Getting started](getting-started.md) to install the library, or explore the [notation guide](notation/index.md) to see what you can roll.
 
+You can also try the [dice playground](tools:playground) to experiment with notation and roll dice in your browser, without installing the library or writing any code.
+
 
 ## Features
 
