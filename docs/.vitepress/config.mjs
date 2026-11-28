@@ -18,6 +18,9 @@ const stableDocsUrl = (process.env.DOCS_SITE_URL || `https://${docsOwner}.github
 const versionDocsUrl = new URL('versions/', stableDocsUrl).href;
 const toolsSiteUrl = (process.env.TOOLS_SITE_URL || 'https://tools.dice-roller.dev/').replace(/\/?$/, '/');
 const toolsUrl = (path) => new URL(path, toolsSiteUrl).href;
+const resolveToolsLink = (link) => link?.startsWith('tools:')
+  ? toolsUrl(link.slice('tools:'.length))
+  : link;
 
 // Keep consuming the existing VuePress-shaped TypeDoc sidebar until its
 // generator is migrated in the library repository.
@@ -39,6 +42,11 @@ export default defineConfig({
   lastUpdated: true,
   async transformPageData({ frontmatter }) {
     if (frontmatter.layout !== 'home') return;
+
+    // Frontmatter links bypass the Markdown renderer.
+    for (const item of [...(frontmatter.hero?.actions || []), ...(frontmatter.features || [])]) {
+      if (item.link) item.link = resolveToolsLink(item.link);
+    }
 
     // Inline local SVG feature icons so they inherit the theme's CSS colour.
     for (const feature of frontmatter.features || []) {
@@ -93,7 +101,7 @@ export default defineConfig({
             if (child.type !== 'link_open') continue;
             const href = child.attrGet('href');
             if (href?.startsWith('tools:')) {
-              child.attrSet('href', toolsUrl(href.slice('tools:'.length)));
+              child.attrSet('href', resolveToolsLink(href));
             }
           }
         }

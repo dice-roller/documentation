@@ -11,6 +11,7 @@ and provided by [Game-icons.net](https://game-icons.net/) under the
 * [Dice 20 faces 20](https://game-icons.net/1x1/delapouite/dice-twenty-faces-twenty.html)
 * [Rule Book](https://game-icons.net/1x1/delapouite/rule-book.html)
 * [Scroll Quill](https://game-icons.net/1x1/delapouite/scroll-quill.html)
+* [Rolling Dice](https://game-icons.net/1x1/delapouite/rolling-dices.html)
 
 The icons have been modified: backgrounds removed and colours adjusted.
 These icons retain their CC BY 3.0 licence and are not covered by the documentation's MIT licence.

@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: Explore dice notation →
       link: /guide/notation/
+    - theme: alt
+      text: Try the Playground →
+      link: tools:playground
 features:
 - title: Familiar dice notation
   icon:
@@ -38,6 +41,15 @@ features:
     height: 48
   details: Use the roll total or inspect the individual dice. Create a presenter to format the results for your app, chat bot or virtual tabletop.
   link: /guide/customisation/presenters/
+- title: Roll, experiment and explore
+  icon:
+    src: /icons/rolling-dices.svg
+    alt: Rolling dice
+    width: 48
+    height: 48
+  details: Try your own dice notation, experiment with modifiers and explore your roll results in the interactive playground. No installation or coding required.
+  link: tools:playground
+  linkText: Explore the playground
 ---
 
 ## Try me
