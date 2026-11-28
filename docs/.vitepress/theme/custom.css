@@ -52,3 +52,15 @@ html.dark .VPHomeHero {
   background-color: transparent;
   color: var(--vp-home-hero-name-color);
 }
+
+/* Reuse the feature icon as a mask so it follows the hero button's text colour. */
+.VPHomeHero .VPButton[href$="/playground"]::before {
+  content: "";
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  margin-inline-end: 0.4em;
+  vertical-align: -0.25em;
+  background-color: currentColor;
+  mask: url('/icons/rolling-dices.svg') center / contain no-repeat;
+}
