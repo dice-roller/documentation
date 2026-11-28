@@ -49,3 +49,10 @@ bower_components
 ## Documentation
 /docs/.vitepress/dist/
 /docs/.vitepress/cache/
+
+# Docus experiment: generated content and Nuxt output
+/content/
+/.nuxt/
+/.output/
+/.data/
+/.vercel/

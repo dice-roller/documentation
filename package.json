@@ -6,9 +6,13 @@
     "doc": "docs"
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "prepare:content": "node scripts/prepare-content.mjs",
+    "dev": "npm run prepare:content && nuxt dev",
+    "build": "npm run prepare:content && nuxt build",
+    "preview": "nuxt preview",
+    "docs:dev": "npm run dev",
+    "docs:build": "npm run build",
+    "docs:preview": "npm run preview"
   },
   "repository": {
     "type": "git",
@@ -34,14 +38,21 @@
     "url": "https://github.com/dice-roller/documentation/issues"
   },
   "homepage": "https://dice-roller.github.io/documentation",
-  "devDependencies": {
-    "@dice-roller/vitepress-plugin-dice-roller": "^1.0.0-beta.3",
-    "vitepress": "^1.6.4",
-    "vitepress-plugin-tabs": "^0.9.1"
-  },
   "dependencies": {
     "@dice-roller/rpg-dice-roller": "^6.0.0-beta.7",
     "@dice-roller/svg-presenter": "^1.0.0-beta.5",
-    "@dice-roller/vue": "^2.0.0-beta.1"
+    "@dice-roller/vue": "^2.0.0-beta.1",
+    "docus": "5.15.1",
+    "nuxt": "^4.7.0",
+    "better-sqlite3": "^13.2.0",
+    "@fontsource-variable/dm-sans": "^5.2.0",
+    "@fontsource-variable/source-serif-4": "^5.2.0",
+    "@iconify-json/lucide": "^1.2.158",
+    "@iconify-json/heroicons": "^1.2.0"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
   }
 }
