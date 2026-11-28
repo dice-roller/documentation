@@ -109,6 +109,14 @@ export default defineConfig({
       { text: 'Guide', link: '/guide/' },
       { text: 'API', link: '/api/' },
       {
+        text: 'Tools',
+        items: [
+          { text: 'Playground', link: 'https://tools.dice-roller.dev/playground'},
+          { text: 'Converter', link: 'https://tools.dice-roller.dev/converter' },
+          { text: 'AST Explorer', link: 'https://tools.dice-roller.dev/ast' },
+        ],
+      },
+      {
         text: 'v6.x',
         items: [
           { text: 'Version 5.x', link: `${versionDocsUrl}v5/`, target: '_self', noIcon: true },
