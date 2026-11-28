@@ -4,6 +4,8 @@ Install RPG Dice Roller and load it using the setup that matches your applicatio
 
 If you're upgrading an existing application from v5, see [Migrating from v5 to v6](migration.md) first.
 
+If you just want to try rolling dice before installing the library, use the [dice playground](tools:playground).
+
 
 ## Install
 

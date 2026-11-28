@@ -61,6 +61,8 @@ Each constructor call creates an independent roll with new results, even if the 
 
 Notation supports [dice types](../notation/dice.md), [modifiers](../notation/modifiers.md), [roll groups](../notation/roll-groups.md), [maths](../notation/maths.md), [variables](../notation/variables.md) and more. See the [notation guide](../notation/index.md) to learn what you can roll.
 
+Use the [dice playground](tools:playground) to try different notation strings and inspect their roll results without changing your application code.
+
 ### The roll() shorthand
 
 Use the exported `roll()` function if you prefer a function call:

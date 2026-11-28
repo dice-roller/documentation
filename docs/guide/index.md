@@ -20,6 +20,8 @@ The library interprets the notation, rolls the dice and applies the modifiers. Y
 
 Start with [Getting started](getting-started.md) to install the library, or explore the [notation guide](notation/index.md) to see what you can roll.
 
+You can also try the [dice playground](tools:playground) to experiment with notation and roll dice in your browser, without installing the library or writing any code.
+
 
 ## Features
 
@@ -97,6 +99,7 @@ See [Getting started](getting-started.md) for installation and import options.
 
 Other projects in the Dice Roller ecosystem include:
 
+* [Online tools](tools:) for experimenting with dice notation in an interactive playground and converting saved roll data.
 * [Vue components](https://github.com/dice-roller/vue) for adding dice rolling to Vue applications.
 * The [VitePress plugin](https://github.com/dice-roller/vitepress-plugin) used for interactive rolls in this documentation. <Badge text="New in v6" vertical="middle"/>
 * A [command-line interface](packages/cli.md) for rolling dice in your terminal.
